@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Bot, Zap, Code, BookOpen, Target, Rocket } from 'lucide-react';
 import logo from '@/assets/logo-nexus.png';
+import LogoMarquee from '@/components/LogoMarquee';
 const fadeInUp = {
   initial: {
     opacity: 0,
@@ -90,6 +91,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Logo Marquee Section */}
+      <LogoMarquee />
 
       {/* Cosa Facciamo Section */}
       <section className="py-24">

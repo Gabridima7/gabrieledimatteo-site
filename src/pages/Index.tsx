@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Bot, Zap, Code, BookOpen, Target, Rocket } from 'lucide-react';
+import { ArrowRight, Sparkles, Bot, Zap, Code, Target, Rocket } from 'lucide-react';
 import logo from '@/assets/logo-nexus.png';
 import LogoMarquee from '@/components/LogoMarquee';
+import iconAiEducation from '@/assets/icons/icon-ai-education.png';
 const fadeInUp = {
   initial: {
     opacity: 0,
@@ -134,11 +135,6 @@ const Index = () => {
           once: true
         }} className="grid md:grid-cols-2 gap-6">
             {[{
-            icon: BookOpen,
-            title: 'AI Education & Strategy',
-            description: 'Formiamo il team e definiamo una roadmap AI concreta.',
-            link: '/soluzioni'
-          }, {
             icon: Bot,
             title: 'AI Agents & Automazioni',
             description: 'Agenti che trasformano attività manuali in processi automatici.',
@@ -153,7 +149,7 @@ const Index = () => {
             title: 'Soluzioni Digitali Custom',
             description: 'Web app, siti ed e-commerce quando servono al sistema.',
             link: '/soluzioni'
-          }].map((item, i) => <motion.div key={i} variants={fadeInUp} className="glass-card p-8" data-cursor="spotlight">
+          }].map((item, i) => <motion.div key={i + 1} variants={fadeInUp} className="glass-card p-8" data-cursor="spotlight">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <item.icon className="text-primary" size={24} />
                 </div>
@@ -164,6 +160,19 @@ const Index = () => {
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>)}
+            
+            {/* AI Education & Strategy Card with custom image */}
+            <motion.div variants={fadeInUp} className="glass-card p-8" data-cursor="spotlight">
+              <div className="w-16 h-16 mb-6">
+                <img src={iconAiEducation} alt="AI Education" className="w-full h-full object-contain" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">AI Education & Strategy</h3>
+              <p className="text-muted-foreground mb-6">Formiamo il team e definiamo una roadmap AI concreta.</p>
+              <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-medium transition-colors">
+                Scopri di più
+                <ArrowRight size={16} />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -192,7 +201,7 @@ const Index = () => {
             letter: 'E',
             title: 'Education',
             description: 'Workshop + training per il tuo team',
-            icon: BookOpen
+            icon: Sparkles
           }, {
             letter: 'I',
             title: 'Identification',

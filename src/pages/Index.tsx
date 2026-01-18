@@ -310,7 +310,7 @@ const Index = () => {
           once: true
         }} className="grid md:grid-cols-2 gap-8">
             {/* AI Education & Strategy Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI Education
                 <br />
@@ -318,7 +318,7 @@ const Index = () => {
               </h3>
               
               <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiEducation} alt="AI Education" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                <img src={iconAiEducation} alt="AI Education" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
               </div>
               
               <div className="mt-auto">
@@ -332,7 +332,7 @@ const Index = () => {
             </motion.div>
             
             {/* AI Agents & Automazioni Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI Agents
                 <br />
@@ -340,7 +340,7 @@ const Index = () => {
               </h3>
               
               <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiAgents} alt="AI Agents" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                <img src={iconAiAgents} alt="AI Agents" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
               </div>
               
               <div className="mt-auto">
@@ -354,7 +354,7 @@ const Index = () => {
             </motion.div>
             
             {/* AI Products Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI
                 <br />
@@ -362,7 +362,7 @@ const Index = () => {
               </h3>
               
               <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiProducts} alt="AI Products" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                <img src={iconAiProducts} alt="AI Products" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
               </div>
               
               <div className="mt-auto">
@@ -376,7 +376,7 @@ const Index = () => {
             </motion.div>
             
             {/* Soluzioni Digitali Custom Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 Soluzioni Digitali
                 <br />
@@ -384,7 +384,7 @@ const Index = () => {
               </h3>
               
               <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconSoluzioniCustom} alt="Soluzioni Custom" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
+                <img src={iconSoluzioniCustom} alt="Soluzioni Custom" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
               </div>
               
               <div className="mt-auto">

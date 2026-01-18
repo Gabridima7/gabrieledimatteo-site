@@ -1,18 +1,23 @@
 import { motion } from 'framer-motion';
 
-// Placeholder logos - will be replaced with real ones
-const placeholderLogos = [
-  { name: 'TechFlow', id: 1 },
-  { name: 'DataSync', id: 2 },
-  { name: 'CloudWave', id: 3 },
-  { name: 'AICore', id: 4 },
-  { name: 'SmartHub', id: 5 },
-  { name: 'NexGen', id: 6 },
+// Import logos
+import logoHomeleven from '@/assets/logos/logo-homeleven.png';
+import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
+import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
+import logoCentroRiparazione from '@/assets/logos/logo-centro-riparazione.png';
+import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
+
+const clientLogos = [
+  { name: 'Homeleven', src: logoHomeleven, id: 1 },
+  { name: 'Biglia Serramenti', src: logoBigliaSerramenti, id: 2 },
+  { name: 'Revelli Group', src: logoRevelliGroup, id: 3 },
+  { name: 'Centro Riparazione', src: logoCentroRiparazione, id: 4 },
+  { name: 'Biglia Design', src: logoBigliaDesign, id: 5 },
 ];
 
 const LogoMarquee = () => {
   // Duplicate logos for seamless infinite scroll
-  const logos = [...placeholderLogos, ...placeholderLogos];
+  const logos = [...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
     <section className="relative pt-0 pb-16 overflow-hidden">
@@ -33,11 +38,11 @@ const LogoMarquee = () => {
         <motion.div
           className="flex gap-16 md:gap-24 items-center"
           animate={{
-            x: [0, -50 * placeholderLogos.length * 3],
+            x: [0, -50 * clientLogos.length * 6],
           }}
           transition={{
             x: {
-              duration: 30,
+              duration: 40,
               repeat: Infinity,
               ease: "linear",
             },
@@ -46,13 +51,13 @@ const LogoMarquee = () => {
           {logos.map((logo, index) => (
             <div
               key={`${logo.id}-${index}`}
-              className="flex-shrink-0 flex items-center gap-2 text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300"
+              className="flex-shrink-0 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
-              {/* Placeholder logo - simple text with decorative element */}
-              <div className="w-3 h-3 rounded-full bg-primary/40" />
-              <span className="text-xl md:text-2xl font-medium tracking-wide whitespace-nowrap">
-                {logo.name}
-              </span>
+              <img 
+                src={logo.src} 
+                alt={logo.name} 
+                className="h-8 md:h-10 w-auto object-contain"
+              />
             </div>
           ))}
         </motion.div>

@@ -1,9 +1,49 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, Bot, Zap, Code, Target, Rocket } from 'lucide-react';
 import logo from '@/assets/logo-nexus.png';
 import LogoMarquee from '@/components/LogoMarquee';
 import iconAiEducation from '@/assets/icons/icon-ai-education.png';
+import logoHomeleven from '@/assets/logos/logo-homeleven.png';
+import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
+import logoAllfiber from '@/assets/logos/logo-allfiber.png';
+
+const successStories = [
+  {
+    id: 'homeleven',
+    name: 'Homeleven',
+    logo: logoHomeleven,
+    challenge: 'Gestione complessa di listing immobiliari su più piattaforme. Aggiornamenti manuali e rischio di overbooking costante.',
+    solution: 'Un sistema AI centralizzato che sincronizza automaticamente disponibilità e prezzi su tutte le piattaforme in tempo reale.',
+    metrics: [
+      { value: '€45k', label: 'RISPARMIO/ANNO' },
+      { value: '-95%', label: 'ERRORI BOOKING' }
+    ]
+  },
+  {
+    id: 'biglia-serramenti',
+    name: 'Biglia Serramenti',
+    logo: logoBigliaSerramenti,
+    challenge: 'Preventivi manuali lunghi e complessi. Ogni richiesta richiedeva ore di calcoli e configurazioni.',
+    solution: 'Configuratore AI che genera preventivi dettagliati in minuti, con rendering 3D e specifiche tecniche automatiche.',
+    metrics: [
+      { value: '320h', label: 'RISPARMIATE/MESE' },
+      { value: '8x', label: 'ROI' }
+    ]
+  },
+  {
+    id: 'allfiber',
+    name: 'All Fiber',
+    logo: logoAllfiber,
+    challenge: 'Assistenza clienti oberata da richieste ripetitive. Tempi di risposta lunghi e costi di supporto elevati.',
+    solution: "Un agente AI che gestisce l'80% delle richieste automaticamente, escalando solo i casi complessi al team umano.",
+    metrics: [
+      { value: '€28k', label: 'RISPARMIO/ANNO' },
+      { value: '-70%', label: 'TEMPO RISPOSTA' }
+    ]
+  }
+];
 const fadeInUp = {
   initial: {
     opacity: 0,
@@ -24,6 +64,138 @@ const stagger = {
     }
   }
 };
+
+const SuccessStoriesSection = () => {
+  const [activeTab, setActiveTab] = useState('homeleven');
+  const activeStory = successStories.find(s => s.id === activeTab) || successStories[0];
+
+  return (
+    <section className="py-24">
+      <div className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Alcune storie di <span className="font-serif-accent font-normal text-primary">Successo</span>.
+          </h2>
+        </motion.div>
+
+        {/* Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex justify-center gap-3 mb-10"
+        >
+          {successStories.map((story) => (
+            <button
+              key={story.id}
+              onClick={() => setActiveTab(story.id)}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
+                activeTab === story.id
+                  ? 'bg-foreground text-background border-foreground'
+                  : 'bg-transparent text-muted-foreground border-border hover:border-foreground/50'
+              }`}
+            >
+              {story.name}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Content Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass-card p-10 md:p-16"
+          data-cursor="spotlight"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeStory.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="grid lg:grid-cols-2 gap-12 items-center"
+            >
+              {/* Left: Content */}
+              <div className="space-y-8">
+                {/* Logo */}
+                <div className="h-16 md:h-20">
+                  <img
+                    src={activeStory.logo}
+                    alt={activeStory.name}
+                    className="h-full w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+
+                {/* Challenge */}
+                <div>
+                  <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
+                    LA SFIDA
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {activeStory.challenge}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div>
+                  <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
+                    LA NOSTRA SOLUZIONE
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {activeStory.solution}
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: Metrics */}
+              <div className="flex flex-col items-center justify-center gap-8 py-8 lg:border-l border-border/30 lg:pl-12">
+                {activeStory.metrics.map((metric, i) => (
+                  <div key={i} className="text-center">
+                    <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-2">
+                      {metric.value}
+                    </p>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {metric.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Link to all case studies */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-10"
+        >
+          <Link
+            to="/casi-studio"
+            className="glass hover:bg-white/10 text-foreground px-6 py-3 rounded-full text-sm font-medium transition-all inline-flex items-center gap-2"
+            data-cursor="spotlight"
+          >
+            Vedi altri casi studio
+            <ArrowRight size={16} />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
@@ -342,89 +514,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mini Case Studies */}
-      <section className="py-24">
-        <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Alcune storie di <span className="text-primary">Successo</span>.
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[{
-            title: 'HR Reporting Automation',
-            problem: 'Report manuali settimanali',
-            solution: 'Agent AI automatico',
-            result: '8 ore risparmiate/settimana'
-          }, {
-            title: 'Customer Support AI Agent',
-            problem: 'Risposte lente al cliente',
-            solution: 'Chatbot intelligente',
-            result: '-60% tempo risposta'
-          }, {
-            title: 'Operations Dashboard',
-            problem: 'Dati sparsi in 5 tool',
-            solution: 'Dashboard unificata',
-            result: 'Decisioni 3x più veloci'
-          }].map((study, i) => <motion.div key={i} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: i * 0.1
-          }} className="glass-card p-8" data-cursor="spotlight">
-                <h3 className="text-lg font-semibold mb-4">{study.title}</h3>
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <span className="text-muted-foreground">Problema: </span>
-                    <span>{study.problem}</span>
-                  </div>
-                  <div>
-                    <span className="text-muted-foreground">Soluzione: </span>
-                    <span>{study.solution}</span>
-                  </div>
-                  <div className="pt-2 border-t border-border/50">
-                    <span className="text-primary font-medium">{study.result}</span>
-                  </div>
-                </div>
-              </motion.div>)}
-          </div>
-
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6,
-          delay: 0.4
-        }} className="text-center mt-10">
-            <Link to="/casi-studio" className="glass hover:bg-white/10 text-foreground px-6 py-3 rounded-full text-sm font-medium transition-all inline-flex items-center gap-2" data-cursor="spotlight">
-              Vedi altri casi studio
-              <ArrowRight size={16} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* Success Stories with Tabs */}
+      <SuccessStoriesSection />
 
       {/* Final CTA */}
       <section className="py-24">

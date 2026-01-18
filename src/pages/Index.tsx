@@ -166,7 +166,7 @@ const Index = () => {
           duration: 0.6
         }} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Il Metodo <span className="font-serif-accent font-normal text-primary">Nexus</span>
+              Il Metodo <span className="text-primary">Nexus</span>
             </h2>
           </motion.div>
 
@@ -277,7 +277,7 @@ const Index = () => {
           duration: 0.6
         }} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Alcune storie di <span className="font-serif-accent font-normal text-primary">Successo</span>.
+              Alcune storie di <span className="text-primary">Successo</span>.
             </h2>
           </motion.div>
 
@@ -364,7 +364,7 @@ const Index = () => {
               CONTATTACI
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Parliamo del tuo <span className="font-serif-accent font-normal text-primary">progetto</span>.
+              Parliamo del tuo <span className="text-primary">progetto</span>.
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
               In 30 minuti capiamo se l'AI può generare ROI nel tuo processo.

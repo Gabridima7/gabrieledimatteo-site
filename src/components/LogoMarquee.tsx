@@ -3,12 +3,14 @@ import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
+import logoAllfiber from '@/assets/logos/logo-allfiber.png';
 
 const clientLogos = [
   { name: 'Homeleven', src: logoHomeleven, id: 1 },
   { name: 'Biglia Serramenti', src: logoBigliaSerramenti, id: 2 },
   { name: 'Revelli Group', src: logoRevelliGroup, id: 3 },
   { name: 'Biglia Design', src: logoBigliaDesign, id: 4 },
+  { name: 'Allfiber', src: logoAllfiber, id: 5 },
 ];
 
 const LogoMarquee = () => {

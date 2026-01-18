@@ -310,7 +310,7 @@ const Index = () => {
           once: true
         }} className="grid md:grid-cols-2 gap-8">
             {/* AI Education & Strategy Card */}
-            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI Education
                 <br />
@@ -332,7 +332,7 @@ const Index = () => {
             </motion.div>
             
             {/* AI Agents & Automazioni Card */}
-            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI Agents
                 <br />
@@ -354,7 +354,7 @@ const Index = () => {
             </motion.div>
             
             {/* AI Products Card */}
-            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 AI
                 <br />
@@ -376,7 +376,7 @@ const Index = () => {
             </motion.div>
             
             {/* Soluzioni Digitali Custom Card */}
-            <motion.div variants={fadeInUp} whileHover={{ scale: 1.03 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer" data-cursor="spotlight">
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
               <h3 className="text-2xl md:text-3xl font-bold mb-2">
                 Soluzioni Digitali
                 <br />

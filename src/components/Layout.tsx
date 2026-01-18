@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import CustomCursor from './CustomCursor';
 import ParticlesBackground from './ParticlesBackground';
+import CookieBanner from './CookieBanner';
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import LogoMarquee from '@/components/LogoMarquee';
 import iconAiEducation from '@/assets/icons/icon-ai-education.png';
 import iconAiAgents from '@/assets/icons/icon-ai-agents.png';
 import iconAiProducts from '@/assets/icons/icon-ai-products.png';
+import iconSoluzioniCustom from '@/assets/icons/icon-soluzioni-custom.png';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoAllfiber from '@/assets/logos/logo-allfiber.png';
@@ -383,9 +384,7 @@ const Index = () => {
               </h3>
               
               <div className="flex-1 flex items-center justify-center py-8">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-border/50 flex items-center justify-center">
-                  <Code className="text-primary" size={80} />
-                </div>
+                <img src={iconSoluzioniCustom} alt="Soluzioni Custom" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
               </div>
               
               <div className="mt-auto">

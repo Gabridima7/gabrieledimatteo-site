@@ -17,7 +17,7 @@ const Footer = () => {
               Trasformiamo il modo in cui le PMI lavorano attraverso l'Intelligenza Artificiale.
             </p>
             <div className="text-muted-foreground text-xs space-y-1">
-              <p>NexusAgency S.r.l.</p>
+              
               <p>contact@nexusagency.it</p>
             </div>
           </div>

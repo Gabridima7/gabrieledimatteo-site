@@ -135,7 +135,7 @@ const SuccessStoriesSection = () => {
                   <img
                     src={activeStory.logo}
                     alt={activeStory.name}
-                    className="h-full w-auto object-contain brightness-0 invert"
+                    className={`h-full w-auto object-contain ${activeStory.id === 'allfiber' ? '' : 'brightness-0 invert'}`}
                   />
                 </div>
 

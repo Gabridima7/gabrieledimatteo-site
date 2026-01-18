@@ -26,8 +26,21 @@ const stagger = {
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
-      <section className="h-[99vh] flex items-center justify-center pt-16 pb-0">
-        <div className="section-container text-center">
+      <section className="h-[100vh] flex items-center justify-center pt-16 pb-0 relative overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-background/60 z-[1]" />
+        
+        <div className="section-container text-center relative z-10">
           <motion.div initial={{
           opacity: 0,
           scale: 0.9

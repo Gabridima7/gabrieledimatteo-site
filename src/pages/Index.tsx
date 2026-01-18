@@ -26,7 +26,7 @@ const stagger = {
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
-      <section className="h-[99vh] flex items-center justify-center pt-16 pb-0 relative overflow-hidden">
+      <section className="h-[99vh] flex items-center justify-center pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
         {/* Video Background */}
         <video
           autoPlay

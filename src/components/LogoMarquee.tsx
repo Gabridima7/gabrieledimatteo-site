@@ -4,15 +4,13 @@ import { motion } from 'framer-motion';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
-import logoCentroRiparazione from '@/assets/logos/logo-centro-riparazione.png';
 import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
 
 const clientLogos = [
   { name: 'Homeleven', src: logoHomeleven, id: 1 },
   { name: 'Biglia Serramenti', src: logoBigliaSerramenti, id: 2 },
   { name: 'Revelli Group', src: logoRevelliGroup, id: 3 },
-  { name: 'Centro Riparazione', src: logoCentroRiparazione, id: 4 },
-  { name: 'Biglia Design', src: logoBigliaDesign, id: 5 },
+  { name: 'Biglia Design', src: logoBigliaDesign, id: 4 },
 ];
 
 const LogoMarquee = () => {

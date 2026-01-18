@@ -26,7 +26,7 @@ const stagger = {
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
-      <section className="min-h-[calc(100vh-6rem)] flex items-center justify-center pt-20 pb-16">
+      <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center pt-20 pb-8">
         <div className="section-container text-center">
           <motion.div initial={{
           opacity: 0,

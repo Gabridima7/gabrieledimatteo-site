@@ -15,7 +15,7 @@ const LogoMarquee = () => {
   const logos = [...placeholderLogos, ...placeholderLogos];
 
   return (
-    <section className="relative py-16 overflow-hidden">
+    <section className="relative pt-4 pb-16 overflow-hidden">
       {/* Blue glowing line at top center */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-96 h-px">
         <div className="w-full h-full bg-gradient-to-r from-transparent via-primary to-transparent opacity-80" />

@@ -4,6 +4,20 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect touch devices (mobile/tablet)
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isMobileWidth = window.innerWidth <= 1024; // iPad and below
+      setIsTouchDevice(hasTouchScreen || isMobileWidth);
+    };
+
+    checkTouchDevice();
+    window.addEventListener('resize', checkTouchDevice);
+    return () => window.removeEventListener('resize', checkTouchDevice);
+  }, []);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     requestAnimationFrame(() => {
@@ -61,7 +75,8 @@ const CustomCursor = () => {
     return () => observer.disconnect();
   }, [handleMouseEnter, handleMouseLeave]);
 
-  if (!isVisible) return null;
+  // Don't render on touch devices
+  if (!isVisible || isTouchDevice) return null;
 
   return (
     <>

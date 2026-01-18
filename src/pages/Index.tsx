@@ -37,7 +37,7 @@ const Index = () => {
         }} transition={{
           duration: 0.5
         }} className="mb-8">
-            <img src={logo} alt="Nexus" className="h-20 w-auto mx-auto brightness-[2] contrast-125" />
+            <img src={logo} alt="Nexus" className="h-28 md:h-32 w-auto mx-auto brightness-[2] contrast-125" />
           </motion.div>
 
           <motion.h1 initial={{
@@ -49,7 +49,7 @@ const Index = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+        }} className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             Il tuo <span className="font-serif-accent font-normal">Partner AI</span>
             <br />
             <span className="text-foreground">a </span>
@@ -65,7 +65,7 @@ const Index = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.4
-        }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+        }} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
             Progettiamo agenti AI, automazioni e prodotti digitali per PMI.
             <br />
             Dalla strategia alla costruzione in settimane, non mesi.  

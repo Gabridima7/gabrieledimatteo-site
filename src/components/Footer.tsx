@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail } from 'lucide-react';
 import logo from '@/assets/logo-nexus.png';
-
 const Footer = () => {
-  return (
-    <footer className="border-t border-border/50 mt-24">
+  return <footer className="border-t border-border/50 mt-24">
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -89,30 +87,18 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 mt-12 border-t border-border/30">
           <p className="text-muted-foreground text-xs">
-            © 2026 NexusAgency S.r.l. Tutti i diritti riservati.
+            © 2026 Nexus Connect di Di Matteo Gabriele. Tutti i diritti riservati.
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              data-cursor="spotlight"
-            >
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
               <Linkedin size={20} />
             </a>
-            <a
-              href="mailto:contact@nexusagency.it"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              data-cursor="spotlight"
-            >
+            <a href="mailto:contact@nexusagency.it" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
               <Mail size={20} />
             </a>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

@@ -99,12 +99,12 @@ const CustomCursor = () => {
       <div
         className="fixed pointer-events-none z-[9998] transition-opacity duration-300"
         style={{
-          left: position.x - 200,
-          top: position.y - 200,
-          width: '400px',
-          height: '400px',
-          background: `radial-gradient(circle, hsla(240, 100%, 50%, ${isHovering ? 0.15 : 0.08}) 0%, transparent 70%)`,
-          opacity: isHovering ? 1 : 0.6,
+          left: position.x - 250,
+          top: position.y - 250,
+          width: '500px',
+          height: '500px',
+          background: `radial-gradient(circle, hsla(240, 100%, 50%, ${isHovering ? 0.25 : 0.12}) 0%, hsla(240, 100%, 50%, ${isHovering ? 0.1 : 0.04}) 40%, transparent 70%)`,
+          opacity: isHovering ? 1 : 0.7,
           mixBlendMode: 'screen',
         }}
       />

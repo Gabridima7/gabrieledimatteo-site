@@ -105,7 +105,7 @@ const Index = () => {
         }} transition={{
           duration: 0.6
         }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl mb-4 md:text-6xl font-medium">
               Scegli il tuo <span className="font-serif-accent font-normal text-primary">percorso</span>.
             </h2>
             <p className="text-muted-foreground text-lg">

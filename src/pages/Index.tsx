@@ -133,45 +133,99 @@ const Index = () => {
 
           <motion.div variants={stagger} initial="initial" whileInView="animate" viewport={{
           once: true
-        }} className="grid md:grid-cols-2 gap-6">
-            {[{
-            icon: Bot,
-            title: 'AI Agents & Automazioni',
-            description: 'Agenti che trasformano attività manuali in processi automatici.',
-            link: '/soluzioni'
-          }, {
-            icon: Sparkles,
-            title: 'AI Products',
-            description: 'Micro-prodotti e tool interni pronti o personalizzabili.',
-            link: '/prodotti-ai'
-          }, {
-            icon: Code,
-            title: 'Soluzioni Digitali Custom',
-            description: 'Web app, siti ed e-commerce quando servono al sistema.',
-            link: '/soluzioni'
-          }].map((item, i) => <motion.div key={i + 1} variants={fadeInUp} className="glass-card p-8" data-cursor="spotlight">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <item.icon className="text-primary" size={24} />
+        }} className="grid md:grid-cols-2 gap-8">
+            {/* AI Education & Strategy Card */}
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                AI Education
+                <br />
+                <span className="font-serif-accent font-normal text-primary">& Strategy</span>
+              </h3>
+              
+              <div className="flex-1 flex items-center justify-center py-8">
+                <img src={iconAiEducation} alt="AI Education" className="w-48 h-48 md:w-56 md:h-56 object-contain" />
+              </div>
+              
+              <div className="mt-auto">
+                <p className="text-lg font-medium mb-2">Formazione, Analisi e Sviluppo.</p>
+                <p className="text-muted-foreground mb-8">Insegniamo al tuo team a usare l'AI ogni giorno. Analizziamo i tuoi processi per capire dove implementare l'AI e sviluppare soluzioni su misura.</p>
+                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
+                  Inizia ora
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+            
+            {/* AI Agents & Automazioni Card */}
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                AI Agents
+                <br />
+                <span className="font-serif-accent font-normal text-primary">& Automazioni</span>
+              </h3>
+              
+              <div className="flex-1 flex items-center justify-center py-8">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-border/50 flex items-center justify-center">
+                  <Bot className="text-primary" size={80} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground mb-6">{item.description}</p>
-                <Link to={item.link} className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-medium transition-colors">
+              </div>
+              
+              <div className="mt-auto">
+                <p className="text-lg font-medium mb-2">Automazione intelligente.</p>
+                <p className="text-muted-foreground mb-8">Agenti AI che trasformano attività manuali in processi automatici. Risparmi tempo e riduci errori umani.</p>
+                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
                   Scopri di più
                   <ArrowRight size={16} />
                 </Link>
-              </motion.div>)}
-            
-            {/* AI Education & Strategy Card with custom image */}
-            <motion.div variants={fadeInUp} className="glass-card p-8" data-cursor="spotlight">
-              <div className="w-16 h-16 mb-6">
-                <img src={iconAiEducation} alt="AI Education" className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">AI Education & Strategy</h3>
-              <p className="text-muted-foreground mb-6">Formiamo il team e definiamo una roadmap AI concreta.</p>
-              <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-medium transition-colors">
-                Scopri di più
-                <ArrowRight size={16} />
-              </Link>
+            </motion.div>
+            
+            {/* AI Products Card */}
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                AI
+                <br />
+                <span className="font-serif-accent font-normal text-primary">Products</span>
+              </h3>
+              
+              <div className="flex-1 flex items-center justify-center py-8">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-border/50 flex items-center justify-center">
+                  <Sparkles className="text-primary" size={80} />
+                </div>
+              </div>
+              
+              <div className="mt-auto">
+                <p className="text-lg font-medium mb-2">Prodotti pronti all'uso.</p>
+                <p className="text-muted-foreground mb-8">Micro-prodotti e tool interni pronti o personalizzabili per le esigenze specifiche della tua azienda.</p>
+                <Link to="/prodotti-ai" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
+                  Esplora prodotti
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+            
+            {/* Soluzioni Digitali Custom Card */}
+            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px]" data-cursor="spotlight">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                Soluzioni Digitali
+                <br />
+                <span className="font-serif-accent font-normal text-primary">Custom</span>
+              </h3>
+              
+              <div className="flex-1 flex items-center justify-center py-8">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-card to-card/50 border border-border/50 flex items-center justify-center">
+                  <Code className="text-primary" size={80} />
+                </div>
+              </div>
+              
+              <div className="mt-auto">
+                <p className="text-lg font-medium mb-2">Sviluppo su misura.</p>
+                <p className="text-muted-foreground mb-8">Web app, siti ed e-commerce costruiti per integrarsi perfettamente nel tuo ecosistema digitale.</p>
+                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
+                  Scopri di più
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>

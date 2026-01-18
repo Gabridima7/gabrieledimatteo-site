@@ -93,7 +93,7 @@ const Footer = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
               <Linkedin size={20} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
+            <a href="https://www.instagram.com/nexus.agency.it/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
               <Instagram size={20} />
             </a>
           </div>

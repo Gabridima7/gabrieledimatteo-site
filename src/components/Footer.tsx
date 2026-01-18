@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Instagram } from 'lucide-react';
 import logo from '@/assets/logo-nexus.png';
 const Footer = () => {
   return <footer className="border-t border-border/50 mt-24">
@@ -93,8 +93,8 @@ const Footer = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:contact@nexusagency.it" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
-              <Mail size={20} />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" data-cursor="spotlight">
+              <Instagram size={20} />
             </a>
           </div>
         </div>

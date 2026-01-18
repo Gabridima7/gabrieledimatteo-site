@@ -10,7 +10,8 @@ const Privacy = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
+            <p className="text-muted-foreground text-sm mb-8">Ultimo aggiornamento: 04/01/2026</p>
             
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground mb-6">

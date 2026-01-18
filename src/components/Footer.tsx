@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
             <div className="text-muted-foreground text-xs space-y-1">
               
-              <p>contact@nexusagency.it</p>
+              <p>info@nexusagency.it</p>
             </div>
           </div>
 

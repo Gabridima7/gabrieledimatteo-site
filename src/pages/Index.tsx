@@ -202,7 +202,7 @@ const SuccessStoriesSection = () => {
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
-      <section className="h-[100vh] flex items-center justify-center pt-12 md:pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
+      <section className="h-[85vh] md:h-[100vh] flex items-center justify-center pt-12 md:pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
         {/* Video Background */}
         <video
           autoPlay

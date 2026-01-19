@@ -278,10 +278,10 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0"
         >
-          <Link to="/prenota-call" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
+          <a href="https://cal.com/nexus-agency/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
             Prenota Call
             <ArrowRight size={18} className="md:w-5 md:h-5" />
-          </Link>
+          </a>
           <Link to="/soluzioni" className="glass hover:bg-white/10 text-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2" data-cursor="spotlight">
             Scopri le Soluzioni
           </Link>
@@ -552,10 +552,10 @@ const Index = () => {
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
               In 30 minuti capiamo se l'AI può generare ROI nel tuo processo.
             </p>
-            <Link to="/prenota-call" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
+            <a href="https://cal.com/nexus-agency/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
               Prenota Call
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

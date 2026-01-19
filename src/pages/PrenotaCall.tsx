@@ -1,19 +1,43 @@
 import { motion } from 'framer-motion';
-import { Mail, CheckCircle } from 'lucide-react';
+import { Mail, CheckCircle, Calendar } from 'lucide-react';
+import { useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+
 const PrenotaCall = () => {
-  return <div className="pt-24">
+  useEffect(() => {
+    // Load Cal.com embed script
+    const script = document.createElement('script');
+    script.src = 'https://app.cal.com/embed/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      const Cal = (window as any).Cal;
+      if (Cal) {
+        Cal('init', '30min', { origin: 'https://app.cal.com' });
+        Cal.ns['30min']('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+      }
+    };
+
+    return () => {
+      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
+  return (
+    <div className="pt-24">
       {/* Header */}
       <section className="py-16">
         <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="text-center max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto"
+          >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Prenota una Call <span className="font-serif-accent font-normal text-primary">Strategica</span>
             </h1>
@@ -29,22 +53,24 @@ const PrenotaCall = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left: Info */}
-            <motion.div initial={{
-            opacity: 0,
-            x: -20
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.6,
-            delay: 0.2
-          }}>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h2 className="text-2xl font-bold mb-6">Cosa discuteremo:</h2>
               <ul className="space-y-4">
-                {['I tuoi processi attuali e dove l\'AI può fare la differenza', 'Il prodotto o agent più adatto alle tue esigenze', 'Tempistiche realistiche e costi indicativi', 'I prossimi passi concreti'].map((item, i) => <li key={i} className="flex items-start gap-3">
+                {[
+                  'I tuoi processi attuali e dove l\'AI può fare la differenza',
+                  'Il prodotto o agent più adatto alle tue esigenze',
+                  'Tempistiche realistiche e costi indicativi',
+                  'I prossimi passi concreti'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
                     <CheckCircle className="text-primary shrink-0 mt-0.5" size={20} />
                     <span className="text-muted-foreground">{item}</span>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-10 p-6 glass-card" data-cursor="spotlight">
@@ -63,25 +89,35 @@ const PrenotaCall = () => {
               </div>
             </motion.div>
 
-            {/* Right: Cal.com iframe embed */}
-            <motion.div initial={{
-            opacity: 0,
-            x: 20
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.6,
-            delay: 0.3
-          }} className="glass-card p-2 min-h-[600px] overflow-hidden rounded-xl" data-cursor="spotlight">
-              <iframe src="https://cal.com/gabriele-di-matteo/30min?embed=true&theme=dark&layout=month_view" width="100%" height="100%" frameBorder="0" style={{
-              minHeight: '580px',
-              borderRadius: '12px'
-            }} allow="camera; microphone; autoplay; display-capture; clipboard-write" title="Prenota una call con Nexus" />
+            {/* Right: CTA Card with Cal.com trigger */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="glass-card p-8 flex flex-col items-center justify-center text-center min-h-[400px]"
+              data-cursor="spotlight"
+            >
+              <Calendar className="w-16 h-16 text-primary mb-6" />
+              <h3 className="text-2xl font-bold mb-4">Scegli il tuo slot</h3>
+              <p className="text-muted-foreground mb-8 max-w-sm">
+                Clicca il pulsante per aprire il calendario e prenotare la tua call strategica gratuita.
+              </p>
+              <Button
+                size="lg"
+                className="text-lg px-8 py-6"
+                data-cal-link="gabriele-di-matteo/30min"
+                data-cal-namespace="30min"
+                data-cal-config='{"layout":"month_view"}'
+              >
+                <Calendar className="mr-2" size={20} />
+                Prenota Ora
+              </Button>
             </motion.div>
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default PrenotaCall;

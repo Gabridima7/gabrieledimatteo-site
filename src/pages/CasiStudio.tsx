@@ -129,14 +129,16 @@ const CasiStudio = () => {
             <p className="text-muted-foreground mb-8">
               Prenota una call e scopri come possiamo aiutarti.
             </p>
-            <Link
-              to="/prenota-call"
+            <a
+              href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center gap-2"
               data-cursor="spotlight"
             >
               Prenota Call
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

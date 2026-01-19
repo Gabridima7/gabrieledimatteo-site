@@ -59,9 +59,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/prenota-call" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="https://cal.com/nexus-agency/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                   Prenota Call
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

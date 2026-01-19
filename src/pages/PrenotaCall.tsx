@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const PrenotaCall = () => {
   const handleBooking = () => {
-    window.open('https://cal.com/gabriele-di-matteo/30min', '_blank');
+    window.open('https://cal.com/nexus-agency/30min?overlayCalendar=true', '_blank');
   };
 
   return (

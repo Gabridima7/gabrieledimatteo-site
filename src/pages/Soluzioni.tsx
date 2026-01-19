@@ -22,14 +22,16 @@ const Soluzioni = () => {
                 Dalla formazione all'implementazione, tutto ciò che serve per portare l'AI nella tua azienda.
               </p>
             </div>
-            <Link
-              to="/prenota-call"
+            <a
+              href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 glow-box inline-flex items-center gap-2 shrink-0"
               data-cursor="spotlight"
             >
               Prenota Call
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -100,14 +102,16 @@ const Soluzioni = () => {
             </div>
 
             <div className="mt-10">
-              <Link
-                to="/prenota-call"
+              <a
+                href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium transition-all inline-flex items-center gap-2"
                 data-cursor="spotlight"
               >
                 Richiedi demo
                 <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -194,14 +198,16 @@ const Soluzioni = () => {
             <p className="text-muted-foreground mb-8">
               Prenota una call strategica gratuita di 30 minuti.
             </p>
-            <Link
-              to="/prenota-call"
+            <a
+              href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center gap-2"
               data-cursor="spotlight"
             >
               Prenota Call
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

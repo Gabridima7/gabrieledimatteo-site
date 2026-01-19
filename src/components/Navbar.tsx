@@ -69,13 +69,15 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <Link
-            to="/prenota-call"
+          <a
+            href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 glow-box animate-pulse-glow hidden sm:block"
             data-cursor="spotlight"
           >
             Prenota Call
-          </Link>
+          </a>
 
           {/* Mobile menu button */}
           <button
@@ -112,13 +114,15 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/prenota-call"
+              <a
+                href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="bg-primary text-primary-foreground px-4 py-3 rounded-xl text-sm font-medium text-center mt-2"
               >
                 Prenota Call
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

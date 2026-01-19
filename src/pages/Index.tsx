@@ -218,19 +218,19 @@ const Index = () => {
         
         <div className="section-container text-center relative z-10">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="mb-4 md:mb-8 will-change-transform"
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="mb-4 md:mb-8"
           >
             <img src={logo} alt="Nexus" className="h-16 md:h-32 w-auto mx-auto brightness-[2] contrast-125" />
           </motion.div>
 
           <motion.h1 
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
-            className="text-3xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-8 leading-tight will-change-transform"
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-3xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-8 leading-tight"
           >
             Il tuo <span className="font-serif-accent font-normal">Partner AI</span>
             <br />
@@ -239,10 +239,10 @@ const Index = () => {
           </motion.h1>
 
           <motion.p 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-            className="text-base md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-12 leading-relaxed px-4 md:px-0 will-change-transform"
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-base md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-12 leading-relaxed px-4 md:px-0"
           >
             Progettiamo agenti AI, automazioni e prodotti digitali per PMI.
             <br className="hidden md:block" />
@@ -251,10 +251,10 @@ const Index = () => {
           </motion.p>
 
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0 will-change-transform"
+            transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0"
           >
             <Link to="/prenota-call" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
               Prenota Call

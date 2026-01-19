@@ -1,7 +1,37 @@
 import { motion } from 'framer-motion';
-import { Calendar, Mail, CheckCircle } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
+import { useEffect } from 'react';
 
 const PrenotaCall = () => {
+  useEffect(() => {
+    // Load Cal.com embed script
+    const script = document.createElement('script');
+    script.src = 'https://app.cal.com/embed/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      const Cal = (window as any).Cal;
+      if (Cal) {
+        Cal('init', '30min', { origin: 'https://app.cal.com' });
+        Cal.ns['30min']('inline', {
+          elementOrSelector: '#my-cal-inline-30min',
+          config: { layout: 'month_view', theme: 'dark' },
+          calLink: 'gabriele-di-matteo/30min',
+        });
+        Cal.ns['30min']('ui', { hideEventTypeDetails: false, layout: 'month_view' });
+      }
+    };
+
+    return () => {
+      // Cleanup
+      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <div className="pt-24">
       {/* Header */}
@@ -26,7 +56,7 @@ const PrenotaCall = () => {
       {/* Main content */}
       <section className="py-8">
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left: Info */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -50,7 +80,7 @@ const PrenotaCall = () => {
 
               <div className="mt-10 p-6 glass-card" data-cursor="spotlight">
                 <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="text-primary" size={24} />
+                  <span className="text-primary text-2xl">📅</span>
                   <span className="font-semibold">30 minuti</span>
                 </div>
                 <p className="text-muted-foreground text-sm">
@@ -64,28 +94,19 @@ const PrenotaCall = () => {
               </div>
             </motion.div>
 
-            {/* Right: Calendar embed placeholder */}
+            {/* Right: Cal.com embed */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="glass-card p-8 min-h-[500px] flex items-center justify-center"
+              className="glass-card p-4 min-h-[600px] overflow-hidden"
               data-cursor="spotlight"
             >
-              <div className="text-center">
-                <Calendar className="text-primary mx-auto mb-6" size={48} />
-                <h3 className="text-xl font-semibold mb-3">Calendario</h3>
-                <p className="text-muted-foreground mb-6">
-                  Qui verrà integrato il calendario Calendly.
-                </p>
-                <div className="text-xs text-muted-foreground p-4 bg-secondary/30 rounded-xl">
-                  <code>
-                    {`<!-- Calendly inline widget -->`}
-                    <br />
-                    {`<div class="calendly-inline-widget" data-url="..." />`}
-                  </code>
-                </div>
-              </div>
+              <div 
+                id="my-cal-inline-30min" 
+                className="w-full h-full min-h-[580px]"
+                style={{ overflow: 'auto' }}
+              />
             </motion.div>
           </div>
         </div>

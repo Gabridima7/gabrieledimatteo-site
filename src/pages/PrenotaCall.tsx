@@ -1,37 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle } from 'lucide-react';
-import { useEffect } from 'react';
 
 const PrenotaCall = () => {
-  useEffect(() => {
-    // Load Cal.com embed script
-    const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      const Cal = (window as any).Cal;
-      if (Cal) {
-        Cal('init', '30min', { origin: 'https://app.cal.com' });
-        Cal.ns['30min']('inline', {
-          elementOrSelector: '#my-cal-inline-30min',
-          config: { layout: 'month_view', theme: 'dark' },
-          calLink: 'gabriele-di-matteo/30min',
-        });
-        Cal.ns['30min']('ui', { hideEventTypeDetails: false, layout: 'month_view' });
-      }
-    };
-
-    return () => {
-      // Cleanup
-      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
   return (
     <div className="pt-24">
       {/* Header */}
@@ -94,18 +64,22 @@ const PrenotaCall = () => {
               </div>
             </motion.div>
 
-            {/* Right: Cal.com embed */}
+            {/* Right: Cal.com iframe embed */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="glass-card p-4 min-h-[600px] overflow-hidden"
+              className="glass-card p-2 min-h-[600px] overflow-hidden rounded-xl"
               data-cursor="spotlight"
             >
-              <div 
-                id="my-cal-inline-30min" 
-                className="w-full h-full min-h-[580px]"
-                style={{ overflow: 'auto' }}
+              <iframe
+                src="https://cal.com/gabriele-di-matteo/30min?embed=true&theme=dark&layout=month_view"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ minHeight: '580px', borderRadius: '12px' }}
+                allow="camera; microphone; autoplay; display-capture; clipboard-write"
+                title="Prenota una call con Nexus"
               />
             </motion.div>
           </div>

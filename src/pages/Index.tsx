@@ -202,7 +202,7 @@ const SuccessStoriesSection = () => {
 const Index = () => {
   return <div className="relative">
       {/* Hero Section */}
-      <section className="h-[99vh] flex items-center justify-center pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
+      <section className="h-[100vh] flex items-center justify-center pt-12 md:pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
         {/* Video Background */}
         <video
           autoPlay
@@ -225,8 +225,8 @@ const Index = () => {
           scale: 1
         }} transition={{
           duration: 0.5
-        }} className="mb-8">
-            <img src={logo} alt="Nexus" className="h-28 md:h-32 w-auto mx-auto brightness-[2] contrast-125" />
+        }} className="mb-4 md:mb-8">
+            <img src={logo} alt="Nexus" className="h-16 md:h-32 w-auto mx-auto brightness-[2] contrast-125" />
           </motion.div>
 
           <motion.h1 initial={{
@@ -238,7 +238,7 @@ const Index = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+        }} className="text-3xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-8 leading-tight">
             Il tuo <span className="font-serif-accent font-normal">Partner AI</span>
             <br />
             <span className="text-foreground">a </span>
@@ -254,9 +254,10 @@ const Index = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.4
-        }} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+        }} className="text-base md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-12 leading-relaxed px-4 md:px-0">
             Progettiamo agenti AI, automazioni e prodotti digitali per PMI.
-            <br />
+            <br className="hidden md:block" />
+            <span className="md:hidden"> </span>
             Dalla strategia alla costruzione in settimane, non mesi.  
           </motion.p>
 
@@ -269,12 +270,12 @@ const Index = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.6
-        }} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/prenota-call" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
+        }} className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0">
+            <Link to="/prenota-call" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
               Prenota Call
-              <ArrowRight size={20} />
+              <ArrowRight size={18} className="md:w-5 md:h-5" />
             </Link>
-            <Link to="/soluzioni" className="glass hover:bg-white/10 text-foreground px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2" data-cursor="spotlight">
+            <Link to="/soluzioni" className="glass hover:bg-white/10 text-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2" data-cursor="spotlight">
               Scopri le Soluzioni
             </Link>
           </motion.div>

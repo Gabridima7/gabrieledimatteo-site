@@ -1,31 +1,11 @@
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle, Calendar } from 'lucide-react';
-import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 const PrenotaCall = () => {
-  useEffect(() => {
-    // Load Cal.com embed script
-    const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      const Cal = (window as any).Cal;
-      if (Cal) {
-        Cal('init', '30min', { origin: 'https://app.cal.com' });
-        Cal.ns['30min']('ui', { hideEventTypeDetails: false, layout: 'month_view' });
-      }
-    };
-
-    return () => {
-      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
+  const handleBooking = () => {
+    window.open('https://cal.com/gabriele-di-matteo/30min', '_blank');
+  };
 
   return (
     <div className="pt-24">
@@ -89,7 +69,7 @@ const PrenotaCall = () => {
               </div>
             </motion.div>
 
-            {/* Right: CTA Card with Cal.com trigger */}
+            {/* Right: CTA Card */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -105,9 +85,7 @@ const PrenotaCall = () => {
               <Button
                 size="lg"
                 className="text-lg px-8 py-6"
-                data-cal-link="gabriele-di-matteo/30min"
-                data-cal-namespace="30min"
-                data-cal-config='{"layout":"month_view"}'
+                onClick={handleBooking}
               >
                 <Calendar className="mr-2" size={20} />
                 Prenota Ora

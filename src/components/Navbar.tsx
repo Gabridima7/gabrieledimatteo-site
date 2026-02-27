@@ -110,7 +110,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 glass-nav transition-all duration-300 ${scrolled ? 'glass-nav-scrolled' : ''}`}>
-        <div className="section-container lg:pl-5 flex items-center justify-between h-[72px]">
+        <div className="section-container lg:pl-2 flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
             <img src={logo} alt="NEXUS Agency" className="h-8 w-auto brightness-[2] contrast-125" />

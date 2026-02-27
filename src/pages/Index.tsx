@@ -122,7 +122,7 @@ const Index = () => {
       {/* ─── HERO ─── */}
       <section className="relative h-screen flex flex-col overflow-hidden">
 
-        <div className="section-container lg:pl-5 relative z-10 flex flex-col flex-1 pt-8 md:pt-2 pb-6">
+        <div className="section-container lg:pl-2 relative z-10 flex flex-col flex-1 pt-8 md:pt-2 pb-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1 md:max-lg:gap-4">
             {/* Left – Text */}
             <div>

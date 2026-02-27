@@ -57,8 +57,8 @@ const Footer = () => {
               href={CAL_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary text-sm"
-            >
+              className="btn-primary text-sm">
+
               {t('nav', 'prenotaCall')}
               <ArrowRight size={14} />
             </a>
@@ -68,7 +68,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 mt-12 border-t border-white/[0.06] gap-4">
           <p className="text-nexus-gray text-xs">
-            © 2026 NEXUS Agency. P.IVA 12345678901
+            © 2026 NEXUS Connect. P.IVA 01766560054
           </p>
           <div className="flex items-center gap-4 text-xs">
             <Link to="/privacy" className="text-nexus-gray hover:text-white transition-colors">{t('footer', 'privacy')}</Link>
@@ -76,8 +76,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;

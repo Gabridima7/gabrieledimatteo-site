@@ -161,6 +161,12 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
+  .icon-glass-sm {
+    @apply w-9 h-9 rounded-lg flex items-center justify-center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
   /* Nav link underline animation */
   .nav-link {
     @apply relative text-sm font-medium transition-colors;

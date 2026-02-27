@@ -67,69 +67,133 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[700px] glass-mega p-8"
+                    className="fixed top-[72px] left-0 w-full z-50"
                   >
-                    <div className="grid grid-cols-3 gap-6 mb-6">
-                      {/* Col 1 */}
-                      <div>
-                        <p className="text-[10px] font-bold tracking-widest text-nexus-gray mb-3">{t('mega', 'colSviluppo')}</p>
-                        <Link to="/soluzioni" className="flex items-start gap-3 group">
-                          <div className="icon-glass shrink-0">
-                            <Globe size={20} className="text-nexus-electric" />
+                    <div className="bg-nexus-navy/95 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl">
+                      {/* Top: Services grid */}
+                      <div className="section-container py-10">
+                        <div className="flex items-start gap-12">
+                          {/* Badge */}
+                          <div className="shrink-0 pt-1">
+                            <span className="badge-pill">{t('mega', 'servizi') || 'SERVIZI'}</span>
                           </div>
-                          <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'sviluppo')}</p>
-                            <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'sviluppoDesc')}</p>
-                          </div>
-                        </Link>
-                      </div>
-                      {/* Col 2 */}
-                      <div>
-                        <p className="text-[10px] font-bold tracking-widest text-nexus-gray mb-3">{t('mega', 'colAi')}</p>
-                        <Link to="/soluzioni" className="flex items-start gap-3 group">
-                          <div className="icon-glass shrink-0">
-                            <Bot size={20} className="text-nexus-electric" />
-                          </div>
-                          <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'ai')}</p>
-                            <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'aiDesc')}</p>
-                          </div>
-                        </Link>
-                      </div>
-                      {/* Col 3 */}
-                      <div>
-                        <p className="text-[10px] font-bold tracking-widest text-nexus-gray mb-3">{t('mega', 'colDesign')}</p>
-                        <Link to="/soluzioni" className="flex items-start gap-3 group">
-                          <div className="icon-glass shrink-0">
-                            <Palette size={20} className="text-nexus-electric" />
-                          </div>
-                          <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'branding')}</p>
-                            <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'brandingDesc')}</p>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
 
-                    {/* Full width consulenza */}
-                    <div className="border-t border-white/10 pt-4 mb-4">
-                      <Link to="/soluzioni" className="flex items-center gap-3 group">
-                        <div className="icon-glass shrink-0">
-                          <Lightbulb size={20} className="text-nexus-electric" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'consulenza')}</p>
-                          <p className="text-xs text-nexus-gray">{t('mega', 'consulenzaDesc')}</p>
-                        </div>
-                      </Link>
-                    </div>
+                          {/* 3 columns */}
+                          <div className="grid grid-cols-3 gap-x-16 gap-y-0 flex-1">
+                            {/* Col 1 - SVILUPPO */}
+                            <div>
+                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colSviluppo')}</p>
+                              <div className="space-y-5">
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Globe size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'sviluppo')}</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'sviluppoDesc')}</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Code size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Landing Page</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">High-converting website</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Globe size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Web App</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'}</p>
+                                  </div>
+                                </Link>
+                              </div>
+                            </div>
 
-                    {/* Solutions pills */}
-                    <div className="border-t border-white/10 pt-4 flex items-center gap-2">
-                      <span className="text-[10px] font-bold tracking-widest text-nexus-gray">{t('mega', 'soluzioni')}</span>
-                      {['mvp', 'redesign', 'retainer'].map((key) => (
-                        <span key={key} className="badge-pill">{t('mega', key)}</span>
-                      ))}
+                            {/* Col 2 - AI & AUTOMATION */}
+                            <div>
+                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colAi')}</p>
+                              <div className="space-y-5">
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Bot size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'ai')}</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'aiDesc')}</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Bot size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">AI Chatbot</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'}</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Lightbulb size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'consulenza')}</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'consulenzaDesc')}</p>
+                                  </div>
+                                </Link>
+                              </div>
+                            </div>
+
+                            {/* Col 3 - DESIGN */}
+                            <div>
+                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colDesign')}</p>
+                              <div className="space-y-5">
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'branding')}</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'brandingDesc')}</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">UI/UX Design</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Interfacce che convertono' : 'Interfaces that convert'}</p>
+                                  </div>
+                                </Link>
+                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
+                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
+                                  <div>
+                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Logo Design</p>
+                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Diventa memorabile' : 'Become unforgettable'}</p>
+                                  </div>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom: Solutions strip */}
+                      <div className="bg-white/[0.03] border-t border-white/[0.06]">
+                        <div className="section-container py-8">
+                          <div className="flex items-start gap-12">
+                            <div className="shrink-0 pt-1">
+                              <span className="badge-pill">{t('mega', 'soluzioni')}</span>
+                            </div>
+                            <div className="grid grid-cols-3 gap-x-16 flex-1">
+                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
+                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'mvp')}</p>
+                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'}</p>
+                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'}</p>
+                              </Link>
+                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
+                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'redesign')}</p>
+                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'}</p>
+                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'}</p>
+                              </Link>
+                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
+                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'retainer')}</p>
+                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'}</p>
+                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'}</p>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 )}

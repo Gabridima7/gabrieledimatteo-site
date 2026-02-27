@@ -249,7 +249,7 @@ const Index = () => {
                   key={i}
                   src={logo.src}
                   alt={logo.name}
-                  className={`h-10 md:h-12 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
+                  className={`h-14 md:h-16 lg:h-20 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
                   loading="lazy"
                   width={120}
                   height={48} />

@@ -169,7 +169,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-center gap-3"
               >
-                <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-nexus-electric flex items-center justify-center hover:scale-105 transition-transform">
+                <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-[#d0f601] flex items-center justify-center hover:scale-105 transition-transform">
                   <ArrowRight size={20} className="text-white -rotate-45" />
                 </Link>
                 <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base rounded-full bg-[#d0f601] hover:bg-[#bde001] text-nexus-navy">

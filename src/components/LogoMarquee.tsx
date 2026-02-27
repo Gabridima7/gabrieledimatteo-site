@@ -31,12 +31,12 @@ const LogoMarquee = () => {
           {clientLogos.map((logo) => (
             <div
               key={logo.id}
-              className="flex-shrink-0 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300"
+              className="flex-shrink-0 flex items-center justify-center group"
             >
               <img 
                 src={logo.src} 
                 alt={logo.name} 
-                className="h-12 md:h-16 w-auto object-contain brightness-0 invert"
+                className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}

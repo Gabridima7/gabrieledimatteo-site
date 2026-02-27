@@ -241,20 +241,14 @@ const Index = () => {
             
             <div className="flex-1 overflow-hidden marquee-mask">
               <div className="flex animate-marquee hover:[animation-play-state:paused] gap-16 items-center" style={{ width: 'max-content' }}>
-                {[
+            {[
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                { src: logoAllfiber, name: 'All Fiber' },
-                { src: logoBigliaDesign, name: 'Biglia Design' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoNewClient, name: 'Client' },
                 // Duplicate for seamless loop
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                { src: logoAllfiber, name: 'All Fiber' },
-                { src: logoBigliaDesign, name: 'Biglia Design' },
-                { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoNewClient, name: 'Client' }].
+                { src: logoRevelliGroup, name: 'Revelli Group' }].
                 map((logo, i) =>
                 <img
                   key={i}

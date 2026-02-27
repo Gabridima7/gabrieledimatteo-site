@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Bot, Palette, Lightbulb, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
+import heroNexus from '@/assets/hero-nexus.png';
 import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
 import SEOHead from '@/components/SEOHead';
@@ -177,43 +178,7 @@ const Index = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="hidden lg:flex items-center justify-center relative">
-
-              {/* Glow behind cards */}
-              <div className="absolute w-64 h-64 rounded-full bg-nexus-electric/20 blur-[80px]" />
-              <div className="absolute w-40 h-40 rounded-full bg-nexus-blue/30 blur-[60px] translate-x-16 translate-y-16" />
-
-              {/* Glass cards stack */}
-              <div className="relative w-[340px] h-[420px]">
-                {/* Back card */}
-                <div className="absolute top-8 -left-4 w-[300px] h-[380px] rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md rotate-[-6deg] shadow-2xl" />
-                {/* Middle card */}
-                <div className="absolute top-4 left-2 w-[300px] h-[380px] rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md rotate-[-2deg] shadow-2xl" />
-                {/* Front card */}
-                <div className="absolute top-0 left-8 w-[300px] h-[380px] rounded-2xl border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl rotate-[3deg] shadow-2xl p-6 flex flex-col gap-4">
-                  {/* Fake UI lines */}
-                  {[...Array(6)].map((_, i) =>
-                  <div key={i} className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full border border-white/20" />
-                      <div
-                      className="h-2.5 rounded-full"
-                      style={{
-                        width: `${60 + Math.sin(i * 2) * 30}%`,
-                        background: i === 2 || i === 4 ?
-                        'linear-gradient(90deg, #4F6FE8, #10B981)' :
-                        'rgba(255,255,255,0.12)'
-                      }} />
-
-                    </div>
-                  )}
-                  {/* Accent icons */}
-                  <div className="absolute -top-5 -right-5 w-14 h-14 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-blue flex items-center justify-center shadow-lg shadow-nexus-electric/30">
-                    <Bot size={22} className="text-white" />
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                    <Lightbulb size={18} className="text-white" />
-                  </div>
-                </div>
-              </div>
+              <img src={heroNexus} alt="NEXUS Agency Hero" className="w-full max-w-[480px] h-auto object-contain drop-shadow-2xl" />
             </motion.div>
           </div>
 

@@ -1,51 +1,70 @@
 const GlobalBackground = () => (
-  <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#080C14]">
-    {/* Blob 1 — Large purple/blue, top-left */}
+  <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#06080F]">
+    {/* Blob 1 — Fascio principale hero sx */}
     <div
-      className="absolute animate-[blobFloat1_18s_ease-in-out_infinite_alternate]"
+      className="absolute animate-[blobMain_20s_ease-in-out_infinite_alternate]"
       style={{
-        top: '-20%',
-        left: '-10%',
-        width: '70vw',
-        height: '80vh',
-        background: 'radial-gradient(ellipse, rgba(28,53,200,0.35) 0%, transparent 70%)',
+        top: '-10%',
+        left: '-5%',
+        width: '65vw',
+        height: '90vh',
+        background: 'radial-gradient(ellipse at 30% 50%, rgba(61,43,196,0.55) 0%, rgba(91,63,232,0.25) 35%, transparent 70%)',
+        filter: 'blur(60px)',
+      }}
+    />
+    {/* Blob 2 — Luce secondaria centro-alto */}
+    <div
+      className="absolute animate-[blobSecondary_25s_ease-in-out_infinite_alternate-reverse]"
+      style={{
+        top: '0%',
+        left: '20%',
+        width: '50vw',
+        height: '70vh',
+        background: 'radial-gradient(ellipse at 50% 30%, rgba(91,63,232,0.3) 0%, rgba(28,53,200,0.15) 40%, transparent 70%)',
         filter: 'blur(80px)',
       }}
     />
-    {/* Blob 2 — Electric blue, top-right */}
+    {/* Blob 3 — Fascio dx per sezioni medie */}
     <div
-      className="absolute animate-[blobFloat2_22s_ease-in-out_infinite_alternate]"
+      className="absolute animate-[blobRight_22s_ease-in-out_infinite_alternate]"
       style={{
-        top: '5%',
-        right: '-5%',
+        top: '60vh',
+        right: '-10%',
+        width: '60vw',
+        height: '80vh',
+        background: 'radial-gradient(ellipse at 70% 40%, rgba(61,43,196,0.45) 0%, rgba(14,165,200,0.1) 50%, transparent 72%)',
+        filter: 'blur(70px)',
+      }}
+    />
+    {/* Blob 4 — Profondità sx sezioni basse */}
+    <div
+      className="absolute animate-[blobLeft_28s_ease-in-out_infinite_alternate-reverse]"
+      style={{
+        top: '140vh',
+        left: '-15%',
+        width: '55vw',
+        height: '70vh',
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(91,63,232,0.4) 0%, rgba(61,43,196,0.2) 40%, transparent 68%)',
+        filter: 'blur(65px)',
+      }}
+    />
+    {/* Blob 5 — Accento teal basso dx */}
+    <div
+      className="absolute animate-[blobTeal_30s_ease-in-out_infinite_alternate]"
+      style={{
+        top: '220vh',
+        right: '0%',
         width: '50vw',
         height: '60vh',
-        background: 'radial-gradient(ellipse, rgba(79,111,232,0.2) 0%, transparent 65%)',
-        filter: 'blur(100px)',
-      }}
-    />
-    {/* Blob 3 — Deep blue, center */}
-    <div
-      className="absolute animate-[blobFloat3_26s_ease-in-out_infinite_alternate]"
-      style={{
-        top: '40%',
-        left: '30%',
-        width: '40vw',
-        height: '40vh',
-        background: 'radial-gradient(ellipse, rgba(28,53,200,0.12) 0%, transparent 60%)',
-        filter: 'blur(120px)',
-      }}
-    />
-    {/* Blob 4 — Bottom-right */}
-    <div
-      className="absolute animate-[blobFloat1_20s_ease-in-out_infinite_alternate-reverse]"
-      style={{
-        bottom: '-10%',
-        right: '10%',
-        width: '55vw',
-        height: '55vh',
-        background: 'radial-gradient(ellipse, rgba(13,27,42,0.8) 0%, rgba(28,53,200,0.15) 50%, transparent 70%)',
+        background: 'radial-gradient(ellipse at 80% 40%, rgba(14,165,200,0.25) 0%, rgba(61,43,196,0.2) 45%, transparent 70%)',
         filter: 'blur(90px)',
+      }}
+    />
+    {/* Blob 6 — Velo viola globale */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background: 'radial-gradient(ellipse at 40% 30%, rgba(61,43,196,0.12) 0%, transparent 60%)',
       }}
     />
     {/* Noise texture overlay */}

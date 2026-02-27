@@ -185,7 +185,7 @@ const Index = () => {
 
           {/* ─── Bottom info bar ─── */}
           <div className="pb-6 pt-6 md:max-lg:pt-3 md:max-lg:pb-3 border-t border-white/[0.06]">
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-center">
               {/* Left block */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -249,7 +249,7 @@ const Index = () => {
                   key={i}
                   src={logo.src}
                   alt={logo.name}
-                  className={`h-14 md:h-16 lg:h-20 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
+                  className={`h-10 md:h-12 lg:h-14 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
                   loading="lazy"
                   width={120}
                   height={48} />

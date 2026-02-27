@@ -238,7 +238,7 @@ const Index = () => {
       {/* ─── TRUST BAR ─── */}
       <section className="py-12 border-t border-white/[0.06]">
         <div className="section-container">
-          <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap">
+          <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-8 md:gap-24 lg:gap-32 place-items-center">
             {[
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },

@@ -170,7 +170,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<Bot size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title={t('mega', 'ai')} desc={lang === 'it' ? 'Automatizza i processi con l\'AI' : 'Automate processes with AI'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<MessageCircle size={20} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc={lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Lightbulb size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title={t('mega', 'consulenza')} desc={lang === 'it' ? 'Strategia e roadmap per la tua PMI' : 'Strategy & roadmap for your SME'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Automazione & Integrazione API' : 'Automation & API Integration'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Integrazioni API' : 'API Integrations'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 
@@ -339,7 +339,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/ai-automation" icon={<Bot size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title="AI Automation" desc="Automatizza con l'AI" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/ai-automation" icon={<MessageCircle size={18} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc="Assistenti virtuali intelligenti" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Lightbulb size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title="Consulenza Digitale" desc="Strategia e roadmap PMI" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/ai-automation" icon={<GitMerge size={18} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title="Automazione API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<GitMerge size={18} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title="Integrazioni API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />
 
                           {/* DESIGN */}
                           <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">DESIGN</p>

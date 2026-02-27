@@ -185,14 +185,14 @@ const Index = () => {
 
           {/* ─── Bottom info bar ─── */}
           <div className="pb-6 pt-6 md:max-lg:pt-3 md:max-lg:pb-3 border-t border-white/[0.06]">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center">
+            <div className="flex flex-col md:flex-row md:justify-center">
               {/* Left block */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex-1 py-4 md:pr-10">
+                className="py-4 md:pr-10 md:max-w-md">
 
                 <p className="font-mono text-[16px] text-white/25 mb-2">{'{/'}</p>
                 <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>
@@ -208,7 +208,7 @@ const Index = () => {
               </motion.div>
 
               {/* Divider */}
-              <div className="w-full h-px md:w-px md:h-auto bg-white/10" />
+              <div className="w-full h-px md:w-px md:h-24 bg-white/10 md:self-center" />
 
               {/* Right block */}
               <motion.div
@@ -216,7 +216,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="flex-1 py-4 md:pl-10">
+                className="py-4 md:pl-10 md:max-w-md">
 
                 <p className="font-mono text-[16px] text-white/25 mb-2">{'{/'}</p>
                 <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>

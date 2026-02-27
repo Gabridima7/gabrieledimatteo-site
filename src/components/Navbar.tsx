@@ -9,6 +9,7 @@ import iconSviluppoWebAppNew from '@/assets/icons/icon-sviluppo-web-app-new.webp
 import iconLandingPage from '@/assets/icons/icon-landing-page.png';
 import iconWebApp from '@/assets/icons/icon-web-app.webp';
 import iconSoftwareGestionale from '@/assets/icons/icon-software-gestionale.webp';
+import iconSoftwareGestionaleNew from '@/assets/icons/icon-software-gestionale-new.webp';
 import iconProdottoSaas from '@/assets/icons/icon-prodotto-saas.webp';
 import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 import iconAiChatbot from '@/assets/icons/icon-ai-chatbot.png';
@@ -167,7 +168,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<img src={iconSviluppoWebAppNew} alt="Sviluppo Web & App" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'sviluppo')} desc={lang === 'it' ? 'Siti web e applicazioni su misura' : 'Custom websites & applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconLandingPage} alt="Landing Page" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Landing Page" desc={lang === 'it' ? 'Sito ad alta conversione' : 'High-converting website'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconWebApp} alt="Web App" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<img src={iconSoftwareGestionale} alt="Software Gestionale" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconSoftwareGestionaleNew} alt="Software Gestionale" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconProdottoSaas} alt="Prodotto SaaS" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Prodotto SaaS' : 'SaaS Product'} desc={lang === 'it' ? 'Da idea a prodotto scalabile' : 'From idea to scalable product'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
@@ -195,7 +196,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<img src={iconWebsiteDesign} alt="Website Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Website Design" desc={lang === 'it' ? 'Siti custom e landing page' : 'Custom sites & landing pages'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconSviluppoWebApp} alt="Mobile App Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Mobile App Design" desc={lang === 'it' ? 'App che gli utenti amano' : 'Apps your users love'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconWebsiteRedesign} alt="Website Redesign" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Website Redesign" desc={lang === 'it' ? 'Look moderno, impatto maggiore' : 'Modern look, higher impact'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<Search size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc={lang === 'it' ? 'Insights che guidano i risultati' : 'Insights that drive results'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconSoftwareGestionale} alt="Product UX/UI Audit" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Product UX/UI Audit" desc={lang === 'it' ? 'Insights che guidano i risultati' : 'Insights that drive results'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
                         </div>
@@ -342,7 +343,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconSviluppoWebAppNew} alt="Sviluppo Web & App" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Sviluppo Web & App" desc="Siti web e app su misura" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconLandingPage} alt="Landing Page" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Landing Page" desc="High-converting website" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconWebApp} alt="Web App" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Web App" desc="Applicazioni su misura" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconSoftwareGestionale} alt="Software Gestionale" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Software Gestionale" desc="CRM, ERP e tool interni" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconSoftwareGestionaleNew} alt="Software Gestionale" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Software Gestionale" desc="CRM, ERP e tool interni" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconProdottoSaas} alt="Prodotto SaaS" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Prodotto SaaS" desc="Da idea a prodotto scalabile" onClick={() => setIsOpen(false)} last />
 
                           {/* AI & AUTOMATION */}
@@ -358,7 +359,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconWebsiteDesign} alt="Website Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Design" desc="Siti custom e landing" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<img src={iconSviluppoWebApp} alt="Mobile App Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Mobile App Design" desc="App che gli utenti amano" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<img src={iconWebsiteRedesign} alt="Website Redesign" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Redesign" desc="Look moderno, più impatto" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Search size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/consulenza-digitale" icon={<img src={iconSoftwareGestionale} alt="Product UX/UI Audit" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Palette size={18} strokeWidth={1.5} />} gradient="from-[#F43F5E] to-[#BE123C]" title="Branding & UI/UX" desc="Brand identity completa" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Pencil size={18} strokeWidth={1.5} />} gradient="from-[#A855F7] to-[#7C3AED]" title="Logo Design" desc="Diventa memorabile" onClick={() => setIsOpen(false)} last />
                         </div>

@@ -336,7 +336,7 @@ const Navbar = () => {
 
                           {/* AI & AUTOMATION */}
                           <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">AI & AUTOMATION</p>
-                          <MobileServiceItem to="/servizi/ai-automation" icon={<Bot size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title="AI Automation & Integrazione" desc="Automatizza con l'AI" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<Bot size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title="AI Automation" desc="Automatizza con l'AI" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/ai-automation" icon={<MessageCircle size={18} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc="Assistenti virtuali intelligenti" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Lightbulb size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title="Consulenza Digitale" desc="Strategia e roadmap PMI" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/ai-automation" icon={<GitMerge size={18} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title="Automazione API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />

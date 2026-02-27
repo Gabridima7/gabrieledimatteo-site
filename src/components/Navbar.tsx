@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight,
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import logo from '@/assets/logo-nexus.png';
+import iconSviluppoWebApp from '@/assets/icons/icon-sviluppo-web-app.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -151,7 +152,7 @@ const Navbar = () => {
                               {t('mega', 'colSviluppo')}
                             </p>
                             <div className="space-y-1">
-                              <MegaItem to="/soluzioni" icon={<Globe size={20} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title={t('mega', 'sviluppo')} desc={lang === 'it' ? 'Siti web e applicazioni su misura' : 'Custom websites & applications'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconSviluppoWebApp} alt="Sviluppo Web & App" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'sviluppo')} desc={lang === 'it' ? 'Siti web e applicazioni su misura' : 'Custom websites & applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Layout size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="Landing Page" desc={lang === 'it' ? 'Sito ad alta conversione' : 'High-converting website'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Code size={20} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<LayoutDashboard size={20} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4338CA]" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
@@ -326,7 +327,7 @@ const Navbar = () => {
                         <div className="bg-[#F9FAFB] px-6 pb-5 pt-3">
                           {/* SVILUPPO */}
                           <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-4">SVILUPPO</p>
-                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Globe size={18} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title="Sviluppo Web & App" desc="Siti web e app su misura" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconSviluppoWebApp} alt="Sviluppo Web & App" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Sviluppo Web & App" desc="Siti web e app su misura" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Layout size={18} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="Landing Page" desc="High-converting website" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Code size={18} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc="Applicazioni su misura" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<LayoutDashboard size={18} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4338CA]" title="Software Gestionale" desc="CRM, ERP e tool interni" onClick={() => setIsOpen(false)} />

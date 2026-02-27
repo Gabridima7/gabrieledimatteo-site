@@ -103,7 +103,7 @@ const Navbar = () => {
             {/* Servizi with mega menu */}
             <div
               data-mega-root
-              className="relative"
+              className="static"
               onMouseEnter={openMega}
               onMouseLeave={closeMega}
             >
@@ -119,8 +119,9 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="fixed top-[80px] left-1/2 -translate-x-1/2 w-[1100px] max-w-[95vw] z-[200] rounded-[20px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.06)]"
+                    className="fixed top-[80px] left-0 w-full z-[200] flex justify-center pointer-events-none"
                   >
+                    <div className="w-[1100px] max-w-[95vw] rounded-[20px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.06)] pointer-events-auto">
                     {/* Services section */}
                     <div className="px-10 pt-8 pb-6">
                       <div className="flex items-start gap-10">
@@ -193,6 +194,7 @@ const Navbar = () => {
 
                     {/* Bottom padding */}
                     <div className="h-2" />
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

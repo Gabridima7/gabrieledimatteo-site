@@ -117,6 +117,18 @@ export default {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        "blobFloat1": {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(30px, -20px) scale(1.05)" },
+        },
+        "blobFloat2": {
+          "0%": { transform: "translate(0px, 0px) scale(1.02)" },
+          "100%": { transform: "translate(-20px, 30px) scale(0.98)" },
+        },
+        "blobFloat3": {
+          "0%": { transform: "translate(0px, 0px)" },
+          "100%": { transform: "translate(15px, 15px) scale(1.03)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

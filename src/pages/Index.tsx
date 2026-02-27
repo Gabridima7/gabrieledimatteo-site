@@ -120,16 +120,7 @@ const Index = () => {
       />
 
       {/* ─── HERO ─── */}
-      <section className="relative h-screen flex flex-col overflow-hidden bg-[#070B1A]">
-        {/* Deep blue radial glow */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at 30% 50%, rgba(28,53,200,0.35) 0%, rgba(28,53,200,0.08) 40%, transparent 70%), radial-gradient(ellipse 50% 50% at 70% 60%, rgba(79,111,232,0.15) 0%, transparent 60%)',
-          }}
-        />
-        {/* Subtle noise texture overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.5\'/%3E%3C/svg%3E")', backgroundSize: '128px 128px' }} />
+      <section className="relative h-screen flex flex-col overflow-hidden">
 
         <div className="section-container relative z-10 flex flex-col flex-1 pt-8 md:pt-2 pb-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1 md:max-lg:gap-4">
@@ -278,10 +269,10 @@ const Index = () => {
       </section>
 
       {/* ─── TRUST BAR ─── */}
-      <section className="bg-nexus-offwhite py-12 section-light">
+      <section className="py-12 border-t border-white/[0.06]">
         <div className="section-container">
           <div className="flex items-center gap-8 md:gap-0">
-            <p className="text-nexus-gray text-sm font-medium shrink-0 mr-8 hidden md:block">{t('trust', 'label')}</p>
+            <p className="text-white/40 text-sm font-medium shrink-0 mr-8 hidden md:block">{t('trust', 'label')}</p>
             <div className="flex-1 overflow-hidden marquee-mask">
               <div className="flex animate-marquee hover:[animation-play-state:paused] gap-16 items-center" style={{ width: 'max-content' }}>
                 {[
@@ -301,7 +292,7 @@ const Index = () => {
                     key={i}
                     src={logo.src}
                     alt={logo.name}
-                    className="h-10 md:h-12 w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                    className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale invert hover:opacity-80 hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
                     width={120}
                     height={48}
@@ -314,7 +305,7 @@ const Index = () => {
       </section>
 
       {/* ─── SERVICES ─── */}
-      <section className="bg-nexus-navy py-20">
+      <section className="py-24">
         <div className="section-container">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-14">
             <motion.span variants={fadeUpVariants} className="badge-pill inline-block mb-4">{t('services', 'badge')}</motion.span>
@@ -347,7 +338,7 @@ const Index = () => {
       </section>
 
       {/* ─── STATS ─── */}
-      <section ref={statsRef} className="py-20 bg-gradient-nexus">
+      <section ref={statsRef} className="py-24 border-t border-white/[0.06]">
         <div className="section-container">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {[
@@ -368,13 +359,13 @@ const Index = () => {
       </section>
 
       {/* ─── CASE STUDIES ─── */}
-      <section className="bg-nexus-offwhite py-20 section-light">
+      <section className="py-24 border-t border-white/[0.06]">
         <div className="section-container">
           <div className="flex items-end justify-between mb-12">
-            <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-nexus-navy">
+            <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-white">
               {t('cases', 'title')}
             </motion.h2>
-            <Link to="/casi-studio" className="text-nexus-blue font-semibold text-sm hover:text-nexus-electric transition-colors inline-flex items-center gap-1">
+            <Link to="/casi-studio" className="text-nexus-electric font-semibold text-sm hover:text-white transition-colors inline-flex items-center gap-1">
               {t('cases', 'viewAll')} <ArrowRight size={14} />
             </Link>
           </div>
@@ -388,16 +379,16 @@ const Index = () => {
           >
             {caseStudies.map((c, i) => (
               <motion.div key={i} variants={fadeUpVariants}>
-                <Link to={c.link} className="block bg-white rounded-2xl shadow-md overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                <Link to={c.link} className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                   {/* Placeholder cover */}
-                  <div className="aspect-video bg-gradient-nexus relative">
+                  <div className="aspect-video bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative">
                     <div className="absolute inset-0 flex items-center justify-center text-white/30 text-2xl font-bold">{c.title}</div>
                   </div>
                   <div className="p-6">
                     <span className="badge-pill mb-3 inline-block">{c.badge}</span>
-                    <h3 className="text-card-title text-nexus-navy mb-2">{c.title}</h3>
-                    <p className="text-body text-nexus-gray mb-4 line-clamp-2">{c.desc}</p>
-                    <span className="text-nexus-blue text-sm font-semibold inline-flex items-center gap-1">
+                    <h3 className="text-card-title text-white mb-2">{c.title}</h3>
+                    <p className="text-body text-white/60 mb-4 line-clamp-2">{c.desc}</p>
+                    <span className="text-nexus-electric text-sm font-semibold inline-flex items-center gap-1">
                       {t('cases', 'viewCase')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
@@ -409,7 +400,7 @@ const Index = () => {
       </section>
 
       {/* ─── LEAD MAGNET ─── */}
-      <section className="bg-nexus-blue py-20">
+      <section className="py-24 border-t border-white/[0.06]">
         <div className="section-container max-w-2xl mx-auto text-center">
           <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-white mb-4">
             {t('lead', 'title')}
@@ -437,9 +428,9 @@ const Index = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('lead', 'placeholder')}
                 required
-                className="flex-1 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 px-4 py-3 focus:outline-none focus:border-white focus:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all"
+                className="flex-1 rounded-xl bg-white/[0.06] border border-white/[0.15] text-white placeholder:text-white/40 px-4 py-3 focus:outline-none focus:border-white/30 focus:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all"
               />
-              <button type="submit" className="bg-white text-nexus-blue px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2">
+              <button type="submit" className="bg-[#d0f601] text-nexus-navy px-6 py-3 rounded-xl font-semibold hover:bg-[#bde001] transition-colors inline-flex items-center justify-center gap-2">
                 {t('lead', 'cta')} <ArrowRight size={16} />
               </button>
             </motion.form>
@@ -449,7 +440,7 @@ const Index = () => {
       </section>
 
       {/* ─── PROCESS ─── */}
-      <section className="bg-nexus-navy py-20">
+      <section className="py-24 border-t border-white/[0.06]">
         <div className="section-container">
           <motion.h2
             variants={fadeUpVariants}
@@ -486,7 +477,7 @@ const Index = () => {
       </section>
 
       {/* ─── TESTIMONIAL ─── */}
-      <section className="bg-nexus-offwhite py-20 section-light">
+      <section className="py-24 border-t border-white/[0.06]">
         <div className="section-container max-w-3xl mx-auto text-center">
           <motion.div
             variants={fadeUpVariants}
@@ -494,18 +485,18 @@ const Index = () => {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            <span className="text-[120px] leading-none text-nexus-blue/15 font-serif block -mb-10">"</span>
-            <p className="text-2xl italic text-gray-800 mb-8 leading-relaxed">
+            <span className="text-[120px] leading-none text-nexus-electric/15 font-serif block -mb-10">"</span>
+            <p className="text-2xl italic text-white/80 mb-8 leading-relaxed">
               {t('testimonial', 'quote')}
             </p>
-            <p className="text-sm font-semibold text-nexus-navy">{t('testimonial', 'name')}</p>
-            <p className="text-sm text-nexus-gray">{t('testimonial', 'company')}</p>
+            <p className="text-sm font-semibold text-white">{t('testimonial', 'name')}</p>
+            <p className="text-sm text-white/45">{t('testimonial', 'company')}</p>
           </motion.div>
         </div>
       </section>
 
       {/* ─── CTA FINALE ─── */}
-      <section className="bg-nexus-navy py-24">
+      <section className="py-24 border-t border-white/[0.06]">
         <div className="section-container text-center">
           <motion.div
             variants={staggerContainer}

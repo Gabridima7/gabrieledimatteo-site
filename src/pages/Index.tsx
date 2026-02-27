@@ -246,22 +246,21 @@ const Index = () => {
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoOneUp, name: 'One Up Sailing' },
+                { src: logoOneUp, name: 'One Up Sailing', noFilter: true },
                 // Duplicate for seamless loop
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoOneUp, name: 'One Up Sailing' }].
+                { src: logoOneUp, name: 'One Up Sailing', noFilter: true }].
                 map((logo, i) =>
                 <img
                   key={i}
                   src={logo.src}
                   alt={logo.name}
-                  className="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
+                  className={`h-10 md:h-12 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
                   loading="lazy"
                   width={120}
                   height={48} />
-
                 )}
               </div>
             </div>

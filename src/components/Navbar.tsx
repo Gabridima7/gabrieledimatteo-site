@@ -16,6 +16,7 @@ import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp
 import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
 import iconIntegrazioniApi from '@/assets/icons/icon-integrazioni-api.png';
 import iconWebsiteDesign from '@/assets/icons/icon-website-design.png';
+import iconWebsiteRedesign from '@/assets/icons/icon-website-redesign.webp';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -193,7 +194,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<img src={iconUiUxDesign} alt="UI/UX Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="UI/UX Design" desc={lang === 'it' ? 'Web & mobile app design' : 'Web & mobile app design'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconWebsiteDesign} alt="Website Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Website Design" desc={lang === 'it' ? 'Siti custom e landing page' : 'Custom sites & landing pages'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconSviluppoWebApp} alt="Mobile App Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Mobile App Design" desc={lang === 'it' ? 'App che gli utenti amano' : 'Apps your users love'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<RefreshCw size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#B45309]" title="Website Redesign" desc={lang === 'it' ? 'Look moderno, impatto maggiore' : 'Modern look, higher impact'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconWebsiteRedesign} alt="Website Redesign" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Website Redesign" desc={lang === 'it' ? 'Look moderno, impatto maggiore' : 'Modern look, higher impact'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Search size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc={lang === 'it' ? 'Insights che guidano i risultati' : 'Insights that drive results'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
@@ -356,7 +357,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<img src={iconUiUxDesign} alt="UI/UX Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="UI/UX Design" desc="Web & mobile app design" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconWebsiteDesign} alt="Website Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Design" desc="Siti custom e landing" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<img src={iconSviluppoWebApp} alt="Mobile App Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Mobile App Design" desc="App che gli utenti amano" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<RefreshCw size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#B45309]" title="Website Redesign" desc="Look moderno, più impatto" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<img src={iconWebsiteRedesign} alt="Website Redesign" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Redesign" desc="Look moderno, più impatto" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Search size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Palette size={18} strokeWidth={1.5} />} gradient="from-[#F43F5E] to-[#BE123C]" title="Branding & UI/UX" desc="Brand identity completa" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Pencil size={18} strokeWidth={1.5} />} gradient="from-[#A855F7] to-[#7C3AED]" title="Logo Design" desc="Diventa memorabile" onClick={() => setIsOpen(false)} last />

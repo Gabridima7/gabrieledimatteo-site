@@ -129,6 +129,26 @@ export default {
           "0%": { transform: "translate(0px, 0px)" },
           "100%": { transform: "translate(15px, 15px) scale(1.03)" },
         },
+        "blobMain": {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(40px, -30px) scale(1.08)" },
+        },
+        "blobSecondary": {
+          "0%": { transform: "translate(0px, 0px) scale(1.02)" },
+          "100%": { transform: "translate(-30px, 40px) scale(0.95)" },
+        },
+        "blobRight": {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(-25px, -20px) scale(1.05)" },
+        },
+        "blobLeft": {
+          "0%": { transform: "translate(0px, 0px) scale(0.98)" },
+          "100%": { transform: "translate(35px, 25px) scale(1.06)" },
+        },
+        "blobTeal": {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(-20px, -30px) scale(1.04)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight, MessageCircle, Pencil, Layout, Rocket, RefreshCw, Users } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight, MessageCircle, Pencil, Layout, Rocket, RefreshCw, Users, Layers, Monitor, Smartphone, Search, LayoutDashboard, GitMerge } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import logo from '@/assets/logo-nexus.png';
@@ -143,6 +143,9 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<Globe size={20} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title={t('mega', 'sviluppo')} desc={lang === 'it' ? 'Siti web e applicazioni su misura' : 'Custom websites & applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Layout size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="Landing Page" desc={lang === 'it' ? 'Sito ad alta conversione' : 'High-converting website'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Code size={20} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<LayoutDashboard size={20} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4338CA]" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Rocket size={20} strokeWidth={1.5} />} gradient="from-[#0EA5E9] to-[#0369A1]" title={lang === 'it' ? 'Prodotto SaaS' : 'SaaS Product'} desc={lang === 'it' ? 'Da idea a prodotto scalabile' : 'From idea to scalable product'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Automazione & Integrazione API' : 'Automation & API Integration'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 
@@ -164,9 +167,11 @@ const Navbar = () => {
                               {t('mega', 'colDesign')}
                             </p>
                             <div className="space-y-1">
-                              <MegaItem to="/soluzioni" icon={<Palette size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#EA580C]" title={t('mega', 'branding')} desc={lang === 'it' ? 'Brand identity e interfacce che convertono' : 'Brand identity & converting interfaces'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<Pencil size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#7C3AED]" title="UI/UX Design" desc={lang === 'it' ? 'Interfacce che convertono' : 'Interfaces that convert'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<Pencil size={20} strokeWidth={1.5} />} gradient="from-[#EF4444] to-[#DC2626]" title="Logo Design" desc={lang === 'it' ? 'Diventa memorabile' : 'Become unforgettable'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Layers size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="UI/UX Design" desc={lang === 'it' ? 'Web & mobile app design' : 'Web & mobile app design'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Monitor size={20} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title="Website Design" desc={lang === 'it' ? 'Siti custom e landing page' : 'Custom sites & landing pages'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Smartphone size={20} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#BE185D]" title="Mobile App Design" desc={lang === 'it' ? 'App che gli utenti amano' : 'Apps your users love'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<RefreshCw size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#B45309]" title="Website Redesign" desc={lang === 'it' ? 'Look moderno, impatto maggiore' : 'Modern look, higher impact'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Search size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc={lang === 'it' ? 'Insights che guidano i risultati' : 'Insights that drive results'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
                         </div>

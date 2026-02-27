@@ -145,7 +145,6 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<Code size={20} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<LayoutDashboard size={20} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4338CA]" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Rocket size={20} strokeWidth={1.5} />} gradient="from-[#0EA5E9] to-[#0369A1]" title={lang === 'it' ? 'Prodotto SaaS' : 'SaaS Product'} desc={lang === 'it' ? 'Da idea a prodotto scalabile' : 'From idea to scalable product'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Automazione & Integrazione API' : 'Automation & API Integration'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 
@@ -158,6 +157,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<Bot size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title={t('mega', 'ai')} desc={lang === 'it' ? 'Automatizza i processi con l\'AI' : 'Automate processes with AI'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<MessageCircle size={20} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc={lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<Lightbulb size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title={t('mega', 'consulenza')} desc={lang === 'it' ? 'Strategia e roadmap per la tua PMI' : 'Strategy & roadmap for your SME'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Automazione & Integrazione API' : 'Automation & API Integration'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 

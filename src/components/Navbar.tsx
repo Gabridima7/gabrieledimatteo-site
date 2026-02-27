@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight, MessageCircle, Pencil, Layout, Rocket, RefreshCw, Users, Layers, Monitor, Smartphone, Search, LayoutDashboard, GitMerge } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight, ArrowUpRight, ArrowDownRight, MessageCircle, Pencil, Layout, Rocket, RefreshCw, Users, Layers, Monitor, Smartphone, Search, LayoutDashboard, GitMerge } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import logo from '@/assets/logo-nexus.png';
@@ -34,6 +34,17 @@ const SolutionCard = ({ to, icon, gradient, title, subtitle, desc, onClick }: { 
   </Link>
 );
 
+const MobileServiceItem = ({ to, icon, gradient, title, desc, onClick, last }: { to: string; icon: React.ReactNode; gradient: string; title: string; desc: string; onClick: () => void; last?: boolean }) => (
+  <Link to={to} onClick={onClick} className={`flex items-center gap-3.5 py-3 ${last ? '' : 'border-b border-[#E5E7EB]'}`}>
+    <div className={`w-10 h-10 rounded-[10px] bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0`}>
+      <span className="text-white">{icon}</span>
+    </div>
+    <div>
+      <p className="text-[15px] font-semibold text-[#111827]">{title}</p>
+      <p className="text-[12px] text-[#6B7280] mt-0.5">{desc}</p>
+    </div>
+  </Link>
+);
 
 const CLOSE_DELAY = 150;
 
@@ -258,89 +269,130 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — Arounda style */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-nexus-navy flex flex-col"
-          >
-            <div className="flex items-center justify-between px-6 h-[72px]">
+          <div className="fixed inset-0 z-[60] flex flex-col lg:hidden">
+            {/* Dark backdrop behind navbar area */}
+            <div className="bg-[#080C14] h-[72px] shrink-0 flex items-center justify-between px-5">
               <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
                 <img src={logo} alt="NEXUS" className="h-8 w-auto brightness-[2] contrast-125" />
                 <span className="font-bold text-lg text-white">NEXUS</span>
               </Link>
-              <button onClick={() => setIsOpen(false)} className="p-2 text-white">
-                <X size={24} />
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto px-6 py-4">
-              {/* Servizi accordion */}
-              <button
-                onClick={() => setServicesExpanded(!servicesExpanded)}
-                className="flex items-center justify-between w-full py-4 text-lg font-medium text-white border-b border-white/10"
-              >
-                {t('nav', 'servizi')}
-                <ChevronDown size={18} className={`transition-transform ${servicesExpanded ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {servicesExpanded && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="py-2 pl-4 space-y-3">
-                      <Link to="/soluzioni" onClick={() => setIsOpen(false)} className="block text-white/70 text-sm py-1">{t('mega', 'sviluppo')}</Link>
-                      <Link to="/soluzioni" onClick={() => setIsOpen(false)} className="block text-white/70 text-sm py-1">{t('mega', 'ai')}</Link>
-                      <Link to="/soluzioni" onClick={() => setIsOpen(false)} className="block text-white/70 text-sm py-1">{t('mega', 'branding')}</Link>
-                      <Link to="/soluzioni" onClick={() => setIsOpen(false)} className="block text-white/70 text-sm py-1">{t('mega', 'consulenza')}</Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-4 text-lg font-medium text-white border-b border-white/10"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link to="/templates" onClick={() => setIsOpen(false)} className="block py-4 text-lg font-medium text-white border-b border-white/10">
-                {t('nav', 'risorse')}
-              </Link>
-
-              {/* Mobile lang switch */}
-              <div className="flex items-center gap-3 py-4 text-sm">
-                <button onClick={() => setLang('it')} className={lang === 'it' ? 'text-white font-semibold' : 'text-white/40'}>IT</button>
-                <span className="text-white/30">|</span>
-                <button onClick={() => setLang('en')} className={lang === 'en' ? 'text-white font-semibold' : 'text-white/40'}>EN</button>
+              <div className="flex items-center gap-3">
+                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="btn-primary text-sm py-2 px-4">
+                  {t('nav', 'prenotaCall')} <ArrowRight size={14} />
+                </a>
+                <button onClick={() => setIsOpen(false)} className="p-2 text-white">
+                  <X size={24} />
+                </button>
               </div>
             </div>
 
-            {/* Mobile CTA */}
-            <div className="p-6">
+            {/* White panel */}
+            <motion.div
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="mx-4 mt-2 bg-white rounded-[20px] shadow-[0_8px_40px_rgba(0,0,0,0.15)] overflow-hidden flex-1 flex flex-col"
+              style={{ maxHeight: 'calc(100vh - 72px - 88px)' }}
+            >
+              <div className="flex-1 overflow-y-auto py-2">
+                {/* Casi Studio */}
+                <Link to="/casi-studio" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
+                  {t('nav', 'casiStudio')}
+                </Link>
+
+                {/* Servizi — accordion */}
+                <div className="border-b border-[#F3F4F6]">
+                  <button
+                    onClick={() => setServicesExpanded(!servicesExpanded)}
+                    className="flex items-center justify-between w-full px-6 py-5 hover:bg-[#F9FAFB] transition-colors"
+                  >
+                    <span className="text-[28px] font-semibold text-[#111827]">{t('nav', 'servizi')}</span>
+                    <ArrowUpRight size={20} className={`text-[#9CA3AF] transition-transform duration-200 ${servicesExpanded ? 'rotate-90' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {servicesExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-[#F9FAFB] px-6 pb-5 pt-3">
+                          {/* SVILUPPO */}
+                          <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-4">SVILUPPO</p>
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Globe size={18} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title="Sviluppo Web & App" desc="Siti web e app su misura" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Layout size={18} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="Landing Page" desc="High-converting website" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Code size={18} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc="Applicazioni su misura" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<LayoutDashboard size={18} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4338CA]" title="Software Gestionale" desc="CRM, ERP e tool interni" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Rocket size={18} strokeWidth={1.5} />} gradient="from-[#0EA5E9] to-[#0369A1]" title="Prodotto SaaS" desc="Da idea a prodotto scalabile" onClick={() => setIsOpen(false)} last />
+
+                          {/* AI & AUTOMATION */}
+                          <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">AI & AUTOMATION</p>
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<Bot size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title="AI Automation & Integrazione" desc="Automatizza con l'AI" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<MessageCircle size={18} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc="Assistenti virtuali intelligenti" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Lightbulb size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title="Consulenza Digitale" desc="Strategia e roadmap PMI" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<GitMerge size={18} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title="Automazione API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />
+
+                          {/* DESIGN */}
+                          <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">DESIGN</p>
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Layers size={18} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="UI/UX Design" desc="Web & mobile app design" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Monitor size={18} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title="Website Design" desc="Siti custom e landing" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Smartphone size={18} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#BE185D]" title="Mobile App Design" desc="App che gli utenti amano" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<RefreshCw size={18} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#B45309]" title="Website Redesign" desc="Look moderno, più impatto" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/consulenza-digitale" icon={<Search size={18} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#047857]" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Palette size={18} strokeWidth={1.5} />} gradient="from-[#F43F5E] to-[#BE123C]" title="Branding & UI/UX" desc="Brand identity completa" onClick={() => setIsOpen(false)} />
+                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Pencil size={18} strokeWidth={1.5} />} gradient="from-[#A855F7] to-[#7C3AED]" title="Logo Design" desc="Diventa memorabile" onClick={() => setIsOpen(false)} last />
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Chi Siamo */}
+                <Link to="/chi-siamo" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
+                  {t('nav', 'chiSiamo')}
+                </Link>
+
+                {/* Risorse */}
+                <Link to="/templates" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
+                  {t('nav', 'risorse')}
+                </Link>
+
+                {/* Lang switch */}
+                <div className="flex items-center gap-3 px-6 py-4 text-sm">
+                  <button onClick={() => setLang('it')} className={`font-medium ${lang === 'it' ? 'text-[#111827] font-bold' : 'text-[#9CA3AF]'}`}>IT</button>
+                  <span className="text-[#D1D5DB]">|</span>
+                  <button onClick={() => setLang('en')} className={`font-medium ${lang === 'en' ? 'text-[#111827] font-bold' : 'text-[#9CA3AF]'}`}>EN</button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Fixed bottom CTA bar */}
+            <div className="px-4 py-4 flex gap-3">
+              <Link
+                to="/casi-studio"
+                onClick={() => setIsOpen(false)}
+                className="w-14 h-14 rounded-2xl bg-[#1C35C8] flex items-center justify-center shrink-0 hover:bg-[#4F6FE8] transition-colors"
+              >
+                <ArrowDownRight size={22} className="text-white" />
+              </Link>
               <a
                 href={CAL_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="btn-primary w-full justify-center py-4 text-base"
+                className="flex-1 h-14 rounded-2xl bg-[#1C35C8] text-white font-semibold text-base flex items-center justify-center gap-2 hover:bg-[#4F6FE8] transition-colors"
               >
-                {t('nav', 'prenotaCall')}
-                <ArrowRight size={18} />
+                {t('nav', 'prenotaCall')} <ArrowRight size={18} />
               </a>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>

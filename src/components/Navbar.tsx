@@ -1,11 +1,41 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Code, Bot, Palette, Lightbulb, ArrowRight, MessageCircle, Pencil, Layout, Rocket, RefreshCw, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import logo from '@/assets/logo-nexus.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+
+/* ── Sub-components for mega menu ── */
+
+const MegaItem = ({ to, icon, gradient, title, desc, onClick }: { to: string; icon: React.ReactNode; gradient: string; title: string; desc: string; onClick: () => void }) => (
+  <Link to={to} onClick={onClick} className="flex items-center gap-3.5 px-3 py-2.5 rounded-xl hover:bg-[#F8FAFC] transition-colors duration-150 group">
+    <div className={`w-11 h-11 rounded-[10px] bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0`}>
+      <span className="text-white">{icon}</span>
+    </div>
+    <div>
+      <p className="text-[14px] font-semibold text-[#111827] group-hover:text-[#1C35C8] transition-colors">{title}</p>
+      <p className="text-[12px] text-[#6B7280] mt-0.5">{desc}</p>
+    </div>
+  </Link>
+);
+
+const SolutionCard = ({ to, icon, gradient, title, subtitle, desc, onClick }: { to: string; icon: React.ReactNode; gradient: string; title: string; subtitle: string; desc: string; onClick: () => void }) => (
+  <Link to={to} onClick={onClick} className="flex items-start gap-3.5 group">
+    <div className={`w-11 h-11 rounded-[10px] bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0 mt-0.5`}>
+      <span className="text-white">{icon}</span>
+    </div>
+    <div>
+      <p className="text-[14px] font-bold text-[#111827] group-hover:text-[#1C35C8] transition-colors">{title}</p>
+      <p className="text-[12px] text-[#6B7280] mt-0.5">{subtitle}</p>
+      <p className="text-[12px] text-[#9CA3AF] mt-1.5 leading-snug">{desc}</p>
+    </div>
+  </Link>
+);
+
+
+const CLOSE_DELAY = 150;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +44,27 @@ const Navbar = () => {
   const [servicesExpanded, setServicesExpanded] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const location = useLocation();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMega = useCallback(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setMegaOpen(true);
+  }, []);
+
+  const closeMega = useCallback(() => {
+    closeTimer.current = setTimeout(() => setMegaOpen(false), CLOSE_DELAY);
+  }, []);
+
+  // Close on click outside
+  useEffect(() => {
+    if (!megaOpen) return;
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('[data-mega-root]')) setMegaOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [megaOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -51,11 +102,12 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-1">
             {/* Servizi with mega menu */}
             <div
+              data-mega-root
               className="relative"
-              onMouseEnter={() => setMegaOpen(true)}
-              onMouseLeave={() => setMegaOpen(false)}
+              onMouseEnter={openMega}
+              onMouseLeave={closeMega}
             >
-              <button className="nav-link px-4 py-2 flex items-center gap-1">
+              <button className={`nav-link px-4 py-2 flex items-center gap-1 ${megaOpen ? 'after:scale-x-100' : ''}`}>
                 {t('nav', 'servizi')}
                 <ChevronDown size={14} className={`transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -66,135 +118,81 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.2 }}
-                    className="fixed top-[72px] left-0 w-full z-50"
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="fixed top-[80px] left-1/2 -translate-x-1/2 w-[1100px] max-w-[95vw] z-[200] rounded-[20px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.06)]"
                   >
-                    <div className="bg-nexus-navy/95 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl">
-                      {/* Top: Services grid */}
-                      <div className="section-container py-10">
-                        <div className="flex items-start gap-12">
-                          {/* Badge */}
-                          <div className="shrink-0 pt-1">
-                            <span className="badge-pill">{t('mega', 'servizi') || 'SERVIZI'}</span>
-                          </div>
-
-                          {/* 3 columns */}
-                          <div className="grid grid-cols-3 gap-x-16 gap-y-0 flex-1">
-                            {/* Col 1 - SVILUPPO */}
-                            <div>
-                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colSviluppo')}</p>
-                              <div className="space-y-5">
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Globe size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'sviluppo')}</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'sviluppoDesc')}</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Code size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Landing Page</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">High-converting website</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Globe size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Web App</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'}</p>
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-
-                            {/* Col 2 - AI & AUTOMATION */}
-                            <div>
-                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colAi')}</p>
-                              <div className="space-y-5">
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Bot size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'ai')}</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'aiDesc')}</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Bot size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">AI Chatbot</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'}</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Lightbulb size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'consulenza')}</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'consulenzaDesc')}</p>
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-
-                            {/* Col 3 - DESIGN */}
-                            <div>
-                              <p className="text-[11px] font-bold tracking-[0.15em] text-nexus-gray mb-5">{t('mega', 'colDesign')}</p>
-                              <div className="space-y-5">
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'branding')}</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{t('mega', 'brandingDesc')}</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">UI/UX Design</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Interfacce che convertono' : 'Interfaces that convert'}</p>
-                                  </div>
-                                </Link>
-                                <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="flex items-center gap-3 group">
-                                  <div className="icon-glass-sm shrink-0"><Palette size={18} className="text-nexus-electric" /></div>
-                                  <div>
-                                    <p className="text-sm font-semibold text-white group-hover:text-nexus-electric transition-colors">Logo Design</p>
-                                    <p className="text-xs text-nexus-gray mt-0.5">{lang === 'it' ? 'Diventa memorabile' : 'Become unforgettable'}</p>
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
+                    {/* Services section */}
+                    <div className="px-10 pt-8 pb-6">
+                      <div className="flex items-start gap-10">
+                        {/* Badge */}
+                        <div className="shrink-0 pt-1">
+                          <span className="inline-block text-[11px] font-semibold tracking-[0.1em] uppercase text-white bg-[#10B981] rounded-full px-3 py-1">
+                            {lang === 'it' ? 'SERVIZI' : 'SERVICES'}
+                          </span>
                         </div>
-                      </div>
 
-                      {/* Bottom: Solutions strip */}
-                      <div className="bg-white/[0.03] border-t border-white/[0.06]">
-                        <div className="section-container py-8">
-                          <div className="flex items-start gap-12">
-                            <div className="shrink-0 pt-1">
-                              <span className="badge-pill">{t('mega', 'soluzioni')}</span>
+                        {/* 3 columns with dividers */}
+                        <div className="flex-1 grid grid-cols-3 gap-0 divide-x divide-[#E5E7EB]">
+                          {/* Col 1 — SVILUPPO */}
+                          <div className="pr-6">
+                            <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#9CA3AF] mb-5">
+                              {t('mega', 'colSviluppo')}
+                            </p>
+                            <div className="space-y-1">
+                              <MegaItem to="/soluzioni" icon={<Globe size={20} strokeWidth={1.5} />} gradient="from-[#3B82F6] to-[#1D4ED8]" title={t('mega', 'sviluppo')} desc={lang === 'it' ? 'Siti web e applicazioni su misura' : 'Custom websites & applications'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Layout size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#6D28D9]" title="Landing Page" desc={lang === 'it' ? 'Sito ad alta conversione' : 'High-converting website'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Code size={20} strokeWidth={1.5} />} gradient="from-[#06B6D4] to-[#0891B2]" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
                             </div>
-                            <div className="grid grid-cols-3 gap-x-16 flex-1">
-                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
-                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'mvp')}</p>
-                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'}</p>
-                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'}</p>
-                              </Link>
-                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
-                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'redesign')}</p>
-                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'}</p>
-                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'}</p>
-                              </Link>
-                              <Link to="/soluzioni" onClick={() => setMegaOpen(false)} className="group">
-                                <p className="text-sm font-bold text-white group-hover:text-nexus-electric transition-colors">{t('mega', 'retainer')}</p>
-                                <p className="text-xs text-nexus-gray mt-1">{lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'}</p>
-                                <p className="text-xs text-nexus-gray/60 mt-1.5">{lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'}</p>
-                              </Link>
+                          </div>
+
+                          {/* Col 2 — AI & AUTOMATION */}
+                          <div className="px-6">
+                            <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#9CA3AF] mb-5">
+                              {t('mega', 'colAi')}
+                            </p>
+                            <div className="space-y-1">
+                              <MegaItem to="/soluzioni" icon={<Bot size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title={t('mega', 'ai')} desc={lang === 'it' ? 'Automatizza i processi con l\'AI' : 'Automate processes with AI'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<MessageCircle size={20} strokeWidth={1.5} />} gradient="from-[#EC4899] to-[#DB2777]" title="AI Chatbot" desc={lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Lightbulb size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title={t('mega', 'consulenza')} desc={lang === 'it' ? 'Strategia e roadmap per la tua PMI' : 'Strategy & roadmap for your SME'} onClick={() => setMegaOpen(false)} />
+                            </div>
+                          </div>
+
+                          {/* Col 3 — DESIGN */}
+                          <div className="pl-6">
+                            <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#9CA3AF] mb-5">
+                              {t('mega', 'colDesign')}
+                            </p>
+                            <div className="space-y-1">
+                              <MegaItem to="/soluzioni" icon={<Palette size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#EA580C]" title={t('mega', 'branding')} desc={lang === 'it' ? 'Brand identity e interfacce che convertono' : 'Brand identity & converting interfaces'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Pencil size={20} strokeWidth={1.5} />} gradient="from-[#8B5CF6] to-[#7C3AED]" title="UI/UX Design" desc={lang === 'it' ? 'Interfacce che convertono' : 'Interfaces that convert'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<Pencil size={20} strokeWidth={1.5} />} gradient="from-[#EF4444] to-[#DC2626]" title="Logo Design" desc={lang === 'it' ? 'Diventa memorabile' : 'Become unforgettable'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
+                    {/* Divider */}
+                    <hr className="border-[#E5E7EB] mx-10" />
+
+                    {/* Solutions section */}
+                    <div className="mx-10 my-6 bg-[#F9FAFB] rounded-xl px-6 py-5">
+                      <div className="flex items-start gap-10">
+                        <div className="shrink-0 pt-1">
+                          <span className="inline-block text-[11px] font-semibold tracking-[0.1em] uppercase text-white bg-[#FACC15] rounded-full px-3 py-1">
+                            {lang === 'it' ? 'SOLUZIONI' : 'SOLUTIONS'}
+                          </span>
+                        </div>
+                        <div className="flex-1 grid grid-cols-3 gap-4">
+                          <SolutionCard to="/soluzioni" icon={<Rocket size={20} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4F46E5]" title={t('mega', 'mvp')} subtitle={lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'} desc={lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'} onClick={() => setMegaOpen(false)} />
+                          <SolutionCard to="/soluzioni" icon={<RefreshCw size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title={t('mega', 'redesign')} subtitle={lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'} desc={lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'} onClick={() => setMegaOpen(false)} />
+                          <SolutionCard to="/prenota-call" icon={<Users size={20} strokeWidth={1.5} />} gradient="from-[#10B981] to-[#059669]" title={t('mega', 'retainer')} subtitle={lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'} desc={lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'} onClick={() => setMegaOpen(false)} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom padding */}
+                    <div className="h-2" />
                   </motion.div>
                 )}
               </AnimatePresence>

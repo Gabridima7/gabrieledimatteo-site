@@ -8,6 +8,7 @@ import iconSviluppoWebApp from '@/assets/icons/icon-sviluppo-web-app.png';
 import iconLandingPage from '@/assets/icons/icon-landing-page.png';
 import iconWebApp from '@/assets/icons/icon-web-app.webp';
 import iconSoftwareGestionale from '@/assets/icons/icon-software-gestionale.webp';
+import iconProdottoSaas from '@/assets/icons/icon-prodotto-saas.webp';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -159,7 +160,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<img src={iconLandingPage} alt="Landing Page" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Landing Page" desc={lang === 'it' ? 'Sito ad alta conversione' : 'High-converting website'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconWebApp} alt="Web App" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="Web App" desc={lang === 'it' ? 'Applicazioni su misura' : 'Custom applications'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconSoftwareGestionale} alt="Software Gestionale" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Software Gestionale' : 'Management Software'} desc={lang === 'it' ? 'CRM, ERP e tool interni su misura' : 'Custom CRM, ERP & internal tools'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<Rocket size={20} strokeWidth={1.5} />} gradient="from-[#0EA5E9] to-[#0369A1]" title={lang === 'it' ? 'Prodotto SaaS' : 'SaaS Product'} desc={lang === 'it' ? 'Da idea a prodotto scalabile' : 'From idea to scalable product'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconProdottoSaas} alt="Prodotto SaaS" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Prodotto SaaS' : 'SaaS Product'} desc={lang === 'it' ? 'Da idea a prodotto scalabile' : 'From idea to scalable product'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 
@@ -334,7 +335,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconLandingPage} alt="Landing Page" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Landing Page" desc="High-converting website" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconWebApp} alt="Web App" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Web App" desc="Applicazioni su misura" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconSoftwareGestionale} alt="Software Gestionale" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Software Gestionale" desc="CRM, ERP e tool interni" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<Rocket size={18} strokeWidth={1.5} />} gradient="from-[#0EA5E9] to-[#0369A1]" title="Prodotto SaaS" desc="Da idea a prodotto scalabile" onClick={() => setIsOpen(false)} last />
+                          <MobileServiceItem to="/servizi/sviluppo-web-app" icon={<img src={iconProdottoSaas} alt="Prodotto SaaS" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Prodotto SaaS" desc="Da idea a prodotto scalabile" onClick={() => setIsOpen(false)} last />
 
                           {/* AI & AUTOMATION */}
                           <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">AI & AUTOMATION</p>

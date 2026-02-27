@@ -14,7 +14,7 @@ export const translations = {
   mega: {
     sviluppo: { it: 'Sviluppo Web & App', en: 'Web & App Development' },
     sviluppoDesc: { it: 'Siti web e applicazioni su misura', en: 'Custom websites and applications' },
-    ai: { it: 'AI Automation & Integrazione', en: 'AI Automation & Integration' },
+    ai: { it: 'AI Automation', en: 'AI Automation' },
     aiDesc: { it: 'Automatizza i processi con l\'AI', en: 'Automate processes with AI' },
     branding: { it: 'Branding & UI/UX', en: 'Branding & UI/UX' },
     brandingDesc: { it: 'Brand identity e interfacce che convertono', en: 'Brand identity and converting interfaces' },

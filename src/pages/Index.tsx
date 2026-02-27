@@ -12,6 +12,7 @@ import logoAllfiber from '@/assets/logos/logo-allfiber.png';
 import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 import logoNewClient from '@/assets/logos/logo-new-client.png';
+import logoOneUp from '@/assets/logos/logo-oneup.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -245,10 +246,12 @@ const Index = () => {
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
+                { src: logoOneUp, name: 'One Up Sailing' },
                 // Duplicate for seamless loop
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                { src: logoRevelliGroup, name: 'Revelli Group' }].
+                { src: logoRevelliGroup, name: 'Revelli Group' },
+                { src: logoOneUp, name: 'One Up Sailing' }].
                 map((logo, i) =>
                 <img
                   key={i}

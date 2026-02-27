@@ -224,6 +224,56 @@ const Index = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* ─── Bottom info bar ─── */}
+          <div className="mt-auto pb-8 pt-16">
+            <div className="flex flex-col md:flex-row">
+              {/* Left block */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex-1 py-6 md:pr-10"
+              >
+                <p className="font-mono text-[18px] text-white/25 mb-4">{'{/'}</p>
+                <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(18px, 2vw, 22px)' }}>
+                  Lavoriamo con PMI italiane,<br />artigiani e imprenditori digitali
+                </p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {['PMI', 'Startup', 'E-commerce'].map((tag) => (
+                    <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Divider */}
+              <div className="w-full h-px md:w-px md:h-auto bg-white/10" />
+
+              {/* Right block */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex-1 py-6 md:pl-10"
+              >
+                <p className="font-mono text-[18px] text-white/25 mb-4">{'{/'}</p>
+                <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(18px, 2vw, 22px)' }}>
+                  Aiutiamo le aziende a<br />crescere con AI e digitale
+                </p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {['AI Automation', 'Web App', 'Branding'].map((tag) => (
+                    <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

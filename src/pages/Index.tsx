@@ -238,16 +238,8 @@ const Index = () => {
       {/* ─── TRUST BAR ─── */}
       <section className="py-12 border-t border-white/[0.06]">
         <div className="section-container">
-          <div className="flex items-center gap-8 md:gap-0">
-            
-            <div className="flex-1 overflow-hidden marquee-mask">
-              <div className="flex animate-marquee hover:[animation-play-state:paused] gap-16 items-center" style={{ width: 'max-content' }}>
+          <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap">
             {[
-                { src: logoHomeleven, name: 'Homeleven' },
-                { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoOneUp, name: 'One Up Sailing', noFilter: true },
-                // Duplicate for seamless loop
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
@@ -262,8 +254,6 @@ const Index = () => {
                   width={120}
                   height={48} />
                 )}
-              </div>
-            </div>
           </div>
         </div>
       </section>

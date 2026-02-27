@@ -13,6 +13,7 @@ import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 import iconAiChatbot from '@/assets/icons/icon-ai-chatbot.png';
 import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
 import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
+import iconIntegrazioniApi from '@/assets/icons/icon-integrazioni-api.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -177,7 +178,7 @@ const Navbar = () => {
                               <MegaItem to="/soluzioni" icon={<img src={iconAiAutomation} alt="AI Automation" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'ai')} desc={lang === 'it' ? 'Automatizza i processi con l\'AI' : 'Automate processes with AI'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconAiChatbot} alt="AI Chatbot" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title="AI Chatbot" desc={lang === 'it' ? 'Assistenti virtuali intelligenti' : 'Smart virtual assistants'} onClick={() => setMegaOpen(false)} />
                               <MegaItem to="/soluzioni" icon={<img src={iconConsulenzaDigitale} alt="Consulenza Digitale" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'consulenza')} desc={lang === 'it' ? 'Strategia e roadmap per la tua PMI' : 'Strategy & roadmap for your SME'} onClick={() => setMegaOpen(false)} />
-                              <MegaItem to="/soluzioni" icon={<GitMerge size={20} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title={lang === 'it' ? 'Integrazioni API' : 'API Integrations'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
+                              <MegaItem to="/soluzioni" icon={<img src={iconIntegrazioniApi} alt="Integrazioni API" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={lang === 'it' ? 'Integrazioni API' : 'API Integrations'} desc={lang === 'it' ? 'Connetti i tuoi sistemi aziendali' : 'Connect your business systems'} onClick={() => setMegaOpen(false)} />
                             </div>
                           </div>
 
@@ -346,7 +347,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/ai-automation" icon={<img src={iconAiAutomation} alt="AI Automation" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="AI Automation" desc="Automatizza con l'AI" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/ai-automation" icon={<img src={iconAiChatbot} alt="AI Chatbot" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="AI Chatbot" desc="Assistenti virtuali intelligenti" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/consulenza-digitale" icon={<img src={iconConsulenzaDigitale} alt="Consulenza Digitale" className="w-6 h-6 object-contain" />} gradient="from-transparent to-transparent" title="Consulenza Digitale" desc="Strategia e roadmap PMI" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/ai-automation" icon={<GitMerge size={18} strokeWidth={1.5} />} gradient="from-[#F97316] to-[#C2410C]" title="Integrazioni API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />
+                          <MobileServiceItem to="/servizi/ai-automation" icon={<img src={iconIntegrazioniApi} alt="Integrazioni API" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Integrazioni API" desc="Connetti i tuoi sistemi" onClick={() => setIsOpen(false)} last />
 
                           {/* DESIGN */}
                           <p className="text-[11px] font-bold tracking-[0.08em] uppercase text-[#9CA3AF] mb-3 mt-5">DESIGN</p>

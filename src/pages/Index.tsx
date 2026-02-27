@@ -120,60 +120,110 @@ const Index = () => {
       />
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nexus-navy">
-        {/* Animated gradient BG */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#070B1A]">
+        {/* Deep blue radial glow */}
         <div
-          className="absolute inset-0 animate-gradient-shift"
+          className="absolute inset-0"
           style={{
-            background: 'linear-gradient(-45deg, #0D1B2A, #111128, #0f0f20, #0D1B2A)',
-            backgroundSize: '400% 400%',
+            background: 'radial-gradient(ellipse 80% 60% at 30% 50%, rgba(28,53,200,0.35) 0%, rgba(28,53,200,0.08) 40%, transparent 70%), radial-gradient(ellipse 50% 50% at 70% 60%, rgba(79,111,232,0.15) 0%, transparent 60%)',
           }}
         />
-        <GeoShapes />
+        {/* Subtle noise texture overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.5\'/%3E%3C/svg%3E")', backgroundSize: '128px 128px' }} />
 
-        <div className="section-container text-center relative z-10 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="badge-pill inline-block mb-8">{t('hero', 'badge')}</span>
-          </motion.div>
+        <div className="section-container relative z-10 py-32 md:py-0">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-72px)]">
+            {/* Left – Text */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <span className="badge-pill inline-block mb-8">{t('hero', 'badge')}</span>
+              </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-hero text-white mb-6 max-w-5xl mx-auto"
-          >
-            {t('hero', 'title1')}
-            <br />
-            {t('hero', 'title2')}
-          </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="text-hero text-white mb-6"
+              >
+                {t('hero', 'title1')}
+                <br />
+                <span className="italic font-light text-[hsl(var(--nexus-electric,228_85%_60%))]">{t('hero', 'title2')}</span>
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10"
-          >
-            {t('hero', 'subtitle')}
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-body-lg text-white/60 max-w-lg mb-10"
+              >
+                {t('hero', 'subtitle')}
+              </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base">
-              {t('hero', 'cta1')}
-              <ArrowRight size={18} />
-            </a>
-            <Link to="/casi-studio" className="btn-secondary px-8 py-4 text-base">
-              {t('hero', 'cta2')}
-            </Link>
-          </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="flex items-center gap-3"
+              >
+                <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-nexus-electric flex items-center justify-center hover:scale-105 transition-transform">
+                  <ArrowRight size={20} className="text-white -rotate-45" />
+                </Link>
+                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base rounded-full">
+                  {t('hero', 'cta1')}
+                  <ArrowRight size={18} />
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Right – Glassmorphism visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="hidden lg:flex items-center justify-center relative"
+            >
+              {/* Glow behind cards */}
+              <div className="absolute w-64 h-64 rounded-full bg-nexus-electric/20 blur-[80px]" />
+              <div className="absolute w-40 h-40 rounded-full bg-nexus-blue/30 blur-[60px] translate-x-16 translate-y-16" />
+
+              {/* Glass cards stack */}
+              <div className="relative w-[340px] h-[420px]">
+                {/* Back card */}
+                <div className="absolute top-8 -left-4 w-[300px] h-[380px] rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md rotate-[-6deg] shadow-2xl" />
+                {/* Middle card */}
+                <div className="absolute top-4 left-2 w-[300px] h-[380px] rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md rotate-[-2deg] shadow-2xl" />
+                {/* Front card */}
+                <div className="absolute top-0 left-8 w-[300px] h-[380px] rounded-2xl border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl rotate-[3deg] shadow-2xl p-6 flex flex-col gap-4">
+                  {/* Fake UI lines */}
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full border border-white/20" />
+                      <div
+                        className="h-2.5 rounded-full"
+                        style={{
+                          width: `${60 + Math.sin(i * 2) * 30}%`,
+                          background: i === 2 || i === 4
+                            ? 'linear-gradient(90deg, #4F6FE8, #10B981)'
+                            : 'rgba(255,255,255,0.12)',
+                        }}
+                      />
+                    </div>
+                  ))}
+                  {/* Accent icons */}
+                  <div className="absolute -top-5 -right-5 w-14 h-14 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-blue flex items-center justify-center shadow-lg shadow-nexus-electric/30">
+                    <Bot size={22} className="text-white" />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                    <Lightbulb size={18} className="text-white" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

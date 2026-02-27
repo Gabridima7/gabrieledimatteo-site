@@ -131,8 +131,8 @@ const Index = () => {
         {/* Subtle noise texture overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.5\'/%3E%3C/svg%3E")', backgroundSize: '128px 128px' }} />
 
-        <div className="section-container relative z-10 flex flex-col flex-1 pt-8 md:pt-4 pb-6">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1">
+        <div className="section-container relative z-10 flex flex-col flex-1 pt-8 md:pt-2 pb-6">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1 md:max-lg:gap-4">
             {/* Left – Text */}
             <div>
               <motion.div
@@ -140,14 +140,14 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="badge-pill inline-block mb-4">{t('hero', 'badge')}</span>
+                <span className="badge-pill inline-block mb-4 md:max-lg:mb-2">{t('hero', 'badge')}</span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[28px] md:text-hero text-white mb-4 leading-[1.1] tracking-[-0.02em] font-extrabold"
+                className="text-[28px] md:text-hero text-white mb-4 md:max-lg:mb-2 leading-[1.1] tracking-[-0.02em] font-extrabold"
               >
                 {t('hero', 'title1')}
                 <br />
@@ -158,7 +158,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-body-lg text-white/60 max-w-lg mb-6"
+                className="text-body-lg text-white/60 max-w-lg mb-6 md:max-lg:mb-4"
               >
                 {t('hero', 'subtitle')}
               </motion.p>
@@ -226,7 +226,7 @@ const Index = () => {
           </div>
 
           {/* ─── Bottom info bar ─── */}
-          <div className="pb-6 pt-6 border-t border-white/[0.06]">
+          <div className="pb-6 pt-6 md:max-lg:pt-3 md:max-lg:pb-3 border-t border-white/[0.06]">
             <div className="flex flex-col md:flex-row">
               {/* Left block */}
               <motion.div

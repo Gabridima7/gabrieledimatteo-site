@@ -149,6 +149,10 @@ export default {
           "0%": { transform: "translate(0px, 0px) scale(1)" },
           "100%": { transform: "translate(-20px, -30px) scale(1.04)" },
         },
+        "floatBadge": {
+          "0%, 100%": { transform: "translateY(0px) rotate(var(--rotation, 0deg))" },
+          "50%": { transform: "translateY(-6px) rotate(var(--rotation, 0deg))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

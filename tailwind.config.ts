@@ -9,17 +9,15 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
-        "border-glass": "hsl(var(--border-glass))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: {
@@ -30,7 +28,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -55,7 +52,17 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-          glass: "hsl(var(--card-glass))",
+        },
+        nexus: {
+          blue: "#1C35C8",
+          navy: "#0D1B2A",
+          electric: "#4F6FE8",
+          ice: "#EEF2FF",
+          white: "#FFFFFF",
+          gray: "#6B7280",
+          offwhite: "#F8FAFC",
+          green: "#10B981",
+          red: "#EF4444",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -72,8 +79,17 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        "2xl": "1.5rem",
-        "3xl": "2rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
+      },
+      fontSize: {
+        'hero': ['clamp(56px, 6vw, 96px)', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'section': ['clamp(36px, 4vw, 64px)', { lineHeight: '1.1', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'card-title': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
+        'body-lg': ['18px', { lineHeight: '1.7', fontWeight: '400' }],
+        'body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        'caption': ['14px', { lineHeight: '1.5', fontWeight: '400' }],
+        'cta': ['15px', { lineHeight: '1', letterSpacing: '0.02em', fontWeight: '600' }],
       },
       keyframes: {
         "accordion-down": {
@@ -84,30 +100,34 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "count-up": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "scale-in": {
-          "0%": { transform: "scale(0.95)", opacity: "0" },
-          "100%": { transform: "scale(1)", opacity: "1" },
-        },
-        "slide-up": {
-          "0%": { transform: "translateY(20px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-        "scale-in": "scale-in 0.3s ease-out forwards",
-        "slide-up": "slide-up 0.6s ease-out forwards",
+        "gradient-shift": "gradient-shift 12s ease infinite",
+        "float": "float 4s ease-in-out infinite",
+        "marquee": "marquee 25s linear infinite",
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-blue': 'linear-gradient(135deg, hsl(240, 100%, 50%) 0%, hsl(240, 100%, 70%) 100%)',
-        'gradient-blue-subtle': 'linear-gradient(135deg, hsla(240, 100%, 50%, 0.1) 0%, hsla(240, 100%, 70%, 0.05) 100%)',
+        'gradient-nexus': 'linear-gradient(135deg, #1C35C8 0%, #4F6FE8 50%, #0D1B2A 100%)',
+        'gradient-hero': 'linear-gradient(-45deg, #0D1B2A, #111128, #0f0f20, #0D1B2A)',
       },
     },
   },

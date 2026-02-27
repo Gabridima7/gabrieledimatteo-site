@@ -1,564 +1,435 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, Bot, Zap, Code, Target, Rocket } from 'lucide-react';
-import logo from '@/assets/logo-nexus.png';
-import LogoMarquee from '@/components/LogoMarquee';
-import iconAiEducation from '@/assets/icons/icon-ai-education.png';
-import iconAiAgents from '@/assets/icons/icon-ai-agents.png';
-import iconAiProducts from '@/assets/icons/icon-ai-products.png';
-import iconSoluzioniCustom from '@/assets/icons/icon-soluzioni-custom.png';
+import { motion } from 'framer-motion';
+import { ArrowRight, Globe, Bot, Palette, Lightbulb, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
+import SEOHead from '@/components/SEOHead';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoAllfiber from '@/assets/logos/logo-allfiber.png';
+import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
+import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 
-const successStories = [
-  {
-    id: 'homeleven',
-    name: 'Homeleven',
-    logo: logoHomeleven,
-    challenge: 'Gestione complessa di listing immobiliari su più piattaforme. Aggiornamenti manuali e rischio di overbooking costante.',
-    solution: 'Un sistema AI centralizzato che sincronizza automaticamente disponibilità e prezzi su tutte le piattaforme in tempo reale.',
-    metrics: [
-      { value: '€45k', label: 'RISPARMIO/ANNO' },
-      { value: '-95%', label: 'ERRORI BOOKING' }
-    ]
-  },
-  {
-    id: 'biglia-serramenti',
-    name: 'Biglia Serramenti',
-    logo: logoBigliaSerramenti,
-    challenge: 'Preventivi manuali lunghi e complessi. Ogni richiesta richiedeva ore di calcoli e configurazioni.',
-    solution: 'Configuratore AI che genera preventivi dettagliati in minuti, con rendering 3D e specifiche tecniche automatiche.',
-    metrics: [
-      { value: '320h', label: 'RISPARMIATE/MESE' },
-      { value: '8x', label: 'ROI' }
-    ]
-  },
-  {
-    id: 'allfiber',
-    name: 'All Fiber',
-    logo: logoAllfiber,
-    challenge: 'Assistenza clienti oberata da richieste ripetitive. Tempi di risposta lunghi e costi di supporto elevati.',
-    solution: "Un agente AI che gestisce l'80% delle richieste automaticamente, escalando solo i casi complessi al team umano.",
-    metrics: [
-      { value: '€28k', label: 'RISPARMIO/ANNO' },
-      { value: '-70%', label: 'TEMPO RISPOSTA' }
-    ]
-  }
-];
-const fadeInUp = {
-  initial: {
-    opacity: 0,
-    y: 20
-  },
-  animate: {
-    opacity: 1,
-    y: 0
-  },
-  transition: {
-    duration: 0.6
-  }
-};
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
-const SuccessStoriesSection = () => {
-  const [activeTab, setActiveTab] = useState('homeleven');
-  const activeStory = successStories.find(s => s.id === activeTab) || successStories[0];
-
-  return (
-    <section className="py-24">
-      <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Alcune storie di <span className="font-serif-accent font-normal text-primary">Successo</span>.
-          </h2>
-        </motion.div>
-
-        {/* Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex justify-center gap-3 mb-10"
-        >
-          {successStories.map((story) => (
-            <button
-              key={story.id}
-              onClick={() => setActiveTab(story.id)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
-                activeTab === story.id
-                  ? 'bg-foreground text-background border-foreground'
-                  : 'bg-transparent text-muted-foreground border-border hover:border-foreground/50'
-              }`}
-            >
-              {story.name}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Content Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-10 md:p-16"
-          data-cursor="spotlight"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeStory.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="grid lg:grid-cols-2 gap-12 items-center"
-            >
-              {/* Left: Content */}
-              <div className="space-y-8">
-                {/* Logo */}
-                <div className="h-16 md:h-20">
-                  <img
-                    src={activeStory.logo}
-                    alt={activeStory.name}
-                    className={`h-full w-auto object-contain ${activeStory.id === 'allfiber' ? '' : 'brightness-0 invert'}`}
-                  />
-                </div>
-
-                {/* Challenge */}
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
-                    LA SFIDA
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {activeStory.challenge}
-                  </p>
-                </div>
-
-                {/* Solution */}
-                <div>
-                  <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
-                    LA NOSTRA SOLUZIONE
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {activeStory.solution}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right: Metrics */}
-              <div className="flex flex-col items-center justify-center gap-8 py-8 lg:border-l border-border/30 lg:pl-12">
-                {activeStory.metrics.map((metric, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-2">
-                      {metric.value}
-                    </p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {metric.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Link to all case studies */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-10"
-        >
-          <Link
-            to="/casi-studio"
-            className="glass hover:bg-white/10 text-foreground px-6 py-3 rounded-full text-sm font-medium transition-all inline-flex items-center gap-2"
-            data-cursor="spotlight"
-          >
-            Vedi altri casi studio
-            <ArrowRight size={16} />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
+/* ─── useCountUp Hook ─── */
+function useCountUp(end: number, duration = 1500, trigger = false) {
+  const [count, setCount] = useState(0);
   useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      // Check if video is already loaded
-      if (video.readyState >= 3) {
-        setVideoLoaded(true);
-      }
-    }
+    if (!trigger) return;
+    let start = 0;
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      setCount(Math.floor(eased * end));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [trigger, end, duration]);
+  return count;
+}
+
+/* ─── Geometric decoration SVGs ─── */
+const GeoShapes = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <svg className="absolute top-[15%] left-[5%] w-32 h-32 animate-float opacity-[0.05]" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="white"/></svg>
+    <svg className="absolute top-[30%] right-[8%] w-24 h-24 animate-float opacity-[0.04]" style={{animationDelay:'1s'}} viewBox="0 0 100 60"><polygon points="0,60 30,0 60,60" fill="white"/></svg>
+    <svg className="absolute bottom-[20%] left-[12%] w-20 h-20 animate-float opacity-[0.06]" style={{animationDelay:'2s'}} viewBox="0 0 80 80"><rect x="10" y="10" width="60" height="60" transform="rotate(20 40 40)" fill="white"/></svg>
+  </div>
+);
+
+/* ═══════════════════════════════════
+   HOMEPAGE COMPONENT
+═══════════════════════════════════ */
+const Index = () => {
+  const { t } = useLanguage();
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [email, setEmail] = useState('');
+  const [statsInView, setStatsInView] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  // Stats intersection observer
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setStatsInView(true); obs.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
+  const contractsCount = useCountUp(52850, 1500, statsInView);
+  const clientsCount = useCountUp(5, 1500, statsInView);
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setEmailSubmitted(true);
+  };
+
+  const services = [
+    { icon: Globe, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/soluzioni' },
+    { icon: Bot, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/soluzioni' },
+    { icon: Palette, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/soluzioni' },
+    { icon: Lightbulb, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/soluzioni' },
+  ];
+
+  const processSteps = [
+    { icon: Phone, title: t('process', 's1'), desc: t('process', 's1d') },
+    { icon: FileSearch, title: t('process', 's2'), desc: t('process', 's2d') },
+    { icon: PenTool, title: t('process', 's3'), desc: t('process', 's3d') },
+    { icon: Code, title: t('process', 's4'), desc: t('process', 's4d') },
+    { icon: TestTube, title: t('process', 's5'), desc: t('process', 's5d') },
+    { icon: Rocket, title: t('process', 's6'), desc: t('process', 's6d') },
+  ];
+
+  const caseStudies = [
+    { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio' },
+    { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio' },
+    { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio' },
+  ];
+
   return (
-    <section className="h-[85vh] md:h-[100vh] flex items-center justify-center pt-12 md:pt-16 pb-0 relative overflow-hidden" data-cursor="spotlight">
-      {/* Dark background fallback */}
-      <div className="absolute inset-0 bg-background z-0" />
-      
-      {/* Video Background with fade-in */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        onCanPlayThrough={() => setVideoLoaded(true)}
-        onLoadedData={() => setVideoLoaded(true)}
-        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700 ${
-          videoLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <source src="/videos/hero-background.mp4" type="video/mp4" />
-      </video>
-      
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60 z-[1]" />
-      
-      <div className="section-container text-center relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-4 md:mb-8"
-        >
-          <img src={logo} alt="Nexus" className="h-16 md:h-32 w-auto mx-auto brightness-[2] contrast-125" />
-        </motion.div>
+    <>
+      <SEOHead
+        title="NEXUS Agency — AI e Sviluppo Web per PMI Italiane"
+        description="NEXUS è l'agenzia digitale italiana specializzata in AI automation, sviluppo web e app, branding per PMI. Prenota una call gratuita."
+        canonical="https://nexusagency.it"
+      />
 
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-3xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-8 leading-tight"
-        >
-          Il tuo <span className="font-serif-accent font-normal">Partner AI</span>
-          <br />
-          <span className="text-foreground">a </span>
-          <span className="glow-text text-primary">360°.</span>
-        </motion.h1>
+      {/* JSON-LD Organization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "NEXUS Agency",
+            url: "https://nexusagency.it",
+            logo: "https://nexusagency.it/logo.png",
+            foundingDate: "2025",
+            founder: { "@type": "Person", name: "Gabriele Di Matteo" },
+            sameAs: ["https://linkedin.com/company/nexusagency", "https://instagram.com/nexusagency"],
+            contactPoint: { "@type": "ContactPoint", email: "gabriele@nexusagency.it", availableLanguage: ["Italian", "English"] },
+          }),
+        }}
+      />
 
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-base md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-12 leading-relaxed px-4 md:px-0"
-        >
-          Progettiamo agenti AI, automazioni e prodotti digitali per PMI.
-          <br className="hidden md:block" />
-          <span className="md:hidden"> </span>
-          Dalla strategia alla costruzione in settimane, non mesi.  
-        </motion.p>
+      {/* ─── HERO ─── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nexus-navy">
+        {/* Animated gradient BG */}
+        <div
+          className="absolute inset-0 animate-gradient-shift"
+          style={{
+            background: 'linear-gradient(-45deg, #0D1B2A, #111128, #0f0f20, #0D1B2A)',
+            backgroundSize: '400% 400%',
+          }}
+        />
+        <GeoShapes />
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0"
-        >
-          <a href="https://cal.com/nexus-agency/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
-            Prenota Call
-            <ArrowRight size={18} className="md:w-5 md:h-5" />
-          </a>
-          <Link to="/soluzioni" className="glass hover:bg-white/10 text-foreground px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 inline-flex items-center justify-center gap-2" data-cursor="spotlight">
-            Scopri le Soluzioni
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+        <div className="section-container text-center relative z-10 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="badge-pill inline-block mb-8">{t('hero', 'badge')}</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-hero text-white mb-6 max-w-5xl mx-auto"
+          >
+            {t('hero', 'title1')}
+            <br />
+            {t('hero', 'title2')}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-body-lg text-white/70 max-w-2xl mx-auto mb-10"
+          >
+            {t('hero', 'subtitle')}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base">
+              {t('hero', 'cta1')}
+              <ArrowRight size={18} />
+            </a>
+            <Link to="/casi-studio" className="btn-secondary px-8 py-4 text-base">
+              {t('hero', 'cta2')}
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── TRUST BAR ─── */}
+      <section className="bg-nexus-offwhite py-12 section-light">
+        <div className="section-container">
+          <div className="flex items-center gap-8 md:gap-0">
+            <p className="text-nexus-gray text-sm font-medium shrink-0 mr-8 hidden md:block">{t('trust', 'label')}</p>
+            <div className="flex-1 overflow-hidden marquee-mask">
+              <div className="flex animate-marquee hover:[animation-play-state:paused] gap-16 items-center" style={{ width: 'max-content' }}>
+                {[
+                  { src: logoHomeleven, name: 'Homeleven' },
+                  { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
+                  { src: logoAllfiber, name: 'All Fiber' },
+                  { src: logoBigliaDesign, name: 'Biglia Design' },
+                  { src: logoRevelliGroup, name: 'Revelli Group' },
+                  // Duplicate for seamless loop
+                  { src: logoHomeleven, name: 'Homeleven' },
+                  { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
+                  { src: logoAllfiber, name: 'All Fiber' },
+                  { src: logoBigliaDesign, name: 'Biglia Design' },
+                  { src: logoRevelliGroup, name: 'Revelli Group' },
+                ].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo.src}
+                    alt={logo.name}
+                    className="h-10 md:h-12 w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                    width={120}
+                    height={48}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES ─── */}
+      <section className="bg-nexus-navy py-20">
+        <div className="section-container">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-14">
+            <motion.span variants={fadeUpVariants} className="badge-pill inline-block mb-4">{t('services', 'badge')}</motion.span>
+            <motion.h2 variants={fadeUpVariants} className="text-section text-white">{t('services', 'title')}</motion.h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {services.map((s, i) => (
+              <motion.div key={i} variants={fadeUpVariants}>
+                <Link to={s.link} className="service-card block h-full">
+                  <div className="icon-glass mb-5">
+                    <s.icon size={22} className="text-nexus-electric" />
+                  </div>
+                  <h3 className="text-card-title text-white mb-2">{s.title}</h3>
+                  <p className="text-body text-white/70 mb-4 line-clamp-2">{s.desc}</p>
+                  <span className="text-nexus-electric text-sm font-medium inline-flex items-center gap-1 group">
+                    {t('services', 'scopri')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── STATS ─── */}
+      <section ref={statsRef} className="py-20 bg-gradient-nexus">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
+            {[
+              { value: `€${contractsCount.toLocaleString('it-IT')}`, label: t('stats', 's1Label') },
+              { value: String(clientsCount), label: t('stats', 's2Label') },
+              { value: t('stats', 's3Value'), label: t('stats', 's3Label') },
+            ].map((stat, i) => (
+              <div key={i} className="text-center flex-1 relative">
+                {i > 0 && <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/20" />}
+                <p className="text-[clamp(48px,5vw,72px)] font-bold text-white tracking-tight tabular-nums leading-none mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-caption text-white/60">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CASE STUDIES ─── */}
+      <section className="bg-nexus-offwhite py-20 section-light">
+        <div className="section-container">
+          <div className="flex items-end justify-between mb-12">
+            <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-nexus-navy">
+              {t('cases', 'title')}
+            </motion.h2>
+            <Link to="/casi-studio" className="text-nexus-blue font-semibold text-sm hover:text-nexus-electric transition-colors inline-flex items-center gap-1">
+              {t('cases', 'viewAll')} <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {caseStudies.map((c, i) => (
+              <motion.div key={i} variants={fadeUpVariants}>
+                <Link to={c.link} className="block bg-white rounded-2xl shadow-md overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                  {/* Placeholder cover */}
+                  <div className="aspect-video bg-gradient-nexus relative">
+                    <div className="absolute inset-0 flex items-center justify-center text-white/30 text-2xl font-bold">{c.title}</div>
+                  </div>
+                  <div className="p-6">
+                    <span className="badge-pill mb-3 inline-block">{c.badge}</span>
+                    <h3 className="text-card-title text-nexus-navy mb-2">{c.title}</h3>
+                    <p className="text-body text-nexus-gray mb-4 line-clamp-2">{c.desc}</p>
+                    <span className="text-nexus-blue text-sm font-semibold inline-flex items-center gap-1">
+                      {t('cases', 'viewCase')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── LEAD MAGNET ─── */}
+      <section className="bg-nexus-blue py-20">
+        <div className="section-container max-w-2xl mx-auto text-center">
+          <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-white mb-4">
+            {t('lead', 'title')}
+          </motion.h2>
+          <motion.p variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-body-lg text-white/80 mb-8">
+            {t('lead', 'subtitle')}
+          </motion.p>
+
+          {emailSubmitted ? (
+            <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-white text-xl font-semibold">
+              {t('lead', 'success')}
+            </motion.div>
+          ) : (
+            <motion.form
+              onSubmit={handleEmailSubmit}
+              variants={fadeUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('lead', 'placeholder')}
+                required
+                className="flex-1 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 px-4 py-3 focus:outline-none focus:border-white focus:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all"
+              />
+              <button type="submit" className="bg-white text-nexus-blue px-6 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2">
+                {t('lead', 'cta')} <ArrowRight size={16} />
+              </button>
+            </motion.form>
+          )}
+          <p className="text-xs text-white/60 mt-4">{t('lead', 'disclaimer')}</p>
+        </div>
+      </section>
+
+      {/* ─── PROCESS ─── */}
+      <section className="bg-nexus-navy py-20">
+        <div className="section-container">
+          <motion.h2
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            className="text-section text-white text-center mb-14"
+          >
+            {t('process', 'title')}
+          </motion.h2>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative"
+          >
+            {/* Dashed connector (desktop) */}
+            <div className="hidden lg:block absolute top-10 left-[8%] right-[8%] h-px border-t-2 border-dashed border-white/15 z-0" />
+
+            {processSteps.map((step, i) => (
+              <motion.div key={i} variants={fadeUpVariants} className="text-center relative z-10">
+                <div className="w-14 h-14 rounded-full bg-nexus-blue flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm">
+                  {i + 1}
+                </div>
+                <step.icon size={20} className="text-nexus-electric mx-auto mb-2" />
+                <h4 className="text-sm font-semibold text-white mb-1">{step.title}</h4>
+                <p className="text-xs text-white/50">{step.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIAL ─── */}
+      <section className="bg-nexus-offwhite py-20 section-light">
+        <div className="section-container max-w-3xl mx-auto text-center">
+          <motion.div
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
+            <span className="text-[120px] leading-none text-nexus-blue/15 font-serif block -mb-10">"</span>
+            <p className="text-2xl italic text-gray-800 mb-8 leading-relaxed">
+              {t('testimonial', 'quote')}
+            </p>
+            <p className="text-sm font-semibold text-nexus-navy">{t('testimonial', 'name')}</p>
+            <p className="text-sm text-nexus-gray">{t('testimonial', 'company')}</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── CTA FINALE ─── */}
+      <section className="bg-nexus-navy py-24">
+        <div className="section-container text-center">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+          >
+            <motion.h2 variants={fadeUpVariants} className="text-section text-white mb-4">
+              {t('cta', 'title')}
+            </motion.h2>
+            <motion.p variants={fadeUpVariants} className="text-body-lg text-white/60 mb-10 max-w-xl mx-auto">
+              {t('cta', 'subtitle')}
+            </motion.p>
+            <motion.div variants={fadeUpVariants}>
+              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-10 py-4 text-base">
+                {t('cta', 'button')}
+                <ArrowRight size={18} />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 };
 
-const Index = () => {
-  return <div className="relative">
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Logo Marquee Section */}
-      <LogoMarquee />
-
-      {/* Cosa Facciamo Section */}
-      <section className="py-24">
-        <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-16">
-            <h2 className="text-4xl mb-4 md:text-6xl font-medium">
-              Scegli il tuo <span className="text-primary">percorso</span>.
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Automazioni su misura o prodotti pronti all'uso.
-            </p>
-          </motion.div>
-
-          <motion.div variants={stagger} initial="initial" whileInView="animate" viewport={{
-          once: true
-        }} className="grid md:grid-cols-2 gap-8">
-            {/* AI Education & Strategy Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                AI Education
-                <br />
-                <span className="font-serif-accent font-normal text-primary">& Strategy</span>
-              </h3>
-              
-              <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiEducation} alt="AI Education" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
-              </div>
-              
-              <div className="mt-auto">
-                <p className="text-lg font-medium mb-2">Formazione, Analisi e Sviluppo.</p>
-                <p className="text-muted-foreground mb-8">Insegniamo al tuo team a usare l'AI ogni giorno. Analizziamo i tuoi processi per capire dove implementare l'AI e sviluppare soluzioni su misura.</p>
-                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
-                  Inizia ora
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </motion.div>
-            
-            {/* AI Agents & Automazioni Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                AI Agents
-                <br />
-                <span className="font-serif-accent font-normal text-primary">& Automazioni</span>
-              </h3>
-              
-              <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiAgents} alt="AI Agents" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
-              </div>
-              
-              <div className="mt-auto">
-                <p className="text-lg font-medium mb-2">Automazione intelligente.</p>
-                <p className="text-muted-foreground mb-8">Agenti AI che trasformano attività manuali in processi automatici. Risparmi tempo e riduci errori umani.</p>
-                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
-                  Scopri di più
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </motion.div>
-            
-            {/* AI Products Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                AI
-                <br />
-                <span className="font-serif-accent font-normal text-primary">Products</span>
-              </h3>
-              
-              <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconAiProducts} alt="AI Products" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
-              </div>
-              
-              <div className="mt-auto">
-                <p className="text-lg font-medium mb-2">Prodotti pronti all'uso.</p>
-                <p className="text-muted-foreground mb-8">Micro-prodotti e tool interni pronti o personalizzabili per le esigenze specifiche della tua azienda.</p>
-                <Link to="/prodotti-ai" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
-                  Esplora prodotti
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </motion.div>
-            
-            {/* Soluzioni Digitali Custom Card */}
-            <motion.div variants={fadeInUp} className="glass-card p-10 md:p-12 flex flex-col min-h-[500px] cursor-pointer transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(0,0,255,0.4)] hover:border-primary/50" data-cursor="spotlight">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                Soluzioni Digitali
-                <br />
-                <span className="font-serif-accent font-normal text-primary">Custom</span>
-              </h3>
-              
-              <div className="flex-1 flex items-center justify-center py-8">
-                <img src={iconSoluzioniCustom} alt="Soluzioni Custom" className="w-56 h-56 md:w-72 md:h-72 object-contain" />
-              </div>
-              
-              <div className="mt-auto">
-                <p className="text-lg font-medium mb-2">Sviluppo su misura.</p>
-                <p className="text-muted-foreground mb-8">Web app, siti ed e-commerce costruiti per integrarsi perfettamente nel tuo ecosistema digitale.</p>
-                <Link to="/soluzioni" className="text-primary hover:text-primary/80 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider transition-colors">
-                  Scopri di più
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Metodo Nexus Section */}
-      <section className="py-24 bg-gradient-blue-subtle">
-        <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Il Metodo <span className="text-primary">Nexus</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[{
-            letter: 'E',
-            title: 'Education',
-            description: 'Workshop + training per il tuo team',
-            icon: Sparkles
-          }, {
-            letter: 'I',
-            title: 'Identification',
-            description: 'Audit processi + use case con ROI',
-            icon: Target
-          }, {
-            letter: 'D',
-            title: 'Development',
-            description: 'Design + build + deploy rapido',
-            icon: Rocket
-          }].map((step, i) => <motion.div key={i} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6,
-            delay: i * 0.1
-          }} className="text-center">
-                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-6 glow-border">
-                  <span className="text-2xl font-bold text-primary">{step.letter}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
-              </motion.div>)}
-          </div>
-
-          <motion.p initial={{
-          opacity: 0
-        }} whileInView={{
-          opacity: 1
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6,
-          delay: 0.4
-        }} className="text-center text-muted-foreground mt-12">
-            Zero fuffa. Solo implementazioni che si misurano.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Why Lovable Section */}
-      <section className="py-24">
-        <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">
-              Costruiamo veloce.
-              <br />
-              Iteriamo meglio.
-            </h2>
-            
-            <div className="grid sm:grid-cols-3 gap-6 mb-12">
-              {['Time-to-value in 7–21 giorni', 'Prototipi → MVP → produzione', 'Riduzione costi e tempi'].map((item, i) => <motion.div key={i} initial={{
-              opacity: 0,
-              y: 10
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.4,
-              delay: i * 0.1
-            }} className="glass-card p-6" data-cursor="spotlight">
-                  <Zap className="text-primary mx-auto mb-3" size={24} />
-                  <p className="text-sm font-medium">{item}</p>
-                </motion.div>)}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Success Stories with Tabs */}
-      <SuccessStoriesSection />
-
-      {/* Final CTA */}
-      <section className="py-24">
-        <div className="section-container">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="glass-card p-12 md:p-16 text-center max-w-4xl mx-auto" data-cursor="spotlight">
-            <span className="inline-block bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              CONTATTACI
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Parliamo del tuo <span className="text-primary">progetto</span>.
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              In 30 minuti capiamo se l'AI può generare ROI nel tuo processo.
-            </p>
-            <a href="https://cal.com/nexus-agency/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center justify-center gap-2" data-cursor="spotlight">
-              Prenota Call
-              <ArrowRight size={20} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>;
-};
 export default Index;

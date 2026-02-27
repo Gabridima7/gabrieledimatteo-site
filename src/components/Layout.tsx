@@ -1,8 +1,6 @@
 import { ReactNode } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import CustomCursor from './CustomCursor';
-import ParticlesBackground from './ParticlesBackground';
 import CookieBanner from './CookieBanner';
 
 interface LayoutProps {
@@ -12,10 +10,8 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
-      <CustomCursor />
-      <ParticlesBackground />
       <Navbar />
-      <main>{children}</main>
+      <main className="pt-[72px]">{children}</main>
       <Footer />
       <CookieBanner />
     </div>

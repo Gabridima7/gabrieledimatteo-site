@@ -140,7 +140,7 @@ const Navbar = () => {
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="fixed top-[80px] left-0 w-full z-[200] flex justify-center pointer-events-none"
                   >
-                    <div className="w-[1100px] max-w-[95vw] rounded-[20px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.06)] pointer-events-auto">
+                    <div className="w-[1240px] max-w-[95vw] rounded-[20px] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.12),0_4px_16px_rgba(0,0,0,0.06)] pointer-events-auto">
                     {/* Services section */}
                     <div className="px-10 pt-8 pb-6">
                       <div className="flex items-start gap-10">

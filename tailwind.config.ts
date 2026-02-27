@@ -83,7 +83,7 @@ export default {
         "3xl": "1.5rem",
       },
       fontSize: {
-        'hero': ['clamp(56px, 6vw, 96px)', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'hero': ['clamp(40px, 4.5vw, 68px)', { lineHeight: '1.08', letterSpacing: '-0.02em', fontWeight: '800' }],
         'section': ['clamp(36px, 4vw, 64px)', { lineHeight: '1.1', letterSpacing: '-0.01em', fontWeight: '700' }],
         'card-title': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
         'body-lg': ['18px', { lineHeight: '1.7', fontWeight: '400' }],

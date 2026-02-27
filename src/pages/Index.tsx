@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Bot, Palette, Lightbulb, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
+import { ArrowRight, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
+import iconSviluppoWebAppNew from '@/assets/icons/icon-sviluppo-web-app-new.webp';
+import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
+import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
+import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
 import heroNexus from '@/assets/hero-nexus.png';
 import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
@@ -75,10 +79,10 @@ const Index = () => {
   };
 
   const services = [
-  { icon: Globe, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/soluzioni' },
-  { icon: Bot, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/soluzioni' },
-  { icon: Palette, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/soluzioni' },
-  { icon: Lightbulb, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/soluzioni' }];
+  { icon: iconSviluppoWebAppNew, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/soluzioni' },
+  { icon: iconAiAutomation, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/soluzioni' },
+  { icon: iconUiUxDesign, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/soluzioni' },
+  { icon: iconConsulenzaDigitale, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/soluzioni' }];
 
 
   const processSteps = [
@@ -275,15 +279,24 @@ const Index = () => {
 
             {services.map((s, i) =>
             <motion.div key={i} variants={fadeUpVariants}>
-                <Link to={s.link} className="service-card block h-full">
-                  <div className="icon-glass mb-5">
-                    <s.icon size={22} className="text-nexus-electric" />
+                <Link to={s.link} className="group block h-full relative rounded-[20px] border border-white/[0.1] bg-white/[0.03] backdrop-blur-md overflow-hidden transition-all duration-500 hover:border-[hsl(228,76%,45%)]/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(28,53,200,0.2)]">
+                  {/* Top glow effect */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-[hsl(228,76%,45%)] to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-20 bg-[hsl(228,76%,45%)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative p-8 flex flex-col items-center text-center">
+                    {/* Icon in glass sphere */}
+                    <div className="w-20 h-20 rounded-full bg-white/[0.06] border border-white/[0.12] flex items-center justify-center mb-6 group-hover:bg-white/[0.1] group-hover:border-white/[0.2] transition-all duration-300 shadow-[0_0_30px_rgba(28,53,200,0.1)]">
+                      <img src={s.icon} alt={s.title} className="w-10 h-10 object-contain" />
+                    </div>
+                    
+                    <h3 className="text-card-title text-white mb-3">{s.title}</h3>
+                    <p className="text-body text-white/50 mb-6 line-clamp-2">{s.desc}</p>
+                    
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
+                      {t('services', 'scopri')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
-                  <h3 className="text-card-title text-white mb-2">{s.title}</h3>
-                  <p className="text-body text-white/70 mb-4 line-clamp-2">{s.desc}</p>
-                  <span className="text-nexus-electric text-sm font-medium inline-flex items-center gap-1 group">
-                    {t('services', 'scopri')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </span>
                 </Link>
               </motion.div>
             )}

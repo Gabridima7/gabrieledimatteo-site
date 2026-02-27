@@ -32,13 +32,13 @@ function useCountUp(end: number, duration = 1500, trigger = false) {
 }
 
 /* ─── Geometric decoration SVGs ─── */
-const GeoShapes = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <svg className="absolute top-[15%] left-[5%] w-32 h-32 animate-float opacity-[0.05]" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="white"/></svg>
-    <svg className="absolute top-[30%] right-[8%] w-24 h-24 animate-float opacity-[0.04]" style={{animationDelay:'1s'}} viewBox="0 0 100 60"><polygon points="0,60 30,0 60,60" fill="white"/></svg>
-    <svg className="absolute bottom-[20%] left-[12%] w-20 h-20 animate-float opacity-[0.06]" style={{animationDelay:'2s'}} viewBox="0 0 80 80"><rect x="10" y="10" width="60" height="60" transform="rotate(20 40 40)" fill="white"/></svg>
-  </div>
-);
+const GeoShapes = () =>
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <svg className="absolute top-[15%] left-[5%] w-32 h-32 animate-float opacity-[0.05]" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="white" /></svg>
+    <svg className="absolute top-[30%] right-[8%] w-24 h-24 animate-float opacity-[0.04]" style={{ animationDelay: '1s' }} viewBox="0 0 100 60"><polygon points="0,60 30,0 60,60" fill="white" /></svg>
+    <svg className="absolute bottom-[20%] left-[12%] w-20 h-20 animate-float opacity-[0.06]" style={{ animationDelay: '2s' }} viewBox="0 0 80 80"><rect x="10" y="10" width="60" height="60" transform="rotate(20 40 40)" fill="white" /></svg>
+  </div>;
+
 
 /* ═══════════════════════════════════
    HOMEPAGE COMPONENT
@@ -55,7 +55,7 @@ const Index = () => {
     const el = statsRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setStatsInView(true); obs.disconnect(); } },
+      ([e]) => {if (e.isIntersecting) {setStatsInView(true);obs.disconnect();}},
       { threshold: 0.3 }
     );
     obs.observe(el);
@@ -72,34 +72,34 @@ const Index = () => {
   };
 
   const services = [
-    { icon: Globe, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/soluzioni' },
-    { icon: Bot, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/soluzioni' },
-    { icon: Palette, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/soluzioni' },
-    { icon: Lightbulb, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/soluzioni' },
-  ];
+  { icon: Globe, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/soluzioni' },
+  { icon: Bot, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/soluzioni' },
+  { icon: Palette, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/soluzioni' },
+  { icon: Lightbulb, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/soluzioni' }];
+
 
   const processSteps = [
-    { icon: Phone, title: t('process', 's1'), desc: t('process', 's1d') },
-    { icon: FileSearch, title: t('process', 's2'), desc: t('process', 's2d') },
-    { icon: PenTool, title: t('process', 's3'), desc: t('process', 's3d') },
-    { icon: Code, title: t('process', 's4'), desc: t('process', 's4d') },
-    { icon: TestTube, title: t('process', 's5'), desc: t('process', 's5d') },
-    { icon: Rocket, title: t('process', 's6'), desc: t('process', 's6d') },
-  ];
+  { icon: Phone, title: t('process', 's1'), desc: t('process', 's1d') },
+  { icon: FileSearch, title: t('process', 's2'), desc: t('process', 's2d') },
+  { icon: PenTool, title: t('process', 's3'), desc: t('process', 's3d') },
+  { icon: Code, title: t('process', 's4'), desc: t('process', 's4d') },
+  { icon: TestTube, title: t('process', 's5'), desc: t('process', 's5d') },
+  { icon: Rocket, title: t('process', 's6'), desc: t('process', 's6d') }];
+
 
   const caseStudies = [
-    { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio' },
-    { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio' },
-    { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio' },
-  ];
+  { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio' },
+  { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio' },
+  { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio' }];
+
 
   return (
     <>
       <SEOHead
         title="NEXUS Agency — AI e Sviluppo Web per PMI Italiane"
         description="NEXUS è l'agenzia digitale italiana specializzata in AI automation, sviluppo web e app, branding per PMI. Prenota una call gratuita."
-        canonical="https://nexusagency.it"
-      />
+        canonical="https://nexusagency.it" />
+
 
       {/* JSON-LD Organization */}
       <script
@@ -114,10 +114,10 @@ const Index = () => {
             foundingDate: "2025",
             founder: { "@type": "Person", name: "Gabriele Di Matteo" },
             sameAs: ["https://linkedin.com/company/nexusagency", "https://instagram.com/nexusagency"],
-            contactPoint: { "@type": "ContactPoint", email: "gabriele@nexusagency.it", availableLanguage: ["Italian", "English"] },
-          }),
-        }}
-      />
+            contactPoint: { "@type": "ContactPoint", email: "gabriele@nexusagency.it", availableLanguage: ["Italian", "English"] }
+          })
+        }} />
+
 
       {/* ─── HERO ─── */}
       <section className="relative h-screen flex flex-col overflow-hidden">
@@ -129,8 +129,8 @@ const Index = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              >
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
+
                 <span className="badge-pill inline-block mb-4 md:max-lg:mb-2">{t('hero', 'badge')}</span>
               </motion.div>
 
@@ -138,8 +138,8 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[28px] md:text-hero text-white mb-4 md:max-lg:mb-2 leading-[1.1] tracking-[-0.02em] font-extrabold"
-              >
+                className="text-[28px] md:text-hero text-white mb-4 md:max-lg:mb-2 leading-[1.1] tracking-[-0.02em] font-extrabold">
+
                 {t('hero', 'title1')}
                 <br />
                 <span className="italic font-light text-[hsl(var(--nexus-electric,228_85%_60%))]">{t('hero', 'title2')}</span>
@@ -149,8 +149,8 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-body-lg text-white/60 max-w-lg mb-6 md:max-lg:mb-4"
-              >
+                className="text-body-lg text-white/60 max-w-lg mb-6 md:max-lg:mb-4">
+
                 {t('hero', 'subtitle')}
               </motion.p>
 
@@ -158,8 +158,8 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-3"
-              >
+                className="flex items-center gap-3">
+
                 <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-[#d0f601] flex items-center justify-center hover:scale-105 transition-transform">
                   <ArrowRight size={20} className="text-black -rotate-45" />
                 </Link>
@@ -175,8 +175,8 @@ const Index = () => {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="hidden lg:flex items-center justify-center relative"
-            >
+              className="hidden lg:flex items-center justify-center relative">
+
               {/* Glow behind cards */}
               <div className="absolute w-64 h-64 rounded-full bg-nexus-electric/20 blur-[80px]" />
               <div className="absolute w-40 h-40 rounded-full bg-nexus-blue/30 blur-[60px] translate-x-16 translate-y-16" />
@@ -190,20 +190,20 @@ const Index = () => {
                 {/* Front card */}
                 <div className="absolute top-0 left-8 w-[300px] h-[380px] rounded-2xl border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl rotate-[3deg] shadow-2xl p-6 flex flex-col gap-4">
                   {/* Fake UI lines */}
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="flex items-center gap-3">
+                  {[...Array(6)].map((_, i) =>
+                  <div key={i} className="flex items-center gap-3">
                       <div className="w-3 h-3 rounded-full border border-white/20" />
                       <div
-                        className="h-2.5 rounded-full"
-                        style={{
-                          width: `${60 + Math.sin(i * 2) * 30}%`,
-                          background: i === 2 || i === 4
-                            ? 'linear-gradient(90deg, #4F6FE8, #10B981)'
-                            : 'rgba(255,255,255,0.12)',
-                        }}
-                      />
+                      className="h-2.5 rounded-full"
+                      style={{
+                        width: `${60 + Math.sin(i * 2) * 30}%`,
+                        background: i === 2 || i === 4 ?
+                        'linear-gradient(90deg, #4F6FE8, #10B981)' :
+                        'rgba(255,255,255,0.12)'
+                      }} />
+
                     </div>
-                  ))}
+                  )}
                   {/* Accent icons */}
                   <div className="absolute -top-5 -right-5 w-14 h-14 rounded-full bg-gradient-to-br from-nexus-electric to-nexus-blue flex items-center justify-center shadow-lg shadow-nexus-electric/30">
                     <Bot size={22} className="text-white" />
@@ -225,18 +225,18 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex-1 py-4 md:pr-10"
-              >
+                className="flex-1 py-4 md:pr-10">
+
                 <p className="font-mono text-[16px] text-white/25 mb-2">{'{/'}</p>
                 <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>
                   Lavoriamo con PMI italiane,<br />artigiani e imprenditori digitali
                 </p>
                 <div className="flex flex-wrap gap-2 mt-3">
-                  {['PMI', 'Startup', 'E-commerce'].map((tag) => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
+                  {['PMI', 'Startup', 'E-commerce'].map((tag) =>
+                  <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
                       {tag}
                     </span>
-                  ))}
+                  )}
                 </div>
               </motion.div>
 
@@ -249,18 +249,18 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="flex-1 py-4 md:pl-10"
-              >
+                className="flex-1 py-4 md:pl-10">
+
                 <p className="font-mono text-[16px] text-white/25 mb-2">{'{/'}</p>
                 <p className="text-white font-medium leading-[1.4] max-w-md" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>
                   Aiutiamo le aziende a<br />crescere con AI e digitale
                 </p>
                 <div className="flex flex-wrap gap-2 mt-3">
-                  {['AI Automation', 'Web App', 'Branding'].map((tag) => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
+                  {['AI Automation', 'Web App', 'Branding'].map((tag) =>
+                  <span key={tag} className="px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 bg-white/[0.08] border border-white/[0.12]">
                       {tag}
                     </span>
-                  ))}
+                  )}
                 </div>
               </motion.div>
             </div>
@@ -272,32 +272,32 @@ const Index = () => {
       <section className="py-12 border-t border-white/[0.06]">
         <div className="section-container">
           <div className="flex items-center gap-8 md:gap-0">
-            <p className="text-white/40 text-sm font-medium shrink-0 mr-8 hidden md:block">{t('trust', 'label')}</p>
+            
             <div className="flex-1 overflow-hidden marquee-mask">
               <div className="flex animate-marquee hover:[animation-play-state:paused] gap-16 items-center" style={{ width: 'max-content' }}>
                 {[
-                  { src: logoHomeleven, name: 'Homeleven' },
-                  { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                  { src: logoAllfiber, name: 'All Fiber' },
-                  { src: logoBigliaDesign, name: 'Biglia Design' },
-                  { src: logoRevelliGroup, name: 'Revelli Group' },
-                  // Duplicate for seamless loop
-                  { src: logoHomeleven, name: 'Homeleven' },
-                  { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                  { src: logoAllfiber, name: 'All Fiber' },
-                  { src: logoBigliaDesign, name: 'Biglia Design' },
-                  { src: logoRevelliGroup, name: 'Revelli Group' },
-                ].map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo.src}
-                    alt={logo.name}
-                    className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale invert hover:opacity-80 hover:grayscale-0 transition-all duration-300"
-                    loading="lazy"
-                    width={120}
-                    height={48}
-                  />
-                ))}
+                { src: logoHomeleven, name: 'Homeleven' },
+                { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
+                { src: logoAllfiber, name: 'All Fiber' },
+                { src: logoBigliaDesign, name: 'Biglia Design' },
+                { src: logoRevelliGroup, name: 'Revelli Group' },
+                // Duplicate for seamless loop
+                { src: logoHomeleven, name: 'Homeleven' },
+                { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
+                { src: logoAllfiber, name: 'All Fiber' },
+                { src: logoBigliaDesign, name: 'Biglia Design' },
+                { src: logoRevelliGroup, name: 'Revelli Group' }].
+                map((logo, i) =>
+                <img
+                  key={i}
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale invert hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                  loading="lazy"
+                  width={120}
+                  height={48} />
+
+                )}
               </div>
             </div>
           </div>
@@ -317,10 +317,10 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={viewportConfig}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {services.map((s, i) => (
-              <motion.div key={i} variants={fadeUpVariants}>
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {services.map((s, i) =>
+            <motion.div key={i} variants={fadeUpVariants}>
                 <Link to={s.link} className="service-card block h-full">
                   <div className="icon-glass mb-5">
                     <s.icon size={22} className="text-nexus-electric" />
@@ -332,7 +332,7 @@ const Index = () => {
                   </span>
                 </Link>
               </motion.div>
-            ))}
+            )}
           </motion.div>
         </div>
       </section>
@@ -342,18 +342,18 @@ const Index = () => {
         <div className="section-container">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
             {[
-              { value: `€${contractsCount.toLocaleString('it-IT')}`, label: t('stats', 's1Label') },
-              { value: String(clientsCount), label: t('stats', 's2Label') },
-              { value: t('stats', 's3Value'), label: t('stats', 's3Label') },
-            ].map((stat, i) => (
-              <div key={i} className="text-center flex-1 relative">
+            { value: `€${contractsCount.toLocaleString('it-IT')}`, label: t('stats', 's1Label') },
+            { value: String(clientsCount), label: t('stats', 's2Label') },
+            { value: t('stats', 's3Value'), label: t('stats', 's3Label') }].
+            map((stat, i) =>
+            <div key={i} className="text-center flex-1 relative">
                 {i > 0 && <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/20" />}
                 <p className="text-[clamp(48px,5vw,72px)] font-bold text-white tracking-tight tabular-nums leading-none mb-2">
                   {stat.value}
                 </p>
                 <p className="text-caption text-white/60">{stat.label}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -375,10 +375,10 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={viewportConfig}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {caseStudies.map((c, i) => (
-              <motion.div key={i} variants={fadeUpVariants}>
+            className="grid md:grid-cols-3 gap-6">
+
+            {caseStudies.map((c, i) =>
+            <motion.div key={i} variants={fadeUpVariants}>
                 <Link to={c.link} className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                   {/* Placeholder cover */}
                   <div className="aspect-video bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative">
@@ -394,7 +394,7 @@ const Index = () => {
                   </div>
                 </Link>
               </motion.div>
-            ))}
+            )}
           </motion.div>
         </div>
       </section>
@@ -409,32 +409,32 @@ const Index = () => {
             {t('lead', 'subtitle')}
           </motion.p>
 
-          {emailSubmitted ? (
-            <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-white text-xl font-semibold">
+          {emailSubmitted ?
+          <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-white text-xl font-semibold">
               {t('lead', 'success')}
-            </motion.div>
-          ) : (
-            <motion.form
-              onSubmit={handleEmailSubmit}
-              variants={fadeUpVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewportConfig}
-              className="flex flex-col sm:flex-row gap-3"
-            >
+            </motion.div> :
+
+          <motion.form
+            onSubmit={handleEmailSubmit}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            className="flex flex-col sm:flex-row gap-3">
+
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('lead', 'placeholder')}
-                required
-                className="flex-1 rounded-xl bg-white/[0.06] border border-white/[0.15] text-white placeholder:text-white/40 px-4 py-3 focus:outline-none focus:border-white/30 focus:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all"
-              />
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('lead', 'placeholder')}
+              required
+              className="flex-1 rounded-xl bg-white/[0.06] border border-white/[0.15] text-white placeholder:text-white/40 px-4 py-3 focus:outline-none focus:border-white/30 focus:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all" />
+
               <button type="submit" className="bg-[#d0f601] text-nexus-navy px-6 py-3 rounded-xl font-semibold hover:bg-[#bde001] transition-colors inline-flex items-center justify-center gap-2">
                 {t('lead', 'cta')} <ArrowRight size={16} />
               </button>
             </motion.form>
-          )}
+          }
           <p className="text-xs text-white/60 mt-4">{t('lead', 'disclaimer')}</p>
         </div>
       </section>
@@ -447,8 +447,8 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={viewportConfig}
-            className="text-section text-white text-center mb-14"
-          >
+            className="text-section text-white text-center mb-14">
+
             {t('process', 'title')}
           </motion.h2>
 
@@ -457,13 +457,13 @@ const Index = () => {
             initial="hidden"
             whileInView="visible"
             viewport={viewportConfig}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative"
-          >
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
+
             {/* Dashed connector (desktop) */}
             <div className="hidden lg:block absolute top-10 left-[8%] right-[8%] h-px border-t-2 border-dashed border-white/15 z-0" />
 
-            {processSteps.map((step, i) => (
-              <motion.div key={i} variants={fadeUpVariants} className="text-center relative z-10">
+            {processSteps.map((step, i) =>
+            <motion.div key={i} variants={fadeUpVariants} className="text-center relative z-10">
                 <div className="w-14 h-14 rounded-full bg-nexus-blue flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm">
                   {i + 1}
                 </div>
@@ -471,7 +471,7 @@ const Index = () => {
                 <h4 className="text-sm font-semibold text-white mb-1">{step.title}</h4>
                 <p className="text-xs text-white/50">{step.desc}</p>
               </motion.div>
-            ))}
+            )}
           </motion.div>
         </div>
       </section>
@@ -483,8 +483,8 @@ const Index = () => {
             variants={fadeUpVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportConfig}
-          >
+            viewport={viewportConfig}>
+
             <span className="text-[120px] leading-none text-nexus-electric/15 font-serif block -mb-10">"</span>
             <p className="text-2xl italic text-white/80 mb-8 leading-relaxed">
               {t('testimonial', 'quote')}
@@ -502,8 +502,8 @@ const Index = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportConfig}
-          >
+            viewport={viewportConfig}>
+
             <motion.h2 variants={fadeUpVariants} className="text-section text-white mb-4">
               {t('cta', 'title')}
             </motion.h2>
@@ -519,8 +519,8 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 };
 
 export default Index;

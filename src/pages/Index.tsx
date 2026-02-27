@@ -10,6 +10,7 @@ import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoAllfiber from '@/assets/logos/logo-allfiber.png';
 import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
+import logoNewClient from '@/assets/logos/logo-new-client.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -281,18 +282,20 @@ const Index = () => {
                 { src: logoAllfiber, name: 'All Fiber' },
                 { src: logoBigliaDesign, name: 'Biglia Design' },
                 { src: logoRevelliGroup, name: 'Revelli Group' },
+                { src: logoNewClient, name: 'Client' },
                 // Duplicate for seamless loop
                 { src: logoHomeleven, name: 'Homeleven' },
                 { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
                 { src: logoAllfiber, name: 'All Fiber' },
                 { src: logoBigliaDesign, name: 'Biglia Design' },
-                { src: logoRevelliGroup, name: 'Revelli Group' }].
+                { src: logoRevelliGroup, name: 'Revelli Group' },
+                { src: logoNewClient, name: 'Client' }].
                 map((logo, i) =>
                 <img
                   key={i}
                   src={logo.src}
                   alt={logo.name}
-                  className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale invert hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                  className="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
                   width={120}
                   height={48} />

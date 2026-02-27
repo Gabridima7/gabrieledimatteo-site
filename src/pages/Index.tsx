@@ -172,7 +172,7 @@ const Index = () => {
                 <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-[#d0f601] flex items-center justify-center hover:scale-105 transition-transform">
                   <ArrowRight size={20} className="text-black -rotate-45" />
                 </Link>
-                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base rounded-full bg-[#d0f601] hover:bg-[#bde001] text-nexus-navy">
+                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full bg-[#d0f601] hover:bg-[#bde001] text-nexus-navy whitespace-nowrap">
                   {t('hero', 'cta1')}
                   <ArrowRight size={18} />
                 </a>

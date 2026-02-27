@@ -19,6 +19,8 @@ import iconIntegrazioniApi from '@/assets/icons/icon-integrazioni-api.png';
 import iconWebsiteDesign from '@/assets/icons/icon-website-design.png';
 import iconWebsiteRedesign from '@/assets/icons/icon-website-redesign.webp';
 import iconRetainer from '@/assets/icons/icon-retainer.webp';
+import iconMvpDesign from '@/assets/icons/icon-mvp-design.webp';
+import iconProductRedesign from '@/assets/icons/icon-product-redesign.webp';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -216,8 +218,8 @@ const Navbar = () => {
                           </span>
                         </div>
                         <div className="flex-1 grid grid-cols-3 gap-4">
-                          <SolutionCard to="/soluzioni" icon={<Rocket size={20} strokeWidth={1.5} />} gradient="from-[#6366F1] to-[#4F46E5]" title={t('mega', 'mvp')} subtitle={lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'} desc={lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'} onClick={() => setMegaOpen(false)} />
-                          <SolutionCard to="/soluzioni" icon={<RefreshCw size={20} strokeWidth={1.5} />} gradient="from-[#F59E0B] to-[#D97706]" title={t('mega', 'redesign')} subtitle={lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'} desc={lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'} onClick={() => setMegaOpen(false)} />
+                          <SolutionCard to="/soluzioni" icon={<img src={iconMvpDesign} alt="MVP Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'mvp')} subtitle={lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'} desc={lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'} onClick={() => setMegaOpen(false)} />
+                          <SolutionCard to="/soluzioni" icon={<img src={iconProductRedesign} alt="Product Redesign" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'redesign')} subtitle={lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'} desc={lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'} onClick={() => setMegaOpen(false)} />
                           <SolutionCard to="/prenota-call" icon={<img src={iconRetainer} alt="Retainer" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'retainer')} subtitle={lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'} desc={lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'} onClick={() => setMegaOpen(false)} />
                         </div>
                       </div>

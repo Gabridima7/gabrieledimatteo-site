@@ -279,7 +279,7 @@ const Index = () => {
 
             {services.map((s, i) =>
             <motion.div key={i} variants={fadeUpVariants}>
-                <Link to={s.link} className="group block h-full relative rounded-[20px] border border-white/[0.1] bg-white/[0.03] backdrop-blur-md overflow-hidden transition-all duration-500 hover:border-[hsl(228,76%,45%)]/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(28,53,200,0.2)]">
+                <Link to={s.link} className="group block h-full relative rounded-[20px] border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[hsl(228,76%,45%)]/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(28,53,200,0.2)] hover:bg-white/[0.12]">
                   {/* Top glow effect */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-[hsl(228,76%,45%)] to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-20 bg-[hsl(228,76%,45%)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

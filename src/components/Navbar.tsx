@@ -9,7 +9,7 @@ import iconLandingPage from '@/assets/icons/icon-landing-page.png';
 import iconWebApp from '@/assets/icons/icon-web-app.webp';
 import iconSoftwareGestionale from '@/assets/icons/icon-software-gestionale.webp';
 import iconProdottoSaas from '@/assets/icons/icon-prodotto-saas.webp';
-import iconAiAutomation from '@/assets/icons/icon-ai-automation.webp';
+import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 

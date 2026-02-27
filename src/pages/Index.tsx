@@ -315,10 +315,9 @@ const Index = () => {
                 title: 'Processi automatizzati',
                 desc: 'Eliminiamo il lavoro ripetitivo con AI e automazioni su misura',
                 badges: [
-                  { name: 'n8n', logo: 'https://n8n.io/favicon.ico', top: '10%', left: '5%', right: undefined, rot: -6, delay: 0 },
-                  { name: 'Make', logo: 'https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/6baa5827-07ac-4a1e-b498-08568a446994/Make_Logo/w=128,quality=90,fit=scale-down', top: '0%', left: '45%', right: undefined, rot: 4, delay: 1.2 },
-                  { name: 'Claude', logo: 'https://www.anthropic.com/favicon.ico', top: '40%', left: '20%', right: undefined, rot: -3, delay: 0.6 },
-                  { name: 'Zapier', logo: 'https://zapier.com/favicon.ico', top: '15%', left: undefined, right: '5%', rot: 5, delay: 1.8 },
+                  { name: 'Claude', logo: 'https://www.anthropic.com/favicon.ico', bottom: '15%', left: '0%', top: undefined, right: undefined, rot: -8, delay: 0.6, size: 'lg' },
+                  { name: 'n8n', logo: 'https://n8n.io/favicon.ico', bottom: undefined, left: '15%', top: '10%', right: undefined, rot: -4, delay: 0, size: 'md' },
+                  { name: 'Make', logo: 'https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/6baa5827-07ac-4a1e-b498-08568a446994/Make_Logo/w=128,quality=90,fit=scale-down', bottom: undefined, left: undefined, top: '0%', right: '5%', rot: 6, delay: 1.2, size: 'md' },
                 ],
               },
               {
@@ -327,10 +326,9 @@ const Index = () => {
                 title: 'Dal brief al lancio',
                 desc: 'Dallo strategy call al sito live, in tempi certi e trasparenti',
                 badges: [
-                  { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', top: '5%', left: '0%', right: undefined, rot: -5, delay: 0.3 },
-                  { name: 'React', logo: 'https://react.dev/favicon.ico', top: '0%', left: '50%', right: undefined, rot: 6, delay: 1.5 },
-                  { name: 'Vercel', logo: 'https://vercel.com/favicon.ico', top: '45%', left: '10%', right: undefined, rot: -4, delay: 0.9 },
-                  { name: 'Supabase', logo: 'https://supabase.com/favicon.ico', top: '20%', left: undefined, right: '0%', rot: 3, delay: 2.1 },
+                  { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', bottom: '15%', left: '0%', top: undefined, right: undefined, rot: -6, delay: 0.3, size: 'lg' },
+                  { name: 'Vercel', logo: 'https://vercel.com/favicon.ico', bottom: undefined, left: '15%', top: '10%', right: undefined, rot: -3, delay: 0.9, size: 'md' },
+                  { name: 'React', logo: 'https://react.dev/favicon.ico', bottom: undefined, left: undefined, top: '0%', right: '5%', rot: 5, delay: 1.5, size: 'md' },
                 ],
               },
               {
@@ -339,10 +337,9 @@ const Index = () => {
                 title: 'Nessun template',
                 desc: 'Ogni progetto è progettato da zero sulla tua identità e obiettivi',
                 badges: [
-                  { name: 'Figma', logo: 'https://figma.com/favicon.ico', top: '8%', left: '5%', right: undefined, rot: -7, delay: 0.5 },
-                  { name: 'Framer', logo: 'https://framer.com/favicon.ico', top: '5%', left: '48%', right: undefined, rot: 5, delay: 1.3 },
-                  { name: 'Tailwind', logo: 'https://tailwindcss.com/favicon.ico', top: '42%', left: '15%', right: undefined, rot: -3, delay: 0.8 },
-                  { name: 'Canva Pro', logo: 'https://canva.com/favicon.ico', top: '18%', left: undefined, right: '2%', rot: 4, delay: 1.9 },
+                  { name: 'Figma', logo: 'https://figma.com/favicon.ico', bottom: '15%', left: '0%', top: undefined, right: undefined, rot: -7, delay: 0.5, size: 'lg' },
+                  { name: 'Tailwind', logo: 'https://tailwindcss.com/favicon.ico', bottom: undefined, left: '15%', top: '10%', right: undefined, rot: -4, delay: 0.8, size: 'md' },
+                  { name: 'Framer', logo: 'https://framer.com/favicon.ico', bottom: undefined, left: undefined, top: '0%', right: '5%', rot: 5, delay: 1.3, size: 'md' },
                 ],
               },
             ].map((col, colIdx) => (
@@ -357,7 +354,7 @@ const Index = () => {
                 }`}
               >
                 {/* Upper area with metric + floating badges */}
-                <div className="relative min-h-[180px]">
+                <div className="relative h-[200px]">
                   {/* Large background metric */}
                   <span
                     className="absolute bottom-0 left-0 font-extrabold text-white/[0.07] leading-none select-none z-0"
@@ -371,9 +368,10 @@ const Index = () => {
                     {col.badges.map((badge, bIdx) => (
                       <motion.div
                         key={bIdx}
-                        className="absolute z-[1]"
+                        className={`absolute ${badge.size === 'lg' ? 'z-[2]' : 'z-[3]'}`}
                         style={{
                           top: badge.top,
+                          bottom: badge.bottom,
                           left: badge.left,
                           right: badge.right,
                           ['--rotation' as string]: `${badge.rot}deg`,
@@ -383,7 +381,8 @@ const Index = () => {
                         whileHover={{ y: -6, scale: 1.05, rotate: badge.rot > 0 ? badge.rot + 2 : badge.rot - 2 }}
                         transition={{ type: 'spring', stiffness: 400, damping: 15 }}
                       >
-                        <div className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[rgba(20,20,35,0.85)] backdrop-blur-[12px] border border-white/[0.12] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/[0.3] hover:shadow-[0_12px_32px_rgba(28,53,200,0.35)] transition-all duration-300"
+                        <div
+                          className={`flex items-center gap-2 ${badge.size === 'lg' ? 'px-[18px] py-2.5' : 'px-3.5 py-2'} rounded-full bg-[rgba(20,20,35,0.85)] backdrop-blur-[12px] border border-white/[0.12] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/[0.3] hover:shadow-[0_12px_32px_rgba(28,53,200,0.35)] transition-all duration-300`}
                           style={{ transform: `rotate(${badge.rot}deg)` }}
                         >
                           <img

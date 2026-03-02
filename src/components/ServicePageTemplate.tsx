@@ -51,7 +51,7 @@ const whyNexus: { icon?: typeof Clock; image?: string; title: string; desc: stri
   { image: iconConsegnaTempi, title: "Consegna nei tempi", desc: "Rispettiamo sempre le scadenze concordate." },
   { image: iconComunicazioneDiretta, title: "Comunicazione diretta", desc: "Parli sempre con Gabriele, mai con intermediari." },
   { icon: ShieldCheck, title: "Codice di tua proprietà", desc: "Tutto il codice sviluppato è al 100% tuo." },
-  { icon: Headphones, title: "Supporto post-lancio", desc: "Non spariscono dopo la consegna." },
+  { icon: Headphones, title: "Supporto post-lancio", desc: "Ti accompagniamo anche dopo la consegna." },
 ];
 
 /* ── FAQ Accordion Item ── */

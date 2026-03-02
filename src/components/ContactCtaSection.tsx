@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import { useLanguage } from '@/context/LanguageContext';
-import { Mail, ArrowRight } from 'lucide-react';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { ArrowRight } from 'lucide-react';
+import { useApplicationForm } from '@/context/ApplicationFormContext';
 
 const ContactCtaSection = () => {
   const { t } = useLanguage();
+  const { openApplicationForm } = useApplicationForm();
 
   return (
     <section className="py-20 md:py-28">
@@ -52,20 +52,18 @@ const ContactCtaSection = () => {
               {t('contactCta', 'cardLabel')}
             </p>
             <a
-              href="mailto:info@nexusagency.it"
+              href="mailto:recruiters@nexusagency.it"
               className="text-white text-lg md:text-xl font-semibold italic font-serif-accent hover:text-white/80 transition-colors mb-6"
             >
               recruiters@nexusagency.it
             </a>
-            <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openApplicationForm}
               className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#bde000] text-[#111827] font-semibold px-7 py-3 rounded-full text-[14px] transition-colors"
             >
               {t('contactCta', 'bookCall')}
               <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>

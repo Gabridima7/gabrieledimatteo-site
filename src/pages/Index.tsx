@@ -12,6 +12,7 @@ import iconFramer from '@/assets/icons/icon-framer.svg';
 import heroNexus from '@/assets/hero-nexus.png';
 import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
+import ServicesGrid from '@/components/ServicesGrid';
 import SEOHead from '@/components/SEOHead';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
@@ -431,6 +432,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ─── SERVICES GRID (arounda style) ─── */}
+      <ServicesGrid />
 
       {/* ─── CASE STUDIES ─── */}
       <section className="py-24 border-t border-white/[0.06]">

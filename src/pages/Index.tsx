@@ -21,6 +21,7 @@ import logoBigliaDesign from '@/assets/logos/logo-biglia-design.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 import logoNewClient from '@/assets/logos/logo-new-client.png';
 import logoOneUp from '@/assets/logos/logo-oneup.png';
+import coverHomeleven from '@/assets/cover-homeleven.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -99,7 +100,7 @@ const Index = () => {
 
 
   const caseStudies = [
-  { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio' },
+  { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio', cover: coverHomeleven },
   { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio' },
   { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio' }];
 
@@ -458,9 +459,13 @@ const Index = () => {
             {caseStudies.map((c, i) =>
             <motion.div key={i} variants={fadeUpVariants}>
                 <Link to={c.link} className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-                  {/* Placeholder cover */}
-                  <div className="aspect-video bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative">
-                    <div className="absolute inset-0 flex items-center justify-center text-white/30 text-2xl font-bold">{c.title}</div>
+                  {/* Cover */}
+                  <div className="aspect-video bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative overflow-hidden">
+                    {c.cover ? (
+                      <img src={c.cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center text-white/30 text-2xl font-bold">{c.title}</div>
+                    )}
                   </div>
                   <div className="p-6">
                     <span className="badge-pill mb-3 inline-block">{c.badge}</span>

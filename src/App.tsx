@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
+import { ApplicationFormProvider } from "./context/ApplicationFormContext";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 
@@ -36,6 +37,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
+      <ApplicationFormProvider>
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -71,6 +73,7 @@ const App = () => (
           </Layout>
         </BrowserRouter>
       </TooltipProvider>
+      </ApplicationFormProvider>
     </LanguageProvider>
   </QueryClientProvider>
 );

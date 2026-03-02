@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, Youtube, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useApplicationForm } from '@/context/ApplicationFormContext';
 import logo from '@/assets/logo-nexus.png';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
 const Footer = () => {
   const { t } = useLanguage();
+  const { openApplicationForm } = useApplicationForm();
 
   return (
     <footer className="border-t border-white/[0.06]">
       <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -49,6 +49,22 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Company</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/casi-studio" className="text-nexus-gray hover:text-white transition-colors">Works</Link></li>
+              <li><Link to="/chi-siamo" className="text-nexus-gray hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/templates" className="text-nexus-gray hover:text-white transition-colors">Blog</Link></li>
+              <li>
+                <button onClick={openApplicationForm} className="text-nexus-gray hover:text-white transition-colors">
+                  Lavora con noi
+                </button>
+              </li>
+              <li><Link to="/contatti" className="text-nexus-gray hover:text-white transition-colors">{t('footer', 'contattaci')}</Link></li>
+            </ul>
+          </div>
+
           {/* Contatti */}
           <div>
             <h4 className="font-semibold text-white mb-4">{t('footer', 'contatti')}</h4>
@@ -73,8 +89,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 };
 
 export default Footer;

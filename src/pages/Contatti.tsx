@@ -10,6 +10,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import TrustBar from '@/components/TrustBar';
 import NextStepsSection from '@/components/NextStepsSection';
 import ContactTestimonial from '@/components/ContactTestimonial';
+import ContactCtaSection from '@/components/ContactCtaSection';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -256,6 +257,9 @@ const Contatti = () => {
 
         {/* Testimonial */}
         <ContactTestimonial />
+
+        {/* CTA Section */}
+        <ContactCtaSection />
       </div>
     </>);
 };

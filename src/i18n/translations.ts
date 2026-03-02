@@ -176,6 +176,14 @@ export const translations = {
     seoTitle: { it: 'Contatti — NEXUS Agency', en: 'Contact — NEXUS Agency' },
     seoDesc: { it: 'Contattaci per discutere il tuo progetto. Rispondiamo entro 12 ore.', en: 'Contact us to discuss your project. We reply within 12 hours.' },
   },
+  contactCta: {
+    titlePre: { it: 'Creiamo insieme prodotti digitali', en: "Let's create" },
+    titleItalic: { it: 'straordinari', en: 'outstanding' },
+    titlePost: { it: 'insieme!', en: 'digital products together!' },
+    imageAlt: { it: 'Team al lavoro', en: 'Team at work' },
+    cardLabel: { it: 'Inizia ora', en: 'Get started' },
+    bookCall: { it: 'Prenota una call', en: 'Book a call' },
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;

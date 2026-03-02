@@ -544,12 +544,20 @@ const Index = () => {
             viewport={viewportConfig}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative">
 
-            {/* Dashed connector (desktop) */}
-            <div className="hidden lg:block absolute top-10 left-[8%] right-[8%] h-px border-t-2 border-dashed border-white/15 z-0" />
+            {/* Dashed connector (desktop) — vertically centered on the 56px circles */}
+            <div className="hidden lg:block absolute top-[28px] left-[8%] right-[8%] h-px border-t-2 border-dashed border-white/15 z-0" />
 
             {processSteps.map((step, i) =>
             <motion.div key={i} variants={fadeUpVariants} className="text-center relative z-10">
-                <div className="w-14 h-14 rounded-full bg-nexus-blue flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm">
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm border border-white/20"
+                  style={{
+                    background: 'rgba(28, 53, 200, 0.25)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    boxShadow: '0 4px 20px rgba(28, 53, 200, 0.3), inset 0 1px 0 rgba(255,255,255,0.15)',
+                  }}
+                >
                   {i + 1}
                 </div>
                 <step.icon size={20} className="text-nexus-electric mx-auto mb-2" />

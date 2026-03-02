@@ -54,10 +54,10 @@ const NextStepsSection = () => {
                   transition={{ delay: i * 0.1 }}
                   className="relative lg:px-6 first:lg:pl-0 last:lg:pr-0"
                 >
-                  {/* Downward notch/triangle */}
-                  <div className="hidden lg:block absolute top-0 left-6 first:left-0">
-                    <svg width="16" height="10" viewBox="0 0 16 10" className="text-white/15">
-                      <path d="M0 0 L8 10 L16 0" fill="none" stroke="currentColor" strokeWidth="1" />
+                  {/* Downward notch — curved funnel shape */}
+                  <div className="hidden lg:block absolute -top-px left-8">
+                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none">
+                      <path d="M0 0 C0 0, 8 0, 12 18 C16 0, 24 0, 24 0" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
                     </svg>
                   </div>
 

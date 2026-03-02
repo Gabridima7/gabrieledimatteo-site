@@ -1,4 +1,4 @@
-import { Search, Target, BarChart3, ClipboardCheck, Eye, FileText, Rocket, TrendingUp, AlertCircle } from 'lucide-react';
+import { ClipboardCheck, Eye, TrendingUp, AlertCircle } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const ProductAuditService = () => (
@@ -25,10 +25,10 @@ const ProductAuditService = () => (
       { icon: TrendingUp, title: 'Roadmap prioritizzata', desc: 'Piano di azione concreto con priorità basate sull\'impatto.' },
     ]}
     process={[
-      { icon: ClipboardCheck, title: 'Raccolta dati', desc: 'Analizziamo analytics, heatmap e comportamenti utente.' },
-      { icon: Search, title: 'Analisi euristica', desc: 'Valutiamo usabilità secondo best practice.' },
-      { icon: FileText, title: 'Report', desc: 'Documento dettagliato con insights e raccomandazioni.' },
-      { icon: Rocket, title: 'Presentazione', desc: 'Call di presentazione con Q&A e prossimi passi.' },
+      { title: 'Raccolta dati', items: ['Analytics review', 'Heatmap analysis', 'Comportamenti utente'] },
+      { title: 'Analisi euristica', items: ['Valutazione usabilità', 'Best practice check', 'Accessibility audit'] },
+      { title: 'Report & insights', items: ['Documento dettagliato', 'Screenshot annotati', 'Roadmap prioritizzata'] },
+      { title: 'Presentazione', items: ['Call dedicata', 'Q&A', 'Prossimi passi'] },
     ]}
     outcomes={['Problemi di usabilità identificati', 'Roadmap di miglioramento chiara', 'Insights basati su dati reali', 'Aumento delle conversioni', 'Esperienza utente migliorata']}
     outcomesCtaText="Prenota il tuo audit"

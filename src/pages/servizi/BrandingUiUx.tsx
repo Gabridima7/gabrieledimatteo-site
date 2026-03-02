@@ -1,4 +1,4 @@
-import { Palette, Layout, Smartphone, RefreshCw, Search, PenTool, Eye, Rocket } from 'lucide-react';
+import { Palette, Layout, RefreshCw, Eye } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const BrandingUiUx = () => (
@@ -26,10 +26,10 @@ const BrandingUiUx = () => (
       { icon: RefreshCw, title: 'Coerenza totale', desc: 'Brand guideline per mantenere coerenza su ogni touchpoint.' },
     ]}
     process={[
-      { icon: Search, title: 'Ricerca', desc: 'Analizziamo brand, mercato e competitors.' },
-      { icon: PenTool, title: 'Concept', desc: 'Creiamo moodboard e proposte creative.' },
-      { icon: Palette, title: 'Design', desc: 'Sviluppiamo l\'identità visiva completa.' },
-      { icon: Rocket, title: 'Delivery', desc: 'Consegniamo tutti gli asset e le guideline.' },
+      { title: 'Brand Research', items: ['Analisi brand attuale', 'Competitors & mercato', 'Target audience'] },
+      { title: 'Concept & Moodboard', items: ['Moodboard visivo', 'Proposte creative', 'Direzione stilistica'] },
+      { title: 'Design System', items: ['Logo & varianti', 'Palette & tipografia', 'UI components', 'Brand guideline'] },
+      { title: 'Delivery', items: ['Asset finali', 'Documentazione', 'Template social'] },
     ]}
     outcomes={['Identità visiva professionale', 'Aumento della brand awareness', 'Design coerente su ogni canale', 'Maggiore fiducia dei clienti', 'Interfacce ad alta conversione']}
     outcomesCtaText="Rinnova il tuo brand"

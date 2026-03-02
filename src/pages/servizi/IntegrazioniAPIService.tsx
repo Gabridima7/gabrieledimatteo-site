@@ -1,4 +1,4 @@
-import { Plug, Link2, Database, Search, Settings, Code, Rocket, Workflow, RefreshCw } from 'lucide-react';
+import { Plug, Link2, Database, RefreshCw } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const IntegrazioniAPIService = () => (
@@ -25,10 +25,10 @@ const IntegrazioniAPIService = () => (
       { icon: Database, title: 'Single source of truth', desc: 'Un unico punto di verità per tutti i tuoi dati aziendali.' },
     ]}
     process={[
-      { icon: Search, title: 'Mappatura', desc: 'Analizziamo i tuoi sistemi e i flussi di dati.' },
-      { icon: Settings, title: 'Architettura', desc: 'Progettiamo le integrazioni e i flussi.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Implementiamo le API e i webhook.' },
-      { icon: Rocket, title: 'Go-live', desc: 'Attiviamo, testiamo e monitoriamo.' },
+      { title: 'Mappatura sistemi', items: ['Audit tool esistenti', 'Flussi dati attuali', 'Requisiti integrazione'] },
+      { title: 'Architettura', items: ['Design API', 'Definizione endpoint', 'Schema dati'] },
+      { title: 'Sviluppo & test', items: ['Implementazione API', 'Webhook & sync', 'Testing end-to-end'] },
+      { title: 'Go-live & monitoring', items: ['Attivazione', 'Alert & logging', 'Manutenzione'] },
     ]}
     outcomes={['Eliminazione del data entry manuale', 'Dati sincronizzati in tempo reale', 'Zero errori di trascrizione', 'Visione unificata del business', 'Processi automatizzati end-to-end']}
     outcomesCtaText="Collega i tuoi sistemi"

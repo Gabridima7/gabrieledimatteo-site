@@ -1,4 +1,4 @@
-import { Layers, Rocket, TrendingUp, Search, PenTool, Code, BarChart3, Zap, Users } from 'lucide-react';
+import { Rocket, TrendingUp, Zap, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const ProdottoSaaSService = () => (
@@ -25,10 +25,10 @@ const ProdottoSaaSService = () => (
       { icon: TrendingUp, title: 'Revenue model integrato', desc: 'Stripe, billing e subscription management inclusi.' },
     ]}
     process={[
-      { icon: Search, title: 'Validazione', desc: 'Analizziamo mercato, competitors e product-market fit.' },
-      { icon: PenTool, title: 'MVP Design', desc: 'Progettiamo le feature core per il lancio.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo la MVP con stack scalabile.' },
-      { icon: Rocket, title: 'Lancio', desc: 'Go-to-market con onboarding e billing.' },
+      { title: 'Validazione idea', items: ['Analisi mercato', 'Competitors', 'Product-market fit'] },
+      { title: 'MVP Design', items: ['Feature core', 'User flow', 'Prototipo clickable'] },
+      { title: 'Sviluppo MVP', items: ['Stack scalabile', 'Multi-tenant', 'Stripe billing'] },
+      { title: 'Go-to-market', items: ['Onboarding automatico', 'Analytics', 'Iterazione continua'] },
     ]}
     outcomes={['MVP validata sul mercato', 'Architettura scalabile', 'Revenue ricorrente (MRR)', 'Onboarding utenti automatizzato', 'Dashboard analytics integrata']}
     outcomesCtaText="Lancia il tuo SaaS"

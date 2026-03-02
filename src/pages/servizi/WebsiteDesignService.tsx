@@ -1,4 +1,4 @@
-import { Globe, Palette, Zap, Search, PenTool, Code, Rocket, Eye, BarChart3 } from 'lucide-react';
+import { Globe, Zap, Eye, BarChart3 } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const WebsiteDesignService = () => (
@@ -26,10 +26,10 @@ const WebsiteDesignService = () => (
       { icon: BarChart3, title: 'Conversione', desc: 'Layout e copy progettati per generare contatti e vendite.' },
     ]}
     process={[
-      { icon: Search, title: 'Analisi', desc: 'Studiamo brand, competitors e obiettivi.' },
-      { icon: PenTool, title: 'Design', desc: 'Creiamo mockup e prototipi del nuovo sito.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo con focus su velocità e SEO.' },
-      { icon: Rocket, title: 'Lancio', desc: 'Go-live con monitoraggio e ottimizzazione.' },
+      { title: 'Analisi & briefing', items: ['Studio brand', 'Analisi competitors', 'Definizione obiettivi'] },
+      { title: 'Design', items: ['Moodboard', 'Mockup pagine', 'Prototipi interattivi'] },
+      { title: 'Sviluppo', items: ['Codifica responsive', 'Ottimizzazione SEO', 'Performance tuning'] },
+      { title: 'Lancio', items: ['Go-live', 'Monitoraggio', 'Ottimizzazione continua'] },
     ]}
     outcomes={['Sito web professionale e moderno', 'Ottimizzazione SEO integrata', 'Velocità di caricamento top', 'Lead generation efficace', 'Compatibilità cross-browser']}
     outcomesCtaText="Rinnova il tuo sito"

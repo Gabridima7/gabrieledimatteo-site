@@ -1,4 +1,4 @@
-import { Globe, Zap, BarChart3, Search, PenTool, Code, Rocket, Target, MousePointerClick } from 'lucide-react';
+import { Zap, BarChart3, Target, MousePointerClick } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const LandingPageService = () => (
@@ -25,10 +25,10 @@ const LandingPageService = () => (
       { icon: BarChart3, title: 'A/B testing ready', desc: 'Struttura pronta per test e ottimizzazioni continue.' },
     ]}
     process={[
-      { icon: Search, title: 'Briefing', desc: 'Definiamo obiettivi, target e messaging.' },
-      { icon: PenTool, title: 'Design', desc: 'Progettiamo layout e copy persuasivo.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo con focus su performance.' },
-      { icon: Rocket, title: 'Lancio', desc: 'Pubblichiamo e monitoriamo le metriche.' },
+      { title: 'Briefing & strategia', items: ['Obiettivi campagna', 'Target audience', 'Messaging & USP'] },
+      { title: 'Design & copy', items: ['Layout wireframe', 'Copywriting persuasivo', 'Visual design'] },
+      { title: 'Sviluppo', items: ['Codifica responsive', 'Ottimizzazione velocità', 'Tracking & pixel'] },
+      { title: 'Lancio & test', items: ['Go-live', 'A/B testing', 'Monitoring conversioni'] },
     ]}
     outcomes={['Tasso di conversione elevato', 'Costo per acquisizione ridotto', 'Pagina veloce e SEO-friendly', 'Design professionale e persuasivo', 'Tracking e analytics integrati']}
     outcomesCtaText="Crea la tua landing page"

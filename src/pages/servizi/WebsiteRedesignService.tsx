@@ -1,4 +1,4 @@
-import { RefreshCw, TrendingUp, Zap, Search, PenTool, Code, Rocket, Eye } from 'lucide-react';
+import { RefreshCw, TrendingUp, Zap, Eye } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const WebsiteRedesignService = () => (
@@ -25,10 +25,10 @@ const WebsiteRedesignService = () => (
       { icon: TrendingUp, title: 'Più conversioni', desc: 'Layout e UX progettati per trasformare visitatori in clienti.' },
     ]}
     process={[
-      { icon: Search, title: 'Audit', desc: 'Analizziamo il sito attuale e identifichiamo le criticità.' },
-      { icon: PenTool, title: 'Redesign', desc: 'Progettiamo il nuovo design e la nuova UX.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo il nuovo sito con zero downtime.' },
-      { icon: Rocket, title: 'Migrazione', desc: 'Migriamo contenuti e redirect SEO.' },
+      { title: 'Audit sito attuale', items: ['Analisi performance', 'Audit UX/UI', 'SEO check', 'Analytics review'] },
+      { title: 'Redesign', items: ['Nuovo design', 'Nuova UX', 'Prototipi'] },
+      { title: 'Sviluppo', items: ['Codifica nuovo sito', 'Migrazione contenuti', 'Redirect 301'] },
+      { title: 'Go-live', items: ['Zero downtime switch', 'Monitoring', 'Ottimizzazione'] },
     ]}
     outcomes={['Sito moderno e professionale', 'Velocità di caricamento migliorata', 'SEO preservato e migliorato', 'Più lead e conversioni', 'Design responsive aggiornato']}
     outcomesCtaText="Rinnova il tuo sito"

@@ -1,4 +1,4 @@
-import { PenTool, Eye, Layout, Search, Palette, Code, Rocket, MousePointerClick, Users } from 'lucide-react';
+import { PenTool, Eye, MousePointerClick, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const UIUXDesignService = () => (
@@ -25,10 +25,10 @@ const UIUXDesignService = () => (
       { icon: Users, title: 'User-centered', desc: 'Design centrato sugli utenti reali del tuo prodotto.' },
     ]}
     process={[
-      { icon: Search, title: 'UX Research', desc: 'Analizziamo utenti, flussi e pain points.' },
-      { icon: Layout, title: 'Wireframe', desc: 'Strutturiamo layout e architettura informativa.' },
-      { icon: Palette, title: 'UI Design', desc: 'Creiamo il visual design in alta fedeltà.' },
-      { icon: Rocket, title: 'Handoff', desc: 'Consegniamo file Figma pronti per lo sviluppo.' },
+      { title: 'UX Research', items: ['Interviste utenti', 'Analisi flussi', 'Personas & journey map'] },
+      { title: 'Wireframe & IA', items: ['Architettura informativa', 'Wireframe low-fi', 'Prototipi navigabili'] },
+      { title: 'UI Design', items: ['Visual design hi-fi', 'Design system', 'Micro-interazioni'] },
+      { title: 'Handoff & test', items: ['File Figma dev-ready', 'Specifiche tecniche', 'User testing'] },
     ]}
     outcomes={['Interfaccia intuitiva e moderna', 'Aumento delle conversioni', 'Riduzione dei ticket di supporto', 'Maggiore retention degli utenti', 'Design system consistente']}
     outcomesCtaText="Migliora la tua UX"

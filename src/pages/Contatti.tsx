@@ -8,6 +8,8 @@ import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import checkmarkIcon from '@/assets/icons/icon-checkmark-green.png';
 import { useLanguage } from '@/context/LanguageContext';
 import TrustBar from '@/components/TrustBar';
+import NextStepsSection from '@/components/NextStepsSection';
+import ContactTestimonial from '@/components/ContactTestimonial';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -248,6 +250,12 @@ const Contatti = () => {
 
         {/* Trust Bar */}
         <TrustBar />
+
+        {/* Next Steps */}
+        <NextStepsSection />
+
+        {/* Testimonial */}
+        <ContactTestimonial />
       </div>
     </>);
 };

@@ -130,6 +130,27 @@ export const translations = {
     privacy: { it: 'Privacy Policy', en: 'Privacy Policy' },
     cookie: { it: 'Cookie Policy', en: 'Cookie Policy' },
   },
+  // Next Steps
+  nextSteps: {
+    title: { it: 'Quali sono i', en: 'What are the' },
+    titleItalic: { it: 'prossimi passi?', en: 'next steps?' },
+    s1Label: { it: 'STEP 1', en: 'STEP 1' },
+    s1Desc: { it: 'Un nostro referente ti contatta entro 24 ore.', en: 'Our representative contacts you within 24 hours.' },
+    s2Label: { it: 'STEP 2', en: 'STEP 2' },
+    s2Desc: { it: 'Chiariamo i dettagli del progetto e i requisiti necessari.', en: 'We clarify project details and necessary requirements from you.' },
+    s3Label: { it: 'STEP 3', en: 'STEP 3' },
+    s3Desc: { it: 'Analizziamo i requisiti raccolti e prepariamo il brief.', en: 'We analyze and review collected requirements and form up the brief.' },
+    s4Label: { it: 'STEP 4', en: 'STEP 4' },
+    s4Desc: { it: 'Elaboriamo le stime e ti presentiamo la proposta.', en: 'We form up the estimates and present you the proposal.' },
+  },
+  // Contact Testimonial
+  contactTestimonial: {
+    quotePre: { it: 'NEXUS ha trasformato il nostro modo di lavorare. Professionalità, velocità e attenzione ai dettagli. ', en: 'Throughout the entire project all I saw was sheer will to keep pushing forward and adapting to whatever the next request was. ' },
+    quoteHighlight: { it: 'Risultati eccezionali', en: 'Terrific job' },
+    quotePost: { it: ' e non avremmo potuto farcela senza di loro.', en: ' and we couldn\'t have done it without you.' },
+    name: { it: 'Marco R.', en: 'Marco R.' },
+    role: { it: 'CEO, Homeleven', en: 'CEO, Homeleven' },
+  },
   // Contatti
   contatti: {
     breadcrumb: { it: 'Contatti', en: 'Contact' },

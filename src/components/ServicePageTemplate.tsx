@@ -6,6 +6,7 @@ import SEOHead from '@/components/SEOHead';
 import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.png';
 import iconCodiceProprieta from '@/assets/icons/icon-codice-proprieta.png';
+import iconSupportoPostLancio from '@/assets/icons/icon-supporto-post-lancio.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -52,7 +53,7 @@ const whyNexus: { icon?: typeof Clock; image?: string; title: string; desc: stri
   { image: iconConsegnaTempi, title: "Consegna nei tempi", desc: "Rispettiamo sempre le scadenze concordate." },
   { image: iconComunicazioneDiretta, title: "Comunicazione diretta", desc: "Parli sempre con Gabriele, mai con intermediari." },
   { image: iconCodiceProprieta, title: "Codice di tua proprietà", desc: "Tutto il codice sviluppato è al 100% tuo." },
-  { icon: Headphones, title: "Supporto post-lancio", desc: "Ti accompagniamo anche dopo la consegna." },
+  { image: iconSupportoPostLancio, title: "Supporto post-lancio", desc: "Ti accompagniamo anche dopo la consegna." },
 ];
 
 /* ── FAQ Accordion Item ── */

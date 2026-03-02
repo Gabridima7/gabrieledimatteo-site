@@ -182,7 +182,7 @@ export const translations = {
     titlePost: { it: 'insieme!', en: 'digital products together!' },
     imageAlt: { it: 'Team al lavoro', en: 'Team at work' },
     cardLabel: { it: 'Lavora con noi', en: 'Work with us' },
-    bookCall: { it: 'Prenota una call', en: 'Book a call' },
+    bookCall: { it: 'Candidati ora', en: 'Apply now' },
   },
   contactFaq: {
     title: { it: 'Domande frequenti', en: 'Frequently asked questions' },

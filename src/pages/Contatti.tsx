@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import SEOHead from '@/components/SEOHead';
 import founderImg from '@/assets/founder-gd.png';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
+import checkmarkIcon from '@/assets/icons/icon-checkmark-green.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -105,7 +106,7 @@ const Contatti = () => {
                     'Accesso diretto a specialisti dedicati'].
                     map((item, i) =>
                     <li key={i} className="flex items-center gap-3">
-                        <CheckCircle className="text-primary shrink-0" size={20} />
+                        <img src={checkmarkIcon} alt="" className="w-5 h-5 shrink-0" />
                         <span className="text-white/90 text-[15px] font-medium">{item}</span>
                       </li>
                     )}

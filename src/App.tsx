@@ -19,6 +19,17 @@ import SviluppoWebApp from "./pages/servizi/SviluppoWebApp";
 import AiAutomation from "./pages/servizi/AiAutomation";
 import ConsulenzaDigitale from "./pages/servizi/ConsulenzaDigitale";
 import BrandingUiUx from "./pages/servizi/BrandingUiUx";
+import LandingPageService from "./pages/servizi/LandingPageService";
+import WebAppService from "./pages/servizi/WebAppService";
+import SoftwareGestionaleService from "./pages/servizi/SoftwareGestionaleService";
+import ProdottoSaaSService from "./pages/servizi/ProdottoSaaSService";
+import AIChatbotService from "./pages/servizi/AIChatbotService";
+import IntegrazioniAPIService from "./pages/servizi/IntegrazioniAPIService";
+import UIUXDesignService from "./pages/servizi/UIUXDesignService";
+import WebsiteDesignService from "./pages/servizi/WebsiteDesignService";
+import MobileAppDesignService from "./pages/servizi/MobileAppDesignService";
+import WebsiteRedesignService from "./pages/servizi/WebsiteRedesignService";
+import ProductAuditService from "./pages/servizi/ProductAuditService";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +55,17 @@ const App = () => (
               <Route path="/servizi/ai-automation" element={<AiAutomation />} />
               <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />
               <Route path="/servizi/branding-ui-ux" element={<BrandingUiUx />} />
+              <Route path="/servizi/landing-page" element={<LandingPageService />} />
+              <Route path="/servizi/web-app" element={<WebAppService />} />
+              <Route path="/servizi/software-gestionale" element={<SoftwareGestionaleService />} />
+              <Route path="/servizi/prodotto-saas" element={<ProdottoSaaSService />} />
+              <Route path="/servizi/ai-chatbot" element={<AIChatbotService />} />
+              <Route path="/servizi/integrazioni-api" element={<IntegrazioniAPIService />} />
+              <Route path="/servizi/ui-ux-design" element={<UIUXDesignService />} />
+              <Route path="/servizi/website-design" element={<WebsiteDesignService />} />
+              <Route path="/servizi/mobile-app-design" element={<MobileAppDesignService />} />
+              <Route path="/servizi/website-redesign" element={<WebsiteRedesignService />} />
+              <Route path="/servizi/product-audit" element={<ProductAuditService />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

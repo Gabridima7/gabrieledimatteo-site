@@ -30,7 +30,7 @@ export interface ServicePageProps {
   caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string }[];
   ctaBannerText: string;
   benefits: { icon: LucideIcon; title: string; desc: string }[];
-  process: { icon: LucideIcon; title: string; desc: string }[];
+  process: { title: string; items: string[] }[];
   outcomes: string[];
   outcomesCtaText: string;
   faqs: { q: string; a: string }[];
@@ -235,24 +235,63 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         {/* ═══ 6 — PROCESSO ═══ */}
         <section className="py-24">
           <div className="section-container">
-            <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+            <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
               Il nostro processo per {props.badge}
             </motion.h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-              {/* Dashed line desktop */}
-              <div className="hidden lg:block absolute top-6 left-[12.5%] right-[12.5%] h-px" style={{ borderTop: '2px dashed rgba(28,53,200,0.4)' }} />
-              {props.process.map((p, i) => {
-                const Icon = p.icon;
+            <motion.p {...fadeUp} className="text-center text-lg max-w-[700px] mx-auto mb-16" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              Un processo collaudato che copre ogni fase, dalla ricerca al supporto continuo.
+            </motion.p>
+            <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              {props.process.map((stage, i) => {
+                // Gradient shifts per stage: teal → blue → purple
+                const gradients = [
+                  'linear-gradient(135deg, #2dd4bf, #14b8a6)',
+                  'linear-gradient(135deg, #14b8a6, #3b82f6)',
+                  'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                  'linear-gradient(135deg, #8b5cf6, #c084fc)',
+                ];
                 return (
-                  <motion.div key={i} {...stagger(i)} className="text-center relative">
-                    <div className="w-12 h-12 rounded-full bg-primary text-white font-bold flex items-center justify-center mx-auto text-lg relative z-10">{i + 1}</div>
-                    <Icon size={24} className="mx-auto mt-3" style={{ color: 'rgba(255,255,255,0.5)' }} />
-                    <h3 className="text-base font-semibold text-white mt-4">{p.title}</h3>
-                    <p className="text-[13px] mt-2 max-w-[180px] mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>{p.desc}</p>
-                  </motion.div>
+                  <div
+                    key={i}
+                    className="relative pt-8 pb-8 px-4 lg:px-5"
+                    style={{
+                      borderRight: i < props.process.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                      borderBottom: '1px solid rgba(255,255,255,0.1)',
+                    }}
+                  >
+                    {/* Stage connector tick mark */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-4" style={{ background: 'rgba(255,255,255,0.2)' }} />
+                    {/* Stage label */}
+                    <p className="text-[13px] font-medium tracking-widest uppercase mb-6 text-center" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                      Stage {i + 1}
+                    </p>
+                    {/* Gradient title pill */}
+                    <div
+                      className="rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mb-5 mx-auto max-w-[220px]"
+                      style={{ background: gradients[i % gradients.length] }}
+                    >
+                      {stage.title}
+                    </div>
+                    {/* Sub-items */}
+                    <div className="flex flex-col gap-2.5">
+                      {stage.items.map((item, j) => (
+                        <div
+                          key={j}
+                          className="rounded-full px-4 py-2 text-[13px] text-center mx-auto max-w-[220px] w-full"
+                          style={{
+                            border: '1px solid rgba(255,255,255,0.12)',
+                            color: 'rgba(255,255,255,0.65)',
+                            background: 'rgba(255,255,255,0.03)',
+                          }}
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </section>
 

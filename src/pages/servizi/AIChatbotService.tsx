@@ -1,4 +1,4 @@
-import { MessageSquare, Bot, Brain, Search, Settings, Code, Rocket, Zap, Clock } from 'lucide-react';
+import { Bot, Brain, Zap, Clock } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const AIChatbotService = () => (
@@ -25,10 +25,10 @@ const AIChatbotService = () => (
       { icon: Zap, title: 'Lead generation', desc: 'Qualifica i lead automaticamente e li passa al team vendite.' },
     ]}
     process={[
-      { icon: Search, title: 'Knowledge base', desc: 'Raccogliamo e organizziamo i tuoi dati e FAQ.' },
-      { icon: Settings, title: 'Configurazione', desc: 'Addestriamo l\'AI sul tuo business.' },
-      { icon: Code, title: 'Integrazione', desc: 'Lo integriamo nel tuo sito e nei tuoi tool.' },
-      { icon: Rocket, title: 'Ottimizzazione', desc: 'Monitoriamo e miglioriamo le risposte nel tempo.' },
+      { title: 'Knowledge base', items: ['Raccolta FAQ', 'Organizzazione dati', 'Definizione tono'] },
+      { title: 'Training AI', items: ['Addestramento modello', 'Personalizzazione risposte', 'Test conversazioni'] },
+      { title: 'Integrazione', items: ['Embed nel sito', 'Connessione CRM', 'Multi-canale'] },
+      { title: 'Ottimizzazione', items: ['Monitoring risposte', 'Fine-tuning', 'Report performance'] },
     ]}
     outcomes={['Supporto clienti automatizzato', 'Riduzione drastica dei ticket', 'Lead qualificati 24/7', 'Risposte immediate e accurate', 'Integrazione con CRM e tool']}
     outcomesCtaText="Attiva il tuo chatbot AI"

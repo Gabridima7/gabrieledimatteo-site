@@ -1,4 +1,4 @@
-import { Smartphone, Eye, Layout, Search, PenTool, Palette, Rocket, Fingerprint, Sparkles } from 'lucide-react';
+import { Smartphone, Eye, Fingerprint, Sparkles } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const MobileAppDesignService = () => (
@@ -25,10 +25,10 @@ const MobileAppDesignService = () => (
       { icon: Eye, title: 'Accessibilità', desc: 'Interfacce inclusive e accessibili a tutti gli utenti.' },
     ]}
     process={[
-      { icon: Search, title: 'Research', desc: 'Analizziamo target, competitors e use case.' },
-      { icon: Layout, title: 'Wireframe', desc: 'Definiamo i flussi e la struttura dell\'app.' },
-      { icon: Palette, title: 'UI Design', desc: 'Creiamo il visual design pixel-perfect.' },
-      { icon: Rocket, title: 'Prototipo', desc: 'Prototipo interattivo testato con utenti reali.' },
+      { title: 'Discovery & UX research', items: ['Briefing & onboarding', 'Product/business goals', 'Product testing', "Competitor's research", 'Market research'] },
+      { title: 'UX Design', items: ['Wireframes', 'Prototyping'] },
+      { title: 'UI Design', items: ['Moodboard', 'Concept design', 'Layouts design', 'Responsive & Adaptive', 'UI style guide', 'Design system'] },
+      { title: 'Design support', items: ['Team extension for design improvements'] },
     ]}
     outcomes={['App design pixel-perfect', 'User experience fluida e intuitiva', 'Aumento della retention', 'Rating elevato sugli store', 'Design pronto per lo sviluppo']}
     outcomesCtaText="Progetta la tua app"

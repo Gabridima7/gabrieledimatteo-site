@@ -1,4 +1,4 @@
-import { Database, BarChart3, Settings, Search, PenTool, Code, Rocket, Cog, Users } from 'lucide-react';
+import { Database, BarChart3, Cog, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const SoftwareGestionaleService = () => (
@@ -25,10 +25,10 @@ const SoftwareGestionaleService = () => (
       { icon: BarChart3, title: 'Report automatici', desc: 'Dashboard e report generati automaticamente in tempo reale.' },
     ]}
     process={[
-      { icon: Search, title: 'Analisi', desc: 'Mappiamo processi attuali e pain points.' },
-      { icon: PenTool, title: 'Progettazione', desc: 'Definiamo architettura e user flow.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Costruiamo il gestionale per moduli.' },
-      { icon: Rocket, title: 'Migrazione', desc: 'Trasferiamo i dati e formiamo il team.' },
+      { title: 'Analisi processi', items: ['Mappatura flussi', 'Pain points', 'Requisiti funzionali'] },
+      { title: 'Progettazione', items: ['Architettura dati', 'User flow', 'Prototipo interattivo'] },
+      { title: 'Sviluppo modulare', items: ['Moduli core', 'Dashboard & report', 'Integrazioni'] },
+      { title: 'Migrazione & go-live', items: ['Import dati', 'Formazione team', 'Supporto post-lancio'] },
     ]}
     outcomes={['Processi aziendali ottimizzati', 'Zero licenze software mensili', 'Dati centralizzati e accessibili', 'Automazioni sui flussi operativi', 'Report e analytics in tempo reale']}
     outcomesCtaText="Digitalizza i tuoi processi"

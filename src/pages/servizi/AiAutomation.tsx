@@ -1,4 +1,4 @@
-import { Cpu, Bot, Plug, Zap, Search, Settings, Rocket, BarChart3, MessageSquare, Workflow } from 'lucide-react';
+import { Cpu, Bot, Zap, Workflow } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const AiAutomation = () => (
@@ -25,10 +25,10 @@ const AiAutomation = () => (
       { icon: Workflow, title: 'Integrazioni seamless', desc: 'Collegamento con tutti i tuoi strumenti esistenti.' },
     ]}
     process={[
-      { icon: Search, title: 'Audit processi', desc: 'Mappiamo i flussi e identifichiamo opportunità di automazione.' },
-      { icon: Settings, title: 'Progettazione', desc: 'Disegniamo l\'architettura delle automazioni.' },
-      { icon: Cpu, title: 'Implementazione', desc: 'Costruiamo e testiamo le automazioni AI.' },
-      { icon: Rocket, title: 'Ottimizzazione', desc: 'Monitoriamo e miglioriamo le performance.' },
+      { title: 'Audit processi', items: ['Mappatura flussi', 'Identificazione opportunità', 'Analisi ROI potenziale'] },
+      { title: 'Progettazione', items: ['Architettura automazioni', 'Scelta strumenti', 'Definizione trigger'] },
+      { title: 'Implementazione', items: ['Configurazione AI', 'Test & validazione', 'Integrazione sistemi'] },
+      { title: 'Ottimizzazione', items: ['Monitoring KPI', 'Fine-tuning', 'Scaling automazioni'] },
     ]}
     outcomes={['Riduzione drastica del lavoro manuale', 'ROI misurabile dal primo mese', 'Processi scalabili senza assumere', 'Meno errori umani', 'Dati centralizzati e accessibili', 'Tempo liberato per attività strategiche']}
     outcomesCtaText="Automatizza ora"

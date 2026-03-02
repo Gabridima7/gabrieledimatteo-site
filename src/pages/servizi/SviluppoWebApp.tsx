@@ -1,4 +1,4 @@
-import { Code, Globe, Smartphone, Layers, Zap, Search, PenTool, Rocket, BarChart3, Shield } from 'lucide-react';
+import { Code, Globe, Smartphone, Layers } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const SviluppoWebApp = () => (
@@ -26,10 +26,10 @@ const SviluppoWebApp = () => (
       { icon: Layers, title: 'Architettura scalabile', desc: 'Codice modulare pronto a crescere con il tuo business.' },
     ]}
     process={[
-      { icon: Search, title: 'Discovery', desc: 'Analizziamo obiettivi, target e competitors.' },
-      { icon: PenTool, title: 'Design', desc: 'Progettiamo UI/UX e prototipi interattivi.' },
-      { icon: Code, title: 'Sviluppo', desc: 'Codice pulito, test e deploy continuo.' },
-      { icon: Rocket, title: 'Lancio', desc: 'Go-live, monitoraggio e supporto post-lancio.' },
+      { title: 'Discovery & Analisi', items: ['Briefing & onboarding', 'Obiettivi di business', 'Analisi competitors', 'Ricerca di mercato'] },
+      { title: 'Progettazione UX', items: ['Wireframe', 'Prototipi interattivi', 'User flow'] },
+      { title: 'UI Design & Dev', items: ['Visual design', 'Design system', 'Sviluppo frontend', 'Backend & API'] },
+      { title: 'Lancio & Supporto', items: ['Testing & QA', 'Deploy', 'Monitoraggio', 'Supporto continuo'] },
     ]}
     outcomes={['Sito web veloce e ottimizzato SEO', 'Aumento delle conversioni', 'Codice proprietario al 100%', 'Supporto tecnico continuativo', 'Design moderno e professionale', 'Integrazione con i tuoi sistemi']}
     outcomesCtaText="Inizia il tuo progetto"

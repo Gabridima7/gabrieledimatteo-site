@@ -1,4 +1,4 @@
-import { Smartphone, Database, Shield, Search, PenTool, Code, Rocket, Layers, Lock } from 'lucide-react';
+import { Smartphone, Database, Layers, Lock } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const WebAppService = () => (
@@ -25,10 +25,10 @@ const WebAppService = () => (
       { icon: Lock, title: 'Sicurezza enterprise', desc: 'Autenticazione, autorizzazioni e crittografia end-to-end.' },
     ]}
     process={[
-      { icon: Search, title: 'Discovery', desc: 'Mappiamo requisiti funzionali e user flow.' },
-      { icon: PenTool, title: 'Prototipo', desc: 'Design interattivo e validazione con utenti reali.' },
-      { icon: Code, title: 'Sviluppo agile', desc: 'Sprint bisettimanali con demo e feedback.' },
-      { icon: Rocket, title: 'Deploy', desc: 'Lancio, monitoring e iterazioni continue.' },
+      { title: 'Discovery & requisiti', items: ['Raccolta requisiti', 'User flow mapping', 'Definizione MVP'] },
+      { title: 'Prototipo & design', items: ['Wireframe interattivi', 'Validazione utenti', 'UI design'] },
+      { title: 'Sviluppo agile', items: ['Sprint bisettimanali', 'Demo & feedback', 'Testing continuo'] },
+      { title: 'Deploy & scaling', items: ['Go-live', 'Monitoring', 'Iterazioni continue'] },
     ]}
     outcomes={['Piattaforma unificata per il tuo team', 'Accessibile ovunque, senza installazione', 'Dati in tempo reale', 'Scalabile con la crescita aziendale', 'Integrazione con sistemi esistenti']}
     outcomesCtaText="Inizia il tuo progetto"

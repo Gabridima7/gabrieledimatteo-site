@@ -1,4 +1,4 @@
-import { Search, Target, BarChart3, Lightbulb, FileText, TrendingUp, Rocket, ClipboardCheck } from 'lucide-react';
+import { Search, Target, TrendingUp, Lightbulb } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const ConsulenzaDigitale = () => (
@@ -25,10 +25,10 @@ const ConsulenzaDigitale = () => (
       { icon: TrendingUp, title: 'Risultati misurabili', desc: 'Ogni azione è tracciata e ottimizzata per il ROI.' },
     ]}
     process={[
-      { icon: ClipboardCheck, title: 'Assessment', desc: 'Valutiamo lo stato attuale della tua azienda digitale.' },
-      { icon: Search, title: 'Analisi', desc: 'Identifichiamo opportunità e priorità di intervento.' },
-      { icon: FileText, title: 'Roadmap', desc: 'Definiamo il piano operativo con timeline e budget.' },
-      { icon: Rocket, title: 'Execution', desc: 'Ti affianchiamo nell\'implementazione della strategia.' },
+      { title: 'Assessment digitale', items: ['Analisi presenza online', 'Audit tech stack', 'Valutazione processi'] },
+      { title: 'Analisi & opportunità', items: ['Gap analysis', 'Benchmark competitors', 'Priorità intervento'] },
+      { title: 'Roadmap strategica', items: ['Piano operativo', 'Timeline & budget', 'KPI & metriche'] },
+      { title: 'Execution & supporto', items: ['Implementazione', 'Monitoraggio risultati', 'Iterazione continua'] },
     ]}
     outcomes={['Visione chiara del percorso digitale', 'Priorità di investimento definite', 'KPI misurabili e tracking', 'Riduzione sprechi e inefficienze', 'Vantaggio competitivo concreto']}
     outcomesCtaText="Prenota la consulenza"

@@ -7,6 +7,7 @@ import founderImg from '@/assets/founder-gd.png';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import checkmarkIcon from '@/assets/icons/icon-checkmark-green.png';
 import { useLanguage } from '@/context/LanguageContext';
+import TrustBar from '@/components/TrustBar';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -244,6 +245,9 @@ const Contatti = () => {
             </div>
           </div>
         </section>
+
+        {/* Trust Bar */}
+        <TrustBar />
       </div>
     </>);
 };

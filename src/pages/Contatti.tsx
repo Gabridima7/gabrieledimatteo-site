@@ -11,6 +11,7 @@ import TrustBar from '@/components/TrustBar';
 import NextStepsSection from '@/components/NextStepsSection';
 import ContactTestimonial from '@/components/ContactTestimonial';
 import ContactCtaSection from '@/components/ContactCtaSection';
+import ContactFaqSection from '@/components/ContactFaqSection';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -260,6 +261,9 @@ const Contatti = () => {
 
         {/* CTA Section */}
         <ContactCtaSection />
+
+        {/* FAQ */}
+        <ContactFaqSection />
       </div>
     </>);
 };

@@ -184,6 +184,41 @@ export const translations = {
     cardLabel: { it: 'Inizia ora', en: 'Get started' },
     bookCall: { it: 'Prenota una call', en: 'Book a call' },
   },
+  contactFaq: {
+    title: { it: 'Domande frequenti', en: 'Frequently asked questions' },
+    q1: {
+      it: 'Con che tipo di aziende lavora tipicamente NEXUS?',
+      en: 'What types of companies does NEXUS typically work with?',
+    },
+    a1: {
+      it: 'NEXUS collabora con imprese e aziende tecnologiche in crescita che necessitano di una delivery di prodotto strutturata. Definiamo tre gruppi:\n\n• Team di innovazione e prodotto enterprise che gestiscono sistemi interni complessi, dashboard e tool.\n• PMI che costruiscono o scalano prodotti digitali, dove founder e product owner si aspettano designer e sviluppatori di alto livello.\n• Aziende tech-driven in AI, FinTech, Healthcare e Web3 che richiedono comprensione del dominio e UX precise per workflow complessi.\n\nDiamo il meglio in contesti dove gli stakeholder si aspettano risultati misurabili, collaborazione strutturata e trasparente, e un pensiero di prodotto a lungo termine.',
+      en: 'NEXUS partners with enterprises and growing mid-market technology companies that need structured product delivery. We define three groups:\n\n• Enterprise innovation and product teams that manage large internal systems, dashboards, and tools.\n• SMEs building or scaling digital products, where the founders and product owners expect senior-level designers and engineers.\n• Tech-driven companies in AI, FinTech, Healthcare, and Web3 that require domain understanding and precise UX for complex workflows.\n\nWe work best in environments where stakeholders expect measurable outcomes, structured and transparent collaboration, and long-term product thinking.',
+    },
+    q2: {
+      it: 'Quanto velocemente può iniziare il vostro team?',
+      en: 'How quickly can your team start?',
+    },
+    a2: {
+      it: 'La maggior parte dei progetti inizia entro 3-5 giorni lavorativi una volta chiariti scope, aspettative e requisiti. Se il tuo team ha bisogno di muoversi con urgenza, possiamo riallocare le risorse e partire prima dopo una call di allineamento.',
+      en: 'Most projects begin within 3–5 business days once we clarify the scope, expectations, and requirements. But if your team needs to move urgently, we can reallocate resources and start earlier after an alignment call.',
+    },
+    q3: {
+      it: 'Quali informazioni dovrei preparare prima di contattarvi?',
+      en: 'What information should I prepare before contacting you?',
+    },
+    a3: {
+      it: 'Non serve un brief completo, ma le seguenti informazioni ci aiutano a dare indicazioni precise:\n\n• Informazioni principali sul tuo progetto.\n• Cosa ha innescato il progetto. Ad esempio: bassa conversione, inefficienze interne, debito UX, necessità di fundraising, UI datata o colli di bottiglia nello sviluppo.\n• Il tuo stato attuale. File Figma, link al prodotto, screenshot, user flow, un backlog o anche note informali ci aiutano a capire cosa già esiste e cosa va sostituito o preservato.\n• I tuoi vincoli. Tempistiche, disponibilità del team interno, requisiti di compliance, ecc.\n• Il risultato atteso.\n\nMa se non hai tempo per tutto questo, le informazioni principali sul tuo progetto saranno sufficienti per iniziare. Chiariremo tutto il resto durante la prima call.',
+      en: "You don't need a full brief, but the following information helps us give precise guidance:\n\n• Main information about your project.\n• What triggered the project. For example: low conversion, internal inefficiencies, UX debt, fundraising needs, outdated UI, or development bottlenecks.\n• Your current state. Figma files, product links, screenshots, user flows, a backlog, or even informal notes help us understand what already exists and what must be replaced or preserved.\n• Your constraints. Timelines, internal team availability, compliance requirements, etc.\n• Your expected outcome.\n\nBut if you don't have time for this, the main information about your project will be enough to start. We clarify everything else during the first call.",
+    },
+    q4: {
+      it: 'Come stimate i costi e le tempistiche di un progetto?',
+      en: 'How do you estimate project cost and timelines?',
+    },
+    a4: {
+      it: "Basiamo le stime su una scomposizione strutturata del lavoro. Dopo aver esaminato i materiali e gli obiettivi, mappiamo il progetto in deliverable concreti: funzionalità, schermate, stati, integrazioni e task di sviluppo.\nPer mantenere le stime accurate, consideriamo anche:\n\n• Complessità e vincoli: architettura legacy, redesign di workflow densi, sistemi multi-ruolo o requisiti di compliance.\n• Composizione del team: design, sviluppo, engineering, PM, QA, e quanti specialisti servono per rispettare le tempistiche.\n• Dipendenze lato cliente: approvazioni interne, accessi o disponibilità dei dati.\n\nRiceverai una stima trasparente con fasi di consegna, così saprai esattamente come abbiamo definito timeline e costi, e cosa li influenza.",
+      en: "We base estimates on a structured breakdown of work. After reviewing your materials and goals, we map the project into concrete deliverables: features, screens, states, integrations, and development tasks.\nTo keep estimates accurate, we also consider:\n\n• Complexity and constraints: legacy architecture, design, or redesign of dense workflows, multi-role permission systems, or compliance requirements.\n• Team composition: design, development, engineering, PM, QA, and how many specialists we need to meet your timeline.\n• Dependencies on your side (internal approvals, access, or data availability).\n\nYou receive a transparent estimate with delivery stages, so you know exactly how we formed the timeline and cost, and what influences it.",
+    },
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;

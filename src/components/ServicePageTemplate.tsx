@@ -113,7 +113,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center">
               {/* Left */}
               <motion.div {...fadeUp}>
-                <p className="text-[13px] mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   <Link to="/" className="hover:text-white transition-colors">Home</Link>
                   {' / '}
                   <span>Servizi</span>

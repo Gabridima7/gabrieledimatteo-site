@@ -220,7 +220,7 @@ const Navbar = () => {
                         <div className="flex-1 grid grid-cols-3 gap-4">
                           <SolutionCard to="/servizi/sviluppo-web-app" icon={<img src={iconMvpDesign} alt="MVP Design" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'mvp')} subtitle={lang === 'it' ? 'Per startup e imprenditori' : 'For startups & entrepreneurs'} desc={lang === 'it' ? 'Crea un prodotto digitale, attrai investitori e nuovi clienti.' : 'Create a digital product, attract investors and new clients.'} onClick={() => setMegaOpen(false)} />
                           <SolutionCard to="/servizi/branding-ui-ux" icon={<img src={iconProductRedesign} alt="Product Redesign" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'redesign')} subtitle={lang === 'it' ? 'Per PMI e aziende' : 'For SMEs & enterprises'} desc={lang === 'it' ? 'Un look fresco, UX migliorata e funzionalità potenziate.' : 'A fresh look, improved UX, and enhanced functionality.'} onClick={() => setMegaOpen(false)} />
-                          <SolutionCard to="/prenota-call" icon={<img src={iconRetainer} alt="Retainer" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'retainer')} subtitle={lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'} desc={lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'} onClick={() => setMegaOpen(false)} />
+                          <SolutionCard to="/contatti" icon={<img src={iconRetainer} alt="Retainer" className="w-7 h-7 object-contain" />} gradient="from-transparent to-transparent" title={t('mega', 'retainer')} subtitle={lang === 'it' ? 'Per aziende esistenti' : 'For existing companies'} desc={lang === 'it' ? 'Espandi il tuo team con i nostri esperti dedicati.' : 'Expand your team with our dedicated experts.'} onClick={() => setMegaOpen(false)} />
                         </div>
                       </div>
                     </div>
@@ -264,15 +264,13 @@ const Navbar = () => {
             </div>
 
             {/* CTA */}
-            <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contatti"
               className="btn-primary hidden sm:inline-flex"
             >
               {t('nav', 'prenotaCall')}
               <ArrowRight size={16} />
-            </a>
+            </Link>
 
             {/* Mobile hamburger */}
             <button

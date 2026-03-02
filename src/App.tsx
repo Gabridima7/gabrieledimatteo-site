@@ -11,7 +11,7 @@ import ProdottiAI from "./pages/ProdottiAI";
 import CasiStudio from "./pages/CasiStudio";
 import ChiSiamo from "./pages/ChiSiamo";
 import Templates from "./pages/Templates";
-import PrenotaCall from "./pages/PrenotaCall";
+import Contatti from "./pages/Contatti";
 import Privacy from "./pages/Privacy";
 import Cookie from "./pages/Cookie";
 import NotFound from "./pages/NotFound";
@@ -48,7 +48,7 @@ const App = () => (
               <Route path="/casi-studio" element={<CasiStudio />} />
               <Route path="/chi-siamo" element={<ChiSiamo />} />
               <Route path="/templates" element={<Templates />} />
-              <Route path="/prenota-call" element={<PrenotaCall />} />
+              <Route path="/contatti" element={<Contatti />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/cookie" element={<Cookie />} />
               <Route path="/servizi/sviluppo-web-app" element={<SviluppoWebApp />} />

@@ -181,7 +181,7 @@ export const translations = {
     titleItalic: { it: 'straordinari', en: 'outstanding' },
     titlePost: { it: 'insieme!', en: 'digital products together!' },
     imageAlt: { it: 'Team al lavoro', en: 'Team at work' },
-    cardLabel: { it: 'Inizia ora', en: 'Get started' },
+    cardLabel: { it: 'Lavora con noi', en: 'Work with us' },
     bookCall: { it: 'Prenota una call', en: 'Book a call' },
   },
   contactFaq: {

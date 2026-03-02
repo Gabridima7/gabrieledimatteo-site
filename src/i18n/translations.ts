@@ -130,6 +130,31 @@ export const translations = {
     privacy: { it: 'Privacy Policy', en: 'Privacy Policy' },
     cookie: { it: 'Cookie Policy', en: 'Cookie Policy' },
   },
+  // Contatti
+  contatti: {
+    breadcrumb: { it: 'Contatti', en: 'Contact' },
+    founderRole: { it: 'Founder & CEO', en: 'Founder & CEO' },
+    benefit1: { it: 'Rispondiamo entro 12 ore', en: 'We reply within 12 hours' },
+    benefit2: { it: 'Firmiamo un NDA su richiesta', en: 'We sign an NDA on request' },
+    benefit3: { it: 'Accesso diretto a specialisti dedicati', en: 'Direct access to dedicated specialists' },
+    contactLabel: { it: 'Contattaci', en: 'Contact us' },
+    bookCall: { it: 'Prenota una call', en: 'Book a call' },
+    formTitle: { it: 'Parlaci del tuo progetto', en: 'Tell us about your project' },
+    labelName: { it: 'Nome completo*', en: 'Full name*' },
+    labelEmail: { it: 'Email aziendale*', en: 'Business email*' },
+    labelProject: { it: 'Il tuo progetto*', en: 'Your project*' },
+    placeholderName: { it: 'Il tuo nome', en: 'Your name' },
+    placeholderEmail: { it: 'nome@azienda.it', en: 'name@company.com' },
+    placeholderProject: { it: 'Descrivi brevemente il tuo progetto...', en: 'Briefly describe your project...' },
+    disclaimer: { it: 'Inviando questo modulo accetti la nostra', en: 'By submitting this form you accept our' },
+    disclaimerAnd: { it: 'e la', en: 'and the' },
+    submit: { it: 'Invia', en: 'Send' },
+    successTitle: { it: 'Grazie!', en: 'Thank you!' },
+    successMsg: { it: 'Ti risponderemo il prima possibile.', en: 'We\'ll get back to you as soon as possible.' },
+    emailSubject: { it: 'Richiesta progetto da', en: 'Project request from' },
+    seoTitle: { it: 'Contatti — NEXUS Agency', en: 'Contact — NEXUS Agency' },
+    seoDesc: { it: 'Contattaci per discutere il tuo progetto. Rispondiamo entro 12 ore.', en: 'Contact us to discuss your project. We reply within 12 hours.' },
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;

@@ -7,6 +7,7 @@ import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.png';
 import iconCodiceProprieta from '@/assets/icons/icon-codice-proprieta.png';
 import iconSupportoPostLancio from '@/assets/icons/icon-supporto-post-lancio.png';
+import testimonialMarco from '@/assets/testimonial-marco.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -43,7 +44,7 @@ export interface ServicePageProps {
 
 /* ── Reviews (same for all pages) ── */
 const reviews = [
-  { text: "NEXUS ha capito subito le nostre esigenze. Il gestionale ci ha cambiato la vita operativa.", name: "Marco R.", role: "Founder, Homeleven" },
+  { text: "NEXUS ha capito subito le nostre esigenze. Il gestionale ci ha cambiato la vita operativa.", name: "Marco R.", role: "Founder, Homeleven", img: testimonialMarco },
   { text: "Professionalità e velocità di esecuzione fuori dal comune. Consigliato a qualsiasi PMI italiana.", name: "Andrea Z.", role: "CEO, ONE UP" },
   { text: "Il sito rifatto da NEXUS ha portato un aumento immediato delle richieste di preventivo.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" },
 ];
@@ -166,9 +167,13 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               <div className="flex-1">
                 <p className="italic text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>{props.heroQuote.text}</p>
                 <div className="flex items-center gap-3 mt-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%))' }}>
-                    {props.heroQuote.name.split(' ').map(w => w[0]).join('')}
-                  </div>
+                  {props.heroQuote.name.includes('Marco') ? (
+                    <div className="w-12 h-12 rounded-full overflow-hidden"><img src={testimonialMarco} alt={props.heroQuote.name} className="w-full h-full object-cover" /></div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%))' }}>
+                      {props.heroQuote.name.split(' ').map(w => w[0]).join('')}
+                    </div>
+                  )}
                   <div>
                     <p className="text-sm font-semibold text-white">{props.heroQuote.name}</p>
                     <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.5)' }}>{props.heroQuote.role}</p>
@@ -370,9 +375,13 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                       <div className="flex gap-1 mb-4">{Array(5).fill(0).map((_, j) => <Star key={j} size={16} className="text-amber-400 fill-amber-400" />)}</div>
                       <p className="italic text-[15px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>"{r.text}"</p>
                       <div className="mt-5 pt-5 flex items-center gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%))' }}>
-                          {r.name.split(' ').map(w => w[0]).join('')}
-                        </div>
+                        {r.img ? (
+                          <div className="w-10 h-10 rounded-full overflow-hidden"><img src={r.img} alt={r.name} className="w-full h-full object-cover" /></div>
+                        ) : (
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%))' }}>
+                            {r.name.split(' ').map(w => w[0]).join('')}
+                          </div>
+                        )}
                         <div>
                           <p className="text-sm font-semibold text-white">{r.name}</p>
                           <p className="text-[13px]" style={{ color: 'rgba(255,255,255,0.45)' }}>{r.role}</p>
@@ -418,9 +427,13 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   </p>
                 </div>
                 <div className="flex items-center gap-3 mt-8">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#4F6FE8] flex items-center justify-center text-white text-sm font-bold">
-                    {props.heroQuote.name.charAt(0)}
-                  </div>
+                  {props.heroQuote.name.includes('Marco') ? (
+                    <div className="w-10 h-10 rounded-full overflow-hidden"><img src={testimonialMarco} alt={props.heroQuote.name} className="w-full h-full object-cover" /></div>
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#4F6FE8] flex items-center justify-center text-white text-sm font-bold">
+                      {props.heroQuote.name.charAt(0)}
+                    </div>
+                  )}
                   <div>
                     <p className="text-sm font-semibold text-gray-900">{props.heroQuote.name}</p>
                     <p className="text-xs text-gray-500">{props.heroQuote.role}</p>

@@ -53,7 +53,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">Azienda</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/casi-studio" className="text-nexus-gray hover:text-white transition-colors">Works</Link></li>
+              <li><Link to="/casi-studio" className="text-nexus-gray hover:text-white transition-colors">Casi studio</Link></li>
               <li><Link to="/chi-siamo" className="text-nexus-gray hover:text-white transition-colors">Chi siamo</Link></li>
               <li><Link to="/templates" className="text-nexus-gray hover:text-white transition-colors">Blog</Link></li>
               <li>

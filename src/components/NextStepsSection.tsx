@@ -3,11 +3,11 @@ import { Users, Layers, ListChecks, FolderOpen } from 'lucide-react';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import { useLanguage } from '@/context/LanguageContext';
 
-const steps = [
-  { icon: Users, gradient: 'from-slate-400 to-indigo-400' },
-  { icon: Layers, gradient: 'from-emerald-400 to-teal-300' },
-  { icon: ListChecks, gradient: 'from-teal-400 to-cyan-300' },
-  { icon: FolderOpen, gradient: 'from-violet-400 to-purple-300' },
+const iconConfigs = [
+  { icon: Users, bg: 'linear-gradient(135deg, rgba(148,163,184,0.3), rgba(129,140,248,0.2))', color: 'text-slate-300' },
+  { icon: Layers, bg: 'linear-gradient(135deg, rgba(52,211,153,0.3), rgba(45,212,191,0.15))', color: 'text-emerald-300' },
+  { icon: ListChecks, bg: 'linear-gradient(135deg, rgba(45,212,191,0.3), rgba(34,211,238,0.15))', color: 'text-teal-300' },
+  { icon: FolderOpen, bg: 'linear-gradient(135deg, rgba(167,139,250,0.3), rgba(192,132,252,0.15))', color: 'text-violet-300' },
 ];
 
 const NextStepsSection = () => {
@@ -34,40 +34,53 @@ const NextStepsSection = () => {
           <span className="italic font-serif-accent">{t('nextSteps', 'titleItalic')}</span>
         </motion.h2>
 
-        {/* Connector line */}
+        {/* Steps with connector */}
         <div className="relative">
-          <div className="hidden md:block absolute top-[28px] left-0 right-0 h-px border-t border-dashed border-white/20" />
+          {/* Horizontal connector line */}
+          <div className="hidden lg:block absolute top-0 left-0 right-0 h-px bg-white/15" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stepData.map((step, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUpVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={viewportConfig}
-                transition={{ delay: i * 0.1 }}
-                className="relative"
-              >
-                {/* Notch */}
-                <div className="hidden md:block absolute top-[24px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#0d1a2a] border-t border-l border-white/20" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
+            {stepData.map((step, i) => {
+              const config = iconConfigs[i];
+              const Icon = config.icon;
 
-                {/* Icon */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${steps[i].gradient} bg-opacity-20 flex items-center justify-center backdrop-blur-sm`}
-                    style={{ background: `linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`, border: '1px solid rgba(255,255,255,0.1)' }}>
-                    {(() => {
-                      const Icon = steps[i].icon;
-                      return <Icon size={22} className="text-white/80" />;
-                    })()}
+              return (
+                <motion.div
+                  key={i}
+                  variants={fadeUpVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={viewportConfig}
+                  transition={{ delay: i * 0.1 }}
+                  className="relative lg:px-6 first:lg:pl-0 last:lg:pr-0"
+                >
+                  {/* Downward notch/triangle */}
+                  <div className="hidden lg:block absolute top-0 left-6 first:left-0">
+                    <svg width="16" height="10" viewBox="0 0 16 10" className="text-white/15">
+                      <path d="M0 0 L8 10 L16 0" fill="none" stroke="currentColor" strokeWidth="1" />
+                    </svg>
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-white/60">{step.label}</span>
-                </div>
 
-                {/* Description */}
-                <p className="text-white/70 text-[15px] leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
+                  {/* Icon + Label row */}
+                  <div className="flex items-center gap-3 mt-6 lg:mt-5 mb-5">
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 backdrop-blur-sm"
+                      style={{
+                        background: config.bg,
+                        border: '1px solid rgba(255,255,255,0.08)',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                      }}
+                    >
+                      <Icon size={20} className={config.color} />
+                    </div>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/50">{step.label}</span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-white/65 text-[15px] leading-relaxed">{step.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

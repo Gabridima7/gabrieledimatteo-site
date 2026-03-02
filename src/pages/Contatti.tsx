@@ -2,17 +2,16 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Mail, CheckCircle, Phone, ArrowRight, Paperclip, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import SEOHead from '@/components/SEOHead';
 import founderImg from '@/assets/founder-gd.png';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import checkmarkIcon from '@/assets/icons/icon-checkmark-green.png';
+import { useLanguage } from '@/context/LanguageContext';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
 const Contatti = () => {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
@@ -31,20 +30,24 @@ const Contatti = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // mailto fallback
-    const subject = encodeURIComponent(`Richiesta progetto da ${form.name}`);
-    const body = encodeURIComponent(`Nome: ${form.name}\nEmail: ${form.email}\n\nMessaggio:\n${form.message}`);
+    const subject = encodeURIComponent(`${t('contatti', 'emailSubject')} ${form.name}`);
+    const body = encodeURIComponent(`${t('contatti', 'labelName').replace('*', '')}: ${form.name}\nEmail: ${form.email}\n\n${t('contatti', 'labelProject').replace('*', '')}:\n${form.message}`);
     window.open(`mailto:info@nexusagency.it?subject=${subject}&body=${body}`, '_self');
     setSubmitted(true);
   };
 
+  const benefits = [
+    t('contatti', 'benefit1'),
+    t('contatti', 'benefit2'),
+    t('contatti', 'benefit3'),
+  ];
+
   return (
     <>
       <SEOHead
-        title="Contatti — NEXUS Agency"
-        description="Contattaci per discutere il tuo progetto. Rispondiamo entro 12 ore."
+        title={t('contatti', 'seoTitle')}
+        description={t('contatti', 'seoDesc')}
         canonical="https://nexusagency.it/contatti" />
-      
 
       <div className="pt-8">
         {/* Breadcrumb */}
@@ -53,7 +56,7 @@ const Contatti = () => {
             <p className="text-[13px] uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
               <Link to="/" className="hover:text-white transition-colors">Home</Link>
               {' / '}
-              <span className="text-white/70">Contatti</span>
+              <span className="text-white/70">{t('contatti', 'breadcrumb')}</span>
             </p>
           </div>
         </section>
@@ -94,17 +97,13 @@ const Contatti = () => {
                     </div>
                     <div>
                       <p className="font-serif-accent text-xl text-white italic">Gabriele Di Matteo </p>
-                      <p className="text-white/60 text-sm">Founder & CEO</p>
+                      <p className="text-white/60 text-sm">{t('contatti', 'founderRole')}</p>
                     </div>
                   </div>
 
                   {/* Benefits */}
                   <ul className="space-y-4 mb-10">
-                    {[
-                    'Rispondiamo entro 12 ore',
-                    'Firmiamo un NDA su richiesta',
-                    'Accesso diretto a specialisti dedicati'].
-                    map((item, i) =>
+                    {benefits.map((item, i) =>
                     <li key={i} className="flex items-center gap-3">
                         <img src={checkmarkIcon} alt="" className="w-5 h-5 shrink-0" />
                         <span className="text-white/90 text-[15px] font-medium">{item}</span>
@@ -115,12 +114,11 @@ const Contatti = () => {
 
                 {/* Contact info */}
                 <div>
-                  <p className="text-primary text-xs font-semibold uppercase tracking-wider mb-4">Contattaci</p>
+                  <p className="text-primary text-xs font-semibold uppercase tracking-wider mb-4">{t('contatti', 'contactLabel')}</p>
                   <div className="space-y-3">
                     <a
                       href="mailto:info@nexusagency.it"
                       className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm">
-                      
                       <Mail size={18} className="text-white/50" />
                       info@nexusagency.it
                     </a>
@@ -129,9 +127,8 @@ const Contatti = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm">
-                      
                       <Phone size={18} className="text-white/50" />
-                      Prenota una call
+                      {t('contatti', 'bookCall')}
                     </a>
                   </div>
                 </div>
@@ -149,52 +146,49 @@ const Contatti = () => {
                 }}>
                 
                 <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-8">
-                  Parlaci del tuo progetto
+                  {t('contatti', 'formTitle')}
                 </h1>
 
                 {submitted ?
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                     <CheckCircle className="text-primary mb-4" size={48} />
-                    <p className="text-[#111827] text-lg font-semibold mb-2">Grazie!</p>
-                    <p className="text-[#6B7280]">Ti risponderemo il prima possibile.</p>
+                    <p className="text-[#111827] text-lg font-semibold mb-2">{t('contatti', 'successTitle')}</p>
+                    <p className="text-[#6B7280]">{t('contatti', 'successMsg')}</p>
                   </div> :
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">Nome completo*</label>
+                        <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">{t('contatti', 'labelName')}</label>
                         <input
                         type="text"
                         required
                         value={form.name}
                         onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                         className="w-full border-0 border-b border-[#D1D5DB] bg-transparent text-[#111827] py-2.5 text-[15px] focus:outline-none focus:border-[#1C35C8] transition-colors placeholder:text-[#9CA3AF]"
-                        placeholder="Il tuo nome" />
-                      
+                        placeholder={t('contatti', 'placeholderName')} />
                       </div>
                       <div>
-                        <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">Email aziendale*</label>
+                        <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">{t('contatti', 'labelEmail')}</label>
                         <input
                         type="email"
                         required
                         value={form.email}
                         onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                         className="w-full border-0 border-b border-[#D1D5DB] bg-transparent text-[#111827] py-2.5 text-[15px] focus:outline-none focus:border-[#1C35C8] transition-colors placeholder:text-[#9CA3AF]"
-                        placeholder="nome@azienda.it" />
-                      
+                        placeholder={t('contatti', 'placeholderEmail')} />
                       </div>
                     </div>
 
                     <div>
-                      <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">Il tuo progetto*</label>
+                      <label className="text-[13px] font-medium text-[#374151] mb-1.5 block">{t('contatti', 'labelProject')}</label>
                       <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                       className="w-full border-0 border-b border-[#D1D5DB] bg-transparent text-[#111827] py-2.5 text-[15px] focus:outline-none focus:border-[#1C35C8] transition-colors resize-none placeholder:text-[#9CA3AF]"
-                      placeholder="Descrivi brevemente il tuo progetto..." />
-                    
+                      placeholder={t('contatti', 'placeholderProject')} />
                     </div>
 
                     {/* File upload */}
@@ -231,16 +225,15 @@ const Contatti = () => {
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4">
                       <p className="text-[11px] text-[#9CA3AF] max-w-[280px]">
-                        Inviando questo modulo accetti la nostra{' '}
+                        {t('contatti', 'disclaimer')}{' '}
                         <Link to="/privacy" className="underline hover:text-[#374151]">Privacy Policy</Link>
-                        {' '}e la{' '}
+                        {' '}{t('contatti', 'disclaimerAnd')}{' '}
                         <Link to="/cookie" className="underline hover:text-[#374151]">Cookie Policy</Link>.
                       </p>
                       <button
                       type="submit"
                       className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#bde000] text-[#111827] font-semibold px-8 py-3.5 rounded-full text-[15px] transition-colors shrink-0">
-                      
-                        Invia
+                        {t('contatti', 'submit')}
                         <ArrowRight size={18} />
                       </button>
                     </div>
@@ -253,7 +246,6 @@ const Contatti = () => {
         </section>
       </div>
     </>);
-
 };
 
 export default Contatti;

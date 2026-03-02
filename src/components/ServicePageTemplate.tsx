@@ -116,8 +116,6 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   <Link to="/" className="hover:text-white transition-colors">Home</Link>
                   {' / '}
-                  <span>Servizi</span>
-                  {' / '}
                   <span className="text-white/70">{props.badge}</span>
                 </p>
                 <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>

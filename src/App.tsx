@@ -15,6 +15,10 @@ import PrenotaCall from "./pages/PrenotaCall";
 import Privacy from "./pages/Privacy";
 import Cookie from "./pages/Cookie";
 import NotFound from "./pages/NotFound";
+import SviluppoWebApp from "./pages/servizi/SviluppoWebApp";
+import AiAutomation from "./pages/servizi/AiAutomation";
+import ConsulenzaDigitale from "./pages/servizi/ConsulenzaDigitale";
+import BrandingUiUx from "./pages/servizi/BrandingUiUx";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +40,10 @@ const App = () => (
               <Route path="/prenota-call" element={<PrenotaCall />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/cookie" element={<Cookie />} />
+              <Route path="/servizi/sviluppo-web-app" element={<SviluppoWebApp />} />
+              <Route path="/servizi/ai-automation" element={<AiAutomation />} />
+              <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />
+              <Route path="/servizi/branding-ui-ux" element={<BrandingUiUx />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

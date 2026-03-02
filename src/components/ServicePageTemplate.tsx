@@ -409,7 +409,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         {/* ═══ 11 — CTA FINALE ═══ */}
         <section className="py-24 md:py-32">
           <div className="section-container">
-            <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 max-w-5xl mx-auto">
               {/* Left — Client Testimonial */}
               <div className="rounded-3xl bg-white p-8 md:p-10 flex flex-col justify-between min-h-[340px]">
                 <div>

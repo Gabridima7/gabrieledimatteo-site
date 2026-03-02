@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
-import Soluzioni from "./pages/Soluzioni";
+
 import ProdottiAI from "./pages/ProdottiAI";
 import CasiStudio from "./pages/CasiStudio";
 import ChiSiamo from "./pages/ChiSiamo";
@@ -32,7 +32,7 @@ const App = () => (
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/soluzioni" element={<Soluzioni />} />
+              
               <Route path="/prodotti-ai" element={<ProdottiAI />} />
               <Route path="/casi-studio" element={<CasiStudio />} />
               <Route path="/chi-siamo" element={<ChiSiamo />} />

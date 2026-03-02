@@ -5,6 +5,7 @@ import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, X, Clock, MessageCi
 import SEOHead from '@/components/SEOHead';
 import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.png';
+import iconCodiceProprieta from '@/assets/icons/icon-codice-proprieta.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -50,7 +51,7 @@ const reviews = [
 const whyNexus: { icon?: typeof Clock; image?: string; title: string; desc: string }[] = [
   { image: iconConsegnaTempi, title: "Consegna nei tempi", desc: "Rispettiamo sempre le scadenze concordate." },
   { image: iconComunicazioneDiretta, title: "Comunicazione diretta", desc: "Parli sempre con Gabriele, mai con intermediari." },
-  { icon: ShieldCheck, title: "Codice di tua proprietà", desc: "Tutto il codice sviluppato è al 100% tuo." },
+  { image: iconCodiceProprieta, title: "Codice di tua proprietà", desc: "Tutto il codice sviluppato è al 100% tuo." },
   { icon: Headphones, title: "Supporto post-lancio", desc: "Ti accompagniamo anche dopo la consegna." },
 ];
 

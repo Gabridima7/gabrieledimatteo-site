@@ -392,16 +392,7 @@ const Index = () => {
                               src={badge.logo}
                               alt={badge.name}
                               className="w-5 h-5 object-contain"
-                              onError={(e) => {
-                                const target = e.currentTarget;
-                                const parent = target.parentElement;
-                                if (parent) {
-                                  const fallback = document.createElement('div');
-                                  fallback.className = 'w-5 h-5 rounded bg-primary flex items-center justify-center text-[11px] font-bold text-white';
-                                  fallback.textContent = badge.name.charAt(0);
-                                  parent.replaceChild(fallback, target);
-                                }
-                              }}
+                              onError={(e) => { e.currentTarget.style.display = 'none'; }}
                             />
                           </div>
                           <span className={`${badge.size === 'lg' ? 'text-[15px]' : 'text-[14px]'} font-semibold whitespace-nowrap`}>{badge.name}</span>
@@ -421,16 +412,7 @@ const Index = () => {
                           src={badge.logo}
                           alt={badge.name}
                           className="w-4 h-4 object-contain"
-                          onError={(e) => {
-                            const target = e.currentTarget;
-                            const parent = target.parentElement;
-                            if (parent) {
-                              const fallback = document.createElement('div');
-                              fallback.className = 'w-4 h-4 rounded bg-primary flex items-center justify-center text-[9px] font-bold text-white';
-                              fallback.textContent = badge.name.charAt(0);
-                              parent.replaceChild(fallback, target);
-                            }
-                          }}
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         />
                         <span className="text-[12px] font-semibold text-white whitespace-nowrap">{badge.name}</span>
                       </div>

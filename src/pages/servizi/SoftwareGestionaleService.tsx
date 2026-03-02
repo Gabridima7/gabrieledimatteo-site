@@ -14,7 +14,7 @@ const SoftwareGestionaleService = () => (
       { value: '0', label: 'Licenze mensili' },
       { value: '100%', label: 'Personalizzato' },
     ]}
-    heroQuote={{ text: "Il gestionale di NEXUS ci ha cambiato la vita operativa. Tutto centralizzato, tutto sotto controllo.", name: "Marco R.", role: "Founder, Homeleven" }}
+    heroQuote={{ text: "Il gestionale di NEXUS ci ha cambiato la vita operativa. Tutto centralizzato, tutto sotto controllo.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
       { name: 'Homeleven', category: 'Gestionale', description: 'CRM e gestionale immobiliare con automazioni e reportistica avanzata.', metrics: ['-50% tempo operativo', '100% custom'], slug: 'homeleven' },
     ]}

@@ -14,7 +14,7 @@ const AIChatbotService = () => (
       { value: '-70%', label: 'Ticket di supporto' },
       { value: '<3s', label: 'Tempo di risposta' },
     ]}
-    heroQuote={{ text: "Il chatbot AI di NEXUS risponde all'80% delle domande dei clienti senza intervento umano. Un game changer.", name: "Marco R.", role: "Founder, Homeleven" }}
+    heroQuote={{ text: "Il chatbot AI di NEXUS risponde all'80% delle domande dei clienti senza intervento umano. Un game changer.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
       { name: 'Homeleven', category: 'AI Chatbot', description: 'Chatbot per assistenza clienti integrato con il CRM aziendale.', metrics: ['-70% ticket', '+30% lead'], slug: 'homeleven' },
     ]}

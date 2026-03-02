@@ -14,7 +14,7 @@ const SviluppoWebApp = () => (
       { value: '99.9%', label: 'Uptime garantito' },
       { value: '<48h', label: 'Tempo di risposta' },
     ]}
-    heroQuote={{ text: "NEXUS ha trasformato la nostra idea in una piattaforma funzionante in tempi record. Professionalità e competenza al top.", name: "Marco R.", role: "Founder, Homeleven" }}
+    heroQuote={{ text: "NEXUS ha trasformato la nostra idea in una piattaforma funzionante in tempi record. Professionalità e competenza al top.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
       { name: 'Homeleven', category: 'Web App', description: 'Piattaforma gestionale per il settore immobiliare con dashboard analytics.', metrics: ['+40% efficienza', 'Lancio in 8 settimane'], slug: 'homeleven' },
       { name: 'ONE UP', category: 'Sito Web', description: 'Sito web istituzionale con design moderno e ottimizzato per la lead generation.', metrics: ['+65% lead', 'PageSpeed 98'], slug: 'oneup' },

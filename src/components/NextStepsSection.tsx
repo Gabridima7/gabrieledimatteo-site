@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users, Layers, ListChecks, FolderOpen } from 'lucide-react';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import { useLanguage } from '@/context/LanguageContext';
+import iconStep1 from '@/assets/icons/icon-step-1.png';
+import iconStep2 from '@/assets/icons/icon-step-2.png';
+import iconStep3 from '@/assets/icons/icon-step-3.png';
+import iconStep4 from '@/assets/icons/icon-step-4.png';
 
-const steps = [
-  { icon: Users, gradient: 'from-slate-400 to-indigo-400' },
-  { icon: Layers, gradient: 'from-emerald-400 to-teal-300' },
-  { icon: ListChecks, gradient: 'from-teal-400 to-cyan-300' },
-  { icon: FolderOpen, gradient: 'from-violet-400 to-purple-300' },
-];
+const stepIcons = [iconStep1, iconStep2, iconStep3, iconStep4];
 
 const NextStepsSection = () => {
   const { t } = useLanguage();
@@ -54,13 +52,7 @@ const NextStepsSection = () => {
 
                 {/* Icon */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${steps[i].gradient} bg-opacity-20 flex items-center justify-center backdrop-blur-sm`}
-                    style={{ background: `linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))`, border: '1px solid rgba(255,255,255,0.1)' }}>
-                    {(() => {
-                      const Icon = steps[i].icon;
-                      return <Icon size={22} className="text-white/80" />;
-                    })()}
-                  </div>
+                  <img src={stepIcons[i]} alt="" className="w-12 h-12" />
                   <span className="text-xs font-bold uppercase tracking-widest text-white/60">{step.label}</span>
                 </div>
 

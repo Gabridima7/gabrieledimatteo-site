@@ -6,6 +6,7 @@ import iconSviluppoWebAppNew from '@/assets/icons/icon-sviluppo-web-app-new.webp
 import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
 import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
+import iconMake from '@/assets/icons/icon-make.png';
 import heroNexus from '@/assets/hero-nexus.png';
 import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
@@ -317,7 +318,7 @@ const Index = () => {
                 badges: [
                   { name: 'Claude', logo: 'https://www.anthropic.com/favicon.ico', top: '8%', left: '2%', rot: -6, delay: 0.6, size: 'lg', variant: 'light' },
                   { name: 'n8n', logo: 'https://n8n.io/favicon.ico', top: '2%', right: '8%', rot: 3, delay: 0, size: 'md', variant: 'light' },
-                  { name: 'Make', logo: 'https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/6baa5827-07ac-4a1e-b498-08568a446994/Make_Logo/w=128,quality=90,fit=scale-down', top: '38%', right: '4%', rot: -3, delay: 1.2, size: 'md', variant: 'dark' },
+                  { name: 'Make', logo: iconMake, top: '38%', right: '4%', rot: -3, delay: 1.2, size: 'md', variant: 'dark' },
                 ],
               },
               {

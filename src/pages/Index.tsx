@@ -14,6 +14,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
 import ServicesGrid from '@/components/ServicesGrid';
 import SEOHead from '@/components/SEOHead';
+import TrustBar from '@/components/TrustBar';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoAllfiber from '@/assets/logos/logo-allfiber.png';
@@ -247,27 +248,7 @@ const Index = () => {
       </section>
 
       {/* ─── TRUST BAR ─── */}
-      <section className="py-12 border-t border-white/[0.06]">
-        <div className="section-container">
-          <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-8 md:gap-24 lg:gap-32 place-items-center">
-            {[
-                { src: logoHomeleven, name: 'Homeleven' },
-                { src: logoBigliaSerramenti, name: 'Biglia Serramenti' },
-                { src: logoRevelliGroup, name: 'Revelli Group' },
-                { src: logoOneUp, name: 'One Up Sailing', noFilter: true }].
-                map((logo, i) =>
-                <img
-                  key={i}
-                  src={logo.src}
-                  alt={logo.name}
-                  className={`h-10 md:h-12 lg:h-14 w-auto object-contain transition-opacity duration-300 ${logo.noFilter ? 'opacity-80 hover:opacity-100' : 'brightness-0 invert opacity-60 hover:opacity-100'}`}
-                  loading="lazy"
-                  width={120}
-                  height={48} />
-                )}
-          </div>
-        </div>
-      </section>
+      <TrustBar />
 
       {/* ─── SERVICES ─── */}
       <section className="py-24">

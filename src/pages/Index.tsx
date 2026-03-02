@@ -315,9 +315,9 @@ const Index = () => {
                 title: 'Processi automatizzati',
                 desc: 'Eliminiamo il lavoro ripetitivo con AI e automazioni su misura',
                 badges: [
-                  { name: 'Claude', logo: 'https://www.anthropic.com/favicon.ico', top: '20%', left: '8%', bottom: undefined, right: undefined, rot: -6, delay: 0.6, size: 'lg' },
-                  { name: 'n8n', logo: 'https://n8n.io/favicon.ico', top: '6%', left: '24%', bottom: undefined, right: undefined, rot: -3, delay: 0, size: 'md' },
-                  { name: 'Make', logo: 'https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/6baa5827-07ac-4a1e-b498-08568a446994/Make_Logo/w=128,quality=90,fit=scale-down', top: '14%', left: '42%', bottom: undefined, right: undefined, rot: -4, delay: 1.2, size: 'md' },
+                  { name: 'Claude', logo: 'https://www.anthropic.com/favicon.ico', top: '8%', left: '2%', rot: -6, delay: 0.6, size: 'lg', variant: 'light' },
+                  { name: 'n8n', logo: 'https://n8n.io/favicon.ico', top: '2%', right: '8%', rot: 3, delay: 0, size: 'md', variant: 'light' },
+                  { name: 'Make', logo: 'https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/6baa5827-07ac-4a1e-b498-08568a446994/Make_Logo/w=128,quality=90,fit=scale-down', top: '38%', right: '4%', rot: -3, delay: 1.2, size: 'md', variant: 'dark' },
                 ],
               },
               {
@@ -326,9 +326,9 @@ const Index = () => {
                 title: 'Dal brief al lancio',
                 desc: 'Dallo strategy call al sito live, in tempi certi e trasparenti',
                 badges: [
-                  { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', top: '20%', left: '8%', bottom: undefined, right: undefined, rot: -5, delay: 0.3, size: 'lg' },
-                  { name: 'Vercel', logo: 'https://vercel.com/favicon.ico', top: '6%', left: '24%', bottom: undefined, right: undefined, rot: -3, delay: 0.9, size: 'md' },
-                  { name: 'React', logo: 'https://react.dev/favicon.ico', top: '14%', left: '42%', bottom: undefined, right: undefined, rot: -4, delay: 1.5, size: 'md' },
+                  { name: 'Lovable', logo: 'https://lovable.dev/favicon.ico', top: '8%', left: '2%', rot: -5, delay: 0.3, size: 'lg', variant: 'light' },
+                  { name: 'Vercel', logo: 'https://vercel.com/favicon.ico', top: '2%', right: '8%', rot: 3, delay: 0.9, size: 'md', variant: 'light' },
+                  { name: 'React', logo: 'https://react.dev/favicon.ico', top: '38%', right: '4%', rot: -3, delay: 1.5, size: 'md', variant: 'dark' },
                 ],
               },
               {
@@ -337,9 +337,9 @@ const Index = () => {
                 title: 'Nessun template',
                 desc: 'Ogni progetto è progettato da zero sulla tua identità e obiettivi',
                 badges: [
-                  { name: 'Figma', logo: 'https://figma.com/favicon.ico', top: '20%', left: '8%', bottom: undefined, right: undefined, rot: -5, delay: 0.5, size: 'lg' },
-                  { name: 'Tailwind', logo: 'https://tailwindcss.com/favicon.ico', top: '6%', left: '24%', bottom: undefined, right: undefined, rot: -3, delay: 0.8, size: 'md' },
-                  { name: 'Framer', logo: 'https://framer.com/favicon.ico', top: '14%', left: '42%', bottom: undefined, right: undefined, rot: -4, delay: 1.3, size: 'md' },
+                  { name: 'Figma', logo: 'https://figma.com/favicon.ico', top: '8%', left: '2%', rot: -5, delay: 0.5, size: 'lg', variant: 'light' },
+                  { name: 'Tailwind', logo: 'https://tailwindcss.com/favicon.ico', top: '2%', right: '8%', rot: 3, delay: 0.8, size: 'md', variant: 'light' },
+                  { name: 'Framer', logo: 'https://framer.com/favicon.ico', top: '38%', right: '4%', rot: -3, delay: 1.3, size: 'md', variant: 'dark' },
                 ],
               },
             ].map((col, colIdx) => (
@@ -368,39 +368,43 @@ const Index = () => {
                     {col.badges.map((badge, bIdx) => (
                       <motion.div
                         key={bIdx}
-                        className={`absolute ${badge.size === 'lg' ? 'z-[2]' : 'z-[3]'}`}
+                        className="absolute z-[2]"
                         style={{
                           top: badge.top,
-                          bottom: badge.bottom,
                           left: badge.left,
                           right: badge.right,
-                          ['--rotation' as string]: `${badge.rot}deg`,
                           animation: `floatBadge 4s ease-in-out infinite`,
                           animationDelay: `${badge.delay}s`,
                         }}
-                        whileHover={{ y: -6, scale: 1.05, rotate: badge.rot > 0 ? badge.rot + 2 : badge.rot - 2 }}
+                        whileHover={{ y: -6, scale: 1.05 }}
                         transition={{ type: 'spring', stiffness: 400, damping: 15 }}
                       >
                         <div
-                          className={`flex items-center gap-2.5 ${badge.size === 'lg' ? 'px-5 py-3' : 'px-4 py-2.5'} rounded-[14px] bg-[rgba(20,20,35,0.85)] backdrop-blur-[12px] border border-white/[0.12] shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-white/[0.3] hover:shadow-[0_12px_32px_rgba(28,53,200,0.35)] transition-all duration-300`}
+                          className={`flex items-center gap-2.5 ${badge.size === 'lg' ? 'px-5 py-3' : 'px-4 py-2.5'} rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-all duration-300 ${
+                            badge.variant === 'light'
+                              ? 'bg-white text-gray-900 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)]'
+                              : 'bg-[rgba(20,20,40,0.8)] backdrop-blur-xl border border-white/[0.12] text-white hover:border-white/[0.25]'
+                          }`}
                           style={{ transform: `rotate(${badge.rot}deg)` }}
                         >
-                          <img
-                            src={badge.logo}
-                            alt={badge.name}
-                            className={`${badge.size === 'lg' ? 'w-7 h-7' : 'w-6 h-6'} object-contain`}
-                            onError={(e) => {
-                              const target = e.currentTarget;
-                              const parent = target.parentElement;
-                              if (parent) {
-                                const fallback = document.createElement('div');
-                                fallback.className = `${badge.size === 'lg' ? 'w-7 h-7' : 'w-6 h-6'} rounded bg-primary flex items-center justify-center text-[11px] font-bold text-white`;
-                                fallback.textContent = badge.name.charAt(0);
-                                parent.replaceChild(fallback, target);
-                              }
-                            }}
-                          />
-                          <span className={`${badge.size === 'lg' ? 'text-[15px]' : 'text-[14px]'} font-semibold text-white whitespace-nowrap`}>{badge.name}</span>
+                          <div className={`${badge.size === 'lg' ? 'w-8 h-8' : 'w-7 h-7'} rounded-lg overflow-hidden flex items-center justify-center flex-shrink-0 ${badge.variant === 'light' ? 'bg-gray-100' : 'bg-white/10'}`}>
+                            <img
+                              src={badge.logo}
+                              alt={badge.name}
+                              className="w-5 h-5 object-contain"
+                              onError={(e) => {
+                                const target = e.currentTarget;
+                                const parent = target.parentElement;
+                                if (parent) {
+                                  const fallback = document.createElement('div');
+                                  fallback.className = 'w-5 h-5 rounded bg-primary flex items-center justify-center text-[11px] font-bold text-white';
+                                  fallback.textContent = badge.name.charAt(0);
+                                  parent.replaceChild(fallback, target);
+                                }
+                              }}
+                            />
+                          </div>
+                          <span className={`${badge.size === 'lg' ? 'text-[15px]' : 'text-[14px]'} font-semibold whitespace-nowrap`}>{badge.name}</span>
                         </div>
                       </motion.div>
                     ))}

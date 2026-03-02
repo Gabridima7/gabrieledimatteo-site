@@ -152,26 +152,17 @@ const ServicesGrid = () => {
 
           {/* Right */}
           <div className="flex items-center gap-3 w-full md:w-auto">
+            <Link to="/casi-studio" className="w-12 h-12 rounded-full bg-[#d0f601] flex items-center justify-center hover:scale-105 transition-transform shrink-0">
+              <ArrowRight size={20} className="text-black -rotate-45" />
+            </Link>
             <a
               href={CAL_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center shrink-0 transition-all duration-200 hover:scale-105"
-              style={{ background: '#1C35C8' }}
+              className="btn-primary px-6 py-3 text-sm md:px-8 md:py-4 md:text-base rounded-full bg-[#d0f601] hover:bg-[#bde001] text-nexus-navy whitespace-nowrap flex-1 md:flex-none"
             >
-              <ArrowDownRight size={22} className="text-white" />
-            </a>
-            <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-[52px] px-7 rounded-[14px] font-semibold text-[15px] text-white flex items-center justify-center gap-2 transition-all duration-200 hover:shadow-[0_0_24px_rgba(28,53,200,0.4)] flex-1 md:flex-none whitespace-nowrap"
-              style={{ background: '#1C35C8' }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#4F6FE8')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = '#1C35C8')}
-            >
-              Prenota una Call
-              <ArrowRight size={16} />
+              Prenota una call gratuita
+              <ArrowRight size={18} />
             </a>
           </div>
         </motion.div>

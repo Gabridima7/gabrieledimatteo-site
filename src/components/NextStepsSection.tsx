@@ -73,24 +73,28 @@ const NextStepsSection = () => {
             style={{ top: 28, height: 1, background: 'rgba(255,255,255,0.15)', zIndex: 0 }}
           />
 
-          {/* V-shaped connectors at 25%, 50%, 75% */}
+          {/* Curved U-shaped connectors at 25%, 50%, 75% */}
           {[1, 2, 3].map((idx) => (
-            <div
+            <svg
               key={idx}
               className="hidden lg:block absolute pointer-events-none"
+              width="20"
+              height="12"
+              viewBox="0 0 20 12"
               style={{
                 left: `${idx * 25}%`,
-                top: 23,
+                top: 22,
                 transform: 'translateX(-50%)',
-                width: 12,
-                height: 12,
-                borderRight: '1px solid rgba(255,255,255,0.3)',
-                borderBottom: '1px solid rgba(255,255,255,0.3)',
-                transformOrigin: 'center',
-                rotate: '45deg',
                 zIndex: 1,
               }}
-            />
+            >
+              <path
+                d="M0 0 Q10 12 20 0"
+                stroke="rgba(255,255,255,0.3)"
+                strokeWidth="1"
+                fill="none"
+              />
+            </svg>
           ))}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">

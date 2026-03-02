@@ -1,48 +1,47 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Palette, Layout, Smartphone, RefreshCw } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
-
-const services = [
-  { icon: Palette, title: 'UI/UX Design', desc: 'Design di interfacce intuitive e user experience memorabili.' },
-  { icon: Smartphone, title: 'Mobile App Design', desc: 'Design di app mobile native e cross-platform con focus sull\'usabilità.' },
-  { icon: RefreshCw, title: 'Website Redesign', desc: 'Rinnoviamo il tuo sito web con un design moderno e performante.' },
-  { icon: Layout, title: 'Branding & Identity', desc: 'Identità visiva coerente e distintiva per il tuo brand digitale.' },
-];
+import { Palette, Layout, Smartphone, RefreshCw, Search, PenTool, Eye, Rocket } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const BrandingUiUx = () => (
-  <>
-    <SEOHead title="Branding & UI/UX Design — NEXUS Agency" description="UI/UX design, branding, mobile app design e website redesign per PMI italiane." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Branding & <span className="italic font-light text-[hsl(228,85%,60%)]">UI/UX</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Design che comunica, converte e rende il tuo brand indimenticabile.
-            </p>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6">
-                <s.icon className="text-[hsl(228,76%,45%)] mb-4" size={28} />
-                <h3 className="font-semibold text-white mb-2">{s.title}</h3>
-                <p className="text-sm text-white/50">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 text-base">
-              Prenota una Call <ArrowRight size={18} />
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="Branding & UI/UX Design — NEXUS Agency"
+    seoDescription="UI/UX design, branding, mobile app design e website redesign per PMI italiane."
+    badge="Branding & UI/UX"
+    h1="Design che comunica e converte"
+    subtitle="Creiamo identità visive coerenti e interfacce che trasformano visitatori in clienti."
+    heroIcon={Palette}
+    stats={[
+      { value: '+120%', label: 'Conversioni medie' },
+      { value: '5.0', label: 'Rating clienti' },
+      { value: '30+', label: 'Brand progettati' },
+    ]}
+    heroQuote={{ text: "Il redesign del nostro brand ha completamente trasformato la percezione del mercato nei nostri confronti.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
+    caseStudies={[
+      { name: 'Biglia Serramenti', category: 'Branding & Web', description: 'Rebranding completo con nuovo sito web e identità visiva coordinata.', metrics: ['+85% richieste', 'Brand coerente'], slug: 'biglia' },
+      { name: 'Homeleven', category: 'UI/UX Design', description: 'Design dell\'interfaccia utente per piattaforma gestionale immobiliare.', metrics: ['UX intuitiva', '+50% retention'], slug: 'homeleven' },
+    ]}
+    ctaBannerText="Pronto a rinnovare il tuo brand?"
+    benefits={[
+      { icon: Eye, title: 'Design memorabile', desc: 'Identità visiva che ti distingue dalla concorrenza.' },
+      { icon: Layout, title: 'UX che converte', desc: 'Interfacce progettate per guidare l\'utente verso l\'azione.' },
+      { icon: RefreshCw, title: 'Coerenza totale', desc: 'Brand guideline per mantenere coerenza su ogni touchpoint.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Ricerca', desc: 'Analizziamo brand, mercato e competitors.' },
+      { icon: PenTool, title: 'Concept', desc: 'Creiamo moodboard e proposte creative.' },
+      { icon: Palette, title: 'Design', desc: 'Sviluppiamo l\'identità visiva completa.' },
+      { icon: Rocket, title: 'Delivery', desc: 'Consegniamo tutti gli asset e le guideline.' },
+    ]}
+    outcomes={['Identità visiva professionale', 'Aumento della brand awareness', 'Design coerente su ogni canale', 'Maggiore fiducia dei clienti', 'Interfacce ad alta conversione']}
+    outcomesCtaText="Rinnova il tuo brand"
+    faqs={[
+      { q: 'Cosa include un progetto di branding?', a: 'Logo, palette colori, tipografia, brand guideline, template social e tutti gli asset necessari.' },
+      { q: 'Quanto dura un progetto di branding?', a: 'Un branding completo richiede 3-5 settimane, dal concept alla consegna finale.' },
+      { q: 'Posso richiedere solo il logo?', a: 'Sì, ma consigliamo sempre un branding completo per massimizzare l\'impatto.' },
+      { q: 'Fate anche il design di app mobile?', a: 'Sì, progettiamo UI/UX per web e mobile app con focus su usabilità e conversioni.' },
+      { q: 'Come funziona il processo di revisione?', a: 'Includiamo 2-3 round di revisioni per ogni fase del progetto.' },
+    ]}
+    finalCtaH2="Vuoi un brand che lascia il segno?"
+  />
 );
 
 export default BrandingUiUx;

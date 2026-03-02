@@ -1,30 +1,46 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { Plug, Link2, Database, Search, Settings, Code, Rocket, Workflow, RefreshCw } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const IntegrazioniAPIService = () => (
-  <>
-    <SEOHead title="Integrazioni API — NEXUS Agency" description="Connetti i tuoi sistemi aziendali con integrazioni API personalizzate." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Integrazioni <span className="italic font-light text-[hsl(228,85%,60%)]">API</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Connetti i tuoi sistemi aziendali con integrazioni API personalizzate.
-            </p>
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Prenota una call gratuita <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="Integrazioni API — NEXUS Agency"
+    seoDescription="Connetti i tuoi sistemi aziendali con integrazioni API personalizzate."
+    badge="Integrazioni API"
+    h1="Connetti tutti i tuoi sistemi aziendali"
+    subtitle="Integrazioni API personalizzate per far comunicare i tuoi software e automatizzare i flussi di dati."
+    heroIcon={Plug}
+    stats={[
+      { value: '50+', label: 'API integrate' },
+      { value: '0', label: 'Data silos' },
+      { value: 'Real-time', label: 'Sincronizzazione' },
+    ]}
+    heroQuote={{ text: "NEXUS ha collegato tutti i nostri strumenti in un ecosistema unico. Ora i dati fluiscono automaticamente.", name: "Andrea Z.", role: "CEO, ONE UP" }}
+    caseStudies={[
+      { name: 'ONE UP', category: 'Integrazione API', description: 'Integrazione tra CRM, gestionale e piattaforma e-commerce con sync real-time.', metrics: ['5 sistemi connessi', '-90% data entry'], slug: 'oneup' },
+    ]}
+    ctaBannerText="Pronto a connettere i tuoi sistemi?"
+    benefits={[
+      { icon: Link2, title: 'Ecosistema unificato', desc: 'Tutti i tuoi software comunicano tra loro in tempo reale.' },
+      { icon: RefreshCw, title: 'Sync automatica', desc: 'I dati si aggiornano automaticamente senza intervento manuale.' },
+      { icon: Database, title: 'Single source of truth', desc: 'Un unico punto di verità per tutti i tuoi dati aziendali.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Mappatura', desc: 'Analizziamo i tuoi sistemi e i flussi di dati.' },
+      { icon: Settings, title: 'Architettura', desc: 'Progettiamo le integrazioni e i flussi.' },
+      { icon: Code, title: 'Sviluppo', desc: 'Implementiamo le API e i webhook.' },
+      { icon: Rocket, title: 'Go-live', desc: 'Attiviamo, testiamo e monitoriamo.' },
+    ]}
+    outcomes={['Eliminazione del data entry manuale', 'Dati sincronizzati in tempo reale', 'Zero errori di trascrizione', 'Visione unificata del business', 'Processi automatizzati end-to-end']}
+    outcomesCtaText="Collega i tuoi sistemi"
+    faqs={[
+      { q: 'Quali software potete integrare?', a: 'Qualsiasi software con API disponibile: CRM, ERP, e-commerce, email marketing, payment gateway e altri.' },
+      { q: 'Usate Make o Zapier?', a: 'Sì, per integrazioni no-code. Per scenari complessi sviluppiamo integrazioni custom.' },
+      { q: 'Quanto tempo serve per un\'integrazione?', a: 'Un\'integrazione standard richiede 1-2 settimane. Progetti complessi 4-8 settimane.' },
+      { q: 'Come gestite gli errori?', a: 'Implementiamo retry automatici, logging e alerting per garantire affidabilità.' },
+      { q: 'Le integrazioni sono sicure?', a: 'Sì. Utilizziamo OAuth, API key encryption e protocolli sicuri per ogni connessione.' },
+    ]}
+    finalCtaH2="Vuoi un ecosistema digitale connesso per la tua PMI?"
+  />
 );
 
 export default IntegrazioniAPIService;

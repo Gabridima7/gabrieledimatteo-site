@@ -1,30 +1,47 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { Globe, Palette, Zap, Search, PenTool, Code, Rocket, Eye, BarChart3 } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const WebsiteDesignService = () => (
-  <>
-    <SEOHead title="Website Design — NEXUS Agency" description="Siti web custom e landing page dal design moderno e professionale." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Website <span className="italic font-light text-[hsl(228,85%,60%)]">Design</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Siti web custom e landing page dal design moderno e professionale.
-            </p>
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Prenota una call gratuita <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="Website Design — NEXUS Agency"
+    seoDescription="Siti web custom e landing page dal design moderno e professionale."
+    badge="Website Design"
+    h1="Siti web dal design moderno e professionale"
+    subtitle="Siti web custom che comunicano il valore del tuo brand e convertono i visitatori in clienti."
+    heroIcon={Globe}
+    stats={[
+      { value: '98+', label: 'PageSpeed medio' },
+      { value: '+65%', label: 'Lead generati' },
+      { value: '100%', label: 'Responsive' },
+    ]}
+    heroQuote={{ text: "Il sito rifatto da NEXUS ha portato un aumento immediato delle richieste di preventivo.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
+    caseStudies={[
+      { name: 'Biglia Serramenti', category: 'Website Design', description: 'Sito web istituzionale con design premium e ottimizzazione SEO.', metrics: ['+65% lead', 'PageSpeed 98'], slug: 'biglia' },
+      { name: 'ONE UP', category: 'Sito Web', description: 'Sito corporate con animazioni e storytelling del brand.', metrics: ['+80% traffico', 'Bounce -35%'], slug: 'oneup' },
+    ]}
+    ctaBannerText="Pronto a rinnovare il tuo sito web?"
+    benefits={[
+      { icon: Eye, title: 'Design premium', desc: 'Estetica moderna che riflette la qualità del tuo brand.' },
+      { icon: Zap, title: 'Performance', desc: 'Siti veloci, ottimizzati per SEO e Core Web Vitals.' },
+      { icon: BarChart3, title: 'Conversione', desc: 'Layout e copy progettati per generare contatti e vendite.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Analisi', desc: 'Studiamo brand, competitors e obiettivi.' },
+      { icon: PenTool, title: 'Design', desc: 'Creiamo mockup e prototipi del nuovo sito.' },
+      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo con focus su velocità e SEO.' },
+      { icon: Rocket, title: 'Lancio', desc: 'Go-live con monitoraggio e ottimizzazione.' },
+    ]}
+    outcomes={['Sito web professionale e moderno', 'Ottimizzazione SEO integrata', 'Velocità di caricamento top', 'Lead generation efficace', 'Compatibilità cross-browser']}
+    outcomesCtaText="Rinnova il tuo sito"
+    faqs={[
+      { q: 'Quanto costa un sito web?', a: 'Un sito vetrina parte da €2.000, un sito più complesso con funzionalità custom da €4.000.' },
+      { q: 'In quanto tempo è pronto?', a: 'Un sito vetrina richiede 3-4 settimane, progetti più complessi 6-8 settimane.' },
+      { q: 'Il sito sarà ottimizzato per Google?', a: 'Sì, tutti i nostri siti sono ottimizzati per SEO: meta tag, velocità, struttura e contenuti.' },
+      { q: 'Posso aggiornare i contenuti in autonomia?', a: 'Sì, implementiamo un CMS semplice da usare per aggiornare testi e immagini.' },
+      { q: 'Include anche hosting e dominio?', a: 'Possiamo gestire hosting e dominio oppure configurarli sul tuo provider preferito.' },
+    ]}
+    finalCtaH2="Vuoi un sito web che genera clienti?"
+  />
 );
 
 export default WebsiteDesignService;

@@ -326,20 +326,20 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         <section className="py-24">
           <div className="section-container">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">Come lavoriamo con te</motion.h2>
-            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {whyNexus.map((w, i) => {
                 const Icon = w.icon;
                 return (
-                  <motion.div key={i} {...stagger(i)} className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                    <div className="mb-4">
+                  <motion.div key={i} {...stagger(i)} className="flex flex-col items-center text-center">
+                    <div className="mb-6">
                       {w.image ? (
-                        <img src={w.image} alt={w.title} className="w-8 h-8 object-contain" />
+                        <img src={w.image} alt={w.title} className="w-16 h-16 object-contain" />
                       ) : Icon ? (
-                        <Icon size={24} className="text-primary" />
+                        <Icon size={40} className="text-primary" />
                       ) : null}
                     </div>
-                    <h3 className="text-base font-semibold text-white">{w.title}</h3>
-                    <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>{w.desc}</p>
+                    <h3 className="text-base font-semibold text-white leading-snug">{w.title}</h3>
+                    <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.55)' }}>{w.desc}</p>
                   </motion.div>
                 );
               })}

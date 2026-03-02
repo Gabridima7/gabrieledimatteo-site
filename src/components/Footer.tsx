@@ -52,7 +52,7 @@ const Footer = () => {
           {/* Contatti */}
           <div>
             <h4 className="font-semibold text-white mb-4">{t('footer', 'contatti')}</h4>
-            <p className="text-nexus-gray text-sm mb-4">gabriele@nexusagency.it</p>
+            <p className="text-nexus-gray text-sm mb-4">info@nexusagency.it</p>
             <a
               href={CAL_LINK}
               target="_blank"

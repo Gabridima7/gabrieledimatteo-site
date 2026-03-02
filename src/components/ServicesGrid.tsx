@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDownRight, ArrowRight } from 'lucide-react';
+import founderGd from '@/assets/founder-gd.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -137,12 +138,9 @@ const ServicesGrid = () => {
           <div className="flex items-center gap-4 text-center md:text-left">
             {/* Avatar */}
             <div
-              className="w-[52px] h-[52px] rounded-full flex items-center justify-center shrink-0"
-              style={{
-                background: 'linear-gradient(135deg, #1C35C8, #4F6FE8)',
-              }}
+              className="w-[52px] h-[52px] rounded-full shrink-0 overflow-hidden"
             >
-              <span className="text-white font-bold text-lg">GD</span>
+              <img src={founderGd} alt="Gabriele Di Matteo" className="w-full h-full object-cover" />
             </div>
             <p
               className="font-semibold text-white leading-snug max-w-[600px]"

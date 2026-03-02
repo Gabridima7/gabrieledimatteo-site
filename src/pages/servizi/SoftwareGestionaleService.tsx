@@ -1,30 +1,46 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { Database, BarChart3, Settings, Search, PenTool, Code, Rocket, Cog, Users } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const SoftwareGestionaleService = () => (
-  <>
-    <SEOHead title="Software Gestionale — NEXUS Agency" description="Soluzioni gestionali su misura: CRM, ERP e tool interni per ottimizzare i processi aziendali." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Software <span className="italic font-light text-[hsl(228,85%,60%)]">Gestionale</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              CRM, ERP e tool interni su misura per ottimizzare i processi aziendali.
-            </p>
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Prenota una call gratuita <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="Software Gestionale — NEXUS Agency"
+    seoDescription="Soluzioni gestionali su misura: CRM, ERP e tool interni per ottimizzare i processi aziendali."
+    badge="Software Gestionale"
+    h1="Software gestionale su misura per la tua azienda"
+    subtitle="CRM, ERP e tool interni personalizzati per ottimizzare ogni processo e far crescere la tua PMI."
+    heroIcon={Cog}
+    stats={[
+      { value: '-50%', label: 'Tempo di gestione' },
+      { value: '0', label: 'Licenze mensili' },
+      { value: '100%', label: 'Personalizzato' },
+    ]}
+    heroQuote={{ text: "Il gestionale di NEXUS ci ha cambiato la vita operativa. Tutto centralizzato, tutto sotto controllo.", name: "Marco R.", role: "Founder, Homeleven" }}
+    caseStudies={[
+      { name: 'Homeleven', category: 'Gestionale', description: 'CRM e gestionale immobiliare con automazioni e reportistica avanzata.', metrics: ['-50% tempo operativo', '100% custom'], slug: 'homeleven' },
+    ]}
+    ctaBannerText="Pronto a ottimizzare i tuoi processi?"
+    benefits={[
+      { icon: Database, title: 'Tutto centralizzato', desc: 'Dati, clienti, ordini e processi in un unico posto.' },
+      { icon: Users, title: 'Multi-utente', desc: 'Ruoli e permessi personalizzati per ogni membro del team.' },
+      { icon: BarChart3, title: 'Report automatici', desc: 'Dashboard e report generati automaticamente in tempo reale.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Analisi', desc: 'Mappiamo processi attuali e pain points.' },
+      { icon: PenTool, title: 'Progettazione', desc: 'Definiamo architettura e user flow.' },
+      { icon: Code, title: 'Sviluppo', desc: 'Costruiamo il gestionale per moduli.' },
+      { icon: Rocket, title: 'Migrazione', desc: 'Trasferiamo i dati e formiamo il team.' },
+    ]}
+    outcomes={['Processi aziendali ottimizzati', 'Zero licenze software mensili', 'Dati centralizzati e accessibili', 'Automazioni sui flussi operativi', 'Report e analytics in tempo reale']}
+    outcomesCtaText="Digitalizza i tuoi processi"
+    faqs={[
+      { q: 'Quanto costa un software gestionale su misura?', a: 'Dipende dalla complessità. Prenota una call per un preventivo personalizzato basato sulle tue esigenze.' },
+      { q: 'Posso migrare i dati dal mio gestionale attuale?', a: 'Sì, ci occupiamo della migrazione completa dei dati dal tuo sistema esistente.' },
+      { q: 'Devo pagare licenze mensili?', a: 'No. Il software è di tua proprietà, senza costi ricorrenti per licenze.' },
+      { q: 'Quanto tempo serve per lo sviluppo?', a: 'Un gestionale medio-complesso richiede 8-16 settimane.' },
+      { q: 'Include formazione per il mio team?', a: 'Sì, forniamo formazione completa e documentazione per il tuo team.' },
+    ]}
+    finalCtaH2="Vuoi un gestionale su misura per la tua PMI?"
+  />
 );
 
 export default SoftwareGestionaleService;

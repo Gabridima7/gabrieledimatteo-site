@@ -1,30 +1,46 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { MessageSquare, Bot, Brain, Search, Settings, Code, Rocket, Zap, Clock } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const AIChatbotService = () => (
-  <>
-    <SEOHead title="AI Chatbot — NEXUS Agency" description="Assistenti virtuali intelligenti per automatizzare il supporto clienti e le vendite." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              AI <span className="italic font-light text-[hsl(228,85%,60%)]">Chatbot</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Assistenti virtuali intelligenti per automatizzare supporto clienti e vendite.
-            </p>
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Prenota una call gratuita <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="AI Chatbot — NEXUS Agency"
+    seoDescription="Assistenti virtuali intelligenti per automatizzare il supporto clienti e le vendite."
+    badge="AI Chatbot"
+    h1="Chatbot AI per supporto clienti e vendite"
+    subtitle="Assistenti virtuali intelligenti addestrati sui tuoi dati per rispondere 24/7 e generare lead qualificati."
+    heroIcon={Bot}
+    stats={[
+      { value: '24/7', label: 'Disponibilità' },
+      { value: '-70%', label: 'Ticket di supporto' },
+      { value: '<3s', label: 'Tempo di risposta' },
+    ]}
+    heroQuote={{ text: "Il chatbot AI di NEXUS risponde all'80% delle domande dei clienti senza intervento umano. Un game changer.", name: "Marco R.", role: "Founder, Homeleven" }}
+    caseStudies={[
+      { name: 'Homeleven', category: 'AI Chatbot', description: 'Chatbot per assistenza clienti integrato con il CRM aziendale.', metrics: ['-70% ticket', '+30% lead'], slug: 'homeleven' },
+    ]}
+    ctaBannerText="Pronto a mettere l'AI al servizio dei tuoi clienti?"
+    benefits={[
+      { icon: Clock, title: 'Sempre attivo', desc: 'Risponde ai tuoi clienti 24 ore su 24, 7 giorni su 7.' },
+      { icon: Brain, title: 'Addestrato sui tuoi dati', desc: 'Conosce il tuo business, prodotti e procedure alla perfezione.' },
+      { icon: Zap, title: 'Lead generation', desc: 'Qualifica i lead automaticamente e li passa al team vendite.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Knowledge base', desc: 'Raccogliamo e organizziamo i tuoi dati e FAQ.' },
+      { icon: Settings, title: 'Configurazione', desc: 'Addestriamo l\'AI sul tuo business.' },
+      { icon: Code, title: 'Integrazione', desc: 'Lo integriamo nel tuo sito e nei tuoi tool.' },
+      { icon: Rocket, title: 'Ottimizzazione', desc: 'Monitoriamo e miglioriamo le risposte nel tempo.' },
+    ]}
+    outcomes={['Supporto clienti automatizzato', 'Riduzione drastica dei ticket', 'Lead qualificati 24/7', 'Risposte immediate e accurate', 'Integrazione con CRM e tool']}
+    outcomesCtaText="Attiva il tuo chatbot AI"
+    faqs={[
+      { q: 'Su quali canali funziona il chatbot?', a: 'Sito web, WhatsApp, Telegram e qualsiasi piattaforma con API. Lo integriamo dove ti serve.' },
+      { q: 'Come lo addestrate sui miei dati?', a: 'Carichiamo la tua knowledge base (FAQ, documenti, procedure) e addestriamo il modello AI.' },
+      { q: 'Può trasferire la chat a un operatore umano?', a: 'Sì. Se il chatbot non riesce a risolvere, passa la conversazione al tuo team con tutto il contesto.' },
+      { q: 'Quanto costa un chatbot AI?', a: 'Il costo dipende dalla complessità. Prenota una call per un preventivo su misura.' },
+      { q: 'Quante lingue supporta?', a: 'Il chatbot può comunicare in italiano, inglese e nelle principali lingue europee.' },
+    ]}
+    finalCtaH2="Vuoi un assistente AI per la tua PMI?"
+  />
 );
 
 export default AIChatbotService;

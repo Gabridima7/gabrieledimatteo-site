@@ -1,30 +1,46 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import SEOHead from '@/components/SEOHead';
-
-const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+import { Globe, Zap, BarChart3, Search, PenTool, Code, Rocket, Target, MousePointerClick } from 'lucide-react';
+import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 const LandingPageService = () => (
-  <>
-    <SEOHead title="Landing Page — NEXUS Agency" description="Creiamo landing page ad alta conversione per campagne marketing e lancio prodotti." />
-    <div className="pt-24 pb-16">
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-              Landing <span className="italic font-light text-[hsl(228,85%,60%)]">Page</span>
-            </h1>
-            <p className="text-white/60 text-lg max-w-xl mb-10">
-              Pagine di atterraggio ad alta conversione per campagne marketing e lancio prodotti.
-            </p>
-            <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Prenota una call gratuita <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  </>
+  <ServicePageTemplate
+    seoTitle="Landing Page — NEXUS Agency"
+    seoDescription="Creiamo landing page ad alta conversione per campagne marketing e lancio prodotti."
+    badge="Landing Page"
+    h1="Landing page ad alta conversione"
+    subtitle="Pagine di atterraggio progettate per convertire visitatori in lead e clienti, ottimizzate per ogni campagna."
+    heroIcon={MousePointerClick}
+    stats={[
+      { value: '+180%', label: 'Tasso conversione medio' },
+      { value: '< 2s', label: 'Tempo di caricamento' },
+      { value: '100', label: 'PageSpeed Score' },
+    ]}
+    heroQuote={{ text: "La landing page di NEXUS ha triplicato le conversioni della nostra campagna Google Ads.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
+    caseStudies={[
+      { name: 'Biglia Serramenti', category: 'Landing Page', description: 'Landing page per campagna lead generation con form ottimizzato.', metrics: ['+180% conversioni', 'CPA -40%'], slug: 'biglia' },
+    ]}
+    ctaBannerText="Pronto a lanciare una landing page che converte?"
+    benefits={[
+      { icon: Target, title: 'Focalizzata sulla conversione', desc: 'Ogni elemento è progettato per guidare l\'utente verso l\'azione.' },
+      { icon: Zap, title: 'Ultra veloce', desc: 'Caricamento sotto i 2 secondi per non perdere nessun visitatore.' },
+      { icon: BarChart3, title: 'A/B testing ready', desc: 'Struttura pronta per test e ottimizzazioni continue.' },
+    ]}
+    process={[
+      { icon: Search, title: 'Briefing', desc: 'Definiamo obiettivi, target e messaging.' },
+      { icon: PenTool, title: 'Design', desc: 'Progettiamo layout e copy persuasivo.' },
+      { icon: Code, title: 'Sviluppo', desc: 'Codifichiamo con focus su performance.' },
+      { icon: Rocket, title: 'Lancio', desc: 'Pubblichiamo e monitoriamo le metriche.' },
+    ]}
+    outcomes={['Tasso di conversione elevato', 'Costo per acquisizione ridotto', 'Pagina veloce e SEO-friendly', 'Design professionale e persuasivo', 'Tracking e analytics integrati']}
+    outcomesCtaText="Crea la tua landing page"
+    faqs={[
+      { q: 'Quanto costa una landing page?', a: 'Il costo varia in base alla complessità. Una landing page standard parte da €1.500.' },
+      { q: 'In quanto tempo è pronta?', a: 'Una landing page viene consegnata in 1-2 settimane dal briefing iniziale.' },
+      { q: 'Include anche il copywriting?', a: 'Sì, ci occupiamo di design, copy e sviluppo. Servizio completo.' },
+      { q: 'Posso collegare Google Ads o Meta Ads?', a: 'Certamente. Configuriamo pixel, tracking e conversion API.' },
+      { q: 'Fate anche A/B test?', a: 'Sì, possiamo implementare varianti per testare e ottimizzare le performance.' },
+    ]}
+    finalCtaH2="Vuoi una landing page che converte davvero?"
+  />
 );
 
 export default LandingPageService;

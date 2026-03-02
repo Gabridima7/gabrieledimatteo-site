@@ -407,17 +407,46 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 11 — CTA FINALE ═══ */}
-        <section className="py-32">
+        <section className="py-24 md:py-32">
           <div className="section-container">
-            <motion.div {...fadeUp} className="max-w-[700px] mx-auto text-center">
-              <h2 className="font-extrabold text-white" style={{ fontSize: 'clamp(32px,4vw,56px)' }}>{props.finalCtaH2}</h2>
-              <p className="text-lg mt-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                Prenota una call gratuita di 30 minuti. Analizziamo il tuo progetto e ti diciamo come possiamo aiutarti.
-              </p>
-              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-10 py-5 text-base mt-8 inline-flex">
-                Prenota una call gratuita <ArrowRight size={18} />
-              </a>
-              <p className="text-[13px] mt-4" style={{ color: 'rgba(255,255,255,0.35)' }}>Risposta entro 24h · Nessun impegno</p>
+            <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* Left — Client Testimonial */}
+              <div className="rounded-3xl bg-white p-8 md:p-10 flex flex-col justify-between min-h-[340px]">
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-6">💬 Cosa dicono i clienti</h3>
+                  <div className="w-12 border-t border-gray-200 mb-6" />
+                  <p className="text-[15px] text-gray-700 leading-relaxed">
+                    {props.heroQuote.text}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 mt-8">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#4F6FE8] flex items-center justify-center text-white text-sm font-bold">
+                    {props.heroQuote.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">{props.heroQuote.name}</p>
+                    <p className="text-xs text-gray-500">{props.heroQuote.role}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right — CTA */}
+              <div className="rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[340px]" style={{ background: 'linear-gradient(135deg, #1C35C8 0%, #7C3AED 50%, #9333EA 100%)' }}>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">{props.finalCtaH2}</h2>
+                  <p className="text-base mt-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                    La tua idea — le nostre soluzioni professionali
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 mt-8">
+                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm" style={{ background: '#d0f601' }}>
+                    <ArrowRight size={16} className="-rotate-45" />
+                  </a>
+                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm" style={{ background: '#d0f601' }}>
+                    Prenota una Call
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>

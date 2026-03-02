@@ -55,7 +55,7 @@ const ContactCtaSection = () => {
               href="mailto:info@nexusagency.it"
               className="text-white text-lg md:text-xl font-semibold italic font-serif-accent hover:text-white/80 transition-colors mb-6"
             >
-              info@nexusagency.it
+              recruiters@nexusagency.it
             </a>
             <a
               href={CAL_LINK}

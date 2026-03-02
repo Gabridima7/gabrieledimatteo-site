@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Check, ChevronLeft, ChevronRight, ChevronRight as ChevronRightFaq, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, type LucideIcon } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.png';
@@ -58,21 +58,30 @@ const whyNexus: { icon?: typeof Clock; image?: string; title: string; desc: stri
 
 /* ── FAQ Accordion Item ── */
 const FaqItem = ({ q, a, isOpen, toggle }: { q: string; a: string; isOpen: boolean; toggle: () => void }) => (
-  <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-    <button onClick={toggle} className="w-full flex items-center justify-between py-5 text-left cursor-pointer">
-      <span className="text-base font-medium text-white pr-4">{q}</span>
-      <motion.span animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.2 }} className="text-primary flex-shrink-0">
-        {isOpen ? <X size={20} /> : <Plus size={20} />}
-      </motion.span>
-    </button>
+  <motion.div
+    className="rounded-2xl mb-3 overflow-hidden cursor-pointer"
+    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+    onClick={toggle}
+  >
+    <div className="flex items-center gap-4 px-6 py-5">
+      <motion.div
+        animate={{ rotate: isOpen ? 90 : 0 }}
+        transition={{ duration: 0.2 }}
+        className="flex-shrink-0"
+        style={{ color: 'rgba(255,255,255,0.4)' }}
+      >
+        <ChevronRight size={20} />
+      </motion.div>
+      <span className="text-base font-medium text-white">{q}</span>
+    </div>
     <AnimatePresence initial={false}>
       {isOpen && (
         <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
-          <p className="pb-5 text-[15px] leading-[1.7]" style={{ color: 'rgba(255,255,255,0.65)' }}>{a}</p>
+          <p className="px-6 pb-5 pl-[60px] text-[15px] leading-[1.7]" style={{ color: 'rgba(255,255,255,0.65)' }}>{a}</p>
         </motion.div>
       )}
     </AnimatePresence>
-  </div>
+  </motion.div>
 );
 
 /* ══════════════════════════════════════════ */
@@ -386,8 +395,8 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         {/* ═══ 10 — FAQ ═══ */}
         <section className="py-24">
           <div className="section-container">
-            <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Domande frequenti su {props.badge}
+            <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-white text-center mb-12">
+              FAQ on {props.badge} services
             </motion.h2>
             <motion.div {...fadeUp} className="max-w-[800px] mx-auto">
               {props.faqs.map((f, i) => (

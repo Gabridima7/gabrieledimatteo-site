@@ -331,7 +331,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 const Icon = w.icon;
                 return (
                   <motion.div key={i} {...stagger(i)} className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                    <div className="icon-glass mb-4">
+                    <div className="mb-4">
                       {w.image ? (
                         <img src={w.image} alt={w.title} className="w-8 h-8 object-contain" />
                       ) : Icon ? (

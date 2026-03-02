@@ -604,7 +604,12 @@ const Index = () => {
               {t('cta', 'subtitle')}
             </motion.p>
             <motion.div variants={fadeUpVariants}>
-              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-10 py-4 text-base">
+              <a
+                href={CAL_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary px-8 py-4 text-base rounded-full bg-[#d0f601] hover:bg-[#bde001] text-nexus-navy whitespace-nowrap"
+              >
                 {t('cta', 'button')}
                 <ArrowRight size={18} />
               </a>

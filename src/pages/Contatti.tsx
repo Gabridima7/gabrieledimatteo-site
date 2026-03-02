@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, CheckCircle, Phone, ArrowRight } from 'lucide-react';
+import { Mail, CheckCircle, Phone, ArrowRight, Paperclip, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,7 +13,20 @@ const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
 const Contatti = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFiles(prev => [...prev, ...Array.from(e.target.files!)]);
+      e.target.value = '';
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(prev => prev.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,6 +194,38 @@ const Contatti = () => {
                       className="w-full border-0 border-b border-[#D1D5DB] bg-transparent text-[#111827] py-2.5 text-[15px] focus:outline-none focus:border-[#1C35C8] transition-colors resize-none placeholder:text-[#9CA3AF]"
                       placeholder="Descrivi brevemente il tuo progetto..." />
                     
+                    </div>
+
+                    {/* File upload */}
+                    <div className="flex flex-col gap-2">
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        multiple
+                        accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="inline-flex items-center gap-2.5 border border-[#D1D5DB] rounded-full px-5 py-2.5 text-[13px] text-[#6B7280] hover:border-[#9CA3AF] hover:text-[#374151] transition-colors w-fit"
+                      >
+                        <Paperclip size={16} />
+                        <span>.doc .pdf .png .jpg .zip</span>
+                      </button>
+                      {files.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {files.map((file, i) => (
+                            <span key={i} className="inline-flex items-center gap-1.5 bg-[#F3F4F6] text-[#374151] text-[12px] font-medium px-3 py-1.5 rounded-full">
+                              {file.name}
+                              <button type="button" onClick={() => removeFile(i)} className="hover:text-red-500 transition-colors">
+                                <X size={13} />
+                              </button>
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4">

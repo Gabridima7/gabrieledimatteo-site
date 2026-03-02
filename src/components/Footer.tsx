@@ -53,15 +53,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">{t('footer', 'contatti')}</h4>
             <p className="text-nexus-gray text-sm mb-4">info@nexusagency.it</p>
-            <a
-              href={CAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contatti"
               className="btn-primary text-sm">
-
               {t('nav', 'prenotaCall')}
               <ArrowRight size={14} />
-            </a>
+            </Link>
           </div>
         </div>
 

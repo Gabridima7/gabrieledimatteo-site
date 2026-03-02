@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { fadeUpVariants, viewportConfig } from '@/lib/animations';
 import { useLanguage } from '@/context/LanguageContext';
-import founderImg from '@/assets/founder-gd.png';
+import testimonialMarco from '@/assets/testimonial-marco.png';
 
 const ContactTestimonial = () => {
   const { t } = useLanguage();
@@ -34,7 +34,7 @@ const ContactTestimonial = () => {
             {/* Avatar + name */}
             <div className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-lg">
-                <img src={founderImg} alt={t('contactTestimonial', 'name')} className="w-full h-full object-cover" />
+                <img src={testimonialMarco} alt={t('contactTestimonial', 'name')} className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="font-semibold text-[#111827] text-[15px]">{t('contactTestimonial', 'name')}</p>

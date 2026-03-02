@@ -8,6 +8,7 @@ import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
 import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
 import iconMake from '@/assets/icons/icon-make.png';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import iconFramer from '@/assets/icons/icon-framer.svg';
 import heroNexus from '@/assets/hero-nexus.png';
 import { useLanguage } from '@/context/LanguageContext';
 import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animations';
@@ -341,7 +342,7 @@ const Index = () => {
                 badges: [
                   { name: 'Figma', logo: iconFigma, top: '8%', left: '2%', rot: -5, delay: 0.5, size: 'lg', variant: 'light' },
                   { name: 'Tailwind', logo: 'https://tailwindcss.com/favicon.ico', top: '2%', right: '8%', rot: 3, delay: 0.8, size: 'md', variant: 'light' },
-                  { name: 'Framer', logo: 'https://framer.com/favicon.ico', top: '38%', right: '4%', rot: -3, delay: 1.3, size: 'md', variant: 'dark' },
+                  { name: 'Framer', logo: iconFramer, top: '38%', right: '4%', rot: -3, delay: 1.3, size: 'md', variant: 'dark' },
                 ],
               },
             ].map((col, colIdx) => (

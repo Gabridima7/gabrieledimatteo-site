@@ -550,7 +550,7 @@ const Index = () => {
             {processSteps.map((step, i) =>
             <motion.div key={i} variants={fadeUpVariants} className="text-center relative z-10">
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm border border-white/20"
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-sm border border-white/20 transition-transform duration-200 hover:scale-110 cursor-default"
                   style={{
                     background: 'rgba(28, 53, 200, 0.25)',
                     backdropFilter: 'blur(16px)',

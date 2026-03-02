@@ -461,7 +461,7 @@ const Index = () => {
             <motion.div key={i} variants={fadeUpVariants}>
                 <Link to={c.link} className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                   {/* Cover */}
-                  <div className="aspect-video bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative overflow-hidden">
+                  <div className="aspect-[4/3] bg-gradient-to-br from-nexus-blue/30 to-nexus-electric/20 relative overflow-hidden">
                     {c.cover ? (
                       <img src={c.cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
                     ) : (

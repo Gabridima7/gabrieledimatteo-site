@@ -44,7 +44,7 @@ export interface ServicePageProps {
 
 /* ── Reviews (same for all pages) ── */
 const reviews = [
-  { text: "NEXUS ha capito subito le nostre esigenze. Il gestionale ci ha cambiato la vita operativa.", name: "Marco R.", role: "Founder, Homeleven", img: testimonialMarco },
+  { text: "NEXUS ha capito subito le nostre esigenze. Il gestionale ci ha cambiato la vita operativa.", name: "Mattia T.", role: "Founder, Homeleven", img: testimonialMarco },
   { text: "Professionalità e velocità di esecuzione fuori dal comune. Consigliato a qualsiasi PMI italiana.", name: "Andrea Z.", role: "CEO, ONE UP" },
   { text: "Il sito rifatto da NEXUS ha portato un aumento immediato delle richieste di preventivo.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" },
 ];
@@ -167,7 +167,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               <div className="flex-1">
                 <p className="italic text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>{props.heroQuote.text}</p>
                 <div className="flex items-center gap-3 mt-4">
-                  {props.heroQuote.name.includes('Marco') ? (
+                  {props.heroQuote.name.includes('Mattia') ? (
                     <div className="w-12 h-12 rounded-full overflow-hidden"><img src={testimonialMarco} alt={props.heroQuote.name} className="w-full h-full object-cover" /></div>
                   ) : (
                     <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%))' }}>
@@ -427,7 +427,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   </p>
                 </div>
                 <div className="flex items-center gap-3 mt-8">
-                  {props.heroQuote.name.includes('Marco') ? (
+                  {props.heroQuote.name.includes('Mattia') ? (
                     <div className="w-10 h-10 rounded-full overflow-hidden"><img src={testimonialMarco} alt={props.heroQuote.name} className="w-full h-full object-cover" /></div>
                   ) : (
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#4F6FE8] flex items-center justify-center text-white text-sm font-bold">

@@ -107,7 +107,7 @@ export const translations = {
   // Testimonial
   testimonial: {
     quote: { it: 'NEXUS ha trasformato il nostro modo di lavorare. In 3 mesi abbiamo risparmiato oltre 15 ore a settimana grazie all\'automazione.', en: 'NEXUS transformed the way we work. In 3 months we saved over 15 hours per week thanks to automation.' },
-    name: { it: 'Marco R.', en: 'Marco R.' },
+    name: { it: 'Mattia T.', en: 'Mattia T.' },
     company: { it: 'Homeleven', en: 'Homeleven' },
   },
   // Final CTA
@@ -148,7 +148,7 @@ export const translations = {
     quotePre: { it: 'NEXUS ha trasformato il nostro modo di lavorare. Professionalità, velocità e attenzione ai dettagli. ', en: 'Throughout the entire project all I saw was sheer will to keep pushing forward and adapting to whatever the next request was. ' },
     quoteHighlight: { it: 'Risultati eccezionali', en: 'Terrific job' },
     quotePost: { it: ' e non avremmo potuto farcela senza di loro.', en: ' and we couldn\'t have done it without you.' },
-    name: { it: 'Marco R.', en: 'Marco R.' },
+    name: { it: 'Mattia T.', en: 'Mattia T.' },
     role: { it: 'CEO, Homeleven', en: 'CEO, Homeleven' },
   },
   // Contatti

@@ -14,7 +14,7 @@ const UIUXDesignService = () => (
       { value: '5.0', label: 'Rating clienti' },
       { value: 'Figma', label: 'Prototipi interattivi' },
     ]}
-    heroQuote={{ text: "Il redesign dell'interfaccia ha reso la nostra piattaforma intuitiva e i clienti lo notano subito.", name: "Marco R.", role: "Founder, Homeleven" }}
+    heroQuote={{ text: "Il redesign dell'interfaccia ha reso la nostra piattaforma intuitiva e i clienti lo notano subito.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
       { name: 'Homeleven', category: 'UI/UX Design', description: 'Redesign completo dell\'interfaccia utente della piattaforma gestionale.', metrics: ['+50% retention', '-40% ticket supporto'], slug: 'homeleven' },
     ]}

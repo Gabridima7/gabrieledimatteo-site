@@ -14,7 +14,7 @@ const WebAppService = () => (
       { value: 'PWA', label: 'Progressive Web App' },
       { value: '<1s', label: 'First paint' },
     ]}
-    heroQuote={{ text: "La web app sviluppata da NEXUS ha sostituito 3 tool diversi. Ora abbiamo tutto in un'unica piattaforma.", name: "Marco R.", role: "Founder, Homeleven" }}
+    heroQuote={{ text: "La web app sviluppata da NEXUS ha sostituito 3 tool diversi. Ora abbiamo tutto in un'unica piattaforma.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
       { name: 'Homeleven', category: 'Web App', description: 'Piattaforma gestionale con dashboard in tempo reale e notifiche push.', metrics: ['-60% tempo gestione', '99.9% uptime'], slug: 'homeleven' },
     ]}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, ChevronLeft, ChevronRight, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, type LucideIcon } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
+import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -45,8 +46,8 @@ const reviews = [
 ];
 
 /* ── Why NEXUS (same for all pages) ── */
-const whyNexus = [
-  { icon: Clock, title: "Consegna nei tempi", desc: "Rispettiamo sempre le scadenze concordate." },
+const whyNexus: { icon?: typeof Clock; image?: string; title: string; desc: string }[] = [
+  { image: iconConsegnaTempi, title: "Consegna nei tempi", desc: "Rispettiamo sempre le scadenze concordate." },
   { icon: MessageCircle, title: "Comunicazione diretta", desc: "Parli sempre con Gabriele, mai con intermediari." },
   { icon: ShieldCheck, title: "Codice di tua proprietà", desc: "Tutto il codice sviluppato è al 100% tuo." },
   { icon: Headphones, title: "Supporto post-lancio", desc: "Non spariscono dopo la consegna." },
@@ -330,7 +331,13 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 const Icon = w.icon;
                 return (
                   <motion.div key={i} {...stagger(i)} className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                    <div className="icon-glass mb-4"><Icon size={24} className="text-primary" /></div>
+                    <div className="icon-glass mb-4">
+                      {w.image ? (
+                        <img src={w.image} alt={w.title} className="w-8 h-8 object-contain" />
+                      ) : Icon ? (
+                        <Icon size={24} className="text-primary" />
+                      ) : null}
+                    </div>
                     <h3 className="text-base font-semibold text-white">{w.title}</h3>
                     <p className="text-sm mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>{w.desc}</p>
                   </motion.div>

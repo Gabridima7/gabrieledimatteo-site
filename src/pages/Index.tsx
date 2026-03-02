@@ -22,6 +22,7 @@ import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 import logoNewClient from '@/assets/logos/logo-new-client.png';
 import logoOneUp from '@/assets/logos/logo-oneup.png';
 import coverHomeleven from '@/assets/cover-homeleven.png';
+import coverOneup from '@/assets/cover-oneup.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -101,7 +102,7 @@ const Index = () => {
 
   const caseStudies = [
   { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio', cover: coverHomeleven },
-  { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio' },
+  { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio', cover: coverOneup },
   { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio' }];
 
 

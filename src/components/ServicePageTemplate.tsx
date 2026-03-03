@@ -397,7 +397,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
           <SectionBackground variant="dark" />
           <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Risultati <em className="font-light not-italic" style={{ color: '#4F6FE8' }}>che otterrai</em>
+              Cosa otterrai <em className="font-light not-italic" style={{ color: '#4F6FE8' }}>collaborando con noi:</em>
             </motion.h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {(() => {

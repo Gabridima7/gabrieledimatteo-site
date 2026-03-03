@@ -53,9 +53,9 @@ const SviluppoWebApp = () => (
       title: 'Le nostre competenze e cosa possiamo offrirti nello *sviluppo web*',
       subtitle: 'Dalla creazione di siti web visivamente straordinari e funzionali all\'implementazione di funzionalità dinamiche - i nostri sviluppatori hanno l\'esperienza per coprire ogni tua esigenza.',
       columns: [
-        { heading: 'Web App', items: ['Dashboard & Analytics', 'Gestionali su misura', 'Piattaforme SaaS', 'Portali clienti', 'Sistemi di prenotazione', 'Integrazioni API'] },
-        { heading: 'Siti Web', items: ['Siti vetrina professionali', 'Landing page', 'Siti multi-lingua', 'Blog & Magazine', 'Portfolio & Showcase', 'Siti e-commerce'] },
-        { heading: 'Tecnologie', items: ['React & TypeScript', 'Node.js & Supabase', 'Tailwind CSS', 'REST & GraphQL API', 'CI/CD & DevOps', 'Performance & SEO'] },
+        { heading: 'Blockchain', items: ['Layer 2 e Layer 3', 'App Web3 decentralizzate', 'DeFi, DEX, CEX', 'Play2Earn', 'NFT', 'Smart Contract'] },
+        { heading: 'SaaS', items: ['CRM, Analytics', 'Strumenti di automazione', 'Gestione delle risorse umane', 'Software ERP', 'Strumenti AI per i dati', 'Piattaforme di marketing'] },
+        { heading: 'E-commerce', items: ['Retail', 'B2C & B2B', 'Abbonamenti', 'Marketplace', 'Integrazioni per ERP, PIM, WMS', 'Servizi di pagamento e fiscali'] },
       ],
     }}
     finalCtaH2="Vuoi un sito web che converte per la tua PMI?"

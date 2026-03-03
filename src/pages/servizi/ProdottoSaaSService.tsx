@@ -4,6 +4,7 @@ import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
 import techPython from '@/assets/tech/icon-python.png';
+import heroProdottoSaas from '@/assets/hero-prodotto-saas.png';
 
 const ProdottoSaaSService = () => (
   <ServicePageTemplate
@@ -13,6 +14,7 @@ const ProdottoSaaSService = () => (
     h1="Da idea a prodotto SaaS scalabile"
     subtitle="Sviluppiamo il tuo SaaS dalla MVP al lancio, con architettura pronta a scalare e monetizzare."
     heroIcon={Rocket}
+    heroImage={heroProdottoSaas}
     stats={[
       { value: '4-8', label: 'Settimane per la MVP' },
       { value: '∞', label: 'Utenti scalabili' },

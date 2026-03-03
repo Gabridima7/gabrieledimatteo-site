@@ -392,29 +392,36 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 7 — OUTCOMES ═══ */}
-        <section className="relative py-20" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <section className="relative py-24">
           <SectionBackground variant="dark" />
           <div className="section-container relative z-[2]">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <motion.div {...fadeUp}>
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Risultati <em className="font-light" style={{ color: '#4F6FE8' }}>che otterrai:</em>
-                </h2>
-                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-8" style={{ background: '#d0f601' }}>
-                  {props.outcomesCtaText} <ArrowRight size={16} />
-                </a>
-              </motion.div>
-              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }}>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {props.outcomes.map((o, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <Check size={20} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-base font-medium text-white">{o}</span>
+            <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Risultati <em className="font-light not-italic" style={{ color: '#4F6FE8' }}>che otterrai</em>
+            </motion.h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {(() => {
+                const half = Math.ceil(props.outcomes.length / 2);
+                const leftItems = props.outcomes.slice(0, half);
+                const rightItems = props.outcomes.slice(half);
+                return [leftItems, rightItems].map((items, colIdx) => (
+                  <motion.div key={colIdx} {...stagger(colIdx)} className="rounded-2xl p-8 md:p-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div className="flex flex-col">
+                      {items.map((item, i) => (
+                        <div key={i}>
+                          <p className="text-white font-semibold text-base py-4">{item}</p>
+                          {i < items.length - 1 && <div className="w-full h-px" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%)' }} />}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                  </motion.div>
+                ));
+              })()}
             </div>
+            <motion.div {...fadeUp} className="text-center mt-12">
+              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]" style={{ background: '#d0f601' }}>
+                {props.outcomesCtaText} <ArrowRight size={16} />
+              </a>
+            </motion.div>
           </div>
         </section>
 

@@ -1,7 +1,15 @@
-import { Code, Globe, Smartphone, Layers, FileCode2, Palette, Braces, Atom, Cog, Terminal, Server, ShoppingBag } from 'lucide-react';
+import { Code, Globe, Smartphone, Layers } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import heroSviluppoWeb from '@/assets/hero-sviluppo-web.svg';
 import { useLanguage } from '@/context/LanguageContext';
+import techHtml from '@/assets/tech/icon-html.png';
+import techCss from '@/assets/tech/icon-css.png';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import techRust from '@/assets/tech/icon-rust.png';
+import techPython from '@/assets/tech/icon-python.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techShopify from '@/assets/tech/icon-shopify.png';
 
 const SviluppoWebApp = () => {
   const { lang } = useLanguage();
@@ -75,27 +83,27 @@ const SviluppoWebApp = () => {
         title: 'You hire a professional developer with suitable *experience*',
         subtitle: 'From creating visually stunning and functional websites to implementing dynamic features - our developers are experienced to cover your needs.',
         items: [
-          { name: 'HTML', icon: FileCode2 },
-          { name: 'CSS3', icon: Palette },
-          { name: 'JavaScript', icon: Braces },
-          { name: 'ReactJS', icon: Atom },
-          { name: 'TypeScript', icon: Code },
-          { name: 'Python', icon: Terminal },
-          { name: 'NodeJS', icon: Server },
-          { name: 'Shopify', icon: ShoppingBag },
+          { name: 'HTML', image: techHtml },
+          { name: 'CSS3', image: techCss },
+          { name: 'JavaScript', image: techJs },
+          { name: 'ReactJS', image: techReact },
+          { name: 'Rust', image: techRust },
+          { name: 'Python', image: techPython },
+          { name: 'NodeJS', image: techNodejs },
+          { name: 'Shopify', image: techShopify },
         ],
       } : {
         title: 'Assumi uno sviluppatore professionista con *esperienza adeguata*',
         subtitle: 'Dalla creazione di siti web visivamente straordinari e funzionali all\'implementazione di funzionalità dinamiche - i nostri sviluppatori hanno l\'esperienza per coprire le tue esigenze.',
         items: [
-          { name: 'HTML', icon: FileCode2 },
-          { name: 'CSS3', icon: Palette },
-          { name: 'JavaScript', icon: Braces },
-          { name: 'ReactJS', icon: Atom },
-          { name: 'TypeScript', icon: Code },
-          { name: 'Python', icon: Terminal },
-          { name: 'NodeJS', icon: Server },
-          { name: 'Shopify', icon: ShoppingBag },
+          { name: 'HTML', image: techHtml },
+          { name: 'CSS3', image: techCss },
+          { name: 'JavaScript', image: techJs },
+          { name: 'ReactJS', image: techReact },
+          { name: 'Rust', image: techRust },
+          { name: 'Python', image: techPython },
+          { name: 'NodeJS', image: techNodejs },
+          { name: 'Shopify', image: techShopify },
         ],
       }}
       finalCtaH2="Vuoi un sito web che converte per la tua PMI?"

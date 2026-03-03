@@ -23,6 +23,7 @@ const SviluppoWebApp = () => (
     ]}
     ctaBannerText="Pronto a digitalizzare la tua azienda?"
     ctaBannerDescription="Ti offriamo una prova gratuita di 3 giorni con uno dei nostri sviluppatori web per rispondere alle tue domande sul nostro processo di lavoro."
+    benefitsTitle="Servizi di sviluppo web personalizzati e ad alte prestazioni"
     benefits={[
       { icon: Globe, title: 'Performance al top', desc: 'Siti e app ottimizzati per velocità, SEO e conversioni.' },
       { icon: Smartphone, title: 'Responsive su ogni device', desc: 'Design perfetto su desktop, tablet e smartphone.' },

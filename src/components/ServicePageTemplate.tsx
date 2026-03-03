@@ -52,6 +52,7 @@ export interface ServicePageProps {
   caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string; cover?: string }[];
   ctaBannerText: string;
   ctaBannerDescription?: string;
+  benefitsTitle?: string;
   benefits: { icon: LucideIcon; title: string; desc: string }[];
   process: { title: string; items: string[] }[];
   outcomes: string[];
@@ -314,7 +315,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
           <SectionBackground variant="blue-left" />
           <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Come {props.badge} trasforma la tua PMI
+              {props.benefitsTitle || `Come ${props.badge} trasforma la tua PMI`}
             </motion.h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {props.benefits.map((b, i) => {

@@ -113,7 +113,14 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         <section className="relative min-h-[85vh] flex items-center pt-[120px]">
           <SectionBackground variant="hero" />
           <div className="section-container w-full relative z-[2]">
-            <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
+              {/* Image — mobile/tablet first */}
+              {props.heroImage && (
+                <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="lg:hidden w-full flex justify-center">
+                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-[400px] md:max-w-[500px]" />
+                </motion.div>
+              )}
+              {/* Text */}
               <motion.div {...fadeUp}>
                 <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   <Link to="/" className="hover:text-white transition-colors">Home</Link>
@@ -141,6 +148,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   ))}
                 </div>
               </motion.div>
+              {/* Image — desktop */}
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center lg:-mr-10">
                 {props.heroImage ? (
                   <img src={props.heroImage} alt={props.h1} className="w-full max-w-none" />

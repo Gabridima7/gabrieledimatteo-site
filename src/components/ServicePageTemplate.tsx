@@ -57,6 +57,7 @@ export interface ServicePageProps {
   process: { title: string; items: string[] }[];
   outcomes: string[];
   outcomeCards?: { title: string; desc: string }[];
+  outcomesSubtitle?: string;
   outcomesCtaText: string;
   faqs: { q: string; a: string }[];
   finalCtaH2: string;
@@ -399,6 +400,11 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
               Cosa otterrai <em className="font-light not-italic" style={{ color: '#4F6FE8' }}>collaborando con noi:</em>
             </motion.h2>
+            {props.outcomesSubtitle && (
+              <motion.p {...fadeUp} className="text-center max-w-3xl mx-auto -mt-8 mb-16 text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                {props.outcomesSubtitle}
+              </motion.p>
+            )}
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {(() => {
                 const half = Math.ceil(props.outcomes.length / 2);

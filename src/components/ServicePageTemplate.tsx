@@ -125,7 +125,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                   {props.subtitle}
                 </p>
-                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 font-semibold mt-9 inline-flex">
+                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9" style={{ background: '#d0f601' }}>
                   Prenota una call gratuita <ArrowRight size={16} />
                 </a>
                 {/* Stats */}
@@ -220,8 +220,8 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             <motion.div {...fadeUp} className="max-w-5xl mx-auto rounded-3xl text-center py-16 px-8" style={{ background: 'rgba(28,53,200,0.12)', border: '1px solid rgba(28,53,200,0.2)' }}>
               <h2 className="font-bold text-white" style={{ fontSize: 'clamp(28px,3.5vw,48px)' }}>{props.ctaBannerText}</h2>
               <p className="mt-4" style={{ color: 'rgba(255,255,255,0.65)' }}>Parliamo del tuo progetto senza impegno.</p>
-              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 mt-8 inline-flex">
-                Prenota una call <ArrowRight size={16} />
+              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-8" style={{ background: '#d0f601' }}>
+                Prenota una call gratuita <ArrowRight size={16} />
               </a>
             </motion.div>
           </div>
@@ -319,7 +319,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
                   Risultati <em className="font-light" style={{ color: '#4F6FE8' }}>che otterrai:</em>
                 </h2>
-                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary px-8 py-4 mt-8 inline-flex">
+                <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-8" style={{ background: '#d0f601' }}>
                   {props.outcomesCtaText} <ArrowRight size={16} />
                 </a>
               </motion.div>
@@ -449,12 +449,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                     La tua idea — le nostre soluzioni professionali
                   </p>
                 </div>
-                <div className="flex items-center gap-3 mt-8">
-                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm" style={{ background: '#d0f601' }}>
-                    <ArrowRight size={16} className="-rotate-45" />
-                  </a>
-                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm" style={{ background: '#d0f601' }}>
-                    Prenota una Call
+                <div className="mt-8">
+                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]" style={{ background: '#d0f601' }}>
+                    Prenota una call gratuita <ArrowRight size={16} />
                   </a>
                 </div>
               </div>

@@ -107,10 +107,10 @@ const ServicePageTemplate = (props: ServicePageProps) => {
       <SEOHead title={props.seoTitle} description={props.seoDescription} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <div className="pt-[120px] pb-16">
+      <div className="pb-16">
 
         {/* ═══ 1 — HERO ═══ */}
-        <section className="relative min-h-[85vh] flex items-center">
+        <section className="relative min-h-[85vh] flex items-center pt-[120px]">
           <SectionBackground variant="hero" />
           <div className="section-container w-full relative z-[2]">
             <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center">
@@ -143,9 +143,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               </motion.div>
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center">
                 {props.heroImage ? (
-                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-[400px]" />
+                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-[520px]" />
                 ) : (
-                  <div className="relative w-full aspect-square max-w-[400px]">
+                  <div className="relative w-full aspect-square max-w-[520px]">
                     <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%), hsl(190,70%,50%))' , opacity: 0.15 }} />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-[120px] h-[120px] rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}>

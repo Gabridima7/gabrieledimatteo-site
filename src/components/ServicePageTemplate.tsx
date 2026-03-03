@@ -60,6 +60,7 @@ export interface ServicePageProps {
   outcomesSubtitle?: string;
   outcomesCtaText: string;
   capabilities?: { title: string; subtitle: string; columns: { heading: string; items: string[] }[] };
+  techStack?: { title: string; subtitle: string; items: { name: string; icon: LucideIcon }[] };
   faqs: { q: string; a: string }[];
   finalCtaH2: string;
 }

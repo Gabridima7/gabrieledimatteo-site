@@ -1,4 +1,4 @@
-import { Code, Globe, Smartphone, Layers } from 'lucide-react';
+import { Code, Globe, Smartphone, Layers, FileCode2, Palette, Braces, Atom, Cog, Terminal, Server, ShoppingBag } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import heroSviluppoWeb from '@/assets/hero-sviluppo-web.svg';
 import { useLanguage } from '@/context/LanguageContext';
@@ -69,6 +69,33 @@ const SviluppoWebApp = () => {
           { heading: 'Blockchain', items: ['Layer 2 e Layer 3', 'App Web3 decentralizzate', 'DeFi, DEX, CEX', 'Play2Earn', 'NFT', 'Smart Contract'] },
           { heading: 'SaaS', items: ['CRM, Analytics', 'Strumenti di automazione', 'Gestione delle risorse umane', 'Software ERP', 'Strumenti AI per i dati', 'Piattaforme di marketing'] },
           { heading: 'E-commerce', items: ['Retail', 'B2C & B2B', 'Abbonamenti', 'Marketplace', 'Integrazioni per ERP, PIM, WMS', 'Servizi di pagamento e fiscali'] },
+        ],
+      }}
+      techStack={isEN ? {
+        title: 'You hire a professional developer with suitable *experience*',
+        subtitle: 'From creating visually stunning and functional websites to implementing dynamic features - our developers are experienced to cover your needs.',
+        items: [
+          { name: 'HTML', icon: FileCode2 },
+          { name: 'CSS3', icon: Palette },
+          { name: 'JavaScript', icon: Braces },
+          { name: 'ReactJS', icon: Atom },
+          { name: 'TypeScript', icon: Code },
+          { name: 'Python', icon: Terminal },
+          { name: 'NodeJS', icon: Server },
+          { name: 'Shopify', icon: ShoppingBag },
+        ],
+      } : {
+        title: 'Assumi uno sviluppatore professionista con *esperienza adeguata*',
+        subtitle: 'Dalla creazione di siti web visivamente straordinari e funzionali all\'implementazione di funzionalità dinamiche - i nostri sviluppatori hanno l\'esperienza per coprire le tue esigenze.',
+        items: [
+          { name: 'HTML', icon: FileCode2 },
+          { name: 'CSS3', icon: Palette },
+          { name: 'JavaScript', icon: Braces },
+          { name: 'ReactJS', icon: Atom },
+          { name: 'TypeScript', icon: Code },
+          { name: 'Python', icon: Terminal },
+          { name: 'NodeJS', icon: Server },
+          { name: 'Shopify', icon: ShoppingBag },
         ],
       }}
       finalCtaH2="Vuoi un sito web che converte per la tua PMI?"

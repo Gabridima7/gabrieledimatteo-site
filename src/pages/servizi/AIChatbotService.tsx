@@ -4,6 +4,7 @@ import techPython from '@/assets/tech/icon-python.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
+import heroAiChatbot from '@/assets/hero-ai-chatbot.png';
 
 const AIChatbotService = () => (
   <ServicePageTemplate
@@ -13,6 +14,7 @@ const AIChatbotService = () => (
     h1="Chatbot AI per supporto clienti e vendite"
     subtitle="Assistenti virtuali intelligenti addestrati sui tuoi dati per rispondere 24/7 e generare lead qualificati."
     heroIcon={Bot}
+    heroImage={heroAiChatbot}
     stats={[
       { value: '24/7', label: 'Disponibilità' },
       { value: '-70%', label: 'Ticket di supporto' },

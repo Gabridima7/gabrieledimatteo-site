@@ -9,11 +9,11 @@ const columns = [
   {
     title: 'Sviluppo',
     items: [
-      { label: 'Sviluppo Web & App', href: '/servizi/sviluppo-web-app' },
-      { label: 'Landing Page', href: '/servizi/sviluppo-web-app' },
-      { label: 'Web App', href: '/servizi/sviluppo-web-app' },
-      { label: 'Software Gestionale', href: '/servizi/sviluppo-web-app' },
-      { label: 'Prodotto SaaS', href: '/servizi/sviluppo-web-app' },
+      { label: 'Sviluppo Web & App', href: '/servizi/sviluppo-web' },
+      { label: 'Landing Page', href: '/servizi/sviluppo-web' },
+      { label: 'Web App', href: '/servizi/sviluppo-web' },
+      { label: 'Software Gestionale', href: '/servizi/sviluppo-web' },
+      { label: 'Prodotto SaaS', href: '/servizi/sviluppo-web' },
     ],
   },
   {
@@ -29,7 +29,7 @@ const columns = [
     title: 'Design',
     items: [
       { label: 'UI/UX Design', href: '/servizi/branding-ui-ux' },
-      { label: 'Website Design', href: '/servizi/sviluppo-web-app' },
+      { label: 'Website Design', href: '/servizi/sviluppo-web' },
       { label: 'Mobile App Design', href: '/servizi/branding-ui-ux' },
       { label: 'Website Redesign', href: '/servizi/branding-ui-ux' },
       { label: 'Product UX/UI Audit', href: '/servizi/consulenza-digitale' },

@@ -141,9 +141,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   ))}
                 </div>
               </motion.div>
-              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center">
+              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center lg:-mr-10">
                 {props.heroImage ? (
-                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-[800px]" />
+                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-none" />
                 ) : (
                   <div className="relative w-full aspect-square max-w-[800px]">
                     <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%), hsl(190,70%,50%))' , opacity: 0.15 }} />

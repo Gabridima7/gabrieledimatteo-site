@@ -21,7 +21,7 @@ const coverMap: Record<string, string> = {
 
 const canonicalData: Record<string, { name: string; category: string; description: string; bgColor: string }> = {
   homeleven: { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager con AI', bgColor: 'linear-gradient(135deg, #1a1a6e 0%, #3b28cc 100%)' },
-  oneup: { name: 'ONE UP', category: 'Web App', description: 'Gestionale Flotta Barche', bgColor: 'linear-gradient(135deg, #0d3b2e 0%, #0a6e4f 100%)' },
+  oneup: { name: 'ONE UP', category: 'Web App', description: 'Gestionale Flotta Barche', bgColor: '#c8e6e6' },
   biglia: { name: 'Biglia Serramenti', category: 'Sviluppo Web', description: 'Sito Web Professionale', bgColor: 'linear-gradient(135deg, #1C35C8 0%, #4F6FE8 100%)' },
 };
 

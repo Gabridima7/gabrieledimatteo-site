@@ -55,12 +55,18 @@ const SviluppoWebApp = () => {
         { title: 'Supporto & Sicurezza', desc: 'Prioritizziamo sicurezza e supporto per garantire un\'esperienza senza problemi, con protocolli robusti e monitoraggio continuo.' },
       ]}
       outcomesCtaText="Inizia il tuo progetto"
-      faqs={[
-        { q: 'Quanto tempo serve per sviluppare un sito web?', a: 'Dipende dalla complessità: un sito vetrina richiede 3-4 settimane, una web app complessa 8-12 settimane.' },
-        { q: 'Che tecnologie utilizzate?', a: 'React, TypeScript, Tailwind CSS, Node.js e Supabase per il backend. Stack moderno e performante.' },
-        { q: 'Il codice sarà di mia proprietà?', a: 'Sì, al 100%. Tutto il codice sorgente e gli asset sono tuoi.' },
-        { q: 'Offrite supporto dopo il lancio?', a: 'Certamente. Offriamo piani di manutenzione e supporto tecnico continuativo.' },
-        { q: 'Posso vedere esempi di lavori precedenti?', a: 'Sì, visita la sezione Casi Studio per vedere i nostri progetti recenti.' },
+      faqs={isEN ? [
+        { q: 'What kind of web development projects do you handle?', a: 'We create various websites, corporate platforms, and web applications. Whether you need a Webflow landing page or a scalable React-based platform, our developers will create customized, high-performance solutions that meet your business goals.' },
+        { q: 'How long does it take to develop a website or web app?', a: 'Timelines depend on the scope and functionality. We can launch a small website in 4 weeks, but complex web platforms or SaaS dashboards take 10+ weeks.' },
+        { q: 'Can you build both the design and development of my product?', a: 'Yes, that is our main strength. We are a design and development partner that provides a consistent user experience, flawless interface implementation, and faster delivery because there is no gap between concept and code. This unified approach helps our clients reduce production time by 40% and ensures that the final product matches the design pixel by pixel.' },
+        { q: 'Will my website be optimized for SEO and performance?', a: 'Absolutely. Every site we build follows SEO best practices: clean code, fast loading speed, mobile responsiveness, and proper meta structure.' },
+        { q: 'Do you provide post-launch support?', a: 'Yes, we offer support after launch. Our team monitors performance, applies updates, and can add new features as your business grows.' },
+      ] : [
+        { q: 'Che tipo di progetti di sviluppo web gestite?', a: 'Realizziamo siti web, piattaforme aziendali e applicazioni web di vario tipo. Che tu abbia bisogno di una landing page in Webflow o di una piattaforma scalabile basata su React, i nostri sviluppatori creeranno soluzioni personalizzate e ad alte prestazioni che soddisfano i tuoi obiettivi di business.' },
+        { q: 'Quanto tempo ci vuole per sviluppare un sito web o una web app?', a: 'I tempi dipendono dall\'ampiezza e dalle funzionalità del progetto. Possiamo lanciare un sito semplice in 4 settimane, ma piattaforme web complesse o dashboard SaaS richiedono 10+ settimane.' },
+        { q: 'Potete occuparvi sia del design che dello sviluppo del mio prodotto?', a: 'Sì, è il nostro punto di forza principale. Siamo un partner che si occupa sia di design che di sviluppo, garantendo un\'esperienza utente coerente, un\'implementazione dell\'interfaccia impeccabile e consegne più rapide grazie all\'assenza di gap tra concept e codice. Questo approccio integrato aiuta i nostri clienti a ridurre i tempi di produzione del 40% e assicura che il prodotto finale corrisponda al design pixel per pixel.' },
+        { q: 'Il mio sito sarà ottimizzato per la SEO e le performance?', a: 'Assolutamente sì. Ogni sito che realizziamo segue le best practice SEO: codice pulito, velocità di caricamento elevata, responsività mobile e struttura dei meta tag corretta.' },
+        { q: 'Fornite supporto dopo il lancio?', a: 'Sì, offriamo supporto post-lancio. Il nostro team monitora le performance, applica aggiornamenti e può aggiungere nuove funzionalità man mano che il tuo business cresce.' },
       ]}
       capabilities={isEN ? {
         title: 'Our capabilities and what we can offer in *web development*',

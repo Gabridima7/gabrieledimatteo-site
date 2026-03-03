@@ -5,6 +5,7 @@ import techReact from '@/assets/tech/icon-react.png';
 import techPython from '@/assets/tech/icon-python.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
 import iconMake from '@/assets/icons/icon-make.png';
+import heroAiAutomation from '@/assets/hero-ai-automation.png';
 
 const AiAutomation = () => (
   <ServicePageTemplate
@@ -14,6 +15,7 @@ const AiAutomation = () => (
     h1="Automatizza i processi con l'intelligenza artificiale"
     subtitle="Elimina il lavoro manuale e libera tempo per attività strategiche con automazioni AI su misura."
     heroIcon={Cpu}
+    heroImage={heroAiAutomation}
     stats={[
       { value: '-80%', label: 'Tempo manuale risparmiato' },
       { value: '48h', label: 'Prima automazione attiva' },

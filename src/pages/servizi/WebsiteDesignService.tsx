@@ -31,7 +31,12 @@ const WebsiteDesignService = () => (
       { title: 'Sviluppo', items: ['Codifica responsive', 'Ottimizzazione SEO', 'Performance tuning'] },
       { title: 'Lancio', items: ['Go-live', 'Monitoraggio', 'Ottimizzazione continua'] },
     ]}
-    outcomes={['Sito web professionale e moderno', 'Ottimizzazione SEO integrata', 'Velocità di caricamento top', 'Lead generation efficace', 'Compatibilità cross-browser']}
+    outcomes={['Sito web professionale e moderno', 'Ottimizzazione SEO integrata', 'Velocità di caricamento top', 'Lead generation efficace', 'Compatibilità cross-browser', 'Design responsive su ogni device']}
+    outcomesSubtitle="Creiamo siti web custom che comunicano il valore del tuo brand con design moderno, performance elevate e ottimizzazione SEO integrata."
+    outcomeCards={[
+      { title: 'Design & Performance', desc: 'Estetica moderna con velocità di caricamento ottimale e punteggi PageSpeed ai massimi livelli.' },
+      { title: 'SEO & Conversione', desc: 'Struttura ottimizzata per i motori di ricerca con layout e copy progettati per generare contatti e vendite.' },
+    ]}
     outcomesCtaText="Rinnova il tuo sito"
     faqs={[
       { q: 'Quanto costa un sito web?', a: 'Un sito vetrina parte da €2.000, un sito più complesso con funzionalità custom da €4.000.' },

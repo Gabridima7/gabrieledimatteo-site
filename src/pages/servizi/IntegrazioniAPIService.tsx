@@ -30,7 +30,12 @@ const IntegrazioniAPIService = () => (
       { title: 'Sviluppo & test', items: ['Implementazione API', 'Webhook & sync', 'Testing end-to-end'] },
       { title: 'Go-live & monitoring', items: ['Attivazione', 'Alert & logging', 'Manutenzione'] },
     ]}
-    outcomes={['Eliminazione del data entry manuale', 'Dati sincronizzati in tempo reale', 'Zero errori di trascrizione', 'Visione unificata del business', 'Processi automatizzati end-to-end']}
+    outcomes={['Eliminazione del data entry manuale', 'Dati sincronizzati in tempo reale', 'Zero errori di trascrizione', 'Visione unificata del business', 'Processi automatizzati end-to-end', 'Scalabilità delle integrazioni']}
+    outcomesSubtitle="Colleghiamo i tuoi software in un ecosistema unico con integrazioni API personalizzate per eliminare i silos di dati."
+    outcomeCards={[
+      { title: 'Ecosistema Connesso', desc: 'Tutti i tuoi strumenti comunicano in tempo reale, eliminando il data entry manuale e gli errori di trascrizione.' },
+      { title: 'Affidabilità & Sicurezza', desc: 'Integrazioni robuste con retry automatici, logging avanzato e protocolli di sicurezza enterprise.' },
+    ]}
     outcomesCtaText="Collega i tuoi sistemi"
     faqs={[
       { q: 'Quali software potete integrare?', a: 'Qualsiasi software con API disponibile: CRM, ERP, e-commerce, email marketing, payment gateway e altri.' },

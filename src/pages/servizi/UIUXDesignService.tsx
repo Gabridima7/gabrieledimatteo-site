@@ -30,7 +30,12 @@ const UIUXDesignService = () => (
       { title: 'UI Design', items: ['Visual design hi-fi', 'Design system', 'Micro-interazioni'] },
       { title: 'Handoff & test', items: ['File Figma dev-ready', 'Specifiche tecniche', 'User testing'] },
     ]}
-    outcomes={['Interfaccia intuitiva e moderna', 'Aumento delle conversioni', 'Riduzione dei ticket di supporto', 'Maggiore retention degli utenti', 'Design system consistente']}
+    outcomes={['Interfaccia intuitiva e moderna', 'Aumento delle conversioni', 'Riduzione dei ticket di supporto', 'Maggiore retention degli utenti', 'Design system consistente', 'User testing validato']}
+    outcomesSubtitle="Progettiamo interfacce basate su ricerca utente e dati reali, per massimizzare usabilità, conversioni e soddisfazione degli utenti."
+    outcomeCards={[
+      { title: 'Research & Design', desc: 'Decisioni di design basate su UX research, interviste utenti e analisi dei flussi per un\'esperienza ottimale.' },
+      { title: 'Conversione & Retention', desc: 'Interfacce progettate per ridurre i ticket di supporto e aumentare conversioni e fidelizzazione degli utenti.' },
+    ]}
     outcomesCtaText="Migliora la tua UX"
     faqs={[
       { q: 'Che software utilizzate per il design?', a: 'Figma per design e prototipi interattivi. Consegniamo file organizzati e pronti per lo sviluppo.' },

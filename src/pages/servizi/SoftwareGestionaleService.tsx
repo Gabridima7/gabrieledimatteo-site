@@ -30,7 +30,12 @@ const SoftwareGestionaleService = () => (
       { title: 'Sviluppo modulare', items: ['Moduli core', 'Dashboard & report', 'Integrazioni'] },
       { title: 'Migrazione & go-live', items: ['Import dati', 'Formazione team', 'Supporto post-lancio'] },
     ]}
-    outcomes={['Processi aziendali ottimizzati', 'Zero licenze software mensili', 'Dati centralizzati e accessibili', 'Automazioni sui flussi operativi', 'Report e analytics in tempo reale']}
+    outcomes={['Processi aziendali ottimizzati', 'Zero licenze software mensili', 'Dati centralizzati e accessibili', 'Automazioni sui flussi operativi', 'Report e analytics in tempo reale', 'Proprietà totale del software']}
+    outcomesSubtitle="Sviluppiamo software gestionali su misura che centralizzano dati e processi, eliminando licenze mensili e inefficienze operative."
+    outcomeCards={[
+      { title: 'Centralizzazione & Controllo', desc: 'Dati, clienti, ordini e processi in un unico posto con dashboard in tempo reale e report automatici.' },
+      { title: 'Personalizzazione & Proprietà', desc: 'Software 100% personalizzato sulle tue esigenze, di tua proprietà e senza costi ricorrenti di licenza.' },
+    ]}
     outcomesCtaText="Digitalizza i tuoi processi"
     faqs={[
       { q: 'Quanto costa un software gestionale su misura?', a: 'Dipende dalla complessità. Prenota una call per un preventivo personalizzato basato sulle tue esigenze.' },

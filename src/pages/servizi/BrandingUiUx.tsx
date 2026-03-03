@@ -31,7 +31,12 @@ const BrandingUiUx = () => (
       { title: 'Design System', items: ['Logo & varianti', 'Palette & tipografia', 'UI components', 'Brand guideline'] },
       { title: 'Delivery', items: ['Asset finali', 'Documentazione', 'Template social'] },
     ]}
-    outcomes={['Identità visiva professionale', 'Aumento della brand awareness', 'Design coerente su ogni canale', 'Maggiore fiducia dei clienti', 'Interfacce ad alta conversione']}
+    outcomes={['Identità visiva professionale', 'Aumento della brand awareness', 'Design coerente su ogni canale', 'Maggiore fiducia dei clienti', 'Interfacce ad alta conversione', 'Comunicazione visiva memorabile']}
+    outcomesSubtitle="Creiamo identità visive distintive e interfacce intuitive che comunicano il valore del tuo brand e convertono visitatori in clienti."
+    outcomeCards={[
+      { title: 'Brand Identity', desc: 'Un\'identità visiva coerente e memorabile che distingue il tuo brand dalla concorrenza su ogni touchpoint.' },
+      { title: 'Design & Conversione', desc: 'Interfacce progettate con UX research-driven per massimizzare engagement, retention e conversioni.' },
+    ]}
     outcomesCtaText="Rinnova il tuo brand"
     faqs={[
       { q: 'Cosa include un progetto di branding?', a: 'Logo, palette colori, tipografia, brand guideline, template social e tutti gli asset necessari.' },

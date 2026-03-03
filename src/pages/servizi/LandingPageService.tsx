@@ -32,7 +32,12 @@ const LandingPageService = () => (
       { title: 'Sviluppo', items: ['Codifica responsive', 'Ottimizzazione velocità', 'Tracking & pixel'] },
       { title: 'Lancio & test', items: ['Go-live', 'A/B testing', 'Monitoring conversioni'] },
     ]}
-    outcomes={['Tasso di conversione elevato', 'Costo per acquisizione ridotto', 'Pagina veloce e SEO-friendly', 'Design professionale e persuasivo', 'Tracking e analytics integrati']}
+    outcomes={['Tasso di conversione elevato', 'Costo per acquisizione ridotto', 'Pagina veloce e SEO-friendly', 'Design professionale e persuasivo', 'Tracking e analytics integrati', 'Ottimizzazione continua']}
+    outcomesSubtitle="Progettiamo landing page ad alta conversione con design persuasivo, copy efficace e performance ottimizzate per ogni campagna."
+    outcomeCards={[
+      { title: 'Conversione & Performance', desc: 'Ogni elemento è progettato per massimizzare il tasso di conversione con velocità di caricamento sotto i 2 secondi.' },
+      { title: 'Testing & Ottimizzazione', desc: 'Struttura pronta per A/B test con tracking avanzato e analytics per migliorare continuamente i risultati.' },
+    ]}
     outcomesCtaText="Crea la tua landing page"
     faqs={[
       { q: 'Quanto costa una landing page?', a: 'Il costo varia in base alla complessità. Una landing page standard parte da €1.500.' },

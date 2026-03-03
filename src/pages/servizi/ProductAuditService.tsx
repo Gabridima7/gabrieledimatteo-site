@@ -30,7 +30,12 @@ const ProductAuditService = () => (
       { title: 'Report & insights', items: ['Documento dettagliato', 'Screenshot annotati', 'Roadmap prioritizzata'] },
       { title: 'Presentazione', items: ['Call dedicata', 'Q&A', 'Prossimi passi'] },
     ]}
-    outcomes={['Problemi di usabilità identificati', 'Roadmap di miglioramento chiara', 'Insights basati su dati reali', 'Aumento delle conversioni', 'Esperienza utente migliorata']}
+    outcomes={['Problemi di usabilità identificati', 'Roadmap di miglioramento chiara', 'Insights basati su dati reali', 'Aumento delle conversioni', 'Esperienza utente migliorata', 'Priorità di intervento definite']}
+    outcomesSubtitle="Analizziamo ogni aspetto del tuo prodotto digitale con un approccio data-driven per identificare problemi e opportunità di miglioramento."
+    outcomeCards={[
+      { title: 'Analisi Approfondita', desc: 'Valutazione esperta su 50+ punti di analisi tra usabilità, performance, accessibilità e coerenza visiva.' },
+      { title: 'Roadmap Actionable', desc: 'Report dettagliato con screenshot annotati, raccomandazioni prioritizzate e piano di azione concreto.' },
+    ]}
     outcomesCtaText="Prenota il tuo audit"
     faqs={[
       { q: 'Cosa analizzate durante l\'audit?', a: 'Analizziamo UX, UI, flussi utente, performance, accessibilità, copy e coerenza visiva del prodotto.' },

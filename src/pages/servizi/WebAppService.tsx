@@ -1,5 +1,6 @@
 import { Smartphone, Database, Layers, Lock } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroWebApp from '@/assets/hero-web-app.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
@@ -13,6 +14,7 @@ const WebAppService = () => (
     h1="Web app interattive e scalabili"
     subtitle="Applicazioni web progressive su misura che i tuoi utenti ameranno usare ogni giorno."
     heroIcon={Layers}
+    heroImage={heroWebApp}
     stats={[
       { value: '99.9%', label: 'Uptime garantito' },
       { value: 'PWA', label: 'Progressive Web App' },

@@ -32,7 +32,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white mb-4">{t('footer', 'servizi')}</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/servizi/sviluppo-web-app" className="text-nexus-gray hover:text-white transition-colors">{t('mega', 'sviluppo')}</Link></li>
+              <li><Link to="/servizi/sviluppo-web" className="text-nexus-gray hover:text-white transition-colors">{t('mega', 'sviluppo')}</Link></li>
               <li><Link to="/servizi/ai-automation" className="text-nexus-gray hover:text-white transition-colors">{t('mega', 'ai')}</Link></li>
               <li><Link to="/servizi/branding-ui-ux" className="text-nexus-gray hover:text-white transition-colors">{t('mega', 'branding')}</Link></li>
               <li><Link to="/servizi/consulenza-digitale" className="text-nexus-gray hover:text-white transition-colors">{t('mega', 'consulenza')}</Link></li>

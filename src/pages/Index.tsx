@@ -87,7 +87,7 @@ const Index = () => {
   };
 
   const services = [
-  { icon: iconSviluppoWebAppNew, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/servizi/sviluppo-web-app' },
+  { icon: iconSviluppoWebAppNew, title: t('services', 's1Title'), desc: t('services', 's1Desc'), link: '/servizi/sviluppo-web' },
   { icon: iconAiAutomation, title: t('services', 's2Title'), desc: t('services', 's2Desc'), link: '/servizi/ai-automation' },
   { icon: iconUiUxDesign, title: t('services', 's3Title'), desc: t('services', 's3Desc'), link: '/servizi/branding-ui-ux' },
   { icon: iconConsulenzaDigitale, title: t('services', 's4Title'), desc: t('services', 's4Desc'), link: '/servizi/consulenza-digitale' }];

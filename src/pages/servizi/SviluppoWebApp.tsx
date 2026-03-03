@@ -1,5 +1,6 @@
 import { Code, Globe, Smartphone, Layers } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroSviluppoWeb from '@/assets/hero-sviluppo-web.svg';
 
 const SviluppoWebApp = () => (
   <ServicePageTemplate
@@ -9,6 +10,7 @@ const SviluppoWebApp = () => (
     h1="Sviluppo Web & App su misura per la tua PMI"
     subtitle="Siti web, applicazioni e piattaforme digitali performanti, scalabili e progettati per convertire."
     heroIcon={Code}
+    heroImage={heroSviluppoWeb}
     stats={[
       { value: '50+', label: 'Progetti consegnati' },
       { value: '99.9%', label: 'Uptime garantito' },

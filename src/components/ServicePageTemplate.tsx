@@ -30,6 +30,7 @@ export interface ServicePageProps {
   h1: string;
   subtitle: string;
   heroIcon: LucideIcon;
+  heroImage?: string;
   stats: { value: string; label: string }[];
   heroQuote: { text: string; name: string; role: string };
   caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string }[];
@@ -143,17 +144,20 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               </motion.div>
               {/* Right */}
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center">
-                <div className="relative w-full aspect-square max-w-[400px]">
-                  <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%), hsl(190,70%,50%))' , opacity: 0.15 }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-[120px] h-[120px] rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <HeroIcon size={80} className="text-white" strokeWidth={1} />
+                {props.heroImage ? (
+                  <img src={props.heroImage} alt={props.h1} className="w-full max-w-[400px]" />
+                ) : (
+                  <div className="relative w-full aspect-square max-w-[400px]">
+                    <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,45%), hsl(228,85%,60%), hsl(190,70%,50%))' , opacity: 0.15 }} />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-[120px] h-[120px] rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <HeroIcon size={80} className="text-white" strokeWidth={1} />
+                      </div>
                     </div>
+                    <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-8 right-8 w-4 h-4 rounded-full" style={{ background: 'hsl(228,76%,45%)' }} />
+                    <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute bottom-12 left-8 w-6 h-6 rounded" style={{ border: '2px solid hsl(228,85%,60%)', opacity: 0.4 }} />
                   </div>
-                  {/* Decorations */}
-                  <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-8 right-8 w-4 h-4 rounded-full" style={{ background: 'hsl(228,76%,45%)' }} />
-                  <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute bottom-12 left-8 w-6 h-6 rounded" style={{ border: '2px solid hsl(228,85%,60%)', opacity: 0.4 }} />
-                </div>
+                )}
               </motion.div>
             </div>
           </div>

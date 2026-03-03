@@ -1,5 +1,6 @@
 import { Zap, BarChart3, Target, MousePointerClick } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroLandingPage from '@/assets/hero-landing-page.png';
 
 const LandingPageService = () => (
   <ServicePageTemplate
@@ -9,6 +10,7 @@ const LandingPageService = () => (
     h1="Landing page ad alta conversione"
     subtitle="Pagine di atterraggio progettate per convertire visitatori in lead e clienti, ottimizzate per ogni campagna."
     heroIcon={MousePointerClick}
+    heroImage={heroLandingPage}
     stats={[
       { value: '+180%', label: 'Tasso conversione medio' },
       { value: '< 2s', label: 'Tempo di caricamento' },

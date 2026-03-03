@@ -199,7 +199,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         <section className="relative py-24">
           <SectionBackground variant="blue-right" />
           <div className="section-container relative z-[2]">
-            <motion.div {...fadeUp} className="flex items-center justify-between mb-12">
+            <motion.div {...fadeUp} className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-3">
               <h2 className="text-3xl md:text-4xl font-bold text-white">I nostri lavori su {props.badge}</h2>
               <Link to="/casi-studio" className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1">Vedi tutti <ArrowRight size={14} /></Link>
             </motion.div>

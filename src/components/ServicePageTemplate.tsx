@@ -216,7 +216,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
           <SectionBackground variant="blue-right" />
           <div className="section-container relative z-[2]">
             <motion.div {...fadeUp} className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-3">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">I nostri lavori su {props.badge}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">I nostri progetti di {props.badge}</h2>
               <Link to="/casi-studio" className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1">Vedi tutti <ArrowRight size={14} /></Link>
             </motion.div>
             <div className="flex flex-col gap-10">

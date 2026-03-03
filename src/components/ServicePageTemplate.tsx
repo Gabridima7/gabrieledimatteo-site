@@ -275,12 +275,33 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         <section className="relative py-20">
           <SectionBackground variant="blue-center" />
           <div className="section-container relative z-[2]">
-            <motion.div {...fadeUp} className="max-w-5xl mx-auto rounded-3xl text-center py-16 px-8" style={{ background: 'rgba(28,53,200,0.12)', border: '1px solid rgba(28,53,200,0.2)' }}>
-              <h2 className="font-bold text-white" style={{ fontSize: 'clamp(28px,3.5vw,48px)' }}>{props.ctaBannerText}</h2>
-              <p className="mt-4" style={{ color: 'rgba(255,255,255,0.65)' }}>Parliamo del tuo progetto senza impegno.</p>
-              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-8" style={{ background: '#d0f601' }}>
-                Prenota una call gratuita <ArrowRight size={16} />
-              </a>
+            <motion.div {...fadeUp} className="max-w-6xl mx-auto rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f0ff 50%, #e8e0ff 100%)' }}>
+              {/* Desktop */}
+              <div className="hidden md:flex items-center justify-between p-12 lg:p-16 gap-12">
+                <div className="flex-1">
+                  <h2 className="font-bold leading-[1.15]" style={{ fontSize: 'clamp(28px, 3vw, 44px)', color: '#0a0a0a' }}>{props.ctaBannerText}</h2>
+                  <div className="flex items-center gap-3 mt-8">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ background: '#d0f601' }}>
+                      <ArrowRight size={18} className="text-black rotate-45" />
+                    </span>
+                    <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-semibold text-black text-base transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]" style={{ background: '#d0f601' }}>
+                      Prenota una Call
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {/* Mobile */}
+              <div className="md:hidden p-8">
+                <h2 className="font-bold leading-[1.15]" style={{ fontSize: 'clamp(28px, 7vw, 40px)', color: '#0a0a0a' }}>{props.ctaBannerText}</h2>
+                <div className="flex items-center gap-3 mt-8">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ background: '#d0f601' }}>
+                    <ArrowRight size={18} className="text-black rotate-45" />
+                  </span>
+                  <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-semibold text-black text-base transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]" style={{ background: '#d0f601' }}>
+                    Prenota una Call
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>

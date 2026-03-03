@@ -12,7 +12,7 @@ export const translations = {
   },
   // Mega menu
   mega: {
-    sviluppo: { it: 'Sviluppo Web & App', en: 'Web & App Development' },
+    sviluppo: { it: 'Sviluppo Web', en: 'Web Development' },
     sviluppoDesc: { it: 'Siti web e applicazioni su misura', en: 'Custom websites and applications' },
     ai: { it: 'AI Automation', en: 'AI Automation' },
     aiDesc: { it: 'Automatizza i processi con l\'AI', en: 'Automate processes with AI' },

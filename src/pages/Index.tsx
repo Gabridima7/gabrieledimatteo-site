@@ -349,12 +349,12 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: colIdx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative px-6 lg:px-10 py-8 md:py-0 ${
+                className={`relative px-6 lg:px-10 py-4 md:py-0 ${
                   colIdx < 2 ? 'border-b md:border-b-0 md:border-r border-white/[0.08]' : ''
                 }`}
               >
                 {/* Upper area with metric + floating badges */}
-                <div className="relative h-[200px]">
+                <div className="relative h-[140px] md:h-[160px] lg:h-[200px]">
                   {/* Large background metric */}
                   <span
                     className="absolute bottom-0 left-0 font-extrabold text-white/[0.07] leading-none select-none z-0"

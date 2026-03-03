@@ -1,5 +1,6 @@
 import { Palette, Layout, RefreshCw, Eye } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import iconFigma from '@/assets/icons/icon-figma.png';
 
 const BrandingUiUx = () => (
   <ServicePageTemplate
@@ -38,6 +39,22 @@ const BrandingUiUx = () => (
       { title: 'Design & Conversione', desc: 'Interfacce progettate con UX research-driven per massimizzare engagement, retention e conversioni.' },
     ]}
     outcomesCtaText="Rinnova il tuo brand"
+    capabilities={{
+      title: 'Le nostre competenze in *branding e design*',
+      subtitle: 'Dalla brand identity al design di interfacce — creiamo esperienze visive coerenti e memorabili.',
+      columns: [
+        { heading: 'Brand Identity', items: ['Logo design', 'Palette colori', 'Tipografia', 'Brand guideline', 'Tone of voice', 'Visual language'] },
+        { heading: 'UI/UX Design', items: ['Wireframing', 'Prototipi interattivi', 'Design system', 'Micro-interazioni', 'Responsive design', 'Accessibility'] },
+        { heading: 'Applicazioni', items: ['Web design', 'Mobile app design', 'Social media kit', 'Presentazioni', 'Packaging digitale', 'Template email'] },
+      ],
+    }}
+    techStack={{
+      title: 'Gli strumenti che utilizziamo per il tuo *branding e design*',
+      subtitle: 'Tool professionali per creare identità visive e interfacce di alto livello.',
+      items: [
+        { name: 'Figma', image: iconFigma },
+      ],
+    }}
     faqs={[
       { q: 'Cosa include un progetto di branding?', a: 'Logo, palette colori, tipografia, brand guideline, template social e tutti gli asset necessari.' },
       { q: 'Quanto dura un progetto di branding?', a: 'Un branding completo richiede 3-5 settimane, dal concept alla consegna finale.' },

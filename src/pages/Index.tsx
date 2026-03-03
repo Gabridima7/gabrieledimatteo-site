@@ -140,6 +140,15 @@ const Index = () => {
         <SectionBackground variant="hero" />
         <div className="section-container lg:pl-2 relative z-[2] flex flex-col flex-1 pt-8 md:pt-2 pb-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1 md:max-lg:gap-4">
+            {/* Hero image – mobile/tablet (shown first) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="flex lg:hidden items-center justify-center">
+              <img src={heroNexus} alt="NEXUS Agency Hero" className="w-full max-w-[280px] md:max-w-[340px] h-auto object-contain drop-shadow-2xl" />
+            </motion.div>
+
             {/* Left – Text */}
             <div>
               <motion.div
@@ -186,7 +195,7 @@ const Index = () => {
               </motion.div>
             </div>
 
-            {/* Right – Hero image */}
+            {/* Right – Hero image (desktop only) */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}

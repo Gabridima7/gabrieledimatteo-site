@@ -36,6 +36,10 @@ const SviluppoWebApp = () => (
       { title: 'Lancio & Supporto', items: ['Testing & QA', 'Deploy', 'Monitoraggio', 'Supporto continuo'] },
     ]}
     outcomes={['Sito web veloce e ottimizzato SEO', 'Aumento delle conversioni', 'Codice proprietario al 100%', 'Supporto tecnico continuativo', 'Design moderno e professionale', 'Integrazione con i tuoi sistemi']}
+    outcomeCards={[
+      { title: 'Competenza & Esperienza', desc: 'Il nostro team porta conoscenza approfondita del settore ed esperienza pratica nello sviluppo di soluzioni digitali su misura.' },
+      { title: 'Supporto & Sicurezza', desc: 'Prioritizziamo sicurezza e supporto per garantire un\'esperienza senza problemi, con protocolli robusti e monitoraggio continuo.' },
+    ]}
     outcomesCtaText="Inizia il tuo progetto"
     faqs={[
       { q: 'Quanto tempo serve per sviluppare un sito web?', a: 'Dipende dalla complessità: un sito vetrina richiede 3-4 settimane, una web app complessa 8-12 settimane.' },

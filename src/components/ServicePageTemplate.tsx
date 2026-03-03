@@ -56,6 +56,7 @@ export interface ServicePageProps {
   benefits: { icon: LucideIcon; title: string; desc: string }[];
   process: { title: string; items: string[] }[];
   outcomes: string[];
+  outcomeCards?: { title: string; desc: string }[];
   outcomesCtaText: string;
   faqs: { q: string; a: string }[];
   finalCtaH2: string;
@@ -403,9 +404,17 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 const half = Math.ceil(props.outcomes.length / 2);
                 const leftItems = props.outcomes.slice(0, half);
                 const rightItems = props.outcomes.slice(half);
-                return [leftItems, rightItems].map((items, colIdx) => (
+                return [leftItems, rightItems].map((items, colIdx) => {
+                  const cardHeader = props.outcomeCards?.[colIdx];
+                  return (
                   <motion.div key={colIdx} {...stagger(colIdx)} className="rounded-2xl p-8 md:p-10" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
                     <div className="flex flex-col">
+                      {cardHeader && (
+                        <div className="mb-4">
+                          <h3 className="text-xl font-bold text-white">{cardHeader.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{cardHeader.desc}</p>
+                        </div>
+                      )}
                       {items.map((item, i) => (
                         <div key={i}>
                           <p className="text-white font-semibold text-base py-4">{item}</p>
@@ -414,7 +423,8 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                       ))}
                     </div>
                   </motion.div>
-                ));
+                  );
+                });
               })()}
             </div>
             <motion.div {...fadeUp} className="text-center mt-12">

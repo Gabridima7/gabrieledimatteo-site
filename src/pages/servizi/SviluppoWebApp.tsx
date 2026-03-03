@@ -35,7 +35,7 @@ const SviluppoWebApp = () => (
       { title: 'UI Design & Dev', items: ['Visual design', 'Design system', 'Sviluppo frontend', 'Backend & API'] },
       { title: 'Lancio & Supporto', items: ['Testing & QA', 'Deploy', 'Monitoraggio', 'Supporto continuo'] },
     ]}
-    outcomes={['Sito web veloce e ottimizzato SEO', 'Aumento delle conversioni', 'Codice proprietario al 100%', 'Supporto tecnico continuativo', 'Design moderno e professionale', 'Integrazione con i tuoi sistemi']}
+    outcomes={['Sviluppatori qualificati', 'Approccio flessibile', 'Ottimizzazione delle prestazioni', 'Trasparenza dei processi', 'Supporto tecnico continuativo', 'Design moderno e professionale', 'Integrazione con i tuoi sistemi', 'Codice proprietario al 100%']}
     outcomesSubtitle="I nostri sviluppatori front-end e back-end offrono soluzioni di sviluppo siti web personalizzate e a lungo termine, con un ampio stack tecnologico, interfacce responsive e misure di sicurezza."
     outcomeCards={[
       { title: 'Competenza & Esperienza', desc: 'Il nostro team porta conoscenza approfondita del settore ed esperienza pratica nello sviluppo di soluzioni digitali su misura.' },

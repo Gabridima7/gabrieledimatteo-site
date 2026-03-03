@@ -1,5 +1,9 @@
 import { Smartphone, Database, Layers, Lock } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techPython from '@/assets/tech/icon-python.png';
 
 const WebAppService = () => (
   <ServicePageTemplate
@@ -37,6 +41,25 @@ const WebAppService = () => (
       { title: 'Sicurezza & Scalabilità', desc: 'Autenticazione enterprise, crittografia end-to-end e architettura pronta a gestire migliaia di utenti.' },
     ]}
     outcomesCtaText="Inizia il tuo progetto"
+    capabilities={{
+      title: 'Le nostre competenze nello sviluppo di *web app*',
+      subtitle: 'Dalla PWA alla piattaforma enterprise — costruiamo web app su misura per ogni esigenza aziendale.',
+      columns: [
+        { heading: 'Frontend', items: ['React & TypeScript', 'PWA & offline-first', 'Responsive design', 'Real-time updates', 'Animazioni fluide', 'Accessibility'] },
+        { heading: 'Backend', items: ['API RESTful', 'Database design', 'Auth & authorization', 'File storage', 'Webhook & events', 'Background jobs'] },
+        { heading: 'DevOps', items: ['CI/CD pipeline', 'Cloud hosting', 'Monitoring & alerts', 'Auto-scaling', 'Backup automatici', 'SSL & security'] },
+      ],
+    }}
+    techStack={{
+      title: 'Lo stack tecnologico per la tua *web app*',
+      subtitle: 'Tecnologie moderne per web app performanti, scalabili e sicure.',
+      items: [
+        { name: 'ReactJS', image: techReact },
+        { name: 'JavaScript', image: techJs },
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'Python', image: techPython },
+      ],
+    }}
     faqs={[
       { q: 'Che differenza c\'è tra sito web e web app?', a: 'Un sito web è informativo, una web app è interattiva: permette agli utenti di compiere azioni, gestire dati e automatizzare processi.' },
       { q: 'Posso usarla anche da smartphone?', a: 'Sì, le nostre web app sono PWA: funzionano su qualsiasi dispositivo con un browser.' },

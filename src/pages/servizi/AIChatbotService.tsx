@@ -1,5 +1,9 @@
 import { Bot, Brain, Zap, Clock } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techPython from '@/assets/tech/icon-python.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
 
 const AIChatbotService = () => (
   <ServicePageTemplate
@@ -37,6 +41,25 @@ const AIChatbotService = () => (
       { title: 'Integrazione & Personalizzazione', desc: 'Connessione con CRM, e-commerce e tool aziendali per risposte contestuali e azioni automatiche.' },
     ]}
     outcomesCtaText="Attiva il tuo chatbot AI"
+    capabilities={{
+      title: 'Le nostre competenze nei *chatbot AI*',
+      subtitle: 'Dall\'addestramento del modello all\'integrazione multi-canale — costruiamo assistenti virtuali intelligenti.',
+      columns: [
+        { heading: 'AI & NLP', items: ['GPT fine-tuning', 'RAG (Retrieval)', 'Intent classification', 'Sentiment analysis', 'Multi-lingua', 'Context memory'] },
+        { heading: 'Canali', items: ['Widget sito web', 'WhatsApp Business', 'Telegram Bot', 'Facebook Messenger', 'Slack integration', 'Email automation'] },
+        { heading: 'Integrazioni', items: ['CRM sync', 'E-commerce', 'Ticketing system', 'Calendar booking', 'Payment processing', 'Custom webhooks'] },
+      ],
+    }}
+    techStack={{
+      title: 'Le tecnologie per il tuo *chatbot AI*',
+      subtitle: 'Stack tecnologico avanzato per chatbot intelligenti, scalabili e integrabili con i tuoi sistemi.',
+      items: [
+        { name: 'Python', image: techPython },
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'JavaScript', image: techJs },
+        { name: 'ReactJS', image: techReact },
+      ],
+    }}
     faqs={[
       { q: 'Su quali canali funziona il chatbot?', a: 'Sito web, WhatsApp, Telegram e qualsiasi piattaforma con API. Lo integriamo dove ti serve.' },
       { q: 'Come lo addestrate sui miei dati?', a: 'Carichiamo la tua knowledge base (FAQ, documenti, procedure) e addestriamo il modello AI.' },

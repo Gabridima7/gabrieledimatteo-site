@@ -1,5 +1,9 @@
 import { Rocket, TrendingUp, Zap, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techPython from '@/assets/tech/icon-python.png';
 
 const ProdottoSaaSService = () => (
   <ServicePageTemplate
@@ -37,6 +41,25 @@ const ProdottoSaaSService = () => (
       { title: 'Scalabilità & Revenue', desc: 'Architettura multi-tenant pronta a crescere con Stripe billing, subscription management e analytics integrati.' },
     ]}
     outcomesCtaText="Lancia il tuo SaaS"
+    capabilities={{
+      title: 'Le nostre competenze per il tuo *prodotto SaaS*',
+      subtitle: 'Dalla validazione dell\'idea al go-to-market — costruiamo prodotti SaaS pronti a scalare e monetizzare.',
+      columns: [
+        { heading: 'Product', items: ['MVP development', 'Product-market fit', 'User onboarding', 'Feature prioritization', 'Analytics & metrics', 'Pricing strategy'] },
+        { heading: 'Architettura', items: ['Multi-tenant', 'API RESTful', 'Database design', 'Microservizi', 'CI/CD pipeline', 'Auto-scaling'] },
+        { heading: 'Monetizzazione', items: ['Stripe billing', 'Subscription plans', 'Trial management', 'Invoice automation', 'Usage-based pricing', 'Revenue analytics'] },
+      ],
+    }}
+    techStack={{
+      title: 'Lo stack tecnologico per il tuo *prodotto SaaS*',
+      subtitle: 'Tecnologie moderne e scalabili per costruire un SaaS performante e pronto a crescere.',
+      items: [
+        { name: 'ReactJS', image: techReact },
+        { name: 'JavaScript', image: techJs },
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'Python', image: techPython },
+      ],
+    }}
     faqs={[
       { q: 'Che differenza c\'è tra web app e SaaS?', a: 'Un SaaS è un prodotto software venduto in abbonamento a più clienti, con architettura multi-tenant e billing integrato.' },
       { q: 'Quanto costa sviluppare una MVP SaaS?', a: 'Il costo dipende dalla complessità. Prenota una call per discutere la tua idea e ricevere un preventivo.' },

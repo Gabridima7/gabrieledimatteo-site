@@ -1,5 +1,6 @@
 import { Smartphone, Eye, Fingerprint, Sparkles } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import iconFigma from '@/assets/icons/icon-figma.png';
 
 const MobileAppDesignService = () => (
   <ServicePageTemplate
@@ -37,6 +38,22 @@ const MobileAppDesignService = () => (
       { title: 'Engagement & Retention', desc: 'Micro-interazioni, animazioni e flussi progettati per massimizzare il coinvolgimento e la fidelizzazione degli utenti.' },
     ]}
     outcomesCtaText="Progetta la tua app"
+    capabilities={{
+      title: 'Le nostre competenze nel *mobile app design*',
+      subtitle: 'Dal design nativo iOS e Android alle interfacce cross-platform — creiamo app che gli utenti amano.',
+      columns: [
+        { heading: 'iOS Design', items: ['Human Interface Guidelines', 'SF Symbols', 'SwiftUI patterns', 'Haptic feedback', 'Dynamic Island', 'Widgets'] },
+        { heading: 'Android Design', items: ['Material Design 3', 'Adaptive layouts', 'Edge-to-edge', 'Navigation patterns', 'Foldable support', 'Notifications'] },
+        { heading: 'Cross-platform', items: ['Design system unificato', 'Component library', 'Gesture patterns', 'Onboarding flows', 'Gamification', 'Micro-animazioni'] },
+      ],
+    }}
+    techStack={{
+      title: 'Gli strumenti per il *design della tua app mobile*',
+      subtitle: 'Tool professionali per progettare app mobile pixel-perfect e pronte per lo sviluppo.',
+      items: [
+        { name: 'Figma', image: iconFigma },
+      ],
+    }}
     faqs={[
       { q: 'Progettate per iOS, Android o entrambi?', a: 'Progettiamo per entrambe le piattaforme, rispettando le linee guida specifiche di ciascuna.' },
       { q: 'Consegnate anche il codice dell\'app?', a: 'Consegniamo il design completo in Figma. Lo sviluppo può essere un servizio aggiuntivo.' },

@@ -1,5 +1,10 @@
 import { RefreshCw, TrendingUp, Zap, Eye } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techHtml from '@/assets/tech/icon-html.png';
+import techCss from '@/assets/tech/icon-css.png';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import iconFigma from '@/assets/icons/icon-figma.png';
 
 const WebsiteRedesignService = () => (
   <ServicePageTemplate
@@ -37,6 +42,26 @@ const WebsiteRedesignService = () => (
       { title: 'SEO & Continuità', desc: 'Migrazione gestita con redirect 301, zero downtime e posizionamento SEO preservato e migliorato.' },
     ]}
     outcomesCtaText="Rinnova il tuo sito"
+    capabilities={{
+      title: 'Le nostre competenze nel *website redesign*',
+      subtitle: 'Dall\'audit del sito attuale alla migrazione — rinnoviamo il tuo sito senza perdere posizionamento.',
+      columns: [
+        { heading: 'Audit & Analisi', items: ['Performance audit', 'UX/UI review', 'SEO analysis', 'Content audit', 'Analytics review', 'Competitor benchmark'] },
+        { heading: 'Redesign', items: ['Nuovo visual design', 'UX migliorata', 'Responsive update', 'Animazioni moderne', 'Design system', 'Accessibility'] },
+        { heading: 'Migrazione', items: ['Redirect 301', 'Content migration', 'Zero downtime', 'SEO preservation', 'URL structure', 'Post-launch monitoring'] },
+      ],
+    }}
+    techStack={{
+      title: 'Le tecnologie per il *redesign del tuo sito*',
+      subtitle: 'Stack moderno per rinnovare il tuo sito con velocità, accessibilità e SEO ottimizzati.',
+      items: [
+        { name: 'HTML', image: techHtml },
+        { name: 'CSS3', image: techCss },
+        { name: 'JavaScript', image: techJs },
+        { name: 'ReactJS', image: techReact },
+        { name: 'Figma', image: iconFigma },
+      ],
+    }}
     faqs={[
       { q: 'Perdo il posizionamento SEO con il redesign?', a: 'No. Gestiamo redirect 301, conserviamo le URL strategiche e ottimizziamo ulteriormente il SEO.' },
       { q: 'Quanto dura un progetto di redesign?', a: '4-8 settimane a seconda della dimensione del sito e delle funzionalità.' },

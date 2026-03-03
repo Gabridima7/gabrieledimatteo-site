@@ -1,5 +1,9 @@
 import { Database, BarChart3, Cog, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techPython from '@/assets/tech/icon-python.png';
 
 const SoftwareGestionaleService = () => (
   <ServicePageTemplate
@@ -37,6 +41,25 @@ const SoftwareGestionaleService = () => (
       { title: 'Personalizzazione & Proprietà', desc: 'Software 100% personalizzato sulle tue esigenze, di tua proprietà e senza costi ricorrenti di licenza.' },
     ]}
     outcomesCtaText="Digitalizza i tuoi processi"
+    capabilities={{
+      title: 'Le nostre competenze nei *software gestionali*',
+      subtitle: 'Dal CRM all\'ERP — costruiamo strumenti gestionali su misura per digitalizzare ogni processo aziendale.',
+      columns: [
+        { heading: 'CRM & Vendite', items: ['Gestione clienti', 'Pipeline vendite', 'Lead tracking', 'Email automation', 'Preventivi & fatture', 'Customer portal'] },
+        { heading: 'ERP & Operazioni', items: ['Gestione ordini', 'Magazzino & inventario', 'Contabilità', 'Risorse umane', 'Pianificazione risorse', 'Workflow automation'] },
+        { heading: 'Analytics & Report', items: ['Dashboard real-time', 'Report automatici', 'KPI tracking', 'Data export', 'Business intelligence', 'Forecasting'] },
+      ],
+    }}
+    techStack={{
+      title: 'Le tecnologie per il tuo *software gestionale*',
+      subtitle: 'Stack moderno per gestionali performanti, sicuri e scalabili con la crescita della tua azienda.',
+      items: [
+        { name: 'ReactJS', image: techReact },
+        { name: 'JavaScript', image: techJs },
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'Python', image: techPython },
+      ],
+    }}
     faqs={[
       { q: 'Quanto costa un software gestionale su misura?', a: 'Dipende dalla complessità. Prenota una call per un preventivo personalizzato basato sulle tue esigenze.' },
       { q: 'Posso migrare i dati dal mio gestionale attuale?', a: 'Sì, ci occupiamo della migrazione completa dei dati dal tuo sistema esistente.' },

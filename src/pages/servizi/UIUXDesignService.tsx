@@ -1,5 +1,6 @@
 import { PenTool, Eye, MousePointerClick, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import iconFigma from '@/assets/icons/icon-figma.png';
 
 const UIUXDesignService = () => (
   <ServicePageTemplate
@@ -37,6 +38,22 @@ const UIUXDesignService = () => (
       { title: 'Conversione & Retention', desc: 'Interfacce progettate per ridurre i ticket di supporto e aumentare conversioni e fidelizzazione degli utenti.' },
     ]}
     outcomesCtaText="Migliora la tua UX"
+    capabilities={{
+      title: 'Le nostre competenze in *UI/UX design*',
+      subtitle: 'Dalla ricerca utente al design di interfacce — progettiamo esperienze digitali intuitive e orientate alla conversione.',
+      columns: [
+        { heading: 'UX Research', items: ['User interviews', 'Usability testing', 'Personas', 'Journey mapping', 'Heatmap analysis', 'A/B testing'] },
+        { heading: 'UI Design', items: ['Visual design', 'Design system', 'Iconography', 'Micro-interazioni', 'Responsive design', 'Dark/light mode'] },
+        { heading: 'Prototyping', items: ['Wireframe low-fi', 'Prototipi hi-fi', 'Clickable prototype', 'User flow', 'Interaction design', 'Handoff dev-ready'] },
+      ],
+    }}
+    techStack={{
+      title: 'Gli strumenti che utilizziamo per il *design delle tue interfacce*',
+      subtitle: 'Tool professionali per progettare, prototipare e consegnare interfacce di alto livello.',
+      items: [
+        { name: 'Figma', image: iconFigma },
+      ],
+    }}
     faqs={[
       { q: 'Che software utilizzate per il design?', a: 'Figma per design e prototipi interattivi. Consegniamo file organizzati e pronti per lo sviluppo.' },
       { q: 'Fate anche lo sviluppo?', a: 'Sì, possiamo gestire design e sviluppo come progetto completo.' },
@@ -44,7 +61,7 @@ const UIUXDesignService = () => (
       { q: 'Quanto dura un progetto di UI/UX?', a: '2-6 settimane a seconda della complessità del prodotto.' },
       { q: 'Fate test con utenti reali?', a: 'Sì, includiamo user testing per validare le scelte di design.' },
     ]}
-    finalCtaH2="Vuoi un\'interfaccia che converte per la tua PMI?"
+    finalCtaH2="Vuoi un'interfaccia che converte per la tua PMI?"
   />
 );
 

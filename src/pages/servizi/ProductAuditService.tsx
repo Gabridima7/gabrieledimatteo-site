@@ -1,5 +1,6 @@
 import { ClipboardCheck, Eye, TrendingUp, AlertCircle } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import iconFigma from '@/assets/icons/icon-figma.png';
 
 const ProductAuditService = () => (
   <ServicePageTemplate
@@ -37,6 +38,22 @@ const ProductAuditService = () => (
       { title: 'Roadmap Actionable', desc: 'Report dettagliato con screenshot annotati, raccomandazioni prioritizzate e piano di azione concreto.' },
     ]}
     outcomesCtaText="Prenota il tuo audit"
+    capabilities={{
+      title: 'Le nostre competenze nel *product audit*',
+      subtitle: 'Dall\'analisi euristica al benchmark competitivo — valutiamo ogni aspetto del tuo prodotto digitale.',
+      columns: [
+        { heading: 'Usabilità', items: ['Analisi euristica', 'Task analysis', 'Error prevention', 'Learnability', 'Efficiency', 'User satisfaction'] },
+        { heading: 'Performance', items: ['Core Web Vitals', 'PageSpeed analysis', 'Mobile performance', 'Load time audit', 'Bundle analysis', 'Image optimization'] },
+        { heading: 'Accessibilità', items: ['WCAG compliance', 'Screen reader test', 'Color contrast', 'Keyboard navigation', 'Focus management', 'ARIA labels'] },
+      ],
+    }}
+    techStack={{
+      title: 'Gli strumenti per il tuo *product audit*',
+      subtitle: 'Tool professionali per analizzare in profondità ogni aspetto del tuo prodotto digitale.',
+      items: [
+        { name: 'Figma', image: iconFigma },
+      ],
+    }}
     faqs={[
       { q: 'Cosa analizzate durante l\'audit?', a: 'Analizziamo UX, UI, flussi utente, performance, accessibilità, copy e coerenza visiva del prodotto.' },
       { q: 'Quanto dura un audit?', a: 'L\'analisi richiede 1-2 settimane. La presentazione dei risultati avviene con una call dedicata.' },

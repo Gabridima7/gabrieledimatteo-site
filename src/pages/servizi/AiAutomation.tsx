@@ -1,5 +1,10 @@
 import { Cpu, Bot, Zap, Workflow } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techJs from '@/assets/tech/icon-js.png';
+import techReact from '@/assets/tech/icon-react.png';
+import techPython from '@/assets/tech/icon-python.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import iconMake from '@/assets/icons/icon-make.png';
 
 const AiAutomation = () => (
   <ServicePageTemplate
@@ -37,6 +42,26 @@ const AiAutomation = () => (
       { title: 'Scalabilità & ROI', desc: 'Processi che crescono con la tua azienda senza costi aggiuntivi di personale, con ROI misurabile dal primo mese.' },
     ]}
     outcomesCtaText="Automatizza ora"
+    capabilities={{
+      title: 'Le nostre competenze in *AI e automazione*',
+      subtitle: 'Dall\'automazione dei flussi operativi all\'integrazione di modelli AI — copriamo ogni esigenza di automazione aziendale.',
+      columns: [
+        { heading: 'AI & Machine Learning', items: ['Modelli GPT personalizzati', 'NLP e text analysis', 'Computer vision', 'Classificazione dati', 'Sentiment analysis', 'Predictive analytics'] },
+        { heading: 'Automazione', items: ['Workflow automation', 'Email automation', 'Data pipeline', 'Report automatici', 'Lead scoring', 'Task orchestration'] },
+        { heading: 'Integrazioni', items: ['Make & Zapier', 'OpenAI API', 'Google Workspace', 'CRM & ERP', 'Slack & Teams', 'Webhook & API custom'] },
+      ],
+    }}
+    techStack={{
+      title: 'Le tecnologie che utilizziamo per le tue *automazioni AI*',
+      subtitle: 'Stack tecnologico moderno per automazioni affidabili, scalabili e facili da mantenere.',
+      items: [
+        { name: 'Python', image: techPython },
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'JavaScript', image: techJs },
+        { name: 'ReactJS', image: techReact },
+        { name: 'Make', image: iconMake },
+      ],
+    }}
     faqs={[
       { q: 'Che tipo di processi posso automatizzare?', a: 'Qualsiasi processo ripetitivo: gestione email, data entry, generazione report, follow-up clienti, e molto altro.' },
       { q: 'Serve competenza tecnica per usare le automazioni?', a: 'No. Costruiamo interfacce semplici e intuitive. Il tuo team non ha bisogno di competenze tecniche.' },

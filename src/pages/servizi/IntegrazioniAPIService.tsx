@@ -1,5 +1,9 @@
 import { Plug, Link2, Database, RefreshCw } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import techJs from '@/assets/tech/icon-js.png';
+import techNodejs from '@/assets/tech/icon-nodejs.png';
+import techPython from '@/assets/tech/icon-python.png';
+import iconMake from '@/assets/icons/icon-make.png';
 
 const IntegrazioniAPIService = () => (
   <ServicePageTemplate
@@ -37,6 +41,25 @@ const IntegrazioniAPIService = () => (
       { title: 'Affidabilità & Sicurezza', desc: 'Integrazioni robuste con retry automatici, logging avanzato e protocolli di sicurezza enterprise.' },
     ]}
     outcomesCtaText="Collega i tuoi sistemi"
+    capabilities={{
+      title: 'Le nostre competenze nelle *integrazioni API*',
+      subtitle: 'Dalla mappatura dei sistemi all\'orchestrazione dei dati — connettiamo qualsiasi software con API.',
+      columns: [
+        { heading: 'Protocolli', items: ['REST API', 'GraphQL', 'WebSocket', 'Webhook', 'gRPC', 'SOAP'] },
+        { heading: 'Piattaforme', items: ['CRM (Salesforce, HubSpot)', 'ERP & gestionali', 'E-commerce', 'Payment gateway', 'Email marketing', 'Social media API'] },
+        { heading: 'Orchestrazione', items: ['ETL pipeline', 'Event-driven sync', 'Retry & error handling', 'Rate limiting', 'Data transformation', 'Logging & monitoring'] },
+      ],
+    }}
+    techStack={{
+      title: 'Le tecnologie per le tue *integrazioni API*',
+      subtitle: 'Stack tecnologico robusto per integrazioni affidabili, sicure e scalabili.',
+      items: [
+        { name: 'NodeJS', image: techNodejs },
+        { name: 'JavaScript', image: techJs },
+        { name: 'Python', image: techPython },
+        { name: 'Make', image: iconMake },
+      ],
+    }}
     faqs={[
       { q: 'Quali software potete integrare?', a: 'Qualsiasi software con API disponibile: CRM, ERP, e-commerce, email marketing, payment gateway e altri.' },
       { q: 'Usate Make o Zapier?', a: 'Sì, per integrazioni no-code. Per scenari complessi sviluppiamo integrazioni custom.' },

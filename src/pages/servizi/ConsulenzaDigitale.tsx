@@ -1,5 +1,7 @@
 import { Search, Target, TrendingUp, Lightbulb } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import iconFigma from '@/assets/icons/icon-figma.png';
+import iconMake from '@/assets/icons/icon-make.png';
 
 const ConsulenzaDigitale = () => (
   <ServicePageTemplate
@@ -37,6 +39,23 @@ const ConsulenzaDigitale = () => (
       { title: 'Risultati & Crescita', desc: 'Ogni azione è misurata e ottimizzata per garantire il massimo ritorno sull\'investimento digitale.' },
     ]}
     outcomesCtaText="Prenota la consulenza"
+    capabilities={{
+      title: 'Le nostre competenze in *consulenza digitale*',
+      subtitle: 'Dall\'audit della tua presenza online alla definizione di una strategia digitale completa e actionable.',
+      columns: [
+        { heading: 'Audit & Analisi', items: ['Audit UX/UI', 'Performance analysis', 'SEO audit', 'Tech stack review', 'Analytics setup', 'Competitor benchmark'] },
+        { heading: 'Strategia', items: ['Digital roadmap', 'Go-to-market', 'Product strategy', 'Growth hacking', 'Budget planning', 'KPI framework'] },
+        { heading: 'Trasformazione', items: ['Process optimization', 'Tool selection', 'Team enablement', 'Change management', 'Vendor management', 'Digital governance'] },
+      ],
+    }}
+    techStack={{
+      title: 'Gli strumenti che utilizziamo per la tua *strategia digitale*',
+      subtitle: 'Tool professionali per analisi, pianificazione e monitoraggio della tua trasformazione digitale.',
+      items: [
+        { name: 'Figma', image: iconFigma },
+        { name: 'Make', image: iconMake },
+      ],
+    }}
     faqs={[
       { q: 'Cosa include una consulenza digitale?', a: 'Audit della presenza digitale, analisi competitors, roadmap strategica con priorità, timeline e budget stimati.' },
       { q: 'Quanto dura il percorso di consulenza?', a: 'L\'assessment iniziale richiede 1-2 settimane. L\'affiancamento strategico può durare 1-6 mesi.' },

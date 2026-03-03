@@ -511,7 +511,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
           <section className="relative py-24">
             <SectionBackground variant="dark" />
             <div className="section-container relative z-[2]">
-              <motion.h2 {...fadeUp} className="text-center mb-6" style={{ fontSize: 'clamp(32px, 5vw, 64px)', fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 400, color: '#fff' }}>
+              <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-white text-center mb-6">
                 {props.capabilities.title.split(/(\*[^*]+\*)/).map((part, i) =>
                   part.startsWith('*') && part.endsWith('*')
                     ? <em key={i} className="italic">{part.slice(1, -1)}</em>

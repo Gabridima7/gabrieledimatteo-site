@@ -9,6 +9,15 @@ import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.
 import iconCodiceProprieta from '@/assets/icons/icon-codice-proprieta.png';
 import iconSupportoPostLancio from '@/assets/icons/icon-supporto-post-lancio.png';
 import testimonialMarco from '@/assets/testimonial-marco.png';
+import coverHomeleven from '@/assets/cover-homeleven.png';
+import coverOneup from '@/assets/cover-oneup.png';
+import coverBiglia from '@/assets/cover-biglia.png';
+
+const coverMap: Record<string, string> = {
+  homeleven: coverHomeleven,
+  oneup: coverOneup,
+  biglia: coverBiglia,
+};
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -34,7 +43,7 @@ export interface ServicePageProps {
   heroImage?: string;
   stats: { value: string; label: string }[];
   heroQuote: { text: string; name: string; role: string };
-  caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string }[];
+  caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string; cover?: string }[];
   ctaBannerText: string;
   benefits: { icon: LucideIcon; title: string; desc: string }[];
   process: { title: string; items: string[] }[];
@@ -206,8 +215,12 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             <div className="flex flex-col gap-8">
               {props.caseStudies.map((cs, i) => (
                 <motion.div key={i} {...stagger(i)} className="rounded-2xl overflow-hidden grid md:grid-cols-[45%_55%]" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="aspect-video md:aspect-auto flex items-center justify-center" style={{ background: 'linear-gradient(135deg, hsl(228,76%,35%), hsl(228,85%,50%))' }}>
-                    <span className="text-white/70 text-xl font-bold">{cs.name}</span>
+                  <div className="aspect-video md:aspect-auto md:min-h-[280px] flex items-center justify-center relative overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-l-2xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,35%), hsl(228,85%,50%))' }}>
+                    {(cs.cover || coverMap[cs.slug]) ? (
+                      <img src={cs.cover || coverMap[cs.slug]} alt={cs.name} className="absolute inset-0 w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-white/70 text-xl font-bold">{cs.name}</span>
+                    )}
                   </div>
                   <div className="p-8">
                     <span className="badge-pill">{cs.category}</span>

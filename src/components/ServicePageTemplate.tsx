@@ -19,10 +19,10 @@ const coverMap: Record<string, string> = {
   biglia: coverBiglia,
 };
 
-const canonicalData: Record<string, { name: string; category: string; description: string }> = {
-  homeleven: { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager con AI' },
-  oneup: { name: 'ONE UP', category: 'Web App', description: 'Gestionale Flotta Barche' },
-  biglia: { name: 'Biglia Serramenti', category: 'Sviluppo Web', description: 'Sito Web Professionale' },
+const canonicalData: Record<string, { name: string; category: string; description: string; bgColor: string }> = {
+  homeleven: { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager con AI', bgColor: 'linear-gradient(135deg, #1a1a6e 0%, #3b28cc 100%)' },
+  oneup: { name: 'ONE UP', category: 'Web App', description: 'Gestionale Flotta Barche', bgColor: 'linear-gradient(135deg, #0d3b2e 0%, #0a6e4f 100%)' },
+  biglia: { name: 'Biglia Serramenti', category: 'Sviluppo Web', description: 'Sito Web Professionale', bgColor: 'linear-gradient(135deg, #1C35C8 0%, #4F6FE8 100%)' },
 };
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
@@ -218,31 +218,50 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold text-white">I nostri lavori su {props.badge}</h2>
               <Link to="/casi-studio" className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1">Vedi tutti <ArrowRight size={14} /></Link>
             </motion.div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-10">
               {props.caseStudies.map((cs, i) => {
                 const canonical = canonicalData[cs.slug];
                 const name = canonical?.name || cs.name;
                 const category = canonical?.category || cs.category;
                 const description = canonical?.description || cs.description;
                 const cover = cs.cover || coverMap[cs.slug];
+                const bgColor = canonical?.bgColor || 'linear-gradient(135deg, #1C35C8 0%, #4F6FE8 100%)';
                 return (
-                <motion.div key={i} {...stagger(i)} className="rounded-2xl overflow-hidden grid md:grid-cols-[45%_55%]" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div className="aspect-video md:aspect-auto md:min-h-[280px] flex items-center justify-center relative overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-l-2xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,35%), hsl(228,85%,50%))' }}>
-                    {cover ? (
-                      <img src={cover} alt={name} className="absolute inset-0 w-full h-full object-cover" />
-                    ) : (
-                      <span className="text-white/70 text-xl font-bold">{name}</span>
+                <motion.div key={i} {...stagger(i)} className="rounded-3xl overflow-hidden" style={{ background: bgColor }}>
+                  {/* Mobile layout */}
+                  <div className="md:hidden p-6 pb-0 flex flex-col">
+                    <h3 className="text-2xl font-bold text-white mb-3">{name}</h3>
+                    <p className="text-white/70 text-base mb-6 leading-relaxed">{description}</p>
+                    {cover && (
+                      <div className="rounded-t-2xl overflow-hidden aspect-[4/3] relative">
+                        <img src={cover} alt={name} className="absolute inset-0 w-full h-full object-cover" />
+                      </div>
                     )}
+                    {!cover && <div className="h-48 flex items-center justify-center"><span className="text-white/50 text-xl font-bold">{name}</span></div>}
                   </div>
-                  <div className="p-8">
-                    <span className="badge-pill">{category}</span>
-                    <h3 className="text-[22px] font-bold text-white mt-3">{name}</h3>
-                    <p className="mt-2 line-clamp-2" style={{ color: 'rgba(255,255,255,0.6)' }}>{description}</p>
-                    <Link to={`/casi-studio`} className="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style={{ color: '#4F6FE8' }}>Vedi caso studio <ArrowRight size={14} /></Link>
-                    <div className="flex gap-3 mt-4">
-                      {cs.metrics.map((m, j) => (
-                        <span key={j} className="text-xs px-3 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)' }}>{m}</span>
-                      ))}
+                  <div className="md:hidden px-6 py-5">
+                    <Link to="/casi-studio" className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-7 py-3" style={{ background: '#d0f601', color: '#06080F' }}>
+                      Vedi caso studio <ArrowRight size={14} />
+                    </Link>
+                  </div>
+
+                  {/* Desktop layout */}
+                  <div className="hidden md:grid md:grid-cols-[55%_45%] min-h-[420px]">
+                    <div className="p-10 flex flex-col">
+                      <h3 className="text-3xl font-bold text-white mb-auto">{name}</h3>
+                      {cover && (
+                        <div className="rounded-2xl overflow-hidden aspect-[16/10] relative mt-6">
+                          <img src={cover} alt={name} className="absolute inset-0 w-full h-full object-cover" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-10 flex flex-col justify-end">
+                      <p className="text-white/80 text-lg leading-relaxed mb-8">{description}</p>
+                      <div>
+                        <Link to="/casi-studio" className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-8 py-3.5" style={{ background: '#d0f601', color: '#06080F' }}>
+                          Vedi caso studio <ArrowRight size={14} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

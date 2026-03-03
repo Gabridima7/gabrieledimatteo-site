@@ -1,11 +1,10 @@
+import bgHeroDesktop from '@/assets/bg-hero-desktop.png';
+import bgHeroTablet from '@/assets/bg-hero-tablet.png';
+import bgHeroMobile from '@/assets/bg-hero-mobile.png';
+
 type Variant = 'hero' | 'dark' | 'blue-left' | 'blue-right' | 'blue-center' | 'teal' | 'minimal' | 'none';
 
-const backgrounds: Record<Variant, string> = {
-  hero: [
-    'radial-gradient(ellipse 80% 60% at 20% 50%, rgba(28,53,200,0.5) 0%, transparent 70%)',
-    'radial-gradient(ellipse 50% 40% at 70% 30%, rgba(79,111,232,0.25) 0%, transparent 60%)',
-    '#06080F',
-  ].join(', '),
+const backgrounds: Record<Exclude<Variant, 'hero'>, string> = {
   dark: [
     'radial-gradient(ellipse 60% 50% at 80% 80%, rgba(28,53,200,0.15) 0%, transparent 70%)',
     '#06080F',
@@ -41,10 +40,25 @@ interface SectionBackgroundProps {
 
 const SectionBackground = ({ variant, fade = true }: SectionBackgroundProps) => (
   <>
-    <div
-      className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
-      style={{ background: backgrounds[variant] }}
-    />
+    {variant === 'hero' ? (
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={bgHeroDesktop} />
+          <source media="(min-width: 768px)" srcSet={bgHeroTablet} />
+          <img
+            src={bgHeroMobile}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
+        </picture>
+      </div>
+    ) : (
+      <div
+        className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
+        style={{ background: backgrounds[variant] }}
+      />
+    )}
     {fade && variant !== 'none' && (
       <div
         className="absolute bottom-0 left-0 right-0 h-[120px] z-[1] pointer-events-none"

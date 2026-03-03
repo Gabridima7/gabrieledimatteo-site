@@ -51,6 +51,7 @@ export interface ServicePageProps {
   heroQuote: { text: string; name: string; role: string };
   caseStudies: { name: string; category: string; description: string; metrics: string[]; slug: string; cover?: string }[];
   ctaBannerText: string;
+  ctaBannerDescription?: string;
   benefits: { icon: LucideIcon; title: string; desc: string }[];
   process: { title: string; items: string[] }[];
   outcomes: string[];
@@ -280,6 +281,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               <div className="hidden md:flex items-center justify-between p-12 lg:p-16 gap-12">
                 <div className="flex-1">
                   <h2 className="font-bold leading-[1.15]" style={{ fontSize: 'clamp(28px, 3vw, 44px)', color: '#0a0a0a' }}>{props.ctaBannerText}</h2>
+                  {props.ctaBannerDescription && <p className="mt-4 text-base leading-relaxed" style={{ color: '#333' }}>{props.ctaBannerDescription}</p>}
                   <div className="flex items-center gap-3 mt-8">
                     <span className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ background: '#d0f601' }}>
                       <ArrowRight size={18} className="text-black rotate-45" />
@@ -293,6 +295,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               {/* Mobile */}
               <div className="md:hidden p-8">
                 <h2 className="font-bold leading-[1.15]" style={{ fontSize: 'clamp(28px, 7vw, 40px)', color: '#0a0a0a' }}>{props.ctaBannerText}</h2>
+                {props.ctaBannerDescription && <p className="mt-4 text-base leading-relaxed" style={{ color: '#333' }}>{props.ctaBannerDescription}</p>}
                 <div className="flex items-center gap-3 mt-8">
                   <span className="inline-flex items-center justify-center w-12 h-12 rounded-full" style={{ background: '#d0f601' }}>
                     <ArrowRight size={18} className="text-black rotate-45" />

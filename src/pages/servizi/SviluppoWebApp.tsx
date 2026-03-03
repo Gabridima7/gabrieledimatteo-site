@@ -22,6 +22,7 @@ const SviluppoWebApp = () => (
       { name: 'ONE UP', category: 'Sito Web', description: 'Sito web istituzionale con design moderno e ottimizzato per la lead generation.', metrics: ['+65% lead', 'PageSpeed 98'], slug: 'oneup' },
     ]}
     ctaBannerText="Pronto a digitalizzare la tua azienda?"
+    ctaBannerDescription="Ti offriamo una prova gratuita di 3 giorni con uno dei nostri sviluppatori web per rispondere alle tue domande sul nostro processo di lavoro."
     benefits={[
       { icon: Globe, title: 'Performance al top', desc: 'Siti e app ottimizzati per velocità, SEO e conversioni.' },
       { icon: Smartphone, title: 'Responsive su ogni device', desc: 'Design perfetto su desktop, tablet e smartphone.' },

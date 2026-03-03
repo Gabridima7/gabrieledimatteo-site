@@ -60,7 +60,7 @@ export interface ServicePageProps {
   outcomesSubtitle?: string;
   outcomesCtaText: string;
   capabilities?: { title: string; subtitle: string; columns: { heading: string; items: string[] }[] };
-  techStack?: { title: string; subtitle: string; items: { name: string; icon: LucideIcon }[] };
+  techStack?: { title: string; subtitle: string; items: { name: string; icon?: LucideIcon; image?: string }[] };
   faqs: { q: string; a: string }[];
   finalCtaH2: string;
 }
@@ -580,8 +580,12 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   const Icon = tech.icon;
                   return (
                     <div key={i} className="flex flex-col items-center gap-3">
-                      <div className="w-full aspect-square rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                        <Icon size={40} className="text-white" />
+                      <div className="w-full aspect-square rounded-2xl flex items-center justify-center overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        {tech.image ? (
+                          <img src={tech.image} alt={tech.name} className="w-full h-full object-cover" />
+                        ) : Icon ? (
+                          <Icon size={40} className="text-white" />
+                        ) : null}
                       </div>
                       <span className="text-white/70 text-sm font-medium">{tech.name}</span>
                     </div>

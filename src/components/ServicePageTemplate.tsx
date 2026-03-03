@@ -560,6 +560,38 @@ const ServicePageTemplate = (props: ServicePageProps) => {
           </section>
         )}
 
+        {/* ═══ TECH STACK (optional) ═══ */}
+        {props.techStack && (
+          <section className="relative py-24">
+            <SectionBackground variant="dark" />
+            <div className="section-container relative z-[2]">
+              <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-white text-center mb-6">
+                {props.techStack.title.split(/(\*[^*]+\*)/).map((part, i) =>
+                  part.startsWith('*') && part.endsWith('*')
+                    ? <em key={i} className="italic font-light">{part.slice(1, -1)}</em>
+                    : <span key={i}>{part}</span>
+                )}
+              </motion.h2>
+              <motion.p {...fadeUp} className="text-center max-w-2xl mx-auto mb-14 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                {props.techStack.subtitle}
+              </motion.p>
+              <motion.div {...fadeUp} className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-5 max-w-6xl mx-auto">
+                {props.techStack.items.map((tech, i) => {
+                  const Icon = tech.icon;
+                  return (
+                    <div key={i} className="flex flex-col items-center gap-3">
+                      <div className="w-full aspect-square rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <Icon size={40} className="text-white" />
+                      </div>
+                      <span className="text-white/70 text-sm font-medium">{tech.name}</span>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         {/* ═══ 10 — FAQ ═══ */}
         <section className="relative py-24">
           <SectionBackground variant="dark" />

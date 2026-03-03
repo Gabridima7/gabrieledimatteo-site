@@ -19,6 +19,12 @@ const coverMap: Record<string, string> = {
   biglia: coverBiglia,
 };
 
+const canonicalData: Record<string, { name: string; category: string; description: string }> = {
+  homeleven: { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager con AI' },
+  oneup: { name: 'ONE UP', category: 'Web App', description: 'Gestionale Flotta Barche' },
+  biglia: { name: 'Biglia Serramenti', category: 'Sviluppo Web', description: 'Sito Web Professionale' },
+};
+
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -213,19 +219,25 @@ const ServicePageTemplate = (props: ServicePageProps) => {
               <Link to="/casi-studio" className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1">Vedi tutti <ArrowRight size={14} /></Link>
             </motion.div>
             <div className="flex flex-col gap-8">
-              {props.caseStudies.map((cs, i) => (
+              {props.caseStudies.map((cs, i) => {
+                const canonical = canonicalData[cs.slug];
+                const name = canonical?.name || cs.name;
+                const category = canonical?.category || cs.category;
+                const description = canonical?.description || cs.description;
+                const cover = cs.cover || coverMap[cs.slug];
+                return (
                 <motion.div key={i} {...stagger(i)} className="rounded-2xl overflow-hidden grid md:grid-cols-[45%_55%]" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="aspect-video md:aspect-auto md:min-h-[280px] flex items-center justify-center relative overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-l-2xl" style={{ background: 'linear-gradient(135deg, hsl(228,76%,35%), hsl(228,85%,50%))' }}>
-                    {(cs.cover || coverMap[cs.slug]) ? (
-                      <img src={cs.cover || coverMap[cs.slug]} alt={cs.name} className="absolute inset-0 w-full h-full object-cover" />
+                    {cover ? (
+                      <img src={cover} alt={name} className="absolute inset-0 w-full h-full object-cover" />
                     ) : (
-                      <span className="text-white/70 text-xl font-bold">{cs.name}</span>
+                      <span className="text-white/70 text-xl font-bold">{name}</span>
                     )}
                   </div>
                   <div className="p-8">
-                    <span className="badge-pill">{cs.category}</span>
-                    <h3 className="text-[22px] font-bold text-white mt-3">{cs.name}</h3>
-                    <p className="mt-2 line-clamp-2" style={{ color: 'rgba(255,255,255,0.6)' }}>{cs.description}</p>
+                    <span className="badge-pill">{category}</span>
+                    <h3 className="text-[22px] font-bold text-white mt-3">{name}</h3>
+                    <p className="mt-2 line-clamp-2" style={{ color: 'rgba(255,255,255,0.6)' }}>{description}</p>
                     <Link to={`/casi-studio`} className="inline-flex items-center gap-1 mt-4 text-sm font-semibold" style={{ color: '#4F6FE8' }}>Vedi caso studio <ArrowRight size={14} /></Link>
                     <div className="flex gap-3 mt-4">
                       {cs.metrics.map((m, j) => (
@@ -234,7 +246,8 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                     </div>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

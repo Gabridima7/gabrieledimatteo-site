@@ -3,14 +3,26 @@ import { Linkedin, Instagram, Youtube, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useApplicationForm } from '@/context/ApplicationFormContext';
 import logo from '@/assets/logo-nexus.png';
+import bgFooterDesktop from '@/assets/bg-footer-desktop.png';
+import bgFooterMobile from '@/assets/bg-footer-mobile.png';
 
 const Footer = () => {
   const { t } = useLanguage();
   const { openApplicationForm } = useApplicationForm();
 
   return (
-    <footer className="border-t border-white/[0.06]">
-      <div className="section-container py-16">
+    <footer className="border-t border-white/[0.06] relative overflow-hidden">
+      {/* Background blur images */}
+      <picture className="absolute inset-0 z-0 pointer-events-none">
+        <source media="(min-width: 768px)" srcSet={bgFooterDesktop} />
+        <img
+          src={bgFooterMobile}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          loading="lazy"
+        />
+      </picture>
+      <div className="section-container py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div>

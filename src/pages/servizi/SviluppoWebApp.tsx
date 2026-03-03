@@ -49,11 +49,6 @@ const SviluppoWebApp = () => {
         { title: 'Lancio & Supporto', items: ['Testing & QA', 'Deploy', 'Monitoraggio', 'Supporto continuo'] },
       ]}
       outcomes={['Sviluppatori qualificati', 'Approccio flessibile', 'Ottimizzazione delle prestazioni', 'Trasparenza dei processi', 'Supporto continuo', 'Sicurezza completa', 'Servizi di integrazione', 'Scalabilità e crescita']}
-      outcomesSubtitle="I nostri sviluppatori front-end e back-end offrono soluzioni di sviluppo siti web personalizzate e a lungo termine, con un ampio stack tecnologico, interfacce responsive e misure di sicurezza."
-      outcomeCards={[
-        { title: 'Competenza & Esperienza', desc: 'Il nostro team porta conoscenza approfondita del settore ed esperienza pratica nello sviluppo di soluzioni digitali su misura.' },
-        { title: 'Supporto & Sicurezza', desc: 'Prioritizziamo sicurezza e supporto per garantire un\'esperienza senza problemi, con protocolli robusti e monitoraggio continuo.' },
-      ]}
       outcomesCtaText="Inizia il tuo progetto"
       faqs={isEN ? [
         { q: 'What kind of web development projects do you handle?', a: 'We create various websites, corporate platforms, and web applications. Whether you need a Webflow landing page or a scalable React-based platform, our developers will create customized, high-performance solutions that meet your business goals.' },

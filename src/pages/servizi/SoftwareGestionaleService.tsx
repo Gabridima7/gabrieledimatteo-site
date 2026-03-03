@@ -4,6 +4,7 @@ import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
 import techPython from '@/assets/tech/icon-python.png';
+import heroSoftwareGestionale from '@/assets/hero-software-gestionale.png';
 
 const SoftwareGestionaleService = () => (
   <ServicePageTemplate
@@ -13,6 +14,7 @@ const SoftwareGestionaleService = () => (
     h1="Software gestionale su misura per la tua azienda"
     subtitle="CRM, ERP e tool interni personalizzati per ottimizzare ogni processo e far crescere la tua PMI."
     heroIcon={Cog}
+    heroImage={heroSoftwareGestionale}
     stats={[
       { value: '-50%', label: 'Tempo di gestione' },
       { value: '0', label: 'Licenze mensili' },

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, ChevronLeft, ChevronRight, ChevronRight as ChevronRightFaq, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, type LucideIcon } from 'lucide-react';
+import { ArrowRight, Check, ChevronLeft, ChevronRight, ChevronRight as ChevronRightFaq, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, Sparkles, type LucideIcon } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import SectionBackground from '@/components/SectionBackground';
 import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
@@ -59,6 +59,7 @@ export interface ServicePageProps {
   outcomeCards?: { title: string; desc: string }[];
   outcomesSubtitle?: string;
   outcomesCtaText: string;
+  capabilities?: { title: string; subtitle: string; columns: { heading: string; items: string[] }[] };
   faqs: { q: string; a: string }[];
   finalCtaH2: string;
 }
@@ -504,6 +505,59 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             </div>
           </div>
         </section>
+
+        {/* ═══ CAPABILITIES (optional) ═══ */}
+        {props.capabilities && (
+          <section className="relative py-24">
+            <SectionBackground variant="dark" />
+            <div className="section-container relative z-[2]">
+              <motion.h2 {...fadeUp} className="text-center mb-6" style={{ fontSize: 'clamp(32px, 5vw, 64px)', fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 400, color: '#fff' }}>
+                {props.capabilities.title.split(/(\*[^*]+\*)/).map((part, i) =>
+                  part.startsWith('*') && part.endsWith('*')
+                    ? <em key={i} className="italic">{part.slice(1, -1)}</em>
+                    : <span key={i}>{part}</span>
+                )}
+              </motion.h2>
+              <motion.p {...fadeUp} className="text-center max-w-2xl mx-auto mb-16 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                {props.capabilities.subtitle}
+              </motion.p>
+
+              {/* Desktop: 3-col grid */}
+              <motion.div {...fadeUp} className="hidden md:grid md:grid-cols-3 gap-0">
+                {props.capabilities.columns.map((col, ci) => (
+                  <div key={ci} className="px-6" style={{ borderLeft: ci > 0 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                    <h3 className="text-lg font-bold text-white pb-4 mb-2" style={{ borderBottom: '1px solid rgba(255,255,255,0.15)' }}>{col.heading}</h3>
+                    <div className="flex flex-col gap-5 mt-4">
+                      {col.items.map((item, ii) => (
+                        <div key={ii} className="flex items-center gap-3">
+                          <Sparkles size={14} style={{ color: 'rgba(255,255,255,0.5)' }} className="flex-shrink-0" />
+                          <span className="text-white text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* Mobile: stacked with left border */}
+              <div className="md:hidden flex flex-col gap-8">
+                {props.capabilities.columns.map((col, ci) => (
+                  <motion.div key={ci} {...stagger(ci)} className="pl-6" style={{ borderLeft: '2px solid rgba(255,255,255,0.12)' }}>
+                    <h3 className="text-xl font-bold text-white mb-5">{col.heading}</h3>
+                    <div className="flex flex-col gap-5">
+                      {col.items.map((item, ii) => (
+                        <div key={ii} className="flex items-center gap-3">
+                          <Sparkles size={14} style={{ color: 'rgba(255,255,255,0.5)' }} className="flex-shrink-0" />
+                          <span className="text-white text-base font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ═══ 10 — FAQ ═══ */}
         <section className="relative py-24">

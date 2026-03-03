@@ -49,6 +49,15 @@ const SviluppoWebApp = () => (
       { q: 'Offrite supporto dopo il lancio?', a: 'Certamente. Offriamo piani di manutenzione e supporto tecnico continuativo.' },
       { q: 'Posso vedere esempi di lavori precedenti?', a: 'Sì, visita la sezione Casi Studio per vedere i nostri progetti recenti.' },
     ]}
+    capabilities={{
+      title: 'Le nostre competenze e cosa possiamo offrirti nello *sviluppo web*',
+      subtitle: 'Dalla creazione di siti web visivamente straordinari e funzionali all\'implementazione di funzionalità dinamiche - i nostri sviluppatori hanno l\'esperienza per coprire ogni tua esigenza.',
+      columns: [
+        { heading: 'Web App', items: ['Dashboard & Analytics', 'Gestionali su misura', 'Piattaforme SaaS', 'Portali clienti', 'Sistemi di prenotazione', 'Integrazioni API'] },
+        { heading: 'Siti Web', items: ['Siti vetrina professionali', 'Landing page', 'Siti multi-lingua', 'Blog & Magazine', 'Portfolio & Showcase', 'Siti e-commerce'] },
+        { heading: 'Tecnologie', items: ['React & TypeScript', 'Node.js & Supabase', 'Tailwind CSS', 'REST & GraphQL API', 'CI/CD & DevOps', 'Performance & SEO'] },
+      ],
+    }}
     finalCtaH2="Vuoi un sito web che converte per la tua PMI?"
   />
 );

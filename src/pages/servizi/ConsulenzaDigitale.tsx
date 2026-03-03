@@ -30,7 +30,12 @@ const ConsulenzaDigitale = () => (
       { title: 'Roadmap strategica', items: ['Piano operativo', 'Timeline & budget', 'KPI & metriche'] },
       { title: 'Execution & supporto', items: ['Implementazione', 'Monitoraggio risultati', 'Iterazione continua'] },
     ]}
-    outcomes={['Visione chiara del percorso digitale', 'Priorità di investimento definite', 'KPI misurabili e tracking', 'Riduzione sprechi e inefficienze', 'Vantaggio competitivo concreto']}
+    outcomes={['Visione chiara del percorso digitale', 'Priorità di investimento definite', 'KPI misurabili e tracking', 'Riduzione sprechi e inefficienze', 'Vantaggio competitivo concreto', 'Roadmap operativa concreta']}
+    outcomesSubtitle="Ti guidiamo con analisi approfondite e strategie concrete per trasformare il digitale in un vantaggio competitivo misurabile."
+    outcomeCards={[
+      { title: 'Analisi & Strategia', desc: 'Audit completo della tua presenza digitale con roadmap prioritizzata e KPI chiari per ogni investimento.' },
+      { title: 'Risultati & Crescita', desc: 'Ogni azione è misurata e ottimizzata per garantire il massimo ritorno sull\'investimento digitale.' },
+    ]}
     outcomesCtaText="Prenota la consulenza"
     faqs={[
       { q: 'Cosa include una consulenza digitale?', a: 'Audit della presenza digitale, analisi competitors, roadmap strategica con priorità, timeline e budget stimati.' },

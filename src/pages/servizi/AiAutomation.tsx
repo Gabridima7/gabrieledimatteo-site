@@ -31,6 +31,11 @@ const AiAutomation = () => (
       { title: 'Ottimizzazione', items: ['Monitoring KPI', 'Fine-tuning', 'Scaling automazioni'] },
     ]}
     outcomes={['Riduzione drastica del lavoro manuale', 'ROI misurabile dal primo mese', 'Processi scalabili senza assumere', 'Meno errori umani', 'Dati centralizzati e accessibili', 'Tempo liberato per attività strategiche']}
+    outcomesSubtitle="Automatizziamo i processi ripetitivi della tua azienda con soluzioni AI su misura, liberando tempo e risorse per la crescita strategica."
+    outcomeCards={[
+      { title: 'Efficienza Operativa', desc: 'Eliminiamo il lavoro manuale ripetitivo con automazioni intelligenti che lavorano 24/7 senza errori.' },
+      { title: 'Scalabilità & ROI', desc: 'Processi che crescono con la tua azienda senza costi aggiuntivi di personale, con ROI misurabile dal primo mese.' },
+    ]}
     outcomesCtaText="Automatizza ora"
     faqs={[
       { q: 'Che tipo di processi posso automatizzare?', a: 'Qualsiasi processo ripetitivo: gestione email, data entry, generazione report, follow-up clienti, e molto altro.' },

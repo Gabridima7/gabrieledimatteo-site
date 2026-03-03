@@ -30,7 +30,12 @@ const AIChatbotService = () => (
       { title: 'Integrazione', items: ['Embed nel sito', 'Connessione CRM', 'Multi-canale'] },
       { title: 'Ottimizzazione', items: ['Monitoring risposte', 'Fine-tuning', 'Report performance'] },
     ]}
-    outcomes={['Supporto clienti automatizzato', 'Riduzione drastica dei ticket', 'Lead qualificati 24/7', 'Risposte immediate e accurate', 'Integrazione con CRM e tool']}
+    outcomes={['Supporto clienti automatizzato', 'Riduzione drastica dei ticket', 'Lead qualificati 24/7', 'Risposte immediate e accurate', 'Integrazione con CRM e tool', 'Scalabilità senza limiti']}
+    outcomesSubtitle="I nostri chatbot AI offrono assistenza intelligente e personalizzata, addestrati sui tuoi dati per rispondere con precisione e generare lead qualificati."
+    outcomeCards={[
+      { title: 'Automazione Intelligente', desc: 'Il chatbot gestisce autonomamente l\'80% delle richieste, liberando il tuo team per attività ad alto valore.' },
+      { title: 'Integrazione & Personalizzazione', desc: 'Connessione con CRM, e-commerce e tool aziendali per risposte contestuali e azioni automatiche.' },
+    ]}
     outcomesCtaText="Attiva il tuo chatbot AI"
     faqs={[
       { q: 'Su quali canali funziona il chatbot?', a: 'Sito web, WhatsApp, Telegram e qualsiasi piattaforma con API. Lo integriamo dove ti serve.' },

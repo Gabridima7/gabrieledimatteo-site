@@ -30,7 +30,12 @@ const ProdottoSaaSService = () => (
       { title: 'Sviluppo MVP', items: ['Stack scalabile', 'Multi-tenant', 'Stripe billing'] },
       { title: 'Go-to-market', items: ['Onboarding automatico', 'Analytics', 'Iterazione continua'] },
     ]}
-    outcomes={['MVP validata sul mercato', 'Architettura scalabile', 'Revenue ricorrente (MRR)', 'Onboarding utenti automatizzato', 'Dashboard analytics integrata']}
+    outcomes={['MVP validata sul mercato', 'Architettura scalabile', 'Revenue ricorrente (MRR)', 'Onboarding utenti automatizzato', 'Dashboard analytics integrata', 'Billing & subscription management']}
+    outcomesSubtitle="Sviluppiamo il tuo prodotto SaaS dalla validazione dell'idea al lancio sul mercato, con architettura scalabile e modello di revenue integrato."
+    outcomeCards={[
+      { title: 'MVP & Validazione', desc: 'Time-to-market rapido con MVP funzionante in 4-8 settimane per validare l\'idea e acquisire i primi clienti.' },
+      { title: 'Scalabilità & Revenue', desc: 'Architettura multi-tenant pronta a crescere con Stripe billing, subscription management e analytics integrati.' },
+    ]}
     outcomesCtaText="Lancia il tuo SaaS"
     faqs={[
       { q: 'Che differenza c\'è tra web app e SaaS?', a: 'Un SaaS è un prodotto software venduto in abbonamento a più clienti, con architettura multi-tenant e billing integrato.' },

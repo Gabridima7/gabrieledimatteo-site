@@ -30,7 +30,12 @@ const WebAppService = () => (
       { title: 'Sviluppo agile', items: ['Sprint bisettimanali', 'Demo & feedback', 'Testing continuo'] },
       { title: 'Deploy & scaling', items: ['Go-live', 'Monitoring', 'Iterazioni continue'] },
     ]}
-    outcomes={['Piattaforma unificata per il tuo team', 'Accessibile ovunque, senza installazione', 'Dati in tempo reale', 'Scalabile con la crescita aziendale', 'Integrazione con sistemi esistenti']}
+    outcomes={['Piattaforma unificata per il tuo team', 'Accessibile ovunque, senza installazione', 'Dati in tempo reale', 'Scalabile con la crescita aziendale', 'Integrazione con sistemi esistenti', 'Sicurezza enterprise']}
+    outcomesSubtitle="Sviluppiamo web app progressive e interattive su misura, accessibili da qualsiasi dispositivo e scalabili con la crescita della tua azienda."
+    outcomeCards={[
+      { title: 'Tecnologia & Performance', desc: 'PWA cross-platform con dati in tempo reale, first paint sotto il secondo e uptime garantito al 99.9%.' },
+      { title: 'Sicurezza & Scalabilità', desc: 'Autenticazione enterprise, crittografia end-to-end e architettura pronta a gestire migliaia di utenti.' },
+    ]}
     outcomesCtaText="Inizia il tuo progetto"
     faqs={[
       { q: 'Che differenza c\'è tra sito web e web app?', a: 'Un sito web è informativo, una web app è interattiva: permette agli utenti di compiere azioni, gestire dati e automatizzare processi.' },

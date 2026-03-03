@@ -30,7 +30,12 @@ const WebsiteRedesignService = () => (
       { title: 'Sviluppo', items: ['Codifica nuovo sito', 'Migrazione contenuti', 'Redirect 301'] },
       { title: 'Go-live', items: ['Zero downtime switch', 'Monitoring', 'Ottimizzazione'] },
     ]}
-    outcomes={['Sito moderno e professionale', 'Velocità di caricamento migliorata', 'SEO preservato e migliorato', 'Più lead e conversioni', 'Design responsive aggiornato']}
+    outcomes={['Sito moderno e professionale', 'Velocità di caricamento migliorata', 'SEO preservato e migliorato', 'Più lead e conversioni', 'Design responsive aggiornato', 'Migrazione senza downtime']}
+    outcomesSubtitle="Trasformiamo il tuo sito esistente in un asset digitale moderno e performante, preservando il posizionamento SEO e massimizzando le conversioni."
+    outcomeCards={[
+      { title: 'Modernizzazione & Performance', desc: 'Design contemporaneo con velocità ottimizzata, Core Web Vitals al top e user experience rinnovata.' },
+      { title: 'SEO & Continuità', desc: 'Migrazione gestita con redirect 301, zero downtime e posizionamento SEO preservato e migliorato.' },
+    ]}
     outcomesCtaText="Rinnova il tuo sito"
     faqs={[
       { q: 'Perdo il posizionamento SEO con il redesign?', a: 'No. Gestiamo redirect 301, conserviamo le URL strategiche e ottimizziamo ulteriormente il SEO.' },

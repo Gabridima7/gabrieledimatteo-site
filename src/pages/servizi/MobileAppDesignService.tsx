@@ -30,7 +30,12 @@ const MobileAppDesignService = () => (
       { title: 'UI Design', items: ['Moodboard', 'Concept design', 'Layouts design', 'Responsive & Adaptive', 'UI style guide', 'Design system'] },
       { title: 'Design support', items: ['Team extension for design improvements'] },
     ]}
-    outcomes={['App design pixel-perfect', 'User experience fluida e intuitiva', 'Aumento della retention', 'Rating elevato sugli store', 'Design pronto per lo sviluppo']}
+    outcomes={['App design pixel-perfect', 'User experience fluida e intuitiva', 'Aumento della retention', 'Rating elevato sugli store', 'Design pronto per lo sviluppo', 'Micro-interazioni coinvolgenti']}
+    outcomesSubtitle="Progettiamo app mobile native e cross-platform con un focus su usabilità, engagement e conversioni per i tuoi utenti."
+    outcomeCards={[
+      { title: 'Design & Usabilità', desc: 'Interfacce pixel-perfect che rispettano le linee guida iOS e Android per un\'esperienza nativa e intuitiva.' },
+      { title: 'Engagement & Retention', desc: 'Micro-interazioni, animazioni e flussi progettati per massimizzare il coinvolgimento e la fidelizzazione degli utenti.' },
+    ]}
     outcomesCtaText="Progetta la tua app"
     faqs={[
       { q: 'Progettate per iOS, Android o entrambi?', a: 'Progettiamo per entrambe le piattaforme, rispettando le linee guida specifiche di ciascuna.' },

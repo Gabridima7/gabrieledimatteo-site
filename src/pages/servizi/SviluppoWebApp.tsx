@@ -99,7 +99,7 @@ const SviluppoWebApp = () => {
           { name: 'Shopify', image: techShopify },
         ],
       } : {
-        title: 'Assumi uno sviluppatore professionista con *esperienza adeguata*',
+        title: 'Il partner digitale che porta AI e *esperienza adeguata*',
         subtitle: 'Dalla creazione di siti web visivamente straordinari e funzionali all\'implementazione di funzionalità dinamiche - i nostri sviluppatori hanno l\'esperienza per coprire le tue esigenze.',
         items: [
           { name: 'HTML', image: techHtml },

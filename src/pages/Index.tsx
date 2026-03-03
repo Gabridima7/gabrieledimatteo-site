@@ -15,6 +15,7 @@ import { fadeUpVariants, staggerContainer, viewportConfig } from '@/lib/animatio
 import ServicesGrid from '@/components/ServicesGrid';
 import SEOHead from '@/components/SEOHead';
 import TrustBar from '@/components/TrustBar';
+import SectionBackground from '@/components/SectionBackground';
 import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoAllfiber from '@/assets/logos/logo-allfiber.png';
@@ -37,7 +38,7 @@ function useCountUp(end: number, duration = 1500, trigger = false) {
     const startTime = performance.now();
     const step = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * end));
       if (progress < 1) requestAnimationFrame(step);
     };
@@ -136,8 +137,8 @@ const Index = () => {
 
       {/* ─── HERO ─── */}
       <section className="relative h-screen flex flex-col overflow-hidden">
-
-        <div className="section-container lg:pl-2 relative z-10 flex flex-col flex-1 pt-8 md:pt-2 pb-6">
+        <SectionBackground variant="hero" />
+        <div className="section-container lg:pl-2 relative z-[2] flex flex-col flex-1 pt-8 md:pt-2 pb-6">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center flex-1 md:max-lg:gap-4">
             {/* Left – Text */}
             <div>
@@ -185,7 +186,7 @@ const Index = () => {
               </motion.div>
             </div>
 
-            {/* Right – Glassmorphism visual */}
+            {/* Right – Hero image */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -251,8 +252,9 @@ const Index = () => {
       <TrustBar />
 
       {/* ─── SERVICES ─── */}
-      <section className="py-24">
-        <div className="section-container">
+      <section className="relative py-24">
+        <SectionBackground variant="blue-left" />
+        <div className="section-container relative z-[2]">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-14">
             <motion.span variants={fadeUpVariants} className="badge-pill inline-block mb-4">{t('services', 'badge')}</motion.span>
             <motion.h2 variants={fadeUpVariants} className="text-section text-white">{t('services', 'title')}</motion.h2>
@@ -293,8 +295,9 @@ const Index = () => {
       </section>
 
       {/* ─── STATS — arounda style ─── */}
-      <section className="py-24">
-        <div className="section-container">
+      <section className="relative py-24">
+        <SectionBackground variant="teal" />
+        <div className="section-container relative z-[2]">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {[
               {
@@ -418,11 +421,17 @@ const Index = () => {
       </section>
 
       {/* ─── SERVICES GRID (arounda style) ─── */}
-      <ServicesGrid />
+      <section className="relative">
+        <SectionBackground variant="dark" />
+        <div className="relative z-[2]">
+          <ServicesGrid />
+        </div>
+      </section>
 
       {/* ─── CASE STUDIES ─── */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="section-container">
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-right" />
+        <div className="section-container relative z-[2]">
           <div className="flex items-end justify-between mb-12">
             <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-white">
               {t('cases', 'title')}
@@ -466,8 +475,9 @@ const Index = () => {
       </section>
 
       {/* ─── LEAD MAGNET ─── */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="section-container max-w-2xl mx-auto text-center">
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-center" />
+        <div className="section-container max-w-2xl mx-auto text-center relative z-[2]">
           <motion.h2 variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-section text-white mb-4">
             {t('lead', 'title')}
           </motion.h2>
@@ -506,8 +516,9 @@ const Index = () => {
       </section>
 
       {/* ─── PROCESS ─── */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="section-container">
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-center" />
+        <div className="section-container relative z-[2]">
           <motion.h2
             variants={fadeUpVariants}
             initial="hidden"
@@ -551,8 +562,9 @@ const Index = () => {
       </section>
 
       {/* ─── TESTIMONIAL ─── */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="section-container max-w-3xl mx-auto text-center">
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-left" />
+        <div className="section-container max-w-3xl mx-auto text-center relative z-[2]">
           <motion.div
             variants={fadeUpVariants}
             initial="hidden"
@@ -570,8 +582,9 @@ const Index = () => {
       </section>
 
       {/* ─── CTA FINALE ─── */}
-      <section className="py-24 border-t border-white/[0.06]">
-        <div className="section-container text-center">
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-center" fade={false} />
+        <div className="section-container text-center relative z-[2]">
           <motion.div
             variants={staggerContainer}
             initial="hidden"

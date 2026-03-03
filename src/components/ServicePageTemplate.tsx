@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, ChevronLeft, ChevronRight, ChevronRight as ChevronRightFaq, Plus, X, Clock, MessageCircle, ShieldCheck, Headphones, Star, type LucideIcon } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
+import SectionBackground from '@/components/SectionBackground';
 import iconConsegnaTempi from '@/assets/icons/icon-consegna-tempi.png';
 import iconComunicazioneDiretta from '@/assets/icons/icon-comunicazione-diretta.png';
 import iconCodiceProprieta from '@/assets/icons/icon-codice-proprieta.png';
@@ -86,7 +87,6 @@ const FaqItem = ({ q, a, isOpen, toggle }: { q: string; a: string; isOpen: boole
   </motion.div>
 );
 
-/* ══════════════════════════════════════════ */
 const ServicePageTemplate = (props: ServicePageProps) => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [reviewIdx, setReviewIdx] = useState(0);
@@ -110,10 +110,10 @@ const ServicePageTemplate = (props: ServicePageProps) => {
       <div className="pt-[120px] pb-16">
 
         {/* ═══ 1 — HERO ═══ */}
-        <section className="min-h-[85vh] flex items-center">
-          <div className="section-container w-full">
+        <section className="relative min-h-[85vh] flex items-center">
+          <SectionBackground variant="hero" />
+          <div className="section-container w-full relative z-[2]">
             <div className="grid lg:grid-cols-[60%_40%] gap-12 items-center">
-              {/* Left */}
               <motion.div {...fadeUp}>
                 <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   <Link to="/" className="hover:text-white transition-colors">Home</Link>
@@ -129,7 +129,6 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                 <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9" style={{ background: '#d0f601' }}>
                   Prenota una call gratuita <ArrowRight size={16} />
                 </a>
-                {/* Stats */}
                 <div className="flex flex-wrap gap-10 mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                   {props.stats.map((s, i) => (
                     <div key={i} className="flex items-start gap-10">
@@ -142,7 +141,6 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   ))}
                 </div>
               </motion.div>
-              {/* Right */}
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center">
                 {props.heroImage ? (
                   <img src={props.heroImage} alt={props.h1} className="w-full max-w-[400px]" />
@@ -164,8 +162,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 2 — TESTIMONIANZA HERO ═══ */}
-        <section className="py-12" style={{ background: 'rgba(255,255,255,0.03)', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          <div className="section-container">
+        <section className="relative py-12" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <SectionBackground variant="dark" />
+          <div className="section-container relative z-[2]">
             <motion.div {...fadeUp} className="max-w-[800px] mx-auto flex flex-col sm:flex-row items-center gap-6">
               <span className="text-[80px] leading-none font-serif text-primary/30 select-none">"</span>
               <div className="flex-1">
@@ -189,8 +188,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 3 — CASE STUDY ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="blue-right" />
+          <div className="section-container relative z-[2]">
             <motion.div {...fadeUp} className="flex items-center justify-between mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white">I nostri lavori su {props.badge}</h2>
               <Link to="/casi-studio" className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1">Vedi tutti <ArrowRight size={14} /></Link>
@@ -219,8 +219,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 4 — BANNER CTA ═══ */}
-        <section className="py-20">
-          <div className="section-container">
+        <section className="relative py-20">
+          <SectionBackground variant="blue-center" />
+          <div className="section-container relative z-[2]">
             <motion.div {...fadeUp} className="max-w-5xl mx-auto rounded-3xl text-center py-16 px-8" style={{ background: 'rgba(28,53,200,0.12)', border: '1px solid rgba(28,53,200,0.2)' }}>
               <h2 className="font-bold text-white" style={{ fontSize: 'clamp(28px,3.5vw,48px)' }}>{props.ctaBannerText}</h2>
               <p className="mt-4" style={{ color: 'rgba(255,255,255,0.65)' }}>Parliamo del tuo progetto senza impegno.</p>
@@ -232,8 +233,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 5 — BENEFICI ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="blue-left" />
+          <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
               Come {props.badge} trasforma la tua PMI
             </motion.h2>
@@ -253,8 +255,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 6 — PROCESSO ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="teal" />
+          <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
               Il nostro processo per {props.badge}
             </motion.h2>
@@ -263,7 +266,6 @@ const ServicePageTemplate = (props: ServicePageProps) => {
             </motion.p>
             <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
               {props.process.map((stage, i) => {
-                // Gradient shifts per stage: teal → blue → purple
                 const gradients = [
                   'linear-gradient(135deg, #2dd4bf, #14b8a6)',
                   'linear-gradient(135deg, #14b8a6, #3b82f6)',
@@ -279,20 +281,16 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                       borderBottom: '1px solid rgba(255,255,255,0.1)',
                     }}
                   >
-                    {/* Stage connector tick mark */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-4" style={{ background: 'rgba(255,255,255,0.2)' }} />
-                    {/* Stage label */}
                     <p className="text-[13px] font-medium tracking-widest uppercase mb-6 text-center" style={{ color: 'rgba(255,255,255,0.35)' }}>
                       Stage {i + 1}
                     </p>
-                    {/* Gradient title pill */}
                     <div
                       className="rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mb-5 mx-auto max-w-[220px]"
                       style={{ background: gradients[i % gradients.length] }}
                     >
                       {stage.title}
                     </div>
-                    {/* Sub-items */}
                     <div className="flex flex-col gap-2.5">
                       {stage.items.map((item, j) => (
                         <div
@@ -316,8 +314,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 7 — OUTCOMES ═══ */}
-        <section className="py-20" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <div className="section-container">
+        <section className="relative py-20" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <SectionBackground variant="dark" />
+          <div className="section-container relative z-[2]">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div {...fadeUp}>
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -342,8 +341,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 8 — PERCHÉ NEXUS ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="blue-right" />
+          <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">Come lavoriamo con te</motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {whyNexus.map((w, i) => {
@@ -367,8 +367,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 9 — RECENSIONI ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="blue-left" />
+          <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-bold text-white text-center mb-16">Cosa dicono i nostri clienti</motion.h2>
             <div className="relative max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-6">
@@ -404,8 +405,9 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 10 — FAQ ═══ */}
-        <section className="py-24">
-          <div className="section-container">
+        <section className="relative py-24">
+          <SectionBackground variant="dark" />
+          <div className="section-container relative z-[2]">
             <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-white text-center mb-12">
               FAQ on {props.badge} services
             </motion.h2>
@@ -418,10 +420,10 @@ const ServicePageTemplate = (props: ServicePageProps) => {
         </section>
 
         {/* ═══ 11 — CTA FINALE ═══ */}
-        <section className="py-24 md:py-32">
-          <div className="section-container">
+        <section className="relative py-24 md:py-32">
+          <SectionBackground variant="blue-center" fade={false} />
+          <div className="section-container relative z-[2]">
             <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 max-w-5xl mx-auto">
-              {/* Left — Client Testimonial */}
               <div className="rounded-3xl bg-white p-8 md:p-10 flex flex-col justify-between min-h-[340px]">
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-6">💬 Cosa dicono i clienti</h3>
@@ -444,8 +446,6 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                   </div>
                 </div>
               </div>
-
-              {/* Right — CTA */}
               <div className="rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[340px]" style={{ background: 'linear-gradient(135deg, #1C35C8 0%, #7C3AED 50%, #9333EA 100%)' }}>
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">{props.finalCtaH2}</h2>

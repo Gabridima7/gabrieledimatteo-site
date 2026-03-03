@@ -2,6 +2,7 @@ import logoHomeleven from '@/assets/logos/logo-homeleven.png';
 import logoBigliaSerramenti from '@/assets/logos/logo-biglia-serramenti.png';
 import logoRevelliGroup from '@/assets/logos/logo-revelli-group.png';
 import logoOneUp from '@/assets/logos/logo-oneup.png';
+import SectionBackground from './SectionBackground';
 
 const logos = [
   { src: logoHomeleven, name: 'Homeleven' },
@@ -11,8 +12,9 @@ const logos = [
 ];
 
 const TrustBar = () => (
-  <section className="py-12 border-t border-white/[0.06]">
-    <div className="section-container">
+  <section className="relative py-12 border-t border-white/[0.06]">
+    <SectionBackground variant="dark" />
+    <div className="section-container relative z-[2]">
       <div className="grid grid-cols-2 md:flex md:items-center md:justify-center gap-8 md:gap-24 lg:gap-32 place-items-center">
         {logos.map((logo, i) => (
           <img

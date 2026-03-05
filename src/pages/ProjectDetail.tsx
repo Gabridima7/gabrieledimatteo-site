@@ -227,9 +227,6 @@ const ProjectDetail = () => {
               <div className="overflow-hidden rounded-2xl aspect-[16/9]">
                 <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
               </div>
-              {project.galleryImages[0].caption && (
-                <p className="text-sm text-[#999] mt-2 italic">{project.galleryImages[0].caption}</p>
-              )}
             </motion.div>
           )}
 
@@ -247,9 +244,6 @@ const ProjectDetail = () => {
                   <div className="overflow-hidden rounded-2xl aspect-[4/3]">
                     <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
                   </div>
-                  {img.caption && (
-                    <p className="text-sm text-[#999] mt-2 italic">{img.caption}</p>
-                  )}
                 </motion.div>
               ))}
             </div>

@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 import SEOHead from '@/components/SEOHead';
 
@@ -45,8 +45,6 @@ const ProjectDetail = () => {
     );
   }
 
-  const prevProject = projectIndex > 0 ? projectsData[projectIndex - 1] : null;
-  const nextProject = projectIndex < projectsData.length - 1 ? projectsData[projectIndex + 1] : null;
 
   return (
     <div className="min-h-screen" style={{ background: '#0A0A0A' }}>

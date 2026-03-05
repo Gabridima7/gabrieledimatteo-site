@@ -218,55 +218,6 @@ const CasiStudio = () => {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
-      <section className="relative pb-20">
-        <SectionBackground variant="dark" fade={false} />
-        <div className="section-container relative z-[2]">
-          <div className="grid md:grid-cols-2 gap-6">
-            {featuredProjects.map((project, i) => (
-              <motion.a
-                key={project.id}
-                href="#"
-                initial={{ opacity: 0, x: i === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="group block"
-                data-cursor="spotlight"
-              >
-                <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-all duration-300 group-hover:scale-[1.02] group-hover:brightness-110"
-                  />
-                  <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[rgba(255,255,255,0.1)] backdrop-blur-md">
-                    {project.category}
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
-                    <h3 className="text-2xl font-bold text-white">{project.name}</h3>
-                    <p className="text-sm text-[#aaa]">{project.type}</p>
-                  </div>
-                </div>
-                <div className="mt-4 space-y-3">
-                  <p className="text-sm text-[#888]">{project.description}</p>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.services.map((s, j) => (
-                      <span key={j} className="px-4 py-1.5 rounded-full text-sm bg-[rgba(255,255,255,0.08)] text-white border border-[rgba(255,255,255,0.1)]">
-                        {s}
-                      </span>
-                    ))}
-                    <span className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-lg leading-none">
-                      {project.country.split(' ')[0]}
-                    </span>
-                  </div>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* COUNTER SECTION */}
       <section className="relative pt-20 pb-10">

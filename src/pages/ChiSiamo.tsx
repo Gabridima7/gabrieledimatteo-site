@@ -164,7 +164,7 @@ const ChiSiamo = () => {
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
                 <p className="text-xs uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.4)' }}>MISSIONE</p>
                 <p className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white leading-[1.4]">
-                  Siamo un partner attento che fornisce soluzioni innovative di Design & Sviluppo per startup finanziate, PMI tecnologiche e aziende leader di mercato.
+                  Siamo un partner attento che fornisce soluzioni innovative di Design & Sviluppo per Startup, PMI e aziende leader di mercato.
                 </p>
               </motion.div>
 

@@ -1,28 +1,60 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
+import SectionBackground from '@/components/SectionBackground';
+
+const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.5, ease },
+};
 
 const ChiSiamo = () => {
   return (
-    <div className="pt-24">
-      {/* Header */}
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Nexus è uno <span className="font-serif-accent font-normal text-primary">studio</span>.
-              <br />
-              Non una web agency.
-            </h1>
-            <p className="text-muted-foreground text-lg">
-              Progettiamo e costruiamo sistemi AI operativi per le PMI italiane.
-            </p>
-          </motion.div>
+    <div>
+      {/* ═══ HERO ═══ */}
+      <section className="relative min-h-[85vh] flex items-center pt-[120px]">
+        <SectionBackground variant="hero" />
+        <div className="section-container w-full relative z-[2]">
+          <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
+            <motion.div {...fadeUp}>
+              <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                {' / '}
+                <span className="text-white/70">Chi siamo</span>
+              </p>
+              <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
+                Nexus è uno <span className="font-serif-accent font-normal text-primary">studio</span>.
+                <br />
+                Non una web agency.
+              </h1>
+              <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                Progettiamo e costruiamo sistemi AI operativi per le PMI italiane.
+              </p>
+              <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9" style={{ background: '#d0f601' }}>
+                Prenota una call gratuita <ArrowRight size={16} />
+              </a>
+              <div className="flex flex-wrap gap-10 mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                {[
+                  { value: '2024', label: 'Anno di fondazione' },
+                  { value: '10+', label: 'Progetti completati' },
+                  { value: '100%', label: 'Clienti soddisfatti' },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-start gap-10">
+                    {i > 0 && <div className="hidden sm:block w-px h-12 -ml-10 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.1)' }} />}
+                    <div>
+                      <p className="font-bold text-white" style={{ fontSize: 'clamp(28px,3vw,40px)' }}>{s.value}</p>
+                      <p className="text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

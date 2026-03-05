@@ -17,7 +17,20 @@ const fadeUp = {
   transition: { duration: 0.5, ease },
 };
 
+const aboutText = "A partire dal 2024, il nostro fondatore Gabriele ha costruito il team per portare innovazione nello spazio digitale, sviluppando prodotti di valore. Forte motivazione, passione per il design e l'apprendimento continuo è ciò che ci spinge ad andare avanti.";
+const aboutWords = aboutText.split(' ');
+
+const ScrollRevealWord = ({ word, index, total, scrollYProgress }: { word: string; index: number; total: number; scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'] }) => {
+  const start = index / total;
+  const end = (index + 1) / total;
+  const color = useTransform(scrollYProgress, [start, end], ['rgba(255,255,255,0.2)', 'rgba(255,255,255,1)']);
+  return <motion.span style={{ color }} className="inline-block mr-[0.3em]">{word}</motion.span>;
+};
+
 const ChiSiamo = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: aboutRef, offset: ['start 0.8', 'end 0.4'] });
+
   return (
     <div>
       {/* ═══ HERO ═══ */}

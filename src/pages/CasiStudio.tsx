@@ -58,7 +58,7 @@ const CasiStudio = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-3 space-y-8">
-              <nav className="text-sm text-[#888]">
+              <nav className="text-sm text-[#888] uppercase tracking-wide">
                 <Link to="/" className="hover:text-white transition-colors">{t('works', 'breadcrumbHome')}</Link>
                 <span className="mx-2">/</span>
                 <span className="text-white">{t('works', 'breadcrumbWorks')}</span>

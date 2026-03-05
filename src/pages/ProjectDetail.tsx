@@ -99,9 +99,11 @@ const ProjectDetail = () => {
                 <div className="relative rounded-[20px] overflow-hidden aspect-[16/10]">
                   <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
                   {/* Year badge */}
-              <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">
-                {project.year}
-              </span>
+                  <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">
+                    {project.year}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -131,6 +131,48 @@ const ChiSiamo = () => {
           </div>
         </div>
       </section>
+
+      {/* ═══ DNA / MISSION & VISION ═══ */}
+      <section className="relative py-24">
+        <SectionBackground variant="blue-center" />
+        <div className="section-container relative z-[2]">
+          <div className="flex flex-col lg:grid lg:grid-cols-[40%_60%] gap-16 lg:gap-20 items-start">
+            {/* Left — Title */}
+            <motion.div {...fadeUp}>
+              <h2 className="text-4xl md:text-[56px] lg:text-[64px] font-bold text-white leading-[1.1]">
+                Cosa è{' '}
+                <span className="font-serif-accent font-normal text-primary">impresso</span>
+                <br />
+                nel nostro{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-[1]">DNA</span>
+                  <svg className="absolute -inset-x-3 -inset-y-2 w-[calc(100%+24px)] h-[calc(100%+16px)]" viewBox="0 0 100 50" fill="none" preserveAspectRatio="none">
+                    <ellipse cx="50" cy="25" rx="48" ry="22" stroke="#d0f601" strokeWidth="2" fill="none" />
+                  </svg>
+                </span>
+              </h2>
+            </motion.div>
+
+            {/* Right — Mission & Vision */}
+            <div className="flex flex-col gap-16">
+              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
+                <p className="text-xs uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.4)' }}>MISSIONE</p>
+                <p className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white leading-[1.4]">
+                  Siamo un partner attento che fornisce soluzioni innovative di Design & Sviluppo per startup finanziate, PMI tecnologiche e aziende leader di mercato.
+                </p>
+              </motion.div>
+
+              <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+                <p className="text-xs uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.4)' }}>VISIONE</p>
+                <p className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white leading-[1.4]">
+                  Siamo un'agenzia di prodotto digitale a ciclo completo che costruisce e trasforma progetti straordinari con un design incentrato sull'uomo per le migliori aziende.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission */}
       <section className="py-16">
         <div className="section-container">

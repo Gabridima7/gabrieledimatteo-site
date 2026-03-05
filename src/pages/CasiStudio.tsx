@@ -174,11 +174,13 @@ const CasiStudio = () => {
                   <p className="text-sm text-[#888]">{project.description}</p>
                   <div className="flex flex-wrap items-center gap-2">
                     {project.services.map((s, j) => (
-                      <span key={j} className="px-3 py-1 rounded-full text-xs bg-[rgba(0,37,255,0.15)] text-[#0025FF]">
+                      <span key={j} className="px-4 py-1.5 rounded-full text-sm bg-[rgba(255,255,255,0.08)] text-white border border-[rgba(255,255,255,0.1)]">
                         {s}
                       </span>
                     ))}
-                    <span className="text-sm ml-auto">{project.country}</span>
+                    <span className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-lg leading-none">
+                      {project.country.split(' ')[0]}
+                    </span>
                   </div>
                 </div>
               </motion.a>

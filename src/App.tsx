@@ -36,6 +36,8 @@ import MvpDesign from "./pages/soluzioni/MvpDesign";
 import ProductRedesign from "./pages/soluzioni/ProductRedesign";
 import EstensioneTeam from "./pages/soluzioni/EstensioneTeam";
 
+const queryClient = new QueryClient();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>

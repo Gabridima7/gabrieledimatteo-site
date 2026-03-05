@@ -87,8 +87,8 @@ const ChiSiamo = () => {
             >
               <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[65%] h-[90%] object-contain object-bottom" />
               <div className="relative z-[1]">
-                <h3 className="text-2xl font-bold text-white">Gabriele Di Matteo</h3>
-                <p className="text-white/70 text-sm mt-1">Founder & CEO</p>
+                <h3 className="text-2xl font-bold text-gray-900">Gabriele Di Matteo</h3>
+                <p className="text-gray-600 text-sm mt-1">Founder & CEO</p>
               </div>
               <a href="https://www.linkedin.com/in/gabriele-di-matteo/" target="_blank" rel="noopener noreferrer" className="relative z-[1] w-14 h-14 rounded-xl overflow-hidden mt-auto">
                 <img src={iconLinkedin} alt="LinkedIn" className="w-full h-full object-cover" />

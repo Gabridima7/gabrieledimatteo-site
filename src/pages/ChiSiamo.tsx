@@ -5,6 +5,8 @@ import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
 import founderGabriele from '@/assets/founder-gabriele.png';
+import teamSara from '@/assets/team-sara.png';
+import teamFabio from '@/assets/team-fabio.png';
 import iconLinkedin from '@/assets/icons/icon-linkedin.png';
 import iconCrescita from '@/assets/icons/icon-crescita.png';
 import iconPersone from '@/assets/icons/icon-persone.png';
@@ -115,8 +117,8 @@ const ChiSiamo = () => {
 
             {/* Placeholder team cards */}
             {[
-              { name: 'Prossimamente', role: 'Head of Design', bg: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)' },
-              { name: 'Prossimamente', role: 'Lead Developer', bg: 'rgba(255,255,255,0.05)' },
+              { name: 'Sara F.', role: 'Head of Design', bg: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)', img: teamSara },
+              { name: 'Fabio L.', role: 'Lead Developer', bg: 'rgba(255,255,255,0.05)', img: teamFabio },
             ].map((member, i) => (
               <motion.div
                 key={i}
@@ -125,7 +127,8 @@ const ChiSiamo = () => {
                 className="group relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:!bg-[rgba(28,53,200,0.3)]"
                 style={{ background: member.bg, border: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <div>
+                <img src={member.img} alt={member.name} className="absolute bottom-0 right-0 w-[75%] h-[85%] object-contain object-bottom" />
+                <div className="relative z-[1]">
                   <h3 className="text-xl font-bold text-white">{member.name}</h3>
                   <p className="text-white/50 text-sm mt-1">{member.role}</p>
                 </div>

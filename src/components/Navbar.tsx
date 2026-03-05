@@ -360,9 +360,7 @@ const Navbar = () => {
                           <MobileServiceItem to="/servizi/website-design" icon={<img src={iconWebsiteDesign} alt="Website Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Design" desc="Siti custom e landing" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/mobile-app-design" icon={<img src={iconSviluppoWebApp} alt="Mobile App Design" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Mobile App Design" desc="App che gli utenti amano" onClick={() => setIsOpen(false)} />
                           <MobileServiceItem to="/servizi/website-redesign" icon={<img src={iconWebsiteRedesign} alt="Website Redesign" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Website Redesign" desc="Look moderno, più impatto" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/product-audit" icon={<img src={iconSoftwareGestionale} alt="Product UX/UI Audit" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Palette size={18} strokeWidth={1.5} />} gradient="from-[#F43F5E] to-[#BE123C]" title="Branding & UI/UX" desc="Brand identity completa" onClick={() => setIsOpen(false)} />
-                          <MobileServiceItem to="/servizi/branding-ui-ux" icon={<Pencil size={18} strokeWidth={1.5} />} gradient="from-[#A855F7] to-[#7C3AED]" title="Logo Design" desc="Diventa memorabile" onClick={() => setIsOpen(false)} last />
+                          <MobileServiceItem to="/servizi/product-audit" icon={<img src={iconSoftwareGestionale} alt="Product UX/UI Audit" className="w-5 h-5 object-contain" />} gradient="from-transparent to-transparent" title="Product UX/UI Audit" desc="Insights che guidano" onClick={() => setIsOpen(false)} last />
                         </div>
                       </motion.div>
                     )}

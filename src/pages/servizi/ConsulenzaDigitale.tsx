@@ -12,6 +12,7 @@ const ConsulenzaDigitale = () => (
     h1="Strategia digitale per la tua crescita"
     subtitle="Ti guidiamo nella trasformazione digitale con analisi, audit e una roadmap su misura per la tua PMI."
     heroIcon={Lightbulb}
+    heroImage={heroConsulenza}
     stats={[
       { value: '100%', label: 'Roadmap actionable' },
       { value: '+35%', label: 'Efficienza media' },

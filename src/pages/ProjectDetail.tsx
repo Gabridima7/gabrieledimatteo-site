@@ -56,7 +56,7 @@ const ProjectDetail = () => {
       />
 
       {/* ═══ SECTION 1 — HERO ═══ */}
-      <section className="relative pt-[100px] md:pt-[110px] pb-16 md:pb-24">
+      <section className="relative pt-[85px] md:pt-[95px] pb-16 md:pb-24">
         <div className="section-container w-full lg:pl-2">
           {/* Breadcrumb */}
           <motion.p {...fadeUp} className="text-[13px] mb-8 md:mb-12 uppercase tracking-wide text-[#888]">

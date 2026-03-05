@@ -172,7 +172,7 @@ const ProjectDetail = () => {
         <div className="section-container">
           <motion.div {...fadeUp} className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#111] italic">
-              Process
+              Processo
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">

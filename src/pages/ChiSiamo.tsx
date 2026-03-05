@@ -7,6 +7,7 @@ import TrustBar from '@/components/TrustBar';
 import founderGabriele from '@/assets/founder-gabriele.png';
 import iconLinkedin from '@/assets/icons/icon-linkedin.png';
 import iconCrescita from '@/assets/icons/icon-crescita.png';
+import iconPersone from '@/assets/icons/icon-persone.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -218,7 +219,7 @@ const ChiSiamo = () => {
 
             {/* Row 2 — People card */}
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div className="mb-4 text-3xl">💙</div>
+              <img src={iconPersone} alt="Persone" className="w-14 h-14 mb-4" />
               <h3 className="text-2xl font-bold text-white mb-3">Persone</h3>
               <p className="text-[15px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Creare relazioni oneste, affidabili e reciprocamente vantaggiose con i nostri clienti. Prenderci cura di ogni membro del team. Rispondere e soddisfare le esigenze degli utenti, sempre.

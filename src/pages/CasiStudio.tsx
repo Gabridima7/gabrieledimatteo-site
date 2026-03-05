@@ -19,7 +19,7 @@ const fadeUp = {
 const CasiStudio = () => {
   const { t } = useLanguage();
 
-  const projects: Project[] = [
+  const projects = [
     {
       id: 1,
       name: t('works', 'featuredName1'),

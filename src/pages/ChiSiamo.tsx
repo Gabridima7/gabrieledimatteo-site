@@ -1,5 +1,6 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
@@ -16,7 +17,20 @@ const fadeUp = {
   transition: { duration: 0.5, ease },
 };
 
+const aboutText = "A partire dal 2024, il nostro fondatore Gabriele ha costruito il team per portare innovazione nello spazio digitale, sviluppando prodotti di valore. Forte motivazione, passione per il design e l'apprendimento continuo è ciò che ci spinge ad andare avanti.";
+const aboutWords = aboutText.split(' ');
+
+const ScrollRevealWord = ({ word, index, total, scrollYProgress }: { word: string; index: number; total: number; scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'] }) => {
+  const start = index / total;
+  const end = (index + 1) / total;
+  const color = useTransform(scrollYProgress, [start, end], ['rgba(255,255,255,0.2)', 'rgba(255,255,255,1)']);
+  return <motion.span style={{ color }} className="inline-block mr-[0.3em]">{word}</motion.span>;
+};
+
 const ChiSiamo = () => {
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: aboutRef, offset: ['start 0.8', 'end 0.4'] });
+
   return (
     <div>
       {/* ═══ HERO ═══ */}
@@ -67,15 +81,16 @@ const ChiSiamo = () => {
         <SectionBackground variant="dark" />
         <div className="section-container relative z-[2]">
           {/* Intro text */}
-          <motion.div {...fadeUp} className="mb-20 max-w-[900px]">
-            <p className="text-sm uppercase tracking-wide mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <div ref={aboutRef} className="mb-20 max-w-[900px]">
+            <motion.p {...fadeUp} className="text-sm uppercase tracking-wide mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
               Conosciamoci meglio
-            </p>
-            <h2 className="text-3xl md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.2]">
-              A partire dal 2024, il nostro fondatore Gabriele ha costruito il team per portare innovazione nello spazio digitale, sviluppando prodotti di valore. Forte motivazione, passione per il{' '}
-              <span style={{ color: 'rgba(255,255,255,0.4)' }}>design e l'apprendimento continuo è ciò che ci spinge ad andare avanti.</span>
+            </motion.p>
+            <h2 className="text-3xl md:text-[44px] lg:text-[52px] font-bold leading-[1.2] flex flex-wrap">
+              {aboutWords.map((word, i) => (
+                <ScrollRevealWord key={i} word={word} index={i} total={aboutWords.length} scrollYProgress={scrollYProgress} />
+              ))}
             </h2>
-          </motion.div>
+          </div>
 
           {/* Team grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

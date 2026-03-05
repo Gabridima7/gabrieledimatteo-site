@@ -90,7 +90,7 @@ const ChiSiamo = () => {
                 <h3 className="text-2xl font-bold text-white">Gabriele Di Matteo</h3>
                 <p className="text-white/70 text-sm mt-1">Founder & CEO</p>
               </div>
-              <a href="https://www.linkedin.com/in/gabrieledimatteo/" target="_blank" rel="noopener noreferrer" className="relative z-[1] w-10 h-10 rounded-lg overflow-hidden mt-auto">
+              <a href="https://www.linkedin.com/in/gabrieledimatteo/" target="_blank" rel="noopener noreferrer" className="relative z-[1] w-14 h-14 rounded-xl overflow-hidden mt-auto">
                 <img src={iconLinkedin} alt="LinkedIn" className="w-full h-full object-cover" />
               </a>
             </motion.div>

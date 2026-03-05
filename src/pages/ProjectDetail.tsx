@@ -109,21 +109,26 @@ const ProjectDetail = () => {
         </motion.div>
       </section>
 
+      {/* ═══ WHITE BACKGROUND FROM HERE ═══ */}
+      <div style={{ background: '#ffffff' }}>
+
       {/* ═══ SECTION 2 — METADATI ═══ */}
-      <section className="border-t border-b border-[rgba(255,255,255,0.08)]">
-        <div className="section-container py-8">
-          <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Cliente', value: project.client },
-              { label: 'Industry', value: project.industry },
-              { label: 'Servizi', value: project.services.join(', ') },
-              { label: 'Paese', value: project.country },
-            ].map((item, i) => (
-              <div key={i}>
-                <p className="text-[#888] text-xs uppercase tracking-widest mb-1">{item.label}</p>
-                <p className="text-white font-medium text-sm">{item.value}</p>
-              </div>
-            ))}
+      <section className="py-6 md:py-8">
+        <div className="section-container">
+          <motion.div {...fadeUp} className="bg-[#f5f5f5] rounded-2xl px-6 md:px-10 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[#e0e0e0]">
+              {[
+                { label: 'Cliente', value: project.client },
+                { label: 'Industry', value: project.industry },
+                { label: 'Servizi', value: project.services.join(', ') },
+                { label: 'Paese', value: project.country },
+              ].map((item, i) => (
+                <div key={i} className="md:px-8 first:md:pl-0 last:md:pr-0">
+                  <p className="text-[#888] text-xs uppercase tracking-widest mb-2">{item.label}</p>
+                  <p className="text-[#111] font-semibold text-base md:text-lg">{item.value}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -134,11 +139,11 @@ const ProjectDetail = () => {
           <div className="flex flex-col xl:grid xl:grid-cols-[35%_65%] gap-12">
             <motion.div {...fadeUp} className="xl:sticky xl:top-8 xl:self-start">
               <p className="text-[#888] text-xs uppercase tracking-widest mb-4">Panoramica</p>
-              <h2 className="text-3xl font-bold text-white">Sul Progetto</h2>
+              <h2 className="text-3xl font-bold text-[#111]">Sul Progetto</h2>
               <div className="w-12 h-[2px] bg-[#0025FF] mt-6" />
             </motion.div>
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              <p className="text-lg text-[#ccc] leading-relaxed">
+              <p className="text-lg text-[#444] leading-relaxed">
                 {renderTagline(project.about)}
               </p>
             </motion.div>
@@ -150,15 +155,15 @@ const ProjectDetail = () => {
       <section className="pb-16">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div {...fadeUp} className="bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8">
+            <motion.div {...fadeUp} className="bg-[#f5f5f5] border border-[#e8e8e8] rounded-2xl p-8">
               <p className="text-[#888] text-xs uppercase tracking-widest mb-3">Problema</p>
-              <h3 className="text-xl font-bold text-white mb-4">La Sfida</h3>
-              <p className="text-[#aaa] text-base leading-relaxed">{project.challenge}</p>
+              <h3 className="text-xl font-bold text-[#111] mb-4">La Sfida</h3>
+              <p className="text-[#555] text-base leading-relaxed">{project.challenge}</p>
             </motion.div>
-            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="bg-[#111111] border border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-[#0025FF] rounded-2xl p-8">
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="bg-[#f5f5f5] border border-[#e8e8e8] border-l-[3px] border-l-[#0025FF] rounded-2xl p-8">
               <p className="text-[#888] text-xs uppercase tracking-widest mb-3">Soluzione</p>
-              <h3 className="text-xl font-bold text-white mb-4">Il Nostro Approccio</h3>
-              <p className="text-[#aaa] text-base leading-relaxed">{project.solution}</p>
+              <h3 className="text-xl font-bold text-[#111] mb-4">Il Nostro Approccio</h3>
+              <p className="text-[#555] text-base leading-relaxed">{project.solution}</p>
             </motion.div>
           </div>
         </div>
@@ -168,7 +173,7 @@ const ProjectDetail = () => {
       <section className="py-24">
         <div className="section-container">
           <motion.div {...fadeUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111]">
               Il nostro {renderTagline("*Processo*")}
             </h2>
           </motion.div>
@@ -180,13 +185,13 @@ const ProjectDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className="relative border-b xl:border-b-0 xl:border-r border-[rgba(255,255,255,0.06)] last:border-0 pb-6 xl:pb-0 xl:pr-6"
+                className="relative border-b xl:border-b-0 xl:border-r border-[#e8e8e8] last:border-0 pb-6 xl:pb-0 xl:pr-6"
               >
-                <span className="text-6xl font-bold text-[rgba(0,37,255,0.15)] leading-none">{phase.number}</span>
-                <h3 className="text-lg font-bold text-white mt-2 mb-4">{phase.title}</h3>
+                <span className="text-6xl font-bold text-[rgba(0,37,255,0.12)] leading-none">{phase.number}</span>
+                <h3 className="text-lg font-bold text-[#111] mt-2 mb-4">{phase.title}</h3>
                 <ul className="space-y-2">
                   {phase.items.map((item, j) => (
-                    <li key={j} className="text-sm text-[#888] flex items-start gap-2">
+                    <li key={j} className="text-sm text-[#666] flex items-start gap-2">
                       <span className="text-[#0025FF] mt-0.5">•</span>
                       {item}
                     </li>
@@ -201,7 +206,7 @@ const ProjectDetail = () => {
       {/* ═══ SECTION 6 — GALLERIA ═══ */}
       <section className="py-16">
         <div className="section-container">
-          <motion.h2 {...fadeUp} className="text-3xl font-bold text-white mb-10">Galleria</motion.h2>
+          <motion.h2 {...fadeUp} className="text-3xl font-bold text-[#111] mb-10">Galleria</motion.h2>
           <div className="space-y-4">
             {project.galleryImages.map((img, i) => (
               <motion.div
@@ -221,7 +226,7 @@ const ProjectDetail = () => {
                   />
                 </div>
                 {img.caption && (
-                  <p className="text-sm text-[#666] mt-2 italic">{img.caption}</p>
+                  <p className="text-sm text-[#999] mt-2 italic">{img.caption}</p>
                 )}
               </motion.div>
             ))}
@@ -230,10 +235,10 @@ const ProjectDetail = () => {
       </section>
 
       {/* ═══ SECTION 7 — RISULTATI ═══ */}
-      <section className="py-24 bg-[#0D0D0D]">
+      <section className="py-24 bg-[#f5f5f5]">
         <div className="section-container">
           <motion.div {...fadeUp} className="text-center mb-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111]">
               I {renderTagline("*Risultati*")}
             </h2>
           </motion.div>
@@ -249,10 +254,10 @@ const ProjectDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className="bg-[#111] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8"
+                className="bg-white border border-[#e8e8e8] rounded-2xl p-8"
               >
                 <p className="text-5xl font-bold text-[#0025FF]">{r.metric}</p>
-                <p className="text-white font-semibold text-lg mt-2">{r.label}</p>
+                <p className="text-[#111] font-semibold text-lg mt-2">{r.label}</p>
                 <p className="text-[#888] text-sm mt-3 leading-relaxed">{r.description}</p>
               </motion.div>
             ))}
@@ -266,15 +271,15 @@ const ProjectDetail = () => {
           <div className="section-container">
             <motion.div {...fadeUp} className="relative max-w-3xl mx-auto text-center">
               <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-8xl text-[#0025FF] opacity-30 font-serif leading-none select-none">"</span>
-              <p className="text-2xl font-medium text-white leading-relaxed relative z-10 pt-8">
+              <p className="text-2xl font-medium text-[#111] leading-relaxed relative z-10 pt-8">
                 {project.testimonial.quote}
               </p>
               <div className="flex items-center justify-center gap-3 mt-8">
-                <div className="w-12 h-12 bg-[#222] rounded-full flex items-center justify-center text-sm font-bold text-white">
+                <div className="w-12 h-12 bg-[#e8e8e8] rounded-full flex items-center justify-center text-sm font-bold text-[#111]">
                   {project.testimonial.author.split(' ').map(w => w[0]).join('')}
                 </div>
                 <div className="text-left">
-                  <p className="text-white font-semibold text-sm">{project.testimonial.author}</p>
+                  <p className="text-[#111] font-semibold text-sm">{project.testimonial.author}</p>
                   <p className="text-[#888] text-sm">{project.testimonial.role}</p>
                 </div>
               </div>
@@ -284,37 +289,37 @@ const ProjectDetail = () => {
       )}
 
       {/* ═══ SECTION 9 — NAVIGAZIONE PROGETTI ═══ */}
-      <section className="py-16 border-t border-[rgba(255,255,255,0.08)]">
+      <section className="py-16 border-t border-[#e8e8e8]">
         <div className="section-container">
           <div className="flex justify-between items-stretch gap-4">
             {prevProject ? (
-              <Link to={`/progetto/${prevProject.slug}`} className="flex items-center gap-4 bg-[#111] border border-[rgba(255,255,255,0.06)] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%]">
+              <Link to={`/progetto/${prevProject.slug}`} className="flex items-center gap-4 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%]">
                 <ArrowLeft size={16} className="text-[#888] flex-shrink-0" />
                 <img src={prevProject.coverImage} alt={prevProject.name} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
                 <div className="min-w-0">
                   <p className="text-xs text-[#888]">Progetto precedente</p>
-                  <p className="text-white font-semibold text-sm truncate">{prevProject.name}</p>
+                  <p className="text-[#111] font-semibold text-sm truncate">{prevProject.name}</p>
                 </div>
               </Link>
             ) : (
-              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#111] border border-[rgba(255,255,255,0.06)] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300">
+              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300">
                 <ArrowLeft size={16} className="text-[#888]" />
-                <span className="text-white text-sm font-medium">Tutti i progetti</span>
+                <span className="text-[#111] text-sm font-medium">Tutti i progetti</span>
               </Link>
             )}
 
             {nextProject ? (
-              <Link to={`/progetto/${nextProject.slug}`} className="flex items-center gap-4 bg-[#111] border border-[rgba(255,255,255,0.06)] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%] justify-end text-right">
+              <Link to={`/progetto/${nextProject.slug}`} className="flex items-center gap-4 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%] justify-end text-right">
                 <div className="min-w-0">
                   <p className="text-xs text-[#888]">Progetto successivo</p>
-                  <p className="text-white font-semibold text-sm truncate">{nextProject.name}</p>
+                  <p className="text-[#111] font-semibold text-sm truncate">{nextProject.name}</p>
                 </div>
                 <img src={nextProject.coverImage} alt={nextProject.name} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
                 <ArrowRight size={16} className="text-[#888] flex-shrink-0" />
               </Link>
             ) : (
-              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#111] border border-[rgba(255,255,255,0.06)] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 ml-auto">
-                <span className="text-white text-sm font-medium">Tutti i progetti</span>
+              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 ml-auto">
+                <span className="text-[#111] text-sm font-medium">Tutti i progetti</span>
                 <ArrowRight size={16} className="text-[#888]" />
               </Link>
             )}
@@ -326,10 +331,10 @@ const ProjectDetail = () => {
       <section className="py-24">
         <div className="section-container">
           <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-6 bg-[rgba(0,37,255,0.12)] text-[#0025FF]">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-6 bg-[rgba(0,37,255,0.08)] text-[#0025FF]">
               Hai un progetto simile?
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white leading-[1.15]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111] leading-[1.15]">
               Costruiamo il tuo{' '}
               {renderTagline("*prossimo prodotto*")}{' '}
               {renderTagline("*digitale*")} insieme
@@ -346,7 +351,7 @@ const ProjectDetail = () => {
               </Link>
               <Link
                 to="/casi-studio"
-                className="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-full border border-[rgba(255,255,255,0.25)] hover:border-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.05)] transition-all duration-300"
+                className="inline-flex items-center gap-2 text-[#111] font-semibold px-8 py-4 rounded-full border border-[#ccc] hover:border-[#111] hover:bg-[rgba(0,0,0,0.03)] transition-all duration-300"
               >
                 Vedi altri progetti
               </Link>
@@ -354,6 +359,7 @@ const ProjectDetail = () => {
           </motion.div>
         </div>
       </section>
+      </div>{/* end white background */}
     </div>
   );
 };

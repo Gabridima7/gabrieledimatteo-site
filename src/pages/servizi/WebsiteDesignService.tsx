@@ -6,6 +6,7 @@ import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techShopify from '@/assets/tech/icon-shopify.png';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroWebsiteDesign from '@/assets/hero-website-design.png';
 
 const WebsiteDesignService = () => (
   <ServicePageTemplate
@@ -15,6 +16,7 @@ const WebsiteDesignService = () => (
     h1="Siti web dal design moderno e professionale"
     subtitle="Siti web custom che comunicano il valore del tuo brand e convertono i visitatori in clienti."
     heroIcon={Globe}
+    heroImage={heroWebsiteDesign}
     stats={[
       { value: '98+', label: 'PageSpeed medio' },
       { value: '+65%', label: 'Lead generati' },

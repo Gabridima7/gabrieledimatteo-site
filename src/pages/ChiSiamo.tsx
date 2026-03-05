@@ -83,9 +83,9 @@ const ChiSiamo = () => {
             <motion.div
               {...fadeUp}
               className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8"
+              style={{ background: 'linear-gradient(135deg, #e8e0f0 0%, #c4b5fd 30%, #a78bfa 60%, #7c6bc4 100%)' }}
             >
-              <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[65%] h-[90%] object-contain object-bottom" />
               <div className="relative z-[1]">
                 <h3 className="text-2xl font-bold text-white">Gabriele Di Matteo</h3>
                 <p className="text-white/70 text-sm mt-1">Founder & CEO</p>

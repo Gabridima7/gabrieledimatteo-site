@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import ProjectCard, { type Project } from '@/components/ProjectCard';
 import { useLanguage } from '@/context/LanguageContext';
 import SectionBackground from '@/components/SectionBackground';
+import coverHomeleven from '@/assets/cover-homeleven.png';
+import coverOneup from '@/assets/cover-oneup.png';
+import coverBiglia from '@/assets/cover-biglia.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -233,11 +235,38 @@ const CasiStudio = () => {
       <section className="relative pb-24">
         <SectionBackground variant="blue-right" fade={false} />
         <div className="section-container relative z-[2]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {[
+              { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), cover: coverHomeleven },
+              { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), cover: coverOneup },
+              { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), cover: coverBiglia },
+            ].map((c, i) => (
+              <motion.div
+                key={i}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } } }}
+              >
+                <Link to="/casi-studio" className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img src={c.cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <span className="badge-pill mb-3 inline-block">{c.badge}</span>
+                    <h3 className="text-card-title text-white mb-2">{c.title}</h3>
+                    <p className="text-body text-white/60 mb-4 line-clamp-2">{c.desc}</p>
+                    <span className="text-[#d0f601] text-sm font-semibold inline-flex items-center gap-1">
+                      {t('cases', 'viewCase')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

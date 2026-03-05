@@ -452,15 +452,15 @@ const CasiStudio = () => {
             className="grid md:grid-cols-3 gap-6"
           >
             {[
-              { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), cover: coverHomeleven },
-              { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), cover: coverOneup },
-              { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), cover: coverBiglia },
+              { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), cover: coverHomeleven, slug: 'homeleven' },
+              { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), cover: coverOneup, slug: 'one-up' },
+              { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), cover: coverBiglia, slug: 'biglia-serramenti' },
             ].map((c, i) => (
               <motion.div
                 key={i}
                 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } } }}
               >
-                <Link to="/casi-studio" className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                <Link to={`/progetto/${c.slug}`} className="block bg-white/[0.04] border border-white/[0.08] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
                   <div className="aspect-[4/3] relative overflow-hidden">
                     <img src={c.cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
                   </div>

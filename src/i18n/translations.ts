@@ -221,8 +221,8 @@ export const translations = {
   },
   // Works / Casi Studio
   works: {
-    breadcrumbHome: { it: 'Home', en: 'Home' },
-    breadcrumbWorks: { it: 'Works', en: 'Works' },
+    breadcrumbHome: { it: 'HOME', en: 'HOME' },
+    breadcrumbWorks: { it: 'CASI STUDIO', en: 'CASE STUDIES' },
     heroTitle1: { it: 'Trasformiamo le', en: 'We transform' },
     heroTitleIdee: { it: 'Idee', en: 'Ideas' },
     heroTitle2: { it: 'in Prodotti', en: 'into Digital' },

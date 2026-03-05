@@ -6,6 +6,7 @@ import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
 import founderGabriele from '@/assets/founder-gabriele.png';
 import iconLinkedin from '@/assets/icons/icon-linkedin.png';
+import iconCrescita from '@/assets/icons/icon-crescita.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -201,7 +202,7 @@ const ChiSiamo = () => {
 
             {/* Row 1 — Growth card */}
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8" style={{ background: 'linear-gradient(180deg, #c4b5fd 0%, #a78bfa 50%, #7c6bc4 100%)' }}>
-              <div className="mb-4 text-3xl">🚀</div>
+              <img src={iconCrescita} alt="Crescita" className="w-14 h-14 mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Crescita</h3>
               <p className="text-gray-700 text-[15px] leading-relaxed">
                 Lavoriamo costantemente per migliorare le nostre competenze e conoscenze, così da poter continuare a fornire il miglior servizio ai nostri clienti, con risultati di altissima qualità.

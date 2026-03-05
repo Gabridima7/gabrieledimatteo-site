@@ -2,64 +2,66 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import ProjectCard, { type Project } from '@/components/ProjectCard';
-
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "PropManager",
-    description: "Software gestionale custom per la gestione di proprietà immobiliari e affitti brevi.",
-    category: "Gestione Immobiliare",
-    type: "Web App Custom",
-    country: "🇮🇹 Italia",
-    services: ["Sviluppo Web App", "UI/UX Design", "Automazione"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
-    featured: true,
-  },
-  {
-    id: 2,
-    name: "BoatManager",
-    description: "Piattaforma digitale per la gestione operativa di flotte nautiche e prenotazioni.",
-    category: "Gestione Nautica",
-    type: "Software Gestionale",
-    country: "🇮🇹 Italia",
-    services: ["Sviluppo Web App", "UI/UX Design"],
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
-    featured: true,
-  },
-  {
-    id: 3,
-    name: "Infissi Rossi",
-    description: "Sito web aziendale con catalogo prodotti e richiesta preventivi per azienda di infissi.",
-    category: "Artigianato & Edilizia",
-    type: "Sito Web Aziendale",
-    country: "🇮🇹 Italia",
-    services: ["Web Design", "Sviluppo Web"],
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
-    featured: false,
-  },
-];
-
-const featuredProjects = projects.filter(p => p.featured);
-
-const counters = [
-  { value: "3+", label: "Progetti Completati" },
-  { value: "100%", label: "Clienti Soddisfatti" },
-  { value: "3", label: "Settori Serviti" },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const CasiStudio = () => {
+  const { t } = useLanguage();
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      name: t('works', 'featuredName1'),
+      description: t('works', 'featuredDesc1'),
+      category: t('works', 'featuredCategory1'),
+      type: t('works', 'featuredType1'),
+      country: t('works', 'country'),
+      services: [t('works', 'serviceSviluppoWebApp'), t('works', 'serviceUiUx'), t('works', 'serviceAutomazione')],
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
+      featured: true,
+    },
+    {
+      id: 2,
+      name: t('works', 'featuredName2'),
+      description: t('works', 'featuredDesc2'),
+      category: t('works', 'featuredCategory2'),
+      type: t('works', 'featuredType2'),
+      country: t('works', 'country'),
+      services: [t('works', 'serviceSviluppoWebApp'), t('works', 'serviceUiUx')],
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      featured: true,
+    },
+    {
+      id: 3,
+      name: t('works', 'project3Name'),
+      description: t('works', 'project3Desc'),
+      category: t('works', 'project3Category'),
+      type: t('works', 'project3Type'),
+      country: t('works', 'project3Country'),
+      services: [t('works', 'serviceWebDesign'), t('works', 'serviceSviluppoWeb')],
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+      featured: false,
+    },
+  ];
+
+  const featuredProjects = projects.filter(p => p.featured);
+
+  const counters = [
+    { value: "3+", label: t('works', 'counterProjects') },
+    { value: "100%", label: t('works', 'counterClients') },
+    { value: "3", label: t('works', 'counterSectors') },
+  ];
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
       {/* HERO */}
       <section className="py-24 md:py-32">
         <div className="section-container">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            {/* Left 60% */}
             <div className="lg:col-span-3 space-y-8">
               <nav className="text-sm text-[#888]">
-                <Link to="/" className="hover:text-white transition-colors">Home</Link>
+                <Link to="/" className="hover:text-white transition-colors">{t('works', 'breadcrumbHome')}</Link>
                 <span className="mx-2">/</span>
-                <span className="text-white">Works</span>
+                <span className="text-white">{t('works', 'breadcrumbWorks')}</span>
               </nav>
 
               <motion.h1
@@ -68,10 +70,10 @@ const CasiStudio = () => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-white"
               >
-                Trasformiamo le{' '}
-                <em className="italic text-[#0025FF] not-italic font-bold" style={{ fontStyle: 'italic' }}>Idee</em>
-                {' '}in Prodotti<br />Digitali{' '}
-                <em className="italic text-[#0025FF] not-italic font-bold" style={{ fontStyle: 'italic' }}>di Successo</em>
+                {t('works', 'heroTitle1')}{' '}
+                <em className="font-bold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
+                {' '}{t('works', 'heroTitle2')}<br />{t('works', 'heroTitle3')}{' '}
+                <em className="font-bold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
               </motion.h1>
 
               <motion.p
@@ -80,7 +82,7 @@ const CasiStudio = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-lg text-[#888] max-w-xl"
               >
-                Ogni progetto nasce da un problema reale. Noi lo trasformiamo in un prodotto digitale che funziona, scala e crea valore.
+                {t('works', 'heroDescription')}
               </motion.p>
 
               <motion.div
@@ -94,13 +96,12 @@ const CasiStudio = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#0025FF] hover:bg-[#0025FF]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,37,255,0.4)]"
                 >
-                  Inizia il tuo progetto
+                  {t('works', 'heroCta')}
                   <ArrowRight size={18} />
                 </a>
               </motion.div>
             </div>
 
-            {/* Right 40% */}
             <motion.div
               className="lg:col-span-2 relative"
               initial={{ opacity: 0, x: 40 }}
@@ -115,7 +116,7 @@ const CasiStudio = () => {
                   className="w-full h-full object-cover"
                 />
                 <span className="absolute top-4 right-4 bg-[#0025FF] text-white text-xs font-bold px-4 py-2 rounded-full">
-                  3 Progetti Completati
+                  {t('works', 'heroBadge')}
                 </span>
               </div>
             </motion.div>
@@ -145,17 +146,14 @@ const CasiStudio = () => {
                     loading="lazy"
                     className="w-full h-full object-cover transition-all duration-300 group-hover:scale-[1.02] group-hover:brightness-110"
                   />
-                  {/* Category badge */}
                   <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-medium text-white bg-[rgba(255,255,255,0.1)] backdrop-blur-md">
                     {project.category}
                   </span>
-                  {/* Overlay bottom */}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
                     <h3 className="text-2xl font-bold text-white">{project.name}</h3>
                     <p className="text-sm text-[#aaa]">{project.type}</p>
                   </div>
                 </div>
-                {/* Below image */}
                 <div className="mt-4 space-y-3">
                   <p className="text-sm text-[#888]">{project.description}</p>
                   <div className="flex flex-wrap items-center gap-2">
@@ -183,9 +181,10 @@ const CasiStudio = () => {
             transition={{ duration: 0.5 }}
             className="space-y-4"
           >
-            <p className="text-xs uppercase tracking-widest text-[#888]">I NOSTRI LAVORI</p>
+            <p className="text-xs uppercase tracking-widest text-[#888]">{t('works', 'gridLabel')}</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Prodotti che <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>Generano Risultati</em>
+              {t('works', 'gridTitle')}{' '}
+              <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'gridTitleAccent')}</em>
             </h2>
           </motion.div>
 
@@ -233,15 +232,17 @@ const CasiStudio = () => {
             className="text-center max-w-2xl mx-auto space-y-6"
           >
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-[rgba(0,37,255,0.15)] text-[#0025FF]">
-              Prossimo progetto
+              {t('works', 'ctaBadge')}
             </span>
 
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              Sei il <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>prossimo successo</em> di Nexus?
+              {t('works', 'ctaTitle1')}{' '}
+              <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'ctaTitleAccent')}</em>
+              {' '}{t('works', 'ctaTitle2')}
             </h2>
 
             <p className="text-[#888] text-lg">
-              Trasformiamo la tua idea in un prodotto digitale funzionante in poche settimane.
+              {t('works', 'ctaDescription')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -249,14 +250,14 @@ const CasiStudio = () => {
                 to="/contatti"
                 className="inline-flex items-center gap-2 bg-[#0025FF] hover:bg-[#0025FF]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,37,255,0.4)]"
               >
-                Parla con noi
+                {t('works', 'ctaPrimary')}
                 <ArrowRight size={18} />
               </Link>
               <Link
                 to="/servizi/sviluppo-web"
                 className="inline-flex items-center gap-2 border border-[rgba(255,255,255,0.2)] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:border-[rgba(255,255,255,0.5)] hover:bg-[rgba(255,255,255,0.05)]"
               >
-                Scopri i servizi
+                {t('works', 'ctaSecondary')}
               </Link>
             </div>
           </motion.div>

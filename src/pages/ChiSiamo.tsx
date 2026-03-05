@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
-import founderGd from '@/assets/founder-gd.png';
+import founderGabriele from '@/assets/founder-gabriele.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -82,14 +82,12 @@ const ChiSiamo = () => {
             <motion.div
               {...fadeUp}
               className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8"
-              style={{ background: 'linear-gradient(180deg, #c4b5fd 0%, #a78bfa 40%, #7c3aed 100%)' }}
             >
+              <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="relative z-[1]">
                 <h3 className="text-2xl font-bold text-white">Gabriele Di Matteo</h3>
                 <p className="text-white/70 text-sm mt-1">Founder & CEO</p>
-              </div>
-              <div className="absolute bottom-0 right-0 w-[65%] h-[80%]">
-                <img src={founderGd} alt="Gabriele Di Matteo" className="w-full h-full object-contain object-bottom" />
               </div>
               <a href="https://www.linkedin.com/in/gabrieledimatteo/" target="_blank" rel="noopener noreferrer" className="relative z-[1] w-10 h-10 rounded-full bg-white flex items-center justify-center mt-auto">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" fill="#000"/></svg>

@@ -57,6 +57,9 @@ const ChiSiamo = () => {
         </div>
       </section>
 
+      {/* ═══ TRUST BAR ═══ */}
+      <TrustBar />
+
       {/* Mission */}
       <section className="py-16">
         <div className="section-container">

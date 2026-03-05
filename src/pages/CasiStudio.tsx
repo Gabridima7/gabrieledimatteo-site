@@ -88,7 +88,7 @@ const TestimonialsSection = () => {
                     : 'bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border-white/[0.06]'
                 }`}
               >
-                <img src={item.logo} alt={item.name} className="h-8 w-auto object-contain max-w-[70%]" />
+                <img src={item.logo} alt={item.name} className="h-14 w-auto object-contain max-w-[80%]" />
               </button>
             ))}
           </div>

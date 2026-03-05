@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import ProjectCard, { type Project } from '@/components/ProjectCard';
 import { useLanguage } from '@/context/LanguageContext';
+import SectionBackground from '@/components/SectionBackground';
+
+const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.5, ease },
+};
 
 const CasiStudio = () => {
   const { t } = useLanguage();
@@ -53,62 +63,67 @@ const CasiStudio = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
-      {/* HERO */}
-      <section className="py-24 md:py-32">
-        <div className="section-container">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-3 space-y-8">
-              <nav className="text-sm text-[#888] uppercase tracking-wide">
+      {/* ═══ HERO ═══ */}
+      <section className="relative min-h-[85vh] flex items-center pt-[120px]">
+        <SectionBackground variant="hero" />
+        <div className="section-container w-full relative z-[2]">
+          <div className="flex flex-col lg:grid lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
+            {/* Hero image — mobile/tablet first */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="lg:hidden w-full flex justify-center">
+              <div className="relative w-full max-w-[400px] md:max-w-[500px] rounded-2xl overflow-hidden aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+                  alt="Digital product dashboard"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute top-4 right-4 bg-[#0025FF] text-white text-xs font-bold px-4 py-2 rounded-full">
+                  {t('works', 'heroBadge')}
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Text */}
+            <motion.div {...fadeUp}>
+              <p className="text-[13px] mb-8 uppercase tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
                 <Link to="/" className="hover:text-white transition-colors">{t('works', 'breadcrumbHome')}</Link>
-                <span className="mx-2">/</span>
-                <span className="text-white">{t('works', 'breadcrumbWorks')}</span>
-              </nav>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-white"
-              >
+                {' / '}
+                <span className="text-white/70">{t('works', 'breadcrumbWorks')}</span>
+              </p>
+              <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
                 {t('works', 'heroTitle1')}{' '}
-                <em className="font-bold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
+                <em className="font-extrabold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
                 {' '}{t('works', 'heroTitle2')}<br />{t('works', 'heroTitle3')}{' '}
-                <em className="font-bold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-lg text-[#888] max-w-xl"
-              >
+                <em className="font-extrabold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
+              </h1>
+              <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 {t('works', 'heroDescription')}
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+              </p>
+              <a
+                href={CAL_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9"
+                style={{ background: '#d0f601' }}
               >
-                <a
-                  href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#0025FF] hover:bg-[#0025FF]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,37,255,0.4)]"
-                >
-                  {t('works', 'heroCta')}
-                  <ArrowRight size={18} />
-                </a>
-              </motion.div>
-            </div>
+                {t('works', 'heroCta')} <ArrowRight size={16} />
+              </a>
+              <div className="flex flex-wrap gap-10 mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                {counters.map((s, i) => (
+                  <div key={i} className="flex items-start gap-10">
+                    {i > 0 && <div className="hidden sm:block w-px h-12 -ml-10 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.1)' }} />}
+                    <div>
+                      <p className="font-bold text-white" style={{ fontSize: 'clamp(28px,3vw,40px)' }}>{s.value}</p>
+                      <p className="text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-            <motion.div
-              className="lg:col-span-2 relative"
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            {/* Hero image — desktop */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="hidden lg:flex items-center justify-center lg:-mr-10">
+              <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
                   alt="Digital product dashboard"

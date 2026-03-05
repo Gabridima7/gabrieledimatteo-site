@@ -222,6 +222,194 @@ const CasiStudio = () => {
         </div>
       </section>
 
+const testimonials = [
+  {
+    name: 'Mattia T.',
+    role: 'Founder, Homeleven',
+    quote: '"NEXUS ha capito subito le nostre esigenze. Il gestionale ci ha cambiato la vita operativa. *Professionalità e attenzione ai dettagli* che raramente si trovano."',
+    img: testimonialMarco,
+    logo: logoHomeleven,
+    bgColor: '#d0f601',
+    textColor: '#111',
+  },
+  {
+    name: 'Andrea Z.',
+    role: 'CEO, ONE UP',
+    quote: '"Professionalità e velocità di esecuzione fuori dal comune. *Hanno trasformato la nostra idea in un prodotto funzionante* in tempi record. Consigliato a qualsiasi PMI italiana."',
+    logo: logoOneup,
+    bgColor: 'linear-gradient(135deg, #f5f5ff 0%, #e8d5ff 50%, #d5c5ff 100%)',
+    textColor: '#111',
+  },
+  {
+    name: 'Gianni B.',
+    role: 'Titolare, Biglia Serramenti',
+    quote: '"Il sito rifatto da NEXUS ha portato un aumento immediato delle richieste di preventivo. *Comunicazione diretta e risultati concreti,* esattamente quello che cercavamo."',
+    logo: logoBiglia,
+    bgColor: 'linear-gradient(135deg, #6B21A8 0%, #7C3AED 50%, #9333EA 100%)',
+    textColor: '#fff',
+  },
+];
+
+const TestimonialsSection = ({ t }: { t: (section: string, key: string) => string }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const current = testimonials[activeIdx];
+
+  const renderQuote = (text: string) => {
+    const parts = text.split(/\*(.*?)\*/);
+    return parts.map((part, i) =>
+      i % 2 === 1 ? <em key={i} className="italic font-semibold">{part}</em> : <span key={i}>{part}</span>
+    );
+  };
+
+  return (
+    <section className="relative py-24">
+      <SectionBackground variant="dark" fade={false} />
+      <div className="section-container relative z-[2]">
+        <motion.div {...fadeUp} className="mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.15]">
+            I nostri <em className="text-[#d0f601]" style={{ fontStyle: 'italic' }}>Clienti</em> hanno ottime{' '}
+            <br className="hidden md:block" />
+            ragioni per <em className="text-[#d0f601]" style={{ fontStyle: 'italic' }}>Sceglierci</em>
+          </h2>
+        </motion.div>
+
+        {/* Desktop layout */}
+        <motion.div {...fadeUp} className="hidden md:grid md:grid-cols-[280px_1fr] gap-0 rounded-2xl overflow-hidden">
+          {/* Left: client logos */}
+          <div className="flex flex-col">
+            {testimonials.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIdx(i)}
+                className={`flex items-center justify-center h-[100px] transition-all duration-300 cursor-pointer ${
+                  i === activeIdx
+                    ? 'bg-[rgba(255,255,255,0.12)] border-l-2 border-[#d0f601]'
+                    : 'bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border-l-2 border-transparent'
+                }`}
+                style={{ borderBottom: i < testimonials.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
+              >
+                <img src={item.logo} alt={item.name} className="h-7 w-auto object-contain opacity-70 invert brightness-200" />
+              </button>
+            ))}
+          </div>
+
+          {/* Right: testimonial card */}
+          <div className="relative min-h-[300px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className="grid grid-cols-[220px_1fr] h-full rounded-r-2xl overflow-hidden"
+                style={{ background: typeof current.bgColor === 'string' && current.bgColor.includes('gradient') ? current.bgColor : current.bgColor }}
+              >
+                {/* Photo */}
+                <div className="relative overflow-hidden">
+                  {current.img ? (
+                    <img src={current.img} alt={current.name} className="absolute inset-0 w-full h-full object-cover" />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold" style={{ color: current.textColor, opacity: 0.15 }}>
+                      {current.name.split(' ').map(w => w[0]).join('')}
+                    </div>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="p-8 flex flex-col justify-between" style={{ color: current.textColor }}>
+                  {/* Top right: rating */}
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="font-bold text-base">{current.name}</p>
+                      <p className="text-sm opacity-70">{current.role}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-4xl font-bold">5.0</p>
+                      <div className="flex gap-0.5 justify-end mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} fill="currentColor" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-lg leading-relaxed mt-6">{renderQuote(current.quote)}</p>
+
+                  {/* Navigation arrows */}
+                  <div className="flex gap-2 justify-end mt-6">
+                    <button
+                      onClick={() => setActiveIdx(prev => (prev - 1 + testimonials.length) % testimonials.length)}
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                      style={{ border: `1px solid ${current.textColor === '#fff' ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)'}` }}
+                    >
+                      <ArrowLeft size={16} />
+                    </button>
+                    <button
+                      onClick={() => setActiveIdx(prev => (prev + 1) % testimonials.length)}
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                      style={{ border: `1px solid ${current.textColor === '#fff' ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)'}` }}
+                    >
+                      <ArrowRight size={16} />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+
+        {/* Mobile layout */}
+        <motion.div {...fadeUp} className="md:hidden space-y-6">
+          {/* Active logo */}
+          <div className="flex items-center justify-center h-[80px] rounded-2xl bg-[rgba(255,255,255,0.06)]">
+            <img src={current.logo} alt={current.name} className="h-6 w-auto object-contain invert brightness-200" />
+          </div>
+
+          {/* Testimonial card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIdx}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="rounded-2xl overflow-hidden p-6"
+              style={{ background: typeof current.bgColor === 'string' && current.bgColor.includes('gradient') ? current.bgColor : current.bgColor, color: current.textColor }}
+            >
+              <p className="text-lg leading-relaxed font-medium">{renderQuote(current.quote)}</p>
+
+              <div className="flex items-center gap-3 mt-8">
+                {current.img ? (
+                  <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <img src={current.img} alt={current.name} className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: 'rgba(0,0,0,0.1)' }}>
+                    {current.name.split(' ').map(w => w[0]).join('')}
+                  </div>
+                )}
+                <div>
+                  <p className="font-bold text-sm">{current.name}</p>
+                  <p className="text-sm opacity-70">{current.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Progress bars */}
+          <div className="flex gap-2">
+            {testimonials.map((_, i) => (
+              <button key={i} onClick={() => setActiveIdx(i)} className="flex-1 h-[3px] rounded-full overflow-hidden" style={{ background: i === activeIdx ? '#d0f601' : 'rgba(255,255,255,0.15)' }} />
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 
       {/* COUNTER SECTION */}
       <section className="relative pt-20 pb-10">

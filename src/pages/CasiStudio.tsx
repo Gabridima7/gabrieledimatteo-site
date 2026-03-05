@@ -1,12 +1,16 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Star } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import SectionBackground from '@/components/SectionBackground';
 import coverHomeleven from '@/assets/cover-homeleven.png';
 import coverOneup from '@/assets/cover-oneup.png';
 import coverBiglia from '@/assets/cover-biglia.png';
+import testimonialMarco from '@/assets/testimonial-marco.png';
+import logoHomeleven from '@/assets/logos/logo-homeleven.png';
+import logoOneup from '@/assets/logos/logo-oneup.png';
+import logoBiglia from '@/assets/logos/logo-biglia-serramenti.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];

@@ -82,9 +82,7 @@ const ChiSiamo = () => {
             {/* Founder — large card */}
             <motion.div
               {...fadeUp}
-              whileHover={{ scale: 1.02, y: -4 }}
-              transition={{ duration: 0.3 }}
-              className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8 cursor-pointer"
+              className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:shadow-[0_0_40px_rgba(167,139,250,0.3)]"
               style={{ background: 'linear-gradient(135deg, #e8e0f0 0%, #c4b5fd 30%, #a78bfa 60%, #7c6bc4 100%)' }}
             >
               <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[95%] h-[90%] object-contain object-bottom" />

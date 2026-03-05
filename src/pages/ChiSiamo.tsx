@@ -19,13 +19,13 @@ const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.15 },
-  transition: { duration: 0.5, ease },
+  transition: { duration: 0.5, ease }
 };
 
 const aboutText = "A partire dal 2024, il nostro fondatore Gabriele ha costruito il team per portare innovazione nello spazio digitale, sviluppando prodotti di valore. Forte motivazione, passione per il design e l'apprendimento continuo è ciò che ci spinge ad andare avanti.";
 const aboutWords = aboutText.split(' ');
 
-const ScrollRevealWord = ({ word, index, total, scrollYProgress }: { word: string; index: number; total: number; scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'] }) => {
+const ScrollRevealWord = ({ word, index, total, scrollYProgress }: {word: string;index: number;total: number;scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];}) => {
   const start = index / total;
   const end = (index + 1) / total;
   const color = useTransform(scrollYProgress, [start, end], ['rgba(255,255,255,0.2)', 'rgba(255,255,255,1)']);
@@ -60,18 +60,18 @@ const ChiSiamo = () => {
               </a>
               <div className="flex flex-wrap gap-10 mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 {[
-                  { value: '2024', label: 'Anno di fondazione' },
-                  { value: '10+', label: 'Progetti completati' },
-                  { value: '100%', label: 'Clienti soddisfatti' },
-                ].map((s, i) => (
-                  <div key={i} className="flex items-start gap-10">
+                { value: '2024', label: 'Anno di fondazione' },
+                { value: '10+', label: 'Progetti completati' },
+                { value: '100%', label: 'Clienti soddisfatti' }].
+                map((s, i) =>
+                <div key={i} className="flex items-start gap-10">
                     {i > 0 && <div className="hidden sm:block w-px h-12 -ml-10 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.1)' }} />}
                     <div>
                       <p className="font-bold text-white" style={{ fontSize: 'clamp(28px,3vw,40px)' }}>{s.value}</p>
                       <p className="text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</p>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             </motion.div>
           </div>
@@ -91,9 +91,9 @@ const ChiSiamo = () => {
               Conosciamoci meglio
             </motion.p>
             <h2 className="text-3xl md:text-[44px] lg:text-[52px] font-bold leading-[1.2] flex flex-wrap">
-              {aboutWords.map((word, i) => (
-                <ScrollRevealWord key={i} word={word} index={i} total={aboutWords.length} scrollYProgress={scrollYProgress} />
-              ))}
+              {aboutWords.map((word, i) =>
+              <ScrollRevealWord key={i} word={word} index={i} total={aboutWords.length} scrollYProgress={scrollYProgress} />
+              )}
             </h2>
           </div>
 
@@ -103,12 +103,12 @@ const ChiSiamo = () => {
             <motion.div
               {...fadeUp}
               className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:shadow-[0_0_40px_rgba(167,139,250,0.3)]"
-              style={{ background: 'linear-gradient(135deg, #e8e0f0 0%, #c4b5fd 30%, #a78bfa 60%, #7c6bc4 100%)' }}
-            >
+              style={{ background: 'linear-gradient(135deg, #e8e0f0 0%, #c4b5fd 30%, #a78bfa 60%, #7c6bc4 100%)' }}>
+              
               <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[95%] h-[90%] object-contain object-bottom" />
               <div className="relative z-[1]">
                 <h3 className="text-2xl font-bold text-gray-900">Gabriele Di Matteo</h3>
-                <p className="text-gray-600 text-sm mt-1">Founder & CEO</p>
+                <p className="text-gray-600 text-sm mt-1">Founder </p>
               </div>
               <a href="https://www.linkedin.com/in/gabriele-di-matteo/" target="_blank" rel="noopener noreferrer" className="relative z-[1] w-14 h-14 rounded-xl overflow-hidden mt-auto">
                 <img src={iconLinkedin} alt="LinkedIn" className="w-full h-full object-cover" />
@@ -117,23 +117,23 @@ const ChiSiamo = () => {
 
             {/* Placeholder team cards */}
             {[
-              { name: 'Sara F.', role: 'Head of Design', bg: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)', img: teamSara },
-              { name: 'Fabio L.', role: 'Lead Developer', bg: 'rgba(255,255,255,0.05)', img: teamFabio },
-            ].map((member, i) => (
-              <motion.div
-                key={i}
-                {...fadeUp}
-                transition={{ ...fadeUp.transition, delay: (i + 1) * 0.1 }}
-                className="group relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:!bg-[rgba(28,53,200,0.3)]"
-                style={{ background: member.bg, border: '1px solid rgba(255,255,255,0.08)' }}
-              >
+            { name: 'Sara F.', role: 'Head of Design', bg: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)', img: teamSara },
+            { name: 'Fabio L.', role: 'Lead Developer', bg: 'rgba(255,255,255,0.05)', img: teamFabio }].
+            map((member, i) =>
+            <motion.div
+              key={i}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: (i + 1) * 0.1 }}
+              className="group relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:!bg-[rgba(28,53,200,0.3)]"
+              style={{ background: member.bg, border: '1px solid rgba(255,255,255,0.08)' }}>
+              
                 <img src={member.img} alt={member.name} className="absolute bottom-0 right-0 w-[90%] h-[95%] object-contain object-bottom" />
                 <div className="relative z-[1]">
                   <h3 className="text-xl font-bold text-white">{member.name}</h3>
                   <p className="text-white/50 text-sm mt-1">{member.role}</p>
                 </div>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -258,8 +258,8 @@ const ChiSiamo = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="glass-card p-10 md:p-16 text-center max-w-4xl mx-auto"
-            data-cursor="spotlight"
-          >
+            data-cursor="spotlight">
+            
             <h2 className="text-2xl md:text-3xl font-bold mb-6">La nostra missione</h2>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               "Portare l'<span className="text-foreground">AI operativa</span> nelle PMI italiane, 
@@ -278,32 +278,32 @@ const ChiSiamo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+            className="text-center mb-12">
+            
             <h2 className="text-3xl font-bold">I nostri valori</h2>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Zap, title: 'Speed', desc: 'Dalla strategia al deploy in settimane' },
-              { icon: Eye, title: 'Clarity', desc: 'Comunicazione trasparente, sempre' },
-              { icon: Target, title: 'ROI', desc: 'Ogni progetto deve essere misurabile' },
-              { icon: Palette, title: 'Design', desc: 'L\'esperienza utente viene prima' }
-            ].map((value, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="glass-card p-6 text-center"
-                data-cursor="spotlight"
-              >
+            { icon: Zap, title: 'Speed', desc: 'Dalla strategia al deploy in settimane' },
+            { icon: Eye, title: 'Clarity', desc: 'Comunicazione trasparente, sempre' },
+            { icon: Target, title: 'ROI', desc: 'Ogni progetto deve essere misurabile' },
+            { icon: Palette, title: 'Design', desc: 'L\'esperienza utente viene prima' }].
+            map((value, i) =>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="glass-card p-6 text-center"
+              data-cursor="spotlight">
+              
                 <value.icon className="text-primary mx-auto mb-4" size={32} />
                 <h3 className="font-semibold mb-2">{value.title}</h3>
                 <p className="text-sm text-muted-foreground">{value.desc}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -316,18 +316,18 @@ const ChiSiamo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
+            className="text-center max-w-3xl mx-auto">
+            
             <h2 className="text-3xl font-bold mb-8">Il nostro stack</h2>
             <div className="flex flex-wrap justify-center gap-3">
-              {['Lovable', 'Supabase', 'GPT-4', 'Claude', 'n8n', 'Make', 'Vercel', 'React'].map((tech, i) => (
-                <span 
-                  key={i} 
-                  className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm"
-                >
+              {['Lovable', 'Supabase', 'GPT-4', 'Claude', 'n8n', 'Make', 'Vercel', 'React'].map((tech, i) =>
+              <span
+                key={i}
+                className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm">
+                
                   {tech}
                 </span>
-              ))}
+              )}
             </div>
           </motion.div>
         </div>
@@ -342,8 +342,8 @@ const ChiSiamo = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="glass-card p-10 max-w-2xl mx-auto"
-            data-cursor="spotlight"
-          >
+            data-cursor="spotlight">
+            
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary">
                 G
@@ -375,23 +375,23 @@ const ChiSiamo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
-          >
+            className="text-center">
+            
             <a
               href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center gap-2"
-              data-cursor="spotlight"
-            >
+              data-cursor="spotlight">
+              
               Prenota Call
               <ArrowRight size={20} />
             </a>
           </motion.div>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 };
 
 export default ChiSiamo;

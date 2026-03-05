@@ -23,7 +23,7 @@ export const translations = {
     soluzioni: { it: 'SOLUZIONI:', en: 'SOLUTIONS:' },
     mvp: { it: 'MVP Design', en: 'MVP Design' },
     redesign: { it: 'Product Redesign', en: 'Product Redesign' },
-    retainer: { it: 'Retainer', en: 'Retainer' },
+    retainer: { it: 'Estensione Team', en: 'Team Extension' },
     colSviluppo: { it: 'SVILUPPO', en: 'DEVELOPMENT' },
     colAi: { it: 'AI & AUTOMATION', en: 'AI & AUTOMATION' },
     colDesign: { it: 'DESIGN', en: 'DESIGN' },

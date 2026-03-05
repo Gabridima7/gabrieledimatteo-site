@@ -1,6 +1,7 @@
 import { Smartphone, Eye, Fingerprint, Sparkles } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroMobileApp from '@/assets/hero-mobile-app-design.png';
 
 const MobileAppDesignService = () => (
   <ServicePageTemplate
@@ -10,6 +11,7 @@ const MobileAppDesignService = () => (
     h1="App mobile che gli utenti amano"
     subtitle="Design di app mobile native e cross-platform con focus su usabilità, engagement e conversioni."
     heroIcon={Smartphone}
+    heroImage={heroMobileApp}
     stats={[
       { value: '+85%', label: 'Retention rate' },
       { value: '4.8★', label: 'Rating medio app' },

@@ -62,7 +62,7 @@ const CasiStudio = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+    <div className="min-h-screen">
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[85vh] flex items-center pt-[120px]">
         <SectionBackground variant="hero" />
@@ -140,8 +140,9 @@ const CasiStudio = () => {
       </section>
 
       {/* FEATURED PROJECTS */}
-      <section className="pb-20">
-        <div className="section-container">
+      <section className="relative pb-20">
+        <SectionBackground variant="dark" fade={false} />
+        <div className="section-container relative z-[2]">
           <div className="grid md:grid-cols-2 gap-6">
             {featuredProjects.map((project, i) => (
               <motion.a
@@ -187,8 +188,9 @@ const CasiStudio = () => {
       </section>
 
       {/* COUNTER SECTION */}
-      <section className="pt-20 pb-10">
-        <div className="section-container">
+      <section className="relative pt-20 pb-10">
+        <SectionBackground variant="blue-left" fade={false} />
+        <div className="section-container relative z-[2]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,8 +228,9 @@ const CasiStudio = () => {
       </section>
 
       {/* PROJECT GRID */}
-      <section className="pb-24">
-        <div className="section-container">
+      <section className="relative pb-24">
+        <SectionBackground variant="blue-right" fade={false} />
+        <div className="section-container relative z-[2]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
@@ -237,8 +240,9 @@ const CasiStudio = () => {
       </section>
 
       {/* CTA FINALE */}
-      <section className="py-24 border-t border-[rgba(255,255,255,0.06)]" style={{ backgroundColor: '#0D0D0D' }}>
-        <div className="section-container">
+      <section className="relative py-24" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <SectionBackground variant="blue-center" />
+        <div className="section-container relative z-[2]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

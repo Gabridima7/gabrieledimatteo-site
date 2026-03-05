@@ -8,9 +8,9 @@ import coverHomeleven from '@/assets/cover-homeleven.png';
 import coverOneup from '@/assets/cover-oneup.png';
 import coverBiglia from '@/assets/cover-biglia.png';
 import testimonialMarco from '@/assets/testimonial-marco.png';
-import logoHomeleven from '@/assets/logos/logo-homeleven.png';
-import logoOneup from '@/assets/logos/logo-oneup.png';
-import logoBiglia from '@/assets/logos/logo-biglia-serramenti.png';
+import logoHomeleven from '@/assets/logos/logo-homeleven-white.png';
+import logoOneup from '@/assets/logos/logo-oneup-color.png';
+import logoBiglia from '@/assets/logos/logo-biglia-white.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -82,13 +82,13 @@ const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setActiveIdx(i)}
-                className={`flex items-center justify-center flex-1 rounded-2xl transition-all duration-300 cursor-pointer border ${
+                className={`flex items-center justify-center flex-1 rounded-2xl transition-all duration-300 cursor-pointer border hover:scale-[1.03] ${
                   i === activeIdx
-                    ? 'bg-[rgba(255,255,255,0.12)] border-[#d0f601]/40'
+                    ? 'bg-[rgba(255,255,255,0.12)] border-[#d0f601]/40 scale-[1.02]'
                     : 'bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border-white/[0.06]'
                 }`}
               >
-                <img src={item.logo} alt={item.name} className="h-7 w-auto object-contain opacity-70 invert brightness-200" />
+                <img src={item.logo} alt={item.name} className="h-8 w-auto object-contain max-w-[70%]" />
               </button>
             ))}
           </div>
@@ -160,7 +160,7 @@ const TestimonialsSection = () => {
         {/* Mobile layout */}
         <motion.div {...fadeUp} className="md:hidden space-y-6">
           <div className="flex items-center justify-center h-[80px] rounded-2xl bg-[rgba(255,255,255,0.06)]">
-            <img src={current.logo} alt={current.name} className="h-6 w-auto object-contain invert brightness-200" />
+            <img src={current.logo} alt={current.name} className="h-7 w-auto object-contain max-w-[60%]" />
           </div>
 
           <AnimatePresence mode="wait">

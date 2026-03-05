@@ -85,7 +85,7 @@ const ChiSiamo = () => {
               className="relative rounded-2xl overflow-hidden md:row-span-2 min-h-[400px] md:min-h-[560px] flex flex-col justify-between p-8"
               style={{ background: 'linear-gradient(135deg, #e8e0f0 0%, #c4b5fd 30%, #a78bfa 60%, #7c6bc4 100%)' }}
             >
-              <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[80%] h-[85%] object-contain object-bottom" />
+              <img src={founderGabriele} alt="Gabriele Di Matteo" className="absolute bottom-0 right-0 w-[95%] h-[90%] object-contain object-bottom" />
               <div className="relative z-[1]">
                 <h3 className="text-2xl font-bold text-gray-900">Gabriele Di Matteo</h3>
                 <p className="text-gray-600 text-sm mt-1">Founder & CEO</p>

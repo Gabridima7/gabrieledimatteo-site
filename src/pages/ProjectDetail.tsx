@@ -205,30 +205,44 @@ const ProjectDetail = () => {
       <section className="py-16">
         <div className="section-container">
           <motion.h2 {...fadeUp} className="text-3xl font-bold text-[#111] mb-10">Galleria</motion.h2>
-          <div className="space-y-4">
-            {project.galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className={i === 0 ? '' : 'inline-block w-full md:w-[calc(50%-8px)] md:odd:mr-4'}
-              >
-                <div className={`overflow-hidden rounded-2xl ${i === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]"
-                  />
-                </div>
-                {img.caption && (
-                  <p className="text-sm text-[#999] mt-2 italic">{img.caption}</p>
-                )}
-              </motion.div>
-            ))}
-          </div>
+          {/* First image — full width */}
+          {project.galleryImages[0] && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.5, ease }}
+            >
+              <div className="overflow-hidden rounded-2xl aspect-[16/9]">
+                <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
+              </div>
+              {project.galleryImages[0].caption && (
+                <p className="text-sm text-[#999] mt-2 italic">{project.galleryImages[0].caption}</p>
+              )}
+            </motion.div>
+          )}
+
+          {/* Remaining images — 2-col grid with gap */}
+          {project.galleryImages.length > 1 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              {project.galleryImages.slice(1).map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: i * 0.1, ease }}
+                >
+                  <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+                    <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
+                  </div>
+                  {img.caption && (
+                    <p className="text-sm text-[#999] mt-2 italic">{img.caption}</p>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import techCss from '@/assets/tech/icon-css.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techReact from '@/assets/tech/icon-react.png';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroWebsiteDesign from '@/assets/hero-website-design.png';
 
 const WebsiteRedesignService = () => (
   <ServicePageTemplate
@@ -14,6 +15,7 @@ const WebsiteRedesignService = () => (
     h1="Rinnova il tuo sito web"
     subtitle="Trasformiamo il tuo sito esistente in un asset digitale moderno, veloce e orientato alle conversioni."
     heroIcon={RefreshCw}
+    heroImage={heroWebsiteDesign}
     stats={[
       { value: '+150%', label: 'Performance media' },
       { value: '+80%', label: 'Lead generation' },

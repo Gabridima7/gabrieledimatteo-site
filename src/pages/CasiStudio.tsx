@@ -302,6 +302,9 @@ const CasiStudio = () => {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <TestimonialsSection t={t} />
+
       {/* CTA FINALE */}
       <section className="relative py-24" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <SectionBackground variant="blue-center" />

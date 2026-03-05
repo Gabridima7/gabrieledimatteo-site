@@ -31,7 +31,7 @@ const ChiSiamo = () => {
                 Offriamo soluzioni di design <span className="font-serif-accent font-normal text-primary">innovative</span> & talenti esperti
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Progettiamo e costruiamo sistemi AI operativi per le PMI italiane.
+                Da un piccolo team di cinque persone a un team remoto globale di designer e sviluppatori professionisti che si impegnano a creare prodotti digitali di valore per persone in tutto il mondo.
               </p>
               <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9" style={{ background: '#d0f601' }}>
                 Prenota una call gratuita <ArrowRight size={16} />

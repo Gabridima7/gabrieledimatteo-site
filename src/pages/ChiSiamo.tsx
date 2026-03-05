@@ -28,9 +28,7 @@ const ChiSiamo = () => {
                 <span className="text-white/70">Chi siamo</span>
               </p>
               <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
-                Nexus è uno <span className="font-serif-accent font-normal text-primary">studio</span>.
-                <br />
-                Non una web agency.
+                Offriamo soluzioni di design <span className="font-serif-accent font-normal text-primary">innovative</span> & talenti esperti
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Progettiamo e costruiamo sistemi AI operativi per le PMI italiane.

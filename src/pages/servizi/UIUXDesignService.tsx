@@ -1,6 +1,7 @@
 import { PenTool, Eye, MousePointerClick, Users } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroUiUx from '@/assets/hero-ui-ux-design.png';
 
 const UIUXDesignService = () => (
   <ServicePageTemplate
@@ -10,6 +11,7 @@ const UIUXDesignService = () => (
     h1="Interfacce che gli utenti amano usare"
     subtitle="Design di interfacce web e mobile app che convertono i visitatori in clienti con UX research-driven."
     heroIcon={PenTool}
+    heroImage={heroUiUx}
     stats={[
       { value: '+120%', label: 'Conversioni medie' },
       { value: '5.0', label: 'Rating clienti' },

@@ -32,8 +32,9 @@ import WebsiteDesignService from "./pages/servizi/WebsiteDesignService";
 import MobileAppDesignService from "./pages/servizi/MobileAppDesignService";
 import WebsiteRedesignService from "./pages/servizi/WebsiteRedesignService";
 import ProductAuditService from "./pages/servizi/ProductAuditService";
-
-const queryClient = new QueryClient();
+import MvpDesign from "./pages/soluzioni/MvpDesign";
+import ProductRedesign from "./pages/soluzioni/ProductRedesign";
+import EstensioneTeam from "./pages/soluzioni/EstensioneTeam";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -70,6 +71,9 @@ const App = () => (
               <Route path="/servizi/mobile-app-design" element={<MobileAppDesignService />} />
               <Route path="/servizi/website-redesign" element={<WebsiteRedesignService />} />
               <Route path="/servizi/product-audit" element={<ProductAuditService />} />
+              <Route path="/soluzioni/mvp" element={<MvpDesign />} />
+              <Route path="/soluzioni/product-redesign" element={<ProductRedesign />} />
+              <Route path="/soluzioni/estensione-team" element={<EstensioneTeam />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

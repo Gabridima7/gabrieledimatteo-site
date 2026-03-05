@@ -77,7 +77,7 @@ const CasiStudio = () => {
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-4 right-4 bg-[#0025FF] text-white text-xs font-bold px-4 py-2 rounded-full">
+                <span className="absolute top-4 right-4 bg-[#d0f601] text-black text-xs font-bold px-4 py-2 rounded-full">
                   {t('works', 'heroBadge')}
                 </span>
               </div>
@@ -130,7 +130,7 @@ const CasiStudio = () => {
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-4 right-4 bg-[#0025FF] text-white text-xs font-bold px-4 py-2 rounded-full">
+                <span className="absolute top-4 right-4 bg-[#d0f601] text-black text-xs font-bold px-4 py-2 rounded-full">
                   {t('works', 'heroBadge')}
                 </span>
               </div>
@@ -203,7 +203,7 @@ const CasiStudio = () => {
             <p className="text-xs uppercase tracking-widest text-[#888]">{t('works', 'gridLabel')}</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               {t('works', 'gridTitle')}{' '}
-              <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'gridTitleAccent')}</em>
+              <em className="text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'gridTitleAccent')}</em>
             </h2>
           </motion.div>
 
@@ -217,7 +217,7 @@ const CasiStudio = () => {
             {counters.map((c, i) => (
               <div key={i} className="flex items-center gap-8">
                 <div>
-                  <p className="text-3xl font-bold text-[#0025FF]">{c.value}</p>
+                  <p className="text-3xl font-bold text-[#d0f601]">{c.value}</p>
                   <p className="text-sm text-[#888]">{c.label}</p>
                 </div>
                 {i < counters.length - 1 && (
@@ -252,13 +252,13 @@ const CasiStudio = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto space-y-6"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-[rgba(0,37,255,0.15)] text-[#0025FF]">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-[rgba(208,246,1,0.15)] text-[#d0f601]">
               {t('works', 'ctaBadge')}
             </span>
 
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               {t('works', 'ctaTitle1')}{' '}
-              <em className="text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'ctaTitleAccent')}</em>
+              <em className="text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'ctaTitleAccent')}</em>
               {' '}{t('works', 'ctaTitle2')}
             </h2>
 
@@ -269,7 +269,7 @@ const CasiStudio = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link
                 to="/contatti"
-                className="inline-flex items-center gap-2 bg-[#0025FF] hover:bg-[#0025FF]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,37,255,0.4)]"
+                className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#d0f601]/90 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(208,246,1,0.4)]"
               >
                 {t('works', 'ctaPrimary')}
                 <ArrowRight size={18} />

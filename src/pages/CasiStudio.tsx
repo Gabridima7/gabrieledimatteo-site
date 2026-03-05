@@ -492,35 +492,30 @@ const CasiStudio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto space-y-6"
+            className="bg-white rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center max-w-4xl mx-auto"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-[rgba(208,246,1,0.15)] text-[#d0f601]">
-              {t('works', 'ctaBadge')}
-            </span>
-
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-[#111] leading-[1.1] tracking-tight">
               {t('works', 'ctaTitle1')}{' '}
-              <em className="text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'ctaTitleAccent')}</em>
+              <em className="text-[#111]" style={{ fontStyle: 'italic' }}>{t('works', 'ctaTitleAccent')}</em>
               {' '}{t('works', 'ctaTitle2')}
             </h2>
 
-            <p className="text-[#888] text-lg">
+            <p className="text-[#555] text-lg mt-6 max-w-lg mx-auto">
               {t('works', 'ctaDescription')}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex items-center justify-center gap-3 mt-8">
               <Link
                 to="/contatti"
-                className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#d0f601]/90 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(208,246,1,0.4)]"
+                className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#c5e800] text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]"
               >
-                {t('works', 'ctaPrimary')}
-                <ArrowRight size={18} />
+                <ArrowRight size={18} className="rotate-45" />
               </Link>
               <Link
-                to="/servizi/sviluppo-web"
-                className="inline-flex items-center gap-2 border border-[rgba(255,255,255,0.2)] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:border-[rgba(255,255,255,0.5)] hover:bg-[rgba(255,255,255,0.05)]"
+                to="/contatti"
+                className="inline-flex items-center gap-2 bg-[#d0f601] hover:bg-[#c5e800] text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]"
               >
-                {t('works', 'ctaSecondary')}
+                {t('works', 'ctaPrimary')}
               </Link>
             </div>
           </motion.div>

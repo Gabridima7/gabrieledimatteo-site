@@ -81,15 +81,16 @@ const ChiSiamo = () => {
         <SectionBackground variant="dark" />
         <div className="section-container relative z-[2]">
           {/* Intro text */}
-          <motion.div {...fadeUp} className="mb-20 max-w-[900px]">
-            <p className="text-sm uppercase tracking-wide mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <div ref={aboutRef} className="mb-20 max-w-[900px]">
+            <motion.p {...fadeUp} className="text-sm uppercase tracking-wide mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
               Conosciamoci meglio
-            </p>
-            <h2 className="text-3xl md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.2]">
-              A partire dal 2024, il nostro fondatore Gabriele ha costruito il team per portare innovazione nello spazio digitale, sviluppando prodotti di valore. Forte motivazione, passione per il{' '}
-              <span style={{ color: 'rgba(255,255,255,0.4)' }}>design e l'apprendimento continuo è ciò che ci spinge ad andare avanti.</span>
+            </motion.p>
+            <h2 className="text-3xl md:text-[44px] lg:text-[52px] font-bold leading-[1.2] flex flex-wrap">
+              {aboutWords.map((word, i) => (
+                <ScrollRevealWord key={i} word={word} index={i} total={aboutWords.length} scrollYProgress={scrollYProgress} />
+              ))}
             </h2>
-          </motion.div>
+          </div>
 
           {/* Team grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

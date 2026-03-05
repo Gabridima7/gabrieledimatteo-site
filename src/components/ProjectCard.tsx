@@ -7,6 +7,7 @@ interface Project {
   category: string;
   type: string;
   country: string;
+  countryFlag?: string;
   services: string[];
   image: string;
   featured?: boolean;
@@ -18,6 +19,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  const flag = project.countryFlag || project.country.split(' ')[0];
+
   return (
     <motion.a
       href="#"
@@ -42,24 +45,22 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Body */}
-      <div className="p-5 space-y-3">
+      <div className="p-5 space-y-4">
         <h3 className="text-lg font-bold text-white">{project.name}</h3>
         <p className="text-sm text-[#888] line-clamp-2">{project.description}</p>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {project.services.map((service, j) => (
             <span
               key={j}
-              className="px-3 py-1 rounded-full text-xs bg-[rgba(0,37,255,0.15)] text-[#0025FF]"
+              className="px-4 py-1.5 rounded-full text-sm bg-[rgba(255,255,255,0.08)] text-white border border-[rgba(255,255,255,0.1)]"
             >
               {service}
             </span>
           ))}
-        </div>
-
-        <div className="flex items-center justify-between text-xs text-[#888] pt-1">
-          <span>{project.country}</span>
-          <span>{project.type}</span>
+          <span className="w-9 h-9 rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-lg leading-none">
+            {flag}
+          </span>
         </div>
       </div>
     </motion.a>

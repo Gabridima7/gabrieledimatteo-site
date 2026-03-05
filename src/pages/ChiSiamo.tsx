@@ -173,6 +173,76 @@ const ChiSiamo = () => {
         </div>
       </section>
 
+      {/* ═══ OUR VALUES ═══ */}
+      <section className="relative py-24">
+        <SectionBackground variant="blue-center" />
+        <div className="section-container relative z-[2]">
+          {/* Header */}
+          <motion.div {...fadeUp} className="text-center mb-16 max-w-[700px] mx-auto">
+            <h2 className="text-4xl md:text-[56px] font-bold text-white leading-[1.1] mb-2 font-serif-accent">
+              I nostri valori
+            </h2>
+            <svg className="mx-auto mb-8" width="180" height="20" viewBox="0 0 180 20" fill="none">
+              <path d="M2 10 C20 2, 30 18, 45 10 C60 2, 70 18, 90 10 C110 2, 120 18, 135 10 C150 2, 160 18, 178 10" stroke="#d0f601" strokeWidth="3" strokeLinecap="round" fill="none" />
+            </svg>
+            <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              Persone, consapevolezza e crescita. L'idea concettuale del nostro sistema di valori è una trinità coerente. Le nostre persone, essendo il valore principale dell'azienda, raggiungono una crescita efficace rimanendo sempre orientate allo scopo.
+            </p>
+          </motion.div>
+
+          {/* Grid 3x2 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Row 1 — Image placeholder */}
+            <motion.div {...fadeUp} className="rounded-2xl overflow-hidden min-h-[320px] flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="w-full h-full flex items-center justify-center p-8">
+                <Zap size={48} className="text-white/20" />
+              </div>
+            </motion.div>
+
+            {/* Row 1 — Growth card */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8" style={{ background: 'linear-gradient(180deg, #c4b5fd 0%, #a78bfa 50%, #7c6bc4 100%)' }}>
+              <div className="mb-4 text-3xl">🚀</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Crescita</h3>
+              <p className="text-gray-700 text-[15px] leading-relaxed">
+                Lavoriamo costantemente per migliorare le nostre competenze e conoscenze, così da poter continuare a fornire il miglior servizio ai nostri clienti, con risultati di altissima qualità.
+              </p>
+            </motion.div>
+
+            {/* Row 1 — Image placeholder */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="rounded-2xl overflow-hidden min-h-[320px] flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="w-full h-full flex items-center justify-center p-8">
+                <Eye size={48} className="text-white/20" />
+              </div>
+            </motion.div>
+
+            {/* Row 2 — People card */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="mb-4 text-3xl">💙</div>
+              <h3 className="text-2xl font-bold text-white mb-3">Persone</h3>
+              <p className="text-[15px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                Creare relazioni oneste, affidabili e reciprocamente vantaggiose con i nostri clienti. Prenderci cura di ogni membro del team. Rispondere e soddisfare le esigenze degli utenti, sempre.
+              </p>
+            </motion.div>
+
+            {/* Row 2 — Image placeholder */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="rounded-2xl overflow-hidden min-h-[320px] flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="w-full h-full flex items-center justify-center p-8">
+                <Target size={48} className="text-white/20" />
+              </div>
+            </motion.div>
+
+            {/* Row 2 — Awareness card */}
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} className="rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="mb-4 text-3xl">🎯</div>
+              <h3 className="text-2xl font-bold text-white mb-3">Consapevolezza</h3>
+              <p className="text-[15px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                Rimanere sempre orientati allo scopo nel lavoro e nel completamento dei progetti. Essere consapevoli aiuta a restare pienamente coinvolti nel processo.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission */}
       <section className="py-16">
         <div className="section-container">

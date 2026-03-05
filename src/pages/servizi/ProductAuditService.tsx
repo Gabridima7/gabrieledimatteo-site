@@ -1,6 +1,7 @@
 import { ClipboardCheck, Eye, TrendingUp, AlertCircle } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroProductAudit from '@/assets/hero-product-audit.png';
 
 const ProductAuditService = () => (
   <ServicePageTemplate

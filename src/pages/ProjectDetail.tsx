@@ -109,21 +109,26 @@ const ProjectDetail = () => {
         </motion.div>
       </section>
 
+      {/* ═══ WHITE BACKGROUND FROM HERE ═══ */}
+      <div style={{ background: '#ffffff' }}>
+
       {/* ═══ SECTION 2 — METADATI ═══ */}
-      <section className="border-t border-b border-[rgba(255,255,255,0.08)]">
-        <div className="section-container py-8">
-          <motion.div {...fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Cliente', value: project.client },
-              { label: 'Industry', value: project.industry },
-              { label: 'Servizi', value: project.services.join(', ') },
-              { label: 'Paese', value: project.country },
-            ].map((item, i) => (
-              <div key={i}>
-                <p className="text-[#888] text-xs uppercase tracking-widest mb-1">{item.label}</p>
-                <p className="text-white font-medium text-sm">{item.value}</p>
-              </div>
-            ))}
+      <section className="py-6 md:py-8">
+        <div className="section-container">
+          <motion.div {...fadeUp} className="bg-[#f5f5f5] rounded-2xl px-6 md:px-10 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[#e0e0e0]">
+              {[
+                { label: 'Cliente', value: project.client },
+                { label: 'Industry', value: project.industry },
+                { label: 'Servizi', value: project.services.join(', ') },
+                { label: 'Paese', value: project.country },
+              ].map((item, i) => (
+                <div key={i} className="md:px-8 first:md:pl-0 last:md:pr-0">
+                  <p className="text-[#888] text-xs uppercase tracking-widest mb-2">{item.label}</p>
+                  <p className="text-[#111] font-semibold text-base md:text-lg">{item.value}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

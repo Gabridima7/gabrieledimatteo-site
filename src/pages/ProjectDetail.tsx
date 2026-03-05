@@ -45,8 +45,6 @@ const ProjectDetail = () => {
     );
   }
 
-  const prevProject = projectIndex > 0 ? projectsData[projectIndex - 1] : null;
-  const nextProject = projectIndex < projectsData.length - 1 ? projectsData[projectIndex + 1] : null;
 
   return (
     <div className="min-h-screen" style={{ background: '#0A0A0A' }}>
@@ -288,44 +286,6 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* ═══ SECTION 9 — NAVIGAZIONE PROGETTI ═══ */}
-      <section className="py-16 border-t border-[#e8e8e8]">
-        <div className="section-container">
-          <div className="flex justify-between items-stretch gap-4">
-            {prevProject ? (
-              <Link to={`/progetto/${prevProject.slug}`} className="flex items-center gap-4 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%]">
-                <ArrowLeft size={16} className="text-[#888] flex-shrink-0" />
-                <img src={prevProject.coverImage} alt={prevProject.name} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
-                <div className="min-w-0">
-                  <p className="text-xs text-[#888]">Progetto precedente</p>
-                  <p className="text-[#111] font-semibold text-sm truncate">{prevProject.name}</p>
-                </div>
-              </Link>
-            ) : (
-              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300">
-                <ArrowLeft size={16} className="text-[#888]" />
-                <span className="text-[#111] text-sm font-medium">Tutti i progetti</span>
-              </Link>
-            )}
-
-            {nextProject ? (
-              <Link to={`/progetto/${nextProject.slug}`} className="flex items-center gap-4 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 flex-1 max-w-[48%] justify-end text-right">
-                <div className="min-w-0">
-                  <p className="text-xs text-[#888]">Progetto successivo</p>
-                  <p className="text-[#111] font-semibold text-sm truncate">{nextProject.name}</p>
-                </div>
-                <img src={nextProject.coverImage} alt={nextProject.name} className="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
-                <ArrowRight size={16} className="text-[#888] flex-shrink-0" />
-              </Link>
-            ) : (
-              <Link to="/casi-studio" className="flex items-center gap-3 bg-[#f5f5f5] border border-[#e8e8e8] hover:border-[#0025FF] rounded-2xl p-4 transition-all duration-300 ml-auto">
-                <span className="text-[#111] text-sm font-medium">Tutti i progetti</span>
-                <ArrowRight size={16} className="text-[#888]" />
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* ═══ SECTION 10 — CTA FINALE ═══ */}
       <section className="py-24">

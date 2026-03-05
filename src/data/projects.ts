@@ -84,7 +84,7 @@ export const projectsData: Project[] = [
     tagline: "Piattaforma Digitale per la *Gestione* di *Flotte Nautiche*",
     heroImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400",
     coverImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
-    client: "Cliente Privato",
+    client: "One Up",
     industry: "Gestione Nautica",
     services: ["Sviluppo Web App", "UI/UX Design"],
     country: "🇮🇹 Italia",

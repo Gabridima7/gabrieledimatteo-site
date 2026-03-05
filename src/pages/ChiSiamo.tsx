@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
+import TrustBar from '@/components/TrustBar';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -55,6 +56,9 @@ const ChiSiamo = () => {
           </div>
         </div>
       </section>
+
+      {/* ═══ TRUST BAR ═══ */}
+      <TrustBar />
 
       {/* Mission */}
       <section className="py-16">

@@ -287,6 +287,8 @@ const ProjectDetail = () => {
       )}
 
 
+      </div>{/* end white background */}
+
       {/* ═══ SECTION 10 — CTA FINALE ═══ */}
       <section className="bg-[#06080F] py-24 md:py-32">
         <div className="section-container">

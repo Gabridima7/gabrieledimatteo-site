@@ -135,7 +135,7 @@ const CookieBanner = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="w-full max-w-2xl glass-card p-6 md:p-8 border border-border/50 rounded-2xl"
+              className="w-full max-w-2xl p-6 md:p-8 border border-border/50 rounded-2xl bg-[#0a0e1a] shadow-2xl"
             >
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-2xl font-semibold">Impostazioni Cookie</h2>

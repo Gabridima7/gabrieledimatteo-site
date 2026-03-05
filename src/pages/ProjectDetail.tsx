@@ -56,47 +56,54 @@ const ProjectDetail = () => {
       />
 
       {/* ═══ SECTION 1 — HERO ═══ */}
-      <section className="relative pt-[140px] pb-20 xl:pb-32 xl:min-h-[90vh] flex items-center">
+      <section className="relative pt-[120px] md:pt-[140px] pb-0">
         <div className="section-container w-full">
-          <div className="flex flex-col xl:grid xl:grid-cols-[55%_45%] gap-10 xl:gap-16 items-center">
-            {/* Text */}
-            <motion.div {...fadeUp} className="order-2 xl:order-1">
-              <p className="text-[13px] mb-6 uppercase tracking-wide text-[#888]">
-                <Link to="/" className="hover:text-white transition-colors">Home</Link>
-                {' / '}
-                <Link to="/casi-studio" className="hover:text-white transition-colors">Progetti</Link>
-                {' / '}
-                <span className="text-white/70">{project.name}</span>
-              </p>
+          {/* Breadcrumb */}
+          <motion.p {...fadeUp} className="text-[13px] mb-8 md:mb-12 uppercase tracking-wide text-[#888]">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            {' / '}
+            <Link to="/casi-studio" className="hover:text-white transition-colors">Progetti</Link>
+            {' / '}
+            <span className="text-white/70">{project.name}</span>
+          </motion.p>
 
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-6 bg-[rgba(0,37,255,0.12)] text-[#0025FF]">
-                {project.industry}
+          {/* Centered Title */}
+          <motion.div {...fadeUp} className="text-center max-w-[900px] mx-auto">
+            <h1 className="font-bold text-white leading-[1.08] tracking-[-0.03em]" style={{ fontSize: 'clamp(32px, 6vw, 72px)' }}>
+              {renderTagline(project.tagline)}
+            </h1>
+          </motion.div>
+
+          {/* Service Tags */}
+          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="flex flex-wrap justify-center gap-3 mt-8 md:mt-10">
+            {project.services.map((s, i) => (
+              <span key={i} className="px-5 py-2.5 rounded-full text-sm border border-[rgba(255,255,255,0.12)] text-white/80 bg-[rgba(255,255,255,0.04)]">
+                {s}
               </span>
-
-              <h1 className="font-bold text-white leading-[1.1] tracking-[-0.02em]" style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}>
-                {renderTagline(project.tagline)}
-              </h1>
-
-              <div className="flex flex-wrap gap-2 mt-8">
-                {project.services.map((s, i) => (
-                  <span key={i} className="px-3 py-1 rounded-full text-xs border border-[rgba(255,255,255,0.15)] text-white">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Hero Image */}
-            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.15 }} className="order-1 xl:order-2 w-full">
-              <div className="relative rounded-[20px] overflow-hidden aspect-[4/3]">
-                <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
-                <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">
-                  {project.year}
-                </span>
-              </div>
-            </motion.div>
-          </div>
+            ))}
+          </motion.div>
         </div>
+
+        {/* Hero Image — full bleed */}
+        <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="relative mt-12 md:mt-16">
+          <div className="section-container">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[16/10] md:aspect-[16/9]">
+              <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
+              {/* Gradient overlay at bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
+              {/* About tagline overlay */}
+              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-[400px]">
+                <p className="text-white text-lg md:text-2xl leading-snug font-light">
+                  {renderTagline(project.tagline)}
+                </p>
+              </div>
+              {/* Year badge */}
+              <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">
+                {project.year}
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ═══ SECTION 2 — METADATI ═══ */}

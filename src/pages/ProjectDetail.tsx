@@ -96,7 +96,7 @@ const ProjectDetail = () => {
               </div>
               {/* Right: hero image */}
               <div className="relative xl:w-[65%] order-1 xl:order-2">
-                <div className="relative rounded-[20px] overflow-hidden aspect-[16/10]">
+                <div className="relative rounded-[20px] overflow-hidden aspect-[16/10] xl:aspect-[2/1]">
                   <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
                   {/* Year badge */}
                   <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">

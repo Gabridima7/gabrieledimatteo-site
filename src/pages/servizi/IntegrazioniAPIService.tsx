@@ -4,6 +4,7 @@ import techJs from '@/assets/tech/icon-js.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
 import techPython from '@/assets/tech/icon-python.png';
 import iconMake from '@/assets/icons/icon-make.png';
+import heroIntegrazioniApi from '@/assets/hero-integrazioni-api.png';
 
 const IntegrazioniAPIService = () => (
   <ServicePageTemplate
@@ -13,6 +14,7 @@ const IntegrazioniAPIService = () => (
     h1="Connetti tutti i tuoi sistemi aziendali"
     subtitle="Integrazioni API personalizzate per far comunicare i tuoi software e automatizzare i flussi di dati."
     heroIcon={Plug}
+    heroImage={heroIntegrazioniApi}
     stats={[
       { value: '50+', label: 'API integrate' },
       { value: '0', label: 'Data silos' },

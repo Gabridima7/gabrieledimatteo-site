@@ -165,7 +165,7 @@ const ChiSiamo = () => {
               <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
                 <p className="text-xs uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.4)' }}>VISIONE</p>
                 <p className="text-xl md:text-2xl lg:text-[28px] font-semibold text-white leading-[1.4]">
-                  Siamo un'agenzia di prodotto digitale a ciclo completo che costruisce e trasforma progetti straordinari con un design incentrato sull'uomo per le migliori aziende.
+                  Siamo un'agenzia di prodotto digitale a ciclo completo che costruisce e trasforma progetti straordinari con un design human-centric per le migliori aziende.
                 </p>
               </motion.div>
             </div>

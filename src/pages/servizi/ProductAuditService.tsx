@@ -11,6 +11,7 @@ const ProductAuditService = () => (
     h1="Audit UX/UI del tuo prodotto digitale"
     subtitle="Analisi approfondita dell'esperienza utente con insights actionable per migliorare conversioni e usabilità."
     heroIcon={ClipboardCheck}
+    heroImage={heroProductAudit}
     stats={[
       { value: '50+', label: 'Punti di analisi' },
       { value: '100%', label: 'Actionable insights' },

@@ -106,11 +106,11 @@ const TestimonialsSection = () => {
                 style={{ background: current.bgColor }}
               >
                 {/* Photo */}
-                <div className="relative overflow-hidden">
+                <div className="relative p-4 flex items-stretch">
                   {current.img ? (
-                    <img src={current.img} alt={current.name} className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={current.img} alt={current.name} className="w-full h-full object-cover rounded-xl" />
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold" style={{ color: current.textColor, opacity: 0.15 }}>
+                    <div className="w-full h-full rounded-xl flex items-center justify-center text-6xl font-bold" style={{ background: 'rgba(0,0,0,0.08)', color: current.textColor, opacity: 0.3 }}>
                       {current.name.split(' ').map(w => w[0]).join('')}
                     </div>
                   )}

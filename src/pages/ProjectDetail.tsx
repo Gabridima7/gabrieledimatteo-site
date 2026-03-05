@@ -206,14 +206,17 @@ const ProjectDetail = () => {
         <div className="section-container">
           <motion.h2 {...fadeUp} className="text-3xl font-bold text-[#111] mb-10">Galleria</motion.h2>
           <div className="space-y-4">
-            {project.galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className={i === 0 ? '' : 'inline-block w-full md:w-[calc(50%-8px)] md:odd:mr-4'}
+            {project.galleryImages.map((img, i) => {
+              // First image full width, rest in a 2-col grid
+              if (i === 0) {
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    transition={{ duration: 0.5, ease }}
+                  >
               >
                 <div className={`overflow-hidden rounded-2xl ${i === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}>
                   <img

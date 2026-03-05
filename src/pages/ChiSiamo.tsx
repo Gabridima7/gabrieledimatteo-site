@@ -5,6 +5,8 @@ import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
 import founderGabriele from '@/assets/founder-gabriele.png';
+import teamSara from '@/assets/team-sara.png';
+import teamFabio from '@/assets/team-fabio.png';
 import iconLinkedin from '@/assets/icons/icon-linkedin.png';
 import iconCrescita from '@/assets/icons/icon-crescita.png';
 import iconPersone from '@/assets/icons/icon-persone.png';

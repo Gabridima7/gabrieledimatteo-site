@@ -75,19 +75,18 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Desktop layout */}
-        <motion.div {...fadeUp} className="hidden md:grid md:grid-cols-[280px_1fr] gap-0 rounded-2xl overflow-hidden">
-          {/* Left: client logos */}
-          <div className="flex flex-col">
+        <motion.div {...fadeUp} className="hidden md:grid md:grid-cols-[280px_1fr] gap-4 items-stretch">
+          {/* Left: client logos as separate cards */}
+          <div className="flex flex-col gap-3">
             {testimonials.map((item, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIdx(i)}
-                className={`flex items-center justify-center h-[100px] transition-all duration-300 cursor-pointer ${
+                className={`flex items-center justify-center flex-1 rounded-2xl transition-all duration-300 cursor-pointer border ${
                   i === activeIdx
-                    ? 'bg-[rgba(255,255,255,0.12)] border-l-2 border-[#d0f601]'
-                    : 'bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border-l-2 border-transparent'
+                    ? 'bg-[rgba(255,255,255,0.12)] border-[#d0f601]/40'
+                    : 'bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border-white/[0.06]'
                 }`}
-                style={{ borderBottom: i < testimonials.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
               >
                 <img src={item.logo} alt={item.name} className="h-7 w-auto object-contain opacity-70 invert brightness-200" />
               </button>

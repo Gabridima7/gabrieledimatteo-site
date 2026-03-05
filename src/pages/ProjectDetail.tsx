@@ -57,9 +57,9 @@ const ProjectDetail = () => {
 
       {/* ═══ SECTION 1 — HERO ═══ */}
       <section className="relative pt-[120px] md:pt-[140px] pb-16 md:pb-24">
-        <div className="section-container w-full">
+        <div className="section-container w-full lg:pl-2">
           {/* Breadcrumb */}
-          <motion.p {...fadeUp} className="text-[13px] mb-8 md:mb-12 uppercase tracking-wide text-[#888] xl:pl-0">
+          <motion.p {...fadeUp} className="text-[13px] mb-8 md:mb-12 uppercase tracking-wide text-[#888]">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             {' / '}
             <Link to="/casi-studio" className="hover:text-white transition-colors">Progetti</Link>

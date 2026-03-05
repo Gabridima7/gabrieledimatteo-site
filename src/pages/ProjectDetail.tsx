@@ -359,6 +359,7 @@ const ProjectDetail = () => {
           </motion.div>
         </div>
       </section>
+      </div>{/* end white background */}
     </div>
   );
 };

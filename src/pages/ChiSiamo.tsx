@@ -127,7 +127,7 @@ const ChiSiamo = () => {
                 className="group relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8 transition-all duration-500 md:hover:!bg-[rgba(28,53,200,0.3)]"
                 style={{ background: member.bg, border: '1px solid rgba(255,255,255,0.08)' }}
               >
-                <img src={member.img} alt={member.name} className="absolute bottom-0 right-0 w-[75%] h-[85%] object-contain object-bottom" />
+                <img src={member.img} alt={member.name} className="absolute bottom-0 right-0 w-[90%] h-[95%] object-contain object-bottom" />
                 <div className="relative z-[1]">
                   <h3 className="text-xl font-bold text-white">{member.name}</h3>
                   <p className="text-white/50 text-sm mt-1">{member.role}</p>

@@ -287,39 +287,46 @@ const ProjectDetail = () => {
       )}
 
 
+      </div>{/* end white background */}
+
       {/* ═══ SECTION 10 — CTA FINALE ═══ */}
-      <section className="py-24">
+      <section className="bg-[#06080F] py-24 md:py-32">
         <div className="section-container">
-          <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-6 bg-[rgba(0,37,255,0.08)] text-[#0025FF]">
-              Hai un progetto simile?
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111] leading-[1.15]">
-              Costruiamo il tuo{' '}
-              {renderTagline("*prossimo prodotto*")}{' '}
-              {renderTagline("*digitale*")} insieme
-            </h2>
-            <p className="text-[#888] text-lg mt-6">
-              Dalla prima idea al prodotto funzionante. Parliamoci.
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-10">
-              <Link
-                to="/contatti"
-                className="inline-flex items-center gap-2 bg-[#0025FF] hover:bg-[#1a3dff] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,37,255,0.4)]"
-              >
-                Parla con noi <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/casi-studio"
-                className="inline-flex items-center gap-2 text-[#111] font-semibold px-8 py-4 rounded-full border border-[#ccc] hover:border-[#111] hover:bg-[rgba(0,0,0,0.03)] transition-all duration-300"
-              >
-                Vedi altri progetti
-              </Link>
+          <motion.h2 {...fadeUp} className="text-3xl md:text-5xl font-bold text-white text-center leading-[1.15] mb-12 md:mb-16">
+            Lavoriamo{' '}
+            <em className="italic text-white/80">insieme</em>
+          </motion.h2>
+
+          <motion.div {...fadeUp} className="relative max-w-3xl mx-auto rounded-3xl bg-white p-10 md:p-14 text-center overflow-hidden">
+            {/* Subtle gradient glow */}
+            <div className="absolute bottom-0 right-0 w-[60%] h-[60%] bg-gradient-to-tl from-purple-200/40 via-transparent to-transparent rounded-3xl pointer-events-none" />
+
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#111] leading-[1.2] mb-4">
+                Hai un progetto simile?<br />Parliamoci.
+              </h3>
+              <p className="text-[#666] text-base md:text-lg max-w-md mx-auto mb-8">
+                Dalla prima idea al prodotto funzionante. Prenota una call gratuita per discutere il tuo progetto.
+              </p>
+              <div className="flex items-center justify-center gap-3">
+                <Link
+                  to="/contatti"
+                  className="inline-flex items-center gap-2 bg-[#d0f601] hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] text-black font-semibold px-8 py-4 rounded-full transition-all duration-300"
+                >
+                  Prenota Call <ArrowRight size={16} className="-rotate-45" />
+                </Link>
+                <Link
+                  to="/casi-studio"
+                  className="inline-flex items-center gap-2 text-[#111] font-semibold px-8 py-4 rounded-full border border-[#ddd] hover:border-[#111] hover:bg-[rgba(0,0,0,0.03)] transition-all duration-300"
+                >
+                  Vedi altri progetti
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
-      </div>{/* end white background */}
+
     </div>
   );
 };

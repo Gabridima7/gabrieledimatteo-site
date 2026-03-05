@@ -105,8 +105,9 @@ const ChiSiamo = () => {
               <motion.div
                 key={i}
                 {...fadeUp}
+                whileHover={{ scale: 1.03, y: -4 }}
                 transition={{ ...fadeUp.transition, delay: (i + 1) * 0.1 }}
-                className="relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8"
+                className="relative rounded-2xl overflow-hidden min-h-[260px] flex flex-col justify-between p-8 cursor-pointer"
                 style={{ background: member.bg, border: '1px solid rgba(255,255,255,0.08)' }}
               >
                 <div>

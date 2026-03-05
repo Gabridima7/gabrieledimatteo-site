@@ -4,6 +4,7 @@ import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
 import SectionBackground from '@/components/SectionBackground';
 import TrustBar from '@/components/TrustBar';
 import founderGabriele from '@/assets/founder-gabriele.png';
+import iconLinkedin from '@/assets/icons/icon-linkedin.png';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 

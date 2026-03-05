@@ -92,9 +92,9 @@ const CasiStudio = () => {
               </p>
               <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
                 {t('works', 'heroTitle1')}{' '}
-                <em className="font-extrabold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
+                <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
                 {' '}{t('works', 'heroTitle2')}<br />{t('works', 'heroTitle3')}{' '}
-                <em className="font-extrabold text-[#0025FF]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
+                <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 {t('works', 'heroDescription')}

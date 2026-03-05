@@ -84,20 +84,21 @@ const ProjectDetail = () => {
           </motion.div>
         </div>
 
-        {/* Hero Image — full bleed */}
+        {/* Hero Image + Tagline — two-column on desktop */}
         <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }} className="relative mt-12 md:mt-16">
           <div className="section-container">
-            <div className="relative rounded-[20px] overflow-hidden aspect-[16/10] md:aspect-[16/9]">
-              <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
-              {/* Gradient overlay at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
-              {/* About tagline overlay */}
-              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-[400px]">
-                <p className="text-white text-lg md:text-2xl leading-snug font-light">
+            <div className="flex flex-col xl:flex-row xl:items-end gap-6 xl:gap-0">
+              {/* Left: tagline overlay text */}
+              <div className="xl:flex-shrink-0 xl:w-[35%] xl:pr-8 xl:pb-4 order-2 xl:order-1">
+                <p className="text-white text-xl md:text-2xl xl:text-[28px] leading-snug font-light">
                   {renderTagline(project.tagline)}
                 </p>
               </div>
-              {/* Year badge */}
+              {/* Right: hero image */}
+              <div className="relative xl:w-[65%] order-1 xl:order-2">
+                <div className="relative rounded-[20px] overflow-hidden aspect-[16/10]">
+                  <img src={project.heroImage} alt={project.name} className="w-full h-full object-cover" />
+                  {/* Year badge */}
               <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white bg-[rgba(0,0,0,0.7)] backdrop-blur-sm">
                 {project.year}
               </span>

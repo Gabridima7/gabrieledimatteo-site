@@ -2,6 +2,7 @@ import { Search, Target, TrendingUp, Lightbulb } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
 import iconMake from '@/assets/icons/icon-make.png';
+import heroConsulenza from '@/assets/hero-consulenza-digitale.png';
 
 const ConsulenzaDigitale = () => (
   <ServicePageTemplate

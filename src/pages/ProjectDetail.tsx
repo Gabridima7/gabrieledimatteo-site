@@ -170,33 +170,44 @@ const ProjectDetail = () => {
       {/* ═══ SECTION 5 — PROCESSO ═══ */}
       <section className="py-24">
         <div className="section-container">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#111]">
-              Il nostro {renderTagline("*Processo*")}
+          <motion.div {...fadeUp} className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111] italic">
+              Process
             </h2>
           </motion.div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {project.phases.map((phase, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease }}
-                className="relative border-b xl:border-b-0 xl:border-r border-[#e8e8e8] last:border-0 pb-6 xl:pb-0 xl:pr-6"
-              >
-                <span className="text-6xl font-bold text-[rgba(0,37,255,0.12)] leading-none">{phase.number}</span>
-                <h3 className="text-lg font-bold text-[#111] mt-2 mb-4">{phase.title}</h3>
-                <ul className="space-y-2">
-                  {phase.items.map((item, j) => (
-                    <li key={j} className="text-sm text-[#666] flex items-start gap-2">
-                      <span className="text-[#0025FF] mt-0.5">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+            {project.phases.map((phase, i) => {
+              const colors = [
+                { badge: 'bg-[#6B5CE7]', itemBg: 'bg-[#E8E0F7]' },
+                { badge: 'bg-[#F5A0C0]', itemBg: 'bg-[#FCE4EC]' },
+                { badge: 'bg-[#8B9FE8]', itemBg: 'bg-[#E3E8F7]' },
+                { badge: 'bg-[#E8C864]', itemBg: 'bg-[#FDF5E0]' },
+              ];
+              const color = colors[i % colors.length];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: i * 0.1, ease }}
+                  className="rounded-2xl border border-[#e8e8e8] p-6 flex flex-col"
+                >
+                  <span className={`w-8 h-8 rounded-full ${color.badge} text-white text-sm font-bold flex items-center justify-center mb-4`}>
+                    {phase.number}
+                  </span>
+                  <h3 className="text-xl font-bold text-[#111] mb-1">{phase.title}</h3>
+                  <div className="w-full h-px bg-[#e8e8e8] my-4" />
+                  <div className="space-y-2">
+                    {phase.items.map((item, j) => (
+                      <div key={j} className={`${color.itemBg} rounded-lg px-4 py-2.5 text-sm text-[#333] text-center font-medium`}>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

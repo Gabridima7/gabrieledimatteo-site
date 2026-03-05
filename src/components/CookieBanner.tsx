@@ -81,7 +81,7 @@ const CookieBanner = () => {
             className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
           >
             <div className="max-w-4xl mx-auto">
-              <div className="glass-card p-6 md:p-8 border border-border/50 rounded-2xl">
+              <div className="p-6 md:p-8 border border-border/50 rounded-2xl bg-[#0a0e1a] backdrop-blur-xl shadow-2xl">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">

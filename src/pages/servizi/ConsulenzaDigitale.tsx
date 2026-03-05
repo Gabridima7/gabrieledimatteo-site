@@ -2,6 +2,7 @@ import { Search, Target, TrendingUp, Lightbulb } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
 import iconMake from '@/assets/icons/icon-make.png';
+import heroConsulenza from '@/assets/hero-consulenza-digitale.png';
 
 const ConsulenzaDigitale = () => (
   <ServicePageTemplate
@@ -11,6 +12,7 @@ const ConsulenzaDigitale = () => (
     h1="Strategia digitale per la tua crescita"
     subtitle="Ti guidiamo nella trasformazione digitale con analisi, audit e una roadmap su misura per la tua PMI."
     heroIcon={Lightbulb}
+    heroImage={heroConsulenza}
     stats={[
       { value: '100%', label: 'Roadmap actionable' },
       { value: '+35%', label: 'Efficienza media' },

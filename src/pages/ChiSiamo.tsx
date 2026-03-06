@@ -341,43 +341,6 @@ const ChiSiamo = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12">
-            
-            <h2 className="text-3xl font-bold">I nostri valori</h2>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-            { icon: Zap, title: 'Speed', desc: 'Dalla strategia al deploy in settimane' },
-            { icon: Eye, title: 'Clarity', desc: 'Comunicazione trasparente, sempre' },
-            { icon: Target, title: 'ROI', desc: 'Ogni progetto deve essere misurabile' },
-            { icon: Palette, title: 'Design', desc: 'L\'esperienza utente viene prima' }].
-            map((value, i) =>
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="glass-card p-6 text-center"
-              data-cursor="spotlight">
-              
-                <value.icon className="text-primary mx-auto mb-4" size={32} />
-                <h3 className="font-semibold mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.desc}</p>
-              </motion.div>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* Stack */}
       <section className="py-16 bg-gradient-blue-subtle">

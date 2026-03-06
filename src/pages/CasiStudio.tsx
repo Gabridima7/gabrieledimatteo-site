@@ -273,7 +273,6 @@ const CasiStudio = () => {
           { name: "Home", url: "https://nexusagency.it" },
           { name: "Casi Studio", url: "https://nexusagency.it/casi-studio" },
         ]}
-        canonical="https://nexusagency.it/casi-studio"
       />
     <div className="min-h-screen">
       {/* ═══ HERO ═══ */}

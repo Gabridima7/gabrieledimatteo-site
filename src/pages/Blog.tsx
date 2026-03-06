@@ -147,7 +147,6 @@ const Blog = () => {
           { name: "Home", url: "https://nexusagency.it" },
           { name: "Blog", url: "https://nexusagency.it/blog" },
         ]}
-        canonical="https://nexusagency.it/blog"
       />
 
       {/* Hero */}

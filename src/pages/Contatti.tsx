@@ -57,7 +57,7 @@ const Contatti = () => {
           { name: "Home", url: "https://nexusagency.it" },
           { name: "Contatti", url: "https://nexusagency.it/contatti" },
         ]}
-        canonical="https://nexusagency.it/contatti" />
+      />
 
       <div className="pt-8">
         {/* Breadcrumb */}

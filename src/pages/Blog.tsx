@@ -235,33 +235,55 @@ const Blog = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0025FF]/[0.04] to-transparent" />
-        <div className="section-container relative z-10">
+      <section className="relative py-24 md:py-32">
+        <SectionBackground variant="blue-center" fade={false} />
+        <div className="section-container relative z-[2]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-card p-12 text-center max-w-3xl mx-auto"
-            data-cursor="spotlight"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 max-w-5xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Hai un progetto in mente?
-            </h2>
-            <p className="text-[#8A8F98] mb-8 text-lg">
-              Parliamone insieme. Scopri come possiamo aiutare il tuo business a crescere.
-            </p>
-            <a
-              href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 glow-box inline-flex items-center gap-2"
-              data-cursor="spotlight"
-            >
-              Prenota Call
-              <ArrowRight size={20} />
-            </a>
+            <div className="rounded-3xl bg-white p-8 md:p-10 flex flex-col justify-between min-h-[340px]">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-6">💬 Cosa dicono i clienti</h3>
+                <div className="w-12 border-t border-gray-200 mb-6" />
+                <p className="text-[15px] text-gray-700 leading-relaxed">
+                  Grazie a NEXUS abbiamo automatizzato il 70% dei processi ripetitivi. Il team ora si concentra su attività ad alto valore.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 mt-8">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#4F6FE8] flex items-center justify-center text-white text-sm font-bold">
+                  A
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">Andrea Z.</p>
+                  <p className="text-xs text-gray-500">CEO, ONE UP</p>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[340px]" style={{ background: 'linear-gradient(135deg, #1C35C8 0%, #7C3AED 50%, #9333EA 100%)' }}>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                  Hai un progetto in mente?
+                </h2>
+                <p className="text-base mt-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  Parliamone insieme. Scopri come possiamo aiutare il tuo business a crescere.
+                </p>
+              </div>
+              <div className="mt-8">
+                <a
+                  href="https://cal.com/nexus-agency/30min?overlayCalendar=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]"
+                  style={{ background: '#d0f601' }}
+                >
+                  Prenota una call gratuita <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

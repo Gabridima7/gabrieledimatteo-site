@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 
 const Privacy = () => {
+  return (
     <>
       <SEOHead
         title="Privacy Policy | NEXUS Agency"

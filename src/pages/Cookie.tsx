@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 
 const Cookie = () => {
+  return (
     <>
       <SEOHead
         title="Cookie Policy | NEXUS Agency"

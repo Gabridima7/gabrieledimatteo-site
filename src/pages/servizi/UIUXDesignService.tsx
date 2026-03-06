@@ -5,8 +5,9 @@ import heroUiUx from '@/assets/hero-ui-ux-design.png';
 
 const UIUXDesignService = () => (
   <ServicePageTemplate
-    seoTitle="UI/UX Design — NEXUS Agency"
-    seoDescription="Design di interfacce web e mobile app che convertono i visitatori in clienti."
+    seoTitle="UI/UX Design per Web e Mobile App | NEXUS Agency"
+    seoDescription="Design di interfacce intuitive per web e mobile app. User research, wireframe, prototipi interattivi, design system."
+    seoCanonical="https://nexusagency.it/servizi/ui-ux-design"
     badge="UI/UX Design"
     h1="Interfacce che gli utenti amano usare"
     subtitle="Design di interfacce web e mobile app che convertono i visitatori in clienti con UX research-driven."

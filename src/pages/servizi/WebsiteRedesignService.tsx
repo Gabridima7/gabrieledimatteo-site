@@ -9,8 +9,9 @@ import heroWebsiteDesign from '@/assets/hero-website-design.png';
 
 const WebsiteRedesignService = () => (
   <ServicePageTemplate
-    seoTitle="Website Redesign — NEXUS Agency"
-    seoDescription="Rinnoviamo il tuo sito web con un design moderno, performante e ottimizzato per le conversioni."
+    seoTitle="Website Redesign — Rinnova il tuo Sito Web | NEXUS Agency"
+    seoDescription="Rifacimento sito web con look moderno e impatto maggiore. Migliora UX, performance e conversioni."
+    seoCanonical="https://nexusagency.it/servizi/website-redesign"
     badge="Website Redesign"
     h1="Rinnova il tuo sito web"
     subtitle="Trasformiamo il tuo sito esistente in un asset digitale moderno, veloce e orientato alle conversioni."

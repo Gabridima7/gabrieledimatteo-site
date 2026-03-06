@@ -8,8 +8,9 @@ import heroAiChatbot from '@/assets/hero-ai-chatbot.png';
 
 const AIChatbotService = () => (
   <ServicePageTemplate
-    seoTitle="AI Chatbot — NEXUS Agency"
-    seoDescription="Assistenti virtuali intelligenti per automatizzare il supporto clienti e le vendite."
+    seoTitle="AI Chatbot e Assistenti Virtuali per PMI | NEXUS Agency"
+    seoDescription="Chatbot intelligenti per customer service, lead generation e automazione. Integrati con i tuoi sistemi aziendali."
+    seoCanonical="https://nexusagency.it/servizi/ai-chatbot"
     badge="AI Chatbot"
     h1="Chatbot AI per supporto clienti e vendite"
     subtitle="Assistenti virtuali intelligenti addestrati sui tuoi dati per rispondere 24/7 e generare lead qualificati."

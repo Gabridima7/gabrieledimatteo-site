@@ -8,8 +8,9 @@ import heroSoftwareGestionale from '@/assets/hero-software-gestionale.png';
 
 const SoftwareGestionaleService = () => (
   <ServicePageTemplate
-    seoTitle="Gestionali e Software su Misura per PMI | NEXUS Agency"
-    seoDescription="Software gestionali personalizzati per PMI: CRM, ERP, dashboard. Digitalizza i tuoi processi. Da €4.000."
+    seoTitle="Software Gestionale su Misura — CRM, ERP, Tool Interni | NEXUS"
+    seoDescription="Gestionali personalizzati per PMI: CRM, ERP, dashboard e tool interni su misura. Digitalizza i tuoi processi."
+    seoCanonical="https://nexusagency.it/servizi/software-gestionale"
     badge="Software Gestionale"
     h1="Software gestionale su misura per la tua azienda"
     subtitle="CRM, ERP e tool interni personalizzati per ottimizzare ogni processo e far crescere la tua PMI."

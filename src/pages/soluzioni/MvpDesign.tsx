@@ -8,8 +8,9 @@ import techCss from '@/assets/tech/icon-css.png';
 
 const MvpDesign = () => (
   <ServicePageTemplate
-    seoTitle="MVP Design — NEXUS Agency"
-    seoDescription="Trasforma la tua idea in un prodotto digitale funzionante. MVP design e sviluppo per startup e imprenditori italiani."
+    seoTitle="MVP Design per Startup e Imprenditori | NEXUS Agency"
+    seoDescription="Crea il tuo prodotto digitale MVP. Validazione rapida, design professionale, pronto per investitori e primi clienti."
+    seoCanonical="https://nexusagency.it/soluzioni/mvp"
     badge="MVP Design"
     h1="Dal concept al *prodotto digitale*"
     subtitle="Progettiamo e sviluppiamo il tuo MVP per validare l'idea, attrarre investitori e conquistare i primi clienti."

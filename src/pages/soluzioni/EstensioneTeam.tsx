@@ -8,8 +8,9 @@ import techHtml from '@/assets/tech/icon-html.png';
 
 const EstensioneTeam = () => (
   <ServicePageTemplate
-    seoTitle="Estensione Team — NEXUS Agency"
-    seoDescription="Espandi il tuo team con sviluppatori, designer e specialisti AI dedicati. Collaborazione flessibile per aziende italiane."
+    seoTitle="Estensione Team — Esperti Digitali Dedicati | NEXUS Agency"
+    seoDescription="Espandi il tuo team con i nostri esperti dedicati. Designer, developer e PM integrati nei tuoi processi."
+    seoCanonical="https://nexusagency.it/soluzioni/estensione-team"
     badge="Estensione Team"
     h1="Espandi il tuo team con *esperti dedicati*"
     subtitle="Sviluppatori, designer e specialisti AI che lavorano come un'estensione del tuo team interno. Flessibilità totale."

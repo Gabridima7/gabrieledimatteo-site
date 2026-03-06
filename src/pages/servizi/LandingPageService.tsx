@@ -9,8 +9,9 @@ import techShopify from '@/assets/tech/icon-shopify.png';
 
 const LandingPageService = () => (
   <ServicePageTemplate
-    seoTitle="Landing Page — NEXUS Agency"
-    seoDescription="Creiamo landing page ad alta conversione per campagne marketing e lancio prodotti."
+    seoTitle="Landing Page ad Alta Conversione per PMI | NEXUS Agency"
+    seoDescription="Creiamo landing page ottimizzate per la conversione. Design persuasivo, A/B testing, performance elevate. Da €800."
+    seoCanonical="https://nexusagency.it/servizi/landing-page"
     badge="Landing Page"
     h1="Landing page ad alta conversione"
     subtitle="Pagine di atterraggio progettate per convertire visitatori in lead e clienti, ottimizzate per ogni campagna."

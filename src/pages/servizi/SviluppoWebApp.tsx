@@ -17,8 +17,9 @@ const SviluppoWebApp = () => {
 
   return (
     <ServicePageTemplate
-      seoTitle="Sviluppo Web App su Misura per PMI | NEXUS Agency"
-      seoDescription="Progettiamo e sviluppiamo web application personalizzate per PMI italiane. React, scalabili, sicure. Da €3.000."
+      seoTitle="Sviluppo Web Front-End e Back-End per PMI | NEXUS Agency"
+      seoDescription="Sviluppo web professionale front-end e back-end per PMI italiane. React, Node.js, architetture scalabili. Risultati misurabili."
+      seoCanonical="https://nexusagency.it/servizi/sviluppo-web"
       badge="Sviluppo Web & App"
       h1="Sviluppo Web & App su misura per la tua PMI"
       subtitle="Siti web, applicazioni e piattaforme digitali performanti, scalabili e progettati per convertire."

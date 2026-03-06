@@ -8,8 +8,9 @@ import techNodejs from '@/assets/tech/icon-nodejs.png';
 
 const ProductRedesign = () => (
   <ServicePageTemplate
-    seoTitle="Product Redesign — NEXUS Agency"
-    seoDescription="Rinnova il tuo prodotto digitale con un redesign completo. UX migliorata, look moderno e funzionalità potenziate per PMI e aziende."
+    seoTitle="Product Redesign per PMI e Aziende | NEXUS Agency"
+    seoDescription="Ridisegniamo il tuo prodotto digitale. UX migliorata, look fresco, funzionalità potenziate. Risultati misurabili."
+    seoCanonical="https://nexusagency.it/soluzioni/product-redesign"
     badge="Product Redesign"
     h1="Un look fresco, *UX migliorata*"
     subtitle="Rinnoviamo il tuo prodotto digitale con un design moderno, un'esperienza utente ottimizzata e funzionalità potenziate."

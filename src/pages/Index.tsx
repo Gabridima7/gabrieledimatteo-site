@@ -6,6 +6,7 @@ import iconSviluppoWebAppNew from '@/assets/icons/icon-sviluppo-web-app-new.webp
 import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
 import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
+import iconWebApp from '@/assets/icons/icon-web-app.webp';
 import iconMake from '@/assets/icons/icon-make.png';
 import iconFigma from '@/assets/icons/icon-figma.png';
 import iconFramer from '@/assets/icons/icon-framer.svg';
@@ -297,14 +298,17 @@ const Index = () => {
           </motion.div>
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Sviluppo siti web professionali', desc: 'Progettiamo e sviluppiamo siti web su misura per la tua azienda, ottimizzati per i motori di ricerca e pensati per convertire i visitatori in clienti.', link: '/servizi/sviluppo-web' },
-              { title: 'Sviluppo web app', desc: 'Creiamo applicazioni web personalizzate che digitalizzano i processi della tua azienda e migliorano la produttività del team.', link: '/servizi/web-app' },
-              { title: 'Automazioni AI', desc: 'Integriamo sistemi di intelligenza artificiale per automatizzare attività ripetitive e ottimizzare i flussi di lavoro aziendali.', link: '/servizi/ai-automation' },
-              { title: 'Consulenza digitale', desc: 'Definiamo insieme la strategia digitale più adatta alla tua azienda, con roadmap concrete e obiettivi misurabili.', link: '/servizi/consulenza-digitale' },
-              { title: 'Branding e design', desc: 'Creiamo identità visive memorabili e interfacce utente che comunicano i valori del tuo brand e migliorano l\'esperienza dei tuoi clienti.', link: '/servizi/ui-ux-design' },
+              { title: 'Sviluppo siti web professionali', desc: 'Progettiamo e sviluppiamo siti web su misura per la tua azienda, ottimizzati per i motori di ricerca e pensati per convertire i visitatori in clienti.', link: '/servizi/sviluppo-web', icon: iconSviluppoWebAppNew },
+              { title: 'Sviluppo web app', desc: 'Creiamo applicazioni web personalizzate che digitalizzano i processi della tua azienda e migliorano la produttività del team.', link: '/servizi/web-app', icon: iconWebApp },
+              { title: 'Automazioni AI', desc: 'Integriamo sistemi di intelligenza artificiale per automatizzare attività ripetitive e ottimizzare i flussi di lavoro aziendali.', link: '/servizi/ai-automation', icon: iconAiAutomation },
+              { title: 'Consulenza digitale', desc: 'Definiamo insieme la strategia digitale più adatta alla tua azienda, con roadmap concrete e obiettivi misurabili.', link: '/servizi/consulenza-digitale', icon: iconConsulenzaDigitale },
+              { title: 'Branding e design', desc: 'Creiamo identità visive memorabili e interfacce utente che comunicano i valori del tuo brand e migliorano l\'esperienza dei tuoi clienti.', link: '/servizi/ui-ux-design', icon: iconUiUxDesign },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeUpVariants}>
                 <Link to={item.link} className="group block h-full rounded-2xl border border-white/[0.1] bg-white/[0.04] p-6 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
+                  <div className="w-11 h-11 rounded-[10px] flex items-center justify-center mb-4">
+                    <img src={item.icon} alt={item.title} className="w-7 h-7 object-contain" />
+                  </div>
                   <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#d0f601] transition-colors">{item.title}</h3>
                   <p className="text-white/55 text-sm leading-relaxed mb-4">{item.desc}</p>
                   <span className="text-sm font-medium text-white/40 group-hover:text-white/70 inline-flex items-center gap-1 transition-colors">

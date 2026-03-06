@@ -32,8 +32,10 @@ export interface BlogPost {
 
 export const blogCategories = [
   'Tutti',
+  'AI per aziende',
   'Sviluppo Web',
-  'AI & Automazione',
+  'Digitalizzazione PMI',
+  'Automazioni aziendali',
   'Business Digitale',
   'Case Study',
   'Guide & Tutorial',

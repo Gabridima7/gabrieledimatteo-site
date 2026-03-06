@@ -50,8 +50,8 @@ const Contatti = () => {
   return (
     <>
       <SEOHead
-        title="Contatti — Parliamo del tuo Progetto | NEXUS Agency"
-        description="Contatta NEXUS Agency per sviluppo web, AI automation e consulenza. Risposta entro 24h."
+        title="Contatta Nexus Agency | sviluppo web e AI"
+        description="Hai un progetto digitale? Contatta Nexus Agency per sviluppare siti web, web app e soluzioni innovative per la tua azienda."
         canonical="https://nexusagency.it/contatti"
         breadcrumbs={[
           { name: "Home", url: "https://nexusagency.it" },
@@ -155,9 +155,12 @@ const Contatti = () => {
                   background: 'rgba(255,255,255,0.97)'
                 }}>
                 
-                <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-8">
-                  {t('contatti', 'formTitle')}
+                <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">
+                  Contattaci
                 </h1>
+                <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
+                  Se stai pensando di sviluppare un sito web, una web app o un sistema digitale per la tua azienda, il nostro team può aiutarti a trasformare l'idea in un prodotto concreto. Raccontaci il tuo progetto e analizzeremo insieme le migliori soluzioni tecnologiche per svilupparlo.
+                </p>
 
                 {submitted ?
                 <div className="flex flex-col items-center justify-center py-16 text-center">

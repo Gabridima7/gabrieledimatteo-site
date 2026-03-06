@@ -266,8 +266,8 @@ const CasiStudio = () => {
   return (
     <>
       <SEOHead
-        title="Casi Studio — Progetti Reali per PMI Italiane | NEXUS"
-        description="Scopri i progetti NEXUS: gestionali, siti web, AI automation per PMI. Risultati concreti e misurabili."
+        title="Case study e progetti digitali | Nexus Agency"
+        description="Scopri i progetti realizzati da Nexus Agency: siti web, piattaforme digitali e sistemi innovativi sviluppati per aziende e startup."
         canonical="https://nexusagency.it/casi-studio"
         breadcrumbs={[
           { name: "Home", url: "https://nexusagency.it" },
@@ -333,13 +333,11 @@ const CasiStudio = () => {
                 <span className="text-white/70">{t('works', 'breadcrumbWorks')}</span>
               </p>
               <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
-                {t('works', 'heroTitle1')}{' '}
-                <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleIdee')}</em>
-                {' '}{t('works', 'heroTitle2')}<br />{t('works', 'heroTitle3')}{' '}
-                <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>{t('works', 'heroTitleSuccesso')}</em>
+                Progetti e{' '}
+                <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>case study</em>
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                {t('works', 'heroDescription')}
+                Nel corso degli anni abbiamo collaborato con aziende e startup per progettare e sviluppare prodotti digitali innovativi. In questa sezione puoi esplorare alcuni dei progetti più significativi realizzati dal nostro team.
               </p>
               <a
                 href={CAL_LINK}

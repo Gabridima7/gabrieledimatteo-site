@@ -31,8 +31,8 @@ export const translations = {
   // Hero
   hero: {
     badge: { it: '✦ AI Agency per PMI Italiane', en: '✦ AI Agency for Italian SMEs' },
-    title1: { it: 'Trasformiamo le PMI italiane', en: 'We transform Italian SMEs' },
-    title2: { it: 'con AI e innovazione digitale', en: 'with AI and digital innovation' },
+    title1: { it: 'Agenzia AI e sviluppo web', en: 'AI Agency and web development' },
+    title2: { it: 'per PMI italiane', en: 'for Italian SMEs' },
     subtitle: { it: 'Sviluppo web, automazione AI, branding. Tutto ciò di cui hai bisogno per crescere.', en: 'Web development, AI automation, branding. Everything you need to grow.' },
     cta1: { it: 'Prenota una call gratuita', en: 'Book a free call' },
     cta2: { it: 'Vedi i nostri lavori', en: 'See our work' },

@@ -329,36 +329,10 @@ const ChiSiamo = () => {
             
             <h2 className="text-3xl font-bold mb-8">Tecnologie e strumenti</h2>
             <div className="flex flex-wrap gap-3">
-              {['WordPress', 'Web App', 'React', 'API Integration', 'AI Automation', 'Node.js', 'Python', 'Supabase', 'n8n', 'Make', 'Figma'].map((tech, i) =>
+              {['Lovable', 'Supabase', 'GPT-4', 'Claude', 'n8n', 'Make', 'Vercel', 'React'].map((tech, i) =>
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm">
-                  {tech}
-                </span>
-              )}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-
-      {/* Stack */}
-      <section className="py-16 bg-gradient-blue-subtle">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto">
-            
-            <h2 className="text-3xl font-bold mb-8">Il nostro stack</h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Lovable', 'Supabase', 'GPT-4', 'Claude', 'n8n', 'Make', 'Vercel', 'React'].map((tech, i) =>
-              <span
-                key={i}
-                className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm">
-                
                   {tech}
                 </span>
               )}

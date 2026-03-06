@@ -7,6 +7,7 @@ const distDir = path.resolve(__dirname, '../dist');
 
 const routes = [
   '/',
+  '/servizi',
   '/servizi/sviluppo-web',
   '/servizi/landing-page',
   '/servizi/web-app',
@@ -31,6 +32,15 @@ const routes = [
   '/progetto/biglia-serramenti',
   '/chi-siamo',
   '/blog',
+  '/blog/gestionale-personalizzato-pmi',
+  '/blog/web-app-vs-sito-web',
+  '/blog/5-processi-automatizzare-ai',
+  '/blog/homeleven-digitalizzazione-immobiliare',
+  '/blog/guida-design-system-prodotti-digitali',
+  '/blog/pmi-italiane-investire-digitale-2026',
+  '/blog/react-vs-nextjs-cosa-scegliere',
+  '/blog/chatbot-ai-customer-service-guida',
+  '/blog/one-up-gestionale-nautico',
   '/contatti',
   '/prenota-call',
   '/privacy',

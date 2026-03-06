@@ -116,7 +116,15 @@ const Index = () => {
       <SEOHead
         title="NEXUS Agency — Prodotti Digitali e AI per PMI Italiane"
         description="Sviluppiamo gestionali, web app, siti web e soluzioni AI per PMI italiane. Lovable Gold Partner. Risultati misurabili, tecnologia moderna."
-        canonical="https://nexusagency.it" />
+        canonical="https://nexusagency.it"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "NEXUS Agency",
+          url: "https://nexusagency.it",
+          description: "Sviluppiamo gestionali, web app, siti web e soluzioni AI per PMI italiane.",
+        }}
+      />
 
 
       {/* JSON-LD Organization */}

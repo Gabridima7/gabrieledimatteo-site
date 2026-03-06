@@ -1,5 +1,6 @@
 import { Rocket, Lightbulb, Target, Zap } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroMvpDesign from '@/assets/hero-mvp-design.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
@@ -15,6 +16,7 @@ const MvpDesign = () => (
     h1="Dal concept al *prodotto digitale*"
     subtitle="Progettiamo e sviluppiamo il tuo MVP per validare l'idea, attrarre investitori e conquistare i primi clienti."
     heroIcon={Rocket}
+    heroImage={heroMvpDesign}
     stats={[
       { value: '4-8', label: 'Settimane di sviluppo' },
       { value: '100%', label: 'Codice di tua proprietà' },

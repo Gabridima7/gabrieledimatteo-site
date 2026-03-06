@@ -40,8 +40,8 @@ const ChiSiamo = () => {
   return (
     <>
       <SEOHead
-        title="Chi Siamo — Gabriele Di Matteo | NEXUS Agency"
-        description="NEXUS è guidata da Gabriele Di Matteo, esperto di sviluppo digitale e AI per PMI italiane."
+        title="Chi siamo | Nexus Agency – sviluppo web e automazioni AI"
+        description="Scopri il team e la visione di Nexus Agency, un'agenzia specializzata nello sviluppo di prodotti digitali, web app e automazioni AI per aziende."
         canonical="https://nexusagency.it/chi-siamo"
         breadcrumbs={[
           { name: "Home", url: "https://nexusagency.it" },
@@ -61,7 +61,7 @@ const ChiSiamo = () => {
                 <span className="text-white/70">Chi siamo</span>
               </p>
               <h1 className="font-extrabold text-white leading-[1.1] tracking-[-0.02em] max-w-[600px]" style={{ fontSize: 'clamp(40px,5vw,72px)' }}>
-                Offriamo soluzioni di design <span className="font-serif-accent font-normal text-primary">innovative</span> & talenti esperti
+                Chi siamo – <span className="font-serif-accent font-normal text-primary">Nexus Agency</span>
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 Da un piccolo team di cinque persone a un team remoto globale di designer e sviluppatori professionisti che si impegnano a creare prodotti digitali di valore per persone in tutto il mondo.
@@ -260,7 +260,7 @@ const ChiSiamo = () => {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Mission — SEO */}
       <section className="py-16">
         <div className="section-container">
           <motion.div
@@ -268,15 +268,74 @@ const ChiSiamo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-10 md:p-16 text-center max-w-4xl mx-auto"
+            className="glass-card p-10 md:p-16 max-w-4xl mx-auto"
             data-cursor="spotlight">
             
             <h2 className="text-2xl md:text-3xl font-bold mb-6">La nostra missione</h2>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              "Portare l'<span className="text-foreground">AI operativa</span> nelle PMI italiane, 
-              trasformando processi manuali in sistemi intelligenti che generano 
-              <span className="text-primary"> ROI misurabile</span>."
-            </p>
+            <div className="text-lg md:text-xl text-muted-foreground leading-relaxed space-y-4">
+              <p>La missione di Nexus Agency è aiutare aziende e PMI a innovare attraverso tecnologia, sviluppo software e automazione.</p>
+              <p>Crediamo che la trasformazione digitale debba essere <span className="text-foreground">accessibile, concreta e orientata ai risultati</span>.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Il nostro approccio — SEO */}
+      <section className="py-16">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto">
+            
+            <h2 className="text-3xl font-bold mb-8">Il nostro approccio</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { step: '01', title: 'Analisi del business', desc: 'Studiamo i processi e le esigenze della tua azienda' },
+                { step: '02', title: 'Progettazione del prodotto digitale', desc: 'Definiamo architettura, UX e funzionalità chiave' },
+                { step: '03', title: 'Sviluppo e implementazione', desc: 'Costruiamo il prodotto con tecnologie moderne e scalabili' },
+                { step: '04', title: 'Ottimizzazione e crescita', desc: 'Monitoriamo, ottimizziamo e facciamo evolvere il prodotto' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="glass-card p-6"
+                  data-cursor="spotlight">
+                  <span className="text-primary font-bold text-2xl mb-3 block">{item.step}</span>
+                  <h3 className="font-semibold mb-2 text-sm">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Tecnologie e strumenti — SEO */}
+      <section className="py-16">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto">
+            
+            <h2 className="text-3xl font-bold mb-8">Tecnologie e strumenti</h2>
+            <div className="flex flex-wrap gap-3">
+              {['WordPress', 'Web app development', 'API integration', 'AI automation', 'Database e backend moderni', 'React', 'Supabase', 'n8n', 'Make', 'Figma'].map((tech, i) =>
+                <span
+                  key={i}
+                  className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm">
+                  {tech}
+                </span>
+              )}
+            </div>
           </motion.div>
         </div>
       </section>

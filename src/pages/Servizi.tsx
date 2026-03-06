@@ -73,9 +73,13 @@ const Servizi = () => {
   return (
     <>
       <SEOHead
-        title="Servizi di Sviluppo Digitale e AI per PMI | NEXUS Agency"
-        description="Web app, gestionali, siti web, AI automation, branding, UI/UX design. Servizi digitali end-to-end per PMI italiane."
+        title="Servizi digitali per aziende | sviluppo web, AI e automazioni"
+        description="Scopri i servizi di Nexus Agency: sviluppo siti web, web app, automazioni AI e consulenza digitale per aziende e PMI."
         canonical="https://nexusagency.it/servizi"
+        breadcrumbs={[
+          { name: "Home", url: "https://nexusagency.it" },
+          { name: "Servizi", url: "https://nexusagency.it/servizi" },
+        ]}
       />
 
       <section className="py-20 md:py-28 px-6 md:px-10">
@@ -91,10 +95,10 @@ const Servizi = () => {
               SERVIZI
             </span>
             <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
-              I nostri servizi
+              I nostri servizi digitali per aziende e PMI
             </h1>
-            <p className="text-base md:text-lg text-white/60 max-w-[600px] mx-auto">
-              Sviluppo digitale, AI e design end-to-end per PMI italiane.
+            <p className="text-base md:text-lg text-white/60 max-w-[700px] mx-auto">
+              Nexus Agency offre servizi digitali progettati per supportare la crescita di aziende e PMI. Ci occupiamo di sviluppo web, creazione di piattaforme digitali e sistemi di automazione che migliorano l'efficienza dei processi aziendali.
             </p>
           </motion.div>
 
@@ -184,6 +188,31 @@ const Servizi = () => {
             </div>
             <div className="h-2" />
           </motion.div>
+
+          {/* ─── SERVICE DESCRIPTION BLOCKS ─── */}
+          <div className="mt-16 space-y-10 max-w-[900px] mx-auto">
+            {[
+              { title: 'Sviluppo siti web professionali', text: 'Progettiamo e sviluppiamo siti web su misura per aziende e PMI italiane. Ogni sito è costruito con tecnologie moderne, ottimizzato per i motori di ricerca e progettato per offrire un\'esperienza utente eccellente. Dalla struttura alla pubblicazione, seguiamo ogni fase del progetto per garantire un prodotto finale che rappresenti al meglio la tua attività e converta i visitatori in clienti. I nostri siti sono responsive, veloci e pensati per crescere insieme al tuo business.', link: '/servizi/sviluppo-web' },
+              { title: 'Sviluppo web app e piattaforme digitali', text: 'Creiamo web app e piattaforme digitali personalizzate per digitalizzare i processi operativi della tua azienda. Dalle dashboard gestionali ai portali clienti, sviluppiamo applicazioni scalabili e sicure che semplificano il lavoro quotidiano del tuo team. Ogni piattaforma è progettata partendo dalle esigenze reali del business, con un focus su usabilità, prestazioni e integrazione con i sistemi esistenti.', link: '/servizi/web-app' },
+              { title: 'Automazioni AI per aziende', text: 'Implementiamo sistemi di automazione basati su intelligenza artificiale per eliminare le attività ripetitive e migliorare l\'efficienza operativa della tua azienda. Dalle risposte automatiche ai clienti alla gestione documentale, dall\'analisi dati ai workflow interni, integriamo AI nei processi aziendali per risparmiare tempo, ridurre gli errori e liberare risorse per attività a maggiore valore aggiunto.', link: '/servizi/ai-automation' },
+              { title: 'Branding e design digitale', text: 'Costruiamo identità visive e interfacce digitali che comunicano il valore del tuo brand. Dal logo alla user interface di un\'applicazione, ogni elemento è progettato per creare un\'esperienza coerente e memorabile. Il nostro approccio al design è orientato ai risultati: ogni scelta estetica è guidata da obiettivi di business e principi di usabilità.', link: '/servizi/ui-ux-design' },
+              { title: 'Consulenza strategica digitale', text: 'Offriamo consulenza digitale per aiutare aziende e PMI a definire la strategia tecnologica più adatta ai propri obiettivi. Analizziamo i processi esistenti, identifichiamo le opportunità di miglioramento e creiamo una roadmap concreta per la trasformazione digitale. Dalla scelta degli strumenti alla pianificazione dello sviluppo, ti accompagniamo in ogni fase del percorso.', link: '/servizi/consulenza-digitale' },
+            ].map((block, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-3">{block.title}</h2>
+                <p className="text-white/60 text-base leading-relaxed mb-3">{block.text}</p>
+                <Link to={block.link} className="text-[#d0f601] text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
+                  Scopri il servizio <ArrowRight size={14} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </>

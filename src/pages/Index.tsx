@@ -114,15 +114,15 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="NEXUS Agency — Prodotti Digitali e AI per PMI Italiane"
-        description="Sviluppiamo gestionali, web app, siti web e soluzioni AI per PMI italiane. Lovable Gold Partner. Risultati misurabili, tecnologia moderna."
+        title="Nexus Agency | Agenzia AI e sviluppo web per aziende e PMI"
+        description="Nexus Agency è un'agenzia specializzata nello sviluppo di siti web, web app e automazioni AI per aziende e PMI. Creiamo prodotti digitali e sistemi innovativi per far crescere il tuo business."
         canonical="https://nexusagency.it"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "NEXUS Agency",
           url: "https://nexusagency.it",
-          description: "Sviluppiamo gestionali, web app, siti web e soluzioni AI per PMI italiane.",
+          description: "Nexus Agency è un'agenzia specializzata nello sviluppo di siti web, web app e automazioni AI per aziende e PMI.",
         }}
       />
 
@@ -269,6 +269,53 @@ const Index = () => {
 
       {/* ─── TRUST BAR ─── */}
       <TrustBar />
+
+      {/* ─── CHI È NEXUS AGENCY — SEO Section ─── */}
+      <section className="relative py-24">
+        <SectionBackground variant="dark" />
+        <div className="section-container relative z-[2] max-w-4xl mx-auto">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+            <motion.h2 variants={fadeUpVariants} className="text-3xl md:text-4xl font-bold text-white mb-6">Chi è Nexus Agency</motion.h2>
+            <motion.div variants={fadeUpVariants} className="space-y-5 text-white/70 text-base md:text-lg leading-relaxed">
+              <p>Nexus Agency è una digital agency specializzata nello sviluppo di prodotti digitali, siti web, web app e sistemi di automazione basati su intelligenza artificiale.</p>
+              <p>Supportiamo aziende e PMI nella progettazione e realizzazione di piattaforme digitali, strumenti di automazione e soluzioni tecnologiche pensate per migliorare processi aziendali, produttività e crescita.</p>
+              <p>Il nostro approccio unisce strategia digitale, sviluppo software e design per creare prodotti scalabili, performanti e orientati ai risultati.</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── COSA FACCIAMO PER LE AZIENDE — SEO Section ─── */}
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="blue-left" />
+        <div className="section-container relative z-[2]">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="max-w-4xl mx-auto mb-12">
+            <motion.h2 variants={fadeUpVariants} className="text-3xl md:text-4xl font-bold text-white mb-4">Cosa facciamo per le aziende</motion.h2>
+            <motion.p variants={fadeUpVariants} className="text-white/60 text-base md:text-lg leading-relaxed">
+              Aiutiamo aziende e PMI a progettare e sviluppare soluzioni digitali moderne. I nostri servizi principali includono sviluppo web, creazione di web app, automazioni AI e consulenza strategica per la trasformazione digitale.
+            </motion.p>
+          </motion.div>
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Sviluppo siti web professionali', desc: 'Progettiamo e sviluppiamo siti web su misura per la tua azienda, ottimizzati per i motori di ricerca e pensati per convertire i visitatori in clienti.', link: '/servizi/sviluppo-web' },
+              { title: 'Sviluppo web app', desc: 'Creiamo applicazioni web personalizzate che digitalizzano i processi della tua azienda e migliorano la produttività del team.', link: '/servizi/web-app' },
+              { title: 'Automazioni AI', desc: 'Integriamo sistemi di intelligenza artificiale per automatizzare attività ripetitive e ottimizzare i flussi di lavoro aziendali.', link: '/servizi/ai-automation' },
+              { title: 'Consulenza digitale', desc: 'Definiamo insieme la strategia digitale più adatta alla tua azienda, con roadmap concrete e obiettivi misurabili.', link: '/servizi/consulenza-digitale' },
+              { title: 'Branding e design', desc: 'Creiamo identità visive memorabili e interfacce utente che comunicano i valori del tuo brand e migliorano l\'esperienza dei tuoi clienti.', link: '/servizi/ui-ux-design' },
+            ].map((item, i) => (
+              <motion.div key={i} variants={fadeUpVariants}>
+                <Link to={item.link} className="group block h-full rounded-2xl border border-white/[0.1] bg-white/[0.04] p-6 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
+                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#d0f601] transition-colors">{item.title}</h3>
+                  <p className="text-white/55 text-sm leading-relaxed mb-4">{item.desc}</p>
+                  <span className="text-sm font-medium text-white/40 group-hover:text-white/70 inline-flex items-center gap-1 transition-colors">
+                    Scopri di più <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* ─── SERVICES ─── */}
       <section className="relative py-24">
@@ -599,6 +646,44 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* ─── FAQ SEO ─── */}
+      <section className="relative py-24 border-t border-white/[0.06]">
+        <SectionBackground variant="dark" />
+        <div className="section-container relative z-[2] max-w-4xl mx-auto">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+            <motion.h2 variants={fadeUpVariants} className="text-3xl md:text-4xl font-bold text-white mb-10">Domande frequenti</motion.h2>
+            <div className="space-y-6">
+              {[
+                { q: 'Quanto costa sviluppare un sito web professionale?', a: 'Il costo dipende dalla complessità del progetto, dalle funzionalità richieste e dal livello di personalizzazione.' },
+                { q: 'Quanto tempo serve per sviluppare una web app?', a: 'Lo sviluppo di una web app può richiedere da alcune settimane a diversi mesi, in base alla complessità della piattaforma.' },
+                { q: "L'intelligenza artificiale può automatizzare processi aziendali?", a: 'Sì, molte attività ripetitive possono essere automatizzate utilizzando sistemi di automazione basati su AI e integrazioni software.' },
+              ].map((faq, i) => (
+                <motion.div key={i} variants={fadeUpVariants} className="border border-white/[0.08] rounded-xl p-6 bg-white/[0.03]">
+                  <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: "Quanto costa sviluppare un sito web professionale?", acceptedAnswer: { "@type": "Answer", text: "Il costo dipende dalla complessità del progetto, dalle funzionalità richieste e dal livello di personalizzazione." } },
+              { "@type": "Question", name: "Quanto tempo serve per sviluppare una web app?", acceptedAnswer: { "@type": "Answer", text: "Lo sviluppo di una web app può richiedere da alcune settimane a diversi mesi, in base alla complessità della piattaforma." } },
+              { "@type": "Question", name: "L'intelligenza artificiale può automatizzare processi aziendali?", acceptedAnswer: { "@type": "Answer", text: "Sì, molte attività ripetitive possono essere automatizzate utilizzando sistemi di automazione basati su AI e integrazioni software." } },
+            ]
+          })
+        }}
+      />
 
       {/* ─── CTA FINALE ─── */}
       <section className="relative py-24 border-t border-white/[0.06]">

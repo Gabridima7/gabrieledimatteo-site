@@ -140,8 +140,9 @@ const Blog = () => {
   return (
     <>
       <SEOHead
-        title="Blog — NEXUS Agency"
-        description="Risorse, guide e insight su sviluppo web, prodotti digitali, AI e strategie per far crescere la tua azienda online."
+        title="Blog su AI e Digitale per PMI — NEXUS Agency"
+        description="Articoli e guide su AI automation, sviluppo web e strategie digitali per PMI italiane."
+        canonical="https://nexusagency.it/blog"
       />
 
       {/* Hero */}

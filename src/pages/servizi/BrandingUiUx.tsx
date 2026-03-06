@@ -5,8 +5,8 @@ import heroBrandingUiUx from '@/assets/hero-branding-ui-ux.png';
 
 const BrandingUiUx = () => (
   <ServicePageTemplate
-    seoTitle="Branding & UI/UX Design — NEXUS Agency"
-    seoDescription="UI/UX design, branding, mobile app design e website redesign per PMI italiane."
+    seoTitle="Branding e UI/UX Design per PMI Italiane | NEXUS Agency"
+    seoDescription="Brand identity, logo design, UI/UX per web e app. Design che converte. Da €1.800."
     badge="Branding & UI/UX"
     h1="Design che comunica e converte"
     subtitle="Creiamo identità visive coerenti e interfacce che trasformano visitatori in clienti."

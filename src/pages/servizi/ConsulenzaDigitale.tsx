@@ -6,8 +6,8 @@ import heroConsulenza from '@/assets/hero-consulenza-digitale.png';
 
 const ConsulenzaDigitale = () => (
   <ServicePageTemplate
-    seoTitle="Consulenza Digitale — NEXUS Agency"
-    seoDescription="Consulenza digitale, audit UX/UI e strategia digitale per PMI italiane."
+    seoTitle="Consulenza Digitale per PMI — Strategia e Roadmap | NEXUS"
+    seoDescription="Audit digitale, roadmap strategica e consulenza per la trasformazione digitale della tua PMI."
     badge="Consulenza Digitale"
     h1="Strategia digitale per la tua crescita"
     subtitle="Ti guidiamo nella trasformazione digitale con analisi, audit e una roadmap su misura per la tua PMI."

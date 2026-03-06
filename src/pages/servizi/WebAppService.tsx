@@ -8,8 +8,8 @@ import techPython from '@/assets/tech/icon-python.png';
 
 const WebAppService = () => (
   <ServicePageTemplate
-    seoTitle="Web App — NEXUS Agency"
-    seoDescription="Applicazioni web progressive e interattive su misura per la tua azienda."
+    seoTitle="Sviluppo Web App su Misura per PMI | NEXUS Agency"
+    seoDescription="Progettiamo e sviluppiamo web application personalizzate per PMI italiane. React, scalabili, sicure. Da €3.000."
     badge="Web App"
     h1="Web app interattive e scalabili"
     subtitle="Applicazioni web progressive su misura che i tuoi utenti ameranno usare ogni giorno."

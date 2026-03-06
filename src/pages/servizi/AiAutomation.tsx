@@ -9,8 +9,8 @@ import heroAiAutomation from '@/assets/hero-ai-automation.png';
 
 const AiAutomation = () => (
   <ServicePageTemplate
-    seoTitle="AI Automation — NEXUS Agency"
-    seoDescription="Automazioni AI, chatbot intelligenti e integrazioni API per PMI italiane."
+    seoTitle="AI Automation e Chatbot per PMI Italiane | NEXUS Agency"
+    seoDescription="Chatbot, workflow automation, integrazioni AI per PMI. ROI misurabile, implementazione in 2-4 settimane."
     badge="AI Automation"
     h1="Automatizza i processi con l'intelligenza artificiale"
     subtitle="Elimina il lavoro manuale e libera tempo per attività strategiche con automazioni AI su misura."

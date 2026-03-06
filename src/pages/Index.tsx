@@ -114,8 +114,8 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="NEXUS Agency — AI e Sviluppo Web per PMI Italiane"
-        description="NEXUS è l'agenzia digitale italiana specializzata in AI automation, sviluppo web e app, branding per PMI. Prenota una call gratuita."
+        title="NEXUS Agency — Prodotti Digitali e AI per PMI Italiane"
+        description="Sviluppiamo gestionali, web app, siti web e soluzioni AI per PMI italiane. Lovable Gold Partner. Risultati misurabili, tecnologia moderna."
         canonical="https://nexusagency.it" />
 
 

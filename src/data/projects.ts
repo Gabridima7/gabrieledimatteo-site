@@ -1,3 +1,5 @@
+import gallery500voltemeglio from '@/assets/gallery-500voltemeglio-hero.png';
+
 export interface ProjectImage {
   src: string;
   alt: string;
@@ -168,7 +170,7 @@ export const projectsData: Project[] = [
       { number: "3", title: "Sviluppo & Integrazioni", items: ["Sviluppo sito web", "Integrazione sistema prenotazioni", "Sezione menù interattiva", "Ottimizzazione SEO locale"] },
     ],
     galleryImages: [
-      { src: "/src/assets/gallery-500voltemeglio-hero.png", alt: "Hero 500 Volte Meglio", caption: "Homepage con hero section accogliente" },
+      { src: gallery500voltemeglio, alt: "Hero 500 Volte Meglio", caption: "Homepage con hero section accogliente" },
       { src: "https://500voltemeglio.it/wp-content/uploads/2025/10/about.png", alt: "Chi Siamo", caption: "Sezione Chi Siamo del ristorante" },
       { src: "https://500voltemeglio.it/wp-content/uploads/2025/10/antipasti.png", alt: "Menù antipasti", caption: "Sezione menù con i piatti del ristorante" },
     ],

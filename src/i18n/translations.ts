@@ -82,14 +82,14 @@ export const translations = {
     c4Desc: { it: 'Sito Web & Sistema Prenotazioni', en: 'Website & Booking System' },
     c4Badge: { it: 'Sviluppo Web', en: 'Web Development' },
   },
-  // Lead magnet
+  // Newsletter
   lead: {
-    title: { it: 'Scarica le risorse gratuite su AI e automazione', en: 'Download free resources on AI and automation' },
-    subtitle: { it: 'Template, guide e tutorial pronti all\'uso per le PMI italiane.', en: 'Ready-to-use templates, guides and tutorials for Italian SMEs.' },
+    title: { it: 'Iscriviti alla nostra newsletter', en: 'Subscribe to our newsletter' },
+    subtitle: { it: 'Ricevi aggiornamenti su AI, automazione e strategie digitali direttamente nella tua inbox.', en: 'Get updates on AI, automation and digital strategies straight to your inbox.' },
     placeholder: { it: 'La tua email', en: 'Your email' },
-    cta: { it: 'Accedi gratis', en: 'Get free access' },
-    disclaimer: { it: 'Riceverai subito il link via email. Nessuno spam.', en: 'You\'ll receive the link immediately. No spam.' },
-    success: { it: '✓ Controlla la tua email!', en: '✓ Check your email!' },
+    cta: { it: 'Iscriviti ora', en: 'Subscribe now' },
+    disclaimer: { it: 'Nessuno spam, solo contenuti di valore. Cancellati quando vuoi.', en: 'No spam, only valuable content. Unsubscribe anytime.' },
+    success: { it: '✓ Iscrizione confermata! Controlla la tua email.', en: '✓ Subscription confirmed! Check your email.' },
   },
   // Process
   process: {

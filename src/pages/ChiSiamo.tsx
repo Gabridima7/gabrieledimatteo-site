@@ -342,35 +342,50 @@ const ChiSiamo = () => {
       </section>
 
       {/* Founder */}
-      <section className="py-16">
-        <div className="section-container">
+      <section className="relative py-24 md:py-32">
+        <SectionBackground variant="blue-center" />
+        <div className="section-container relative z-[2]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-10 max-w-2xl mx-auto"
-            data-cursor="spotlight">
+            className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 max-w-5xl mx-auto">
             
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/30">
-                <img src={founderGabriele} alt="Gabriele Di Matteo — Founder Nexus Agency" className="w-full h-full object-cover" />
-              </div>
+            {/* Left — Founder photo card */}
+            <div className="rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[340px]" style={{ background: 'linear-gradient(180deg, #c4b5fd 0%, #a78bfa 50%, #7c6bc4 100%)' }}>
               <div>
-                <h3 className="text-xl font-semibold">Gabriele Di Matteo</h3>
-                <p className="text-muted-foreground text-sm">Founder & CEO, Nexus Agency</p>
+                <div className="w-24 h-24 rounded-full overflow-hidden border-3 border-white/30 mb-6">
+                  <img src={founderGabriele} alt="Gabriele Di Matteo — Founder Nexus Agency" className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Gabriele Di Matteo</h3>
+                <p className="text-gray-600 text-sm mt-1">Founder & CEO, Nexus Agency</p>
+              </div>
+              <div className="flex gap-2 mt-6 flex-wrap">
+                <span className="px-3 py-1 rounded-full bg-white/20 text-gray-900 text-xs font-medium">AI & Automation</span>
+                <span className="px-3 py-1 rounded-full bg-white/20 text-gray-900 text-xs font-medium">Web Dev</span>
+                <span className="px-3 py-1 rounded-full bg-white/20 text-gray-900 text-xs font-medium">Product Strategy</span>
               </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              Imprenditore digitale e AI product builder con esperienza nella progettazione e realizzazione di prodotti digitali per aziende e PMI. Ho fondato Nexus Agency con la missione di rendere l'innovazione tecnologica accessibile e concreta per il tessuto imprenditoriale italiano.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              La mia visione è portare l'AI operativa e lo sviluppo software di qualità nelle PMI italiane, con un approccio orientato ai risultati, alla trasparenza e alla creazione di valore reale per ogni cliente.
-            </p>
-            <div className="flex gap-2 mt-4">
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">AI & Automation</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Web Development</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Product Strategy</span>
+
+            {/* Right — Bio card with gradient */}
+            <div className="rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[340px]" style={{ background: 'linear-gradient(135deg, #1C35C8 0%, #7C3AED 50%, #9333EA 100%)' }}>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                  Il fondatore dietro <span className="font-serif-accent font-normal">Nexus</span>
+                </h2>
+                <p className="text-base mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  Imprenditore digitale e AI product builder con esperienza nella progettazione e realizzazione di prodotti digitali per aziende e PMI. Ho fondato Nexus Agency con la missione di rendere l'innovazione tecnologica accessibile e concreta per il tessuto imprenditoriale italiano.
+                </p>
+                <p className="text-base mt-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  La mia visione è portare l'AI operativa e lo sviluppo software di qualità nelle PMI italiane, con un approccio orientato ai risultati, alla trasparenza e alla creazione di valore reale per ogni cliente.
+                </p>
+              </div>
+              <div className="mt-8">
+                <a href="https://www.linkedin.com/in/gabriele-di-matteo/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)]" style={{ background: '#d0f601' }}>
+                  Connettiti su LinkedIn <ArrowRight size={16} />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

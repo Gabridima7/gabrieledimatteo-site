@@ -224,12 +224,12 @@ const ProjectDetail = () => {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, ease }}
             >
+              {project.galleryImages[0].caption && (
+                <p className="text-sm text-[#666] mb-3 text-center">{project.galleryImages[0].caption}</p>
+              )}
               <div className="overflow-hidden rounded-2xl aspect-[16/9]">
                 <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
               </div>
-              {project.galleryImages[0].caption && (
-                <p className="text-sm text-[#666] mt-3 text-center">{project.galleryImages[0].caption}</p>
-              )}
             </motion.div>
           )}
 

@@ -70,7 +70,7 @@ export const projectsData: Project[] = [
       { number: "4", title: "Sviluppo", items: ["Frontend React", "Backend API", "Automazioni N8N", "Deploy e testing"] },
     ],
     galleryImages: [
-      { src: galleryHomelevenServizi, alt: "Servizi Homeleven", caption: "Panoramica dei servizi offerti dalla piattaforma" },
+      { src: galleryHomelevenServizi, alt: "Dashboard Staff Interno Homeleven", caption: "Dashboard Staff Interno Homeleven" },
       { src: galleryHomelevenProperty, alt: "Villa Mia - Proprietà gestita", caption: "Una delle proprietà gestite tramite la piattaforma" },
       { src: galleryHomelevenMaison, alt: "Maison Belvedere - Sanremo", caption: "Maison Belvedere, appartamento gestito a Sanremo" },
     ],

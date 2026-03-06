@@ -274,7 +274,7 @@ const BlogPostPage = () => {
       {/* Hero */}
       <section className="relative pt-32 pb-12 md:pt-40 md:pb-16" style={{ background: '#0A0A0A' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,37,255,0.12) 0%, transparent 70%)' }} />
-        <div className="relative z-[2] max-w-[780px] mx-auto px-6">
+        <div className="relative z-[2] max-w-[900px] mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm text-[#6B7280] mb-6">
@@ -335,10 +335,10 @@ const BlogPostPage = () => {
 
       {/* Body + TOC */}
       <section ref={articleRef} className="relative py-12 md:py-16" style={{ background: '#0A0A0A' }}>
-        <div className="relative z-[2] max-w-[1080px] mx-auto px-6">
+        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
           <div className="flex gap-16">
             {/* Main content */}
-            <article className="flex-1 max-w-[680px] mx-auto xl:mx-0">
+            <article className="flex-1 max-w-[800px] mx-auto xl:mx-0">
               {post.content.map((section, i) => {
                 const id = section.type === 'heading2' ? `h2-${h2Index++}` : undefined;
                 return <RenderSection key={i} section={section} id={id} />;
@@ -379,7 +379,7 @@ const BlogPostPage = () => {
       {/* FAQ */}
       {post.faq && post.faq.length > 0 && (
         <section className="relative py-16" style={{ background: '#0A0A0A' }}>
-          <div className="max-w-[680px] mx-auto px-6">
+          <div className="max-w-[800px] mx-auto px-6">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

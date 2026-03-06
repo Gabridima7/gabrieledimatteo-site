@@ -52,6 +52,11 @@ const Contatti = () => {
       <SEOHead
         title="Contatti — Parliamo del tuo Progetto | NEXUS Agency"
         description="Contatta NEXUS Agency per sviluppo web, AI automation e consulenza. Risposta entro 24h."
+        canonical="https://nexusagency.it/contatti"
+        breadcrumbs={[
+          { name: "Home", url: "https://nexusagency.it" },
+          { name: "Contatti", url: "https://nexusagency.it/contatti" },
+        ]}
         canonical="https://nexusagency.it/contatti" />
 
       <div className="pt-8">

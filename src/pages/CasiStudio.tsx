@@ -269,6 +269,11 @@ const CasiStudio = () => {
         title="Casi Studio — Progetti Reali per PMI Italiane | NEXUS"
         description="Scopri i progetti NEXUS: gestionali, siti web, AI automation per PMI. Risultati concreti e misurabili."
         canonical="https://nexusagency.it/casi-studio"
+        breadcrumbs={[
+          { name: "Home", url: "https://nexusagency.it" },
+          { name: "Casi Studio", url: "https://nexusagency.it/casi-studio" },
+        ]}
+        canonical="https://nexusagency.it/casi-studio"
       />
     <div className="min-h-screen">
       {/* ═══ HERO ═══ */}

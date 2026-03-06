@@ -143,6 +143,11 @@ const Blog = () => {
         title="Blog su AI e Digitale per PMI — NEXUS Agency"
         description="Articoli e guide su AI automation, sviluppo web e strategie digitali per PMI italiane."
         canonical="https://nexusagency.it/blog"
+        breadcrumbs={[
+          { name: "Home", url: "https://nexusagency.it" },
+          { name: "Blog", url: "https://nexusagency.it/blog" },
+        ]}
+        canonical="https://nexusagency.it/blog"
       />
 
       {/* Hero */}

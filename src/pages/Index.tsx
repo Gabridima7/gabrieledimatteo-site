@@ -105,10 +105,10 @@ const Index = () => {
 
 
   const caseStudies = [
-  { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/casi-studio', cover: coverHomeleven },
-  { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/casi-studio', cover: coverOneup },
-  { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/casi-studio', cover: coverBiglia },
-  { title: t('cases', 'c4Title'), desc: t('cases', 'c4Desc'), badge: t('cases', 'c4Badge'), link: '/casi-studio', cover: cover500voltemeglio }];
+  { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), link: '/progetto/homeleven', cover: coverHomeleven },
+  { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), link: '/progetto/one-up', cover: coverOneup },
+  { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), link: '/progetto/biglia-serramenti', cover: coverBiglia },
+  { title: t('cases', 'c4Title'), desc: t('cases', 'c4Desc'), badge: t('cases', 'c4Badge'), link: '/progetto/500-volte-meglio', cover: cover500voltemeglio }];
 
 
   return (

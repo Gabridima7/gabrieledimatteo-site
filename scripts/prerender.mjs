@@ -39,7 +39,16 @@ const routes = [
 ];
 
 async function prerender() {
-  const template = fs.readFileSync(path.resolve(distDir, 'index.html'), 'utf-8');
+  const templatePath = path.resolve(distDir, 'index.html');
+  const rawTemplate = fs.readFileSync(templatePath, 'utf-8');
+
+  // Ensure we always start from a clean shell even if prerender is re-run on an already prerendered dist.
+  const template = rawTemplate
+    .replace(/<div id="root">[\s\S]*?<\/div>/, '<div id="root"></div>')
+    .replace(/<title[^>]*data-rh="true"[^>]*>[\s\S]*?<\/title>/g, '')
+    .replace(/<meta[^>]*data-rh="true"[^>]*>/g, '')
+    .replace(/<link[^>]*data-rh="true"[^>]*>/g, '')
+    .replace(/<script[^>]*data-rh="true"[^>]*>[\s\S]*?<\/script>/g, '');
 
   const serverEntry = path.resolve(distDir, 'server', 'entry-server.js');
   const { render } = await import(serverEntry);
@@ -67,6 +76,8 @@ async function prerender() {
           helmet.link?.toString() || '',
           helmet.script?.toString() || '',
         ].filter(Boolean).join('\n');
+
+        console.log(`Route: ${route} → Title: ${helmet.title?.toString() || 'NO_TITLE'}`);
 
         if (headTags) {
           page = page.replace('</head>', `${headTags}\n</head>`);

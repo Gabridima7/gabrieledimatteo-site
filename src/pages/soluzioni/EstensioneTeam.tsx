@@ -1,5 +1,6 @@
 import { Users, Clock, Shield, Zap } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroEstensioneTeam from '@/assets/hero-estensione-team.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
@@ -15,6 +16,7 @@ const EstensioneTeam = () => (
     h1="Espandi il tuo team con *esperti dedicati*"
     subtitle="Sviluppatori, designer e specialisti AI che lavorano come un'estensione del tuo team interno. Flessibilità totale."
     heroIcon={Users}
+    heroImage={heroEstensioneTeam}
     stats={[
       { value: '48h', label: 'Tempo di onboarding' },
       { value: '100%', label: 'Dedicati al tuo progetto' },

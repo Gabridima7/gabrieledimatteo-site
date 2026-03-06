@@ -244,6 +244,9 @@ const ProjectDetail = () => {
                   viewport={{ once: true, amount: 0.15 }}
                   transition={{ duration: 0.5, delay: i * 0.1, ease }}
                 >
+                  {img.caption && (
+                    <p className="text-sm text-[#666] mb-3 text-center">{img.caption}</p>
+                  )}
                   <div className="overflow-hidden rounded-2xl aspect-[4/3]">
                     <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
                   </div>

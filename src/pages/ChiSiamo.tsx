@@ -43,6 +43,10 @@ const ChiSiamo = () => {
         title="Chi Siamo — Gabriele Di Matteo | NEXUS Agency"
         description="NEXUS è guidata da Gabriele Di Matteo, esperto di sviluppo digitale e AI per PMI italiane."
         canonical="https://nexusagency.it/chi-siamo"
+        breadcrumbs={[
+          { name: "Home", url: "https://nexusagency.it" },
+          { name: "Chi Siamo", url: "https://nexusagency.it/chi-siamo" },
+        ]}
       />
     <div>
       {/* ═══ HERO ═══ */}

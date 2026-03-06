@@ -124,9 +124,33 @@ const ServicePageTemplate = (props: ServicePageProps) => {
     })),
   };
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: props.h1,
+    description: props.seoDescription,
+    provider: {
+      "@type": "Organization",
+      name: "NEXUS Agency",
+      url: "https://nexusagency.it",
+    },
+    ...(props.seoCanonical ? { url: props.seoCanonical } : {}),
+  };
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://nexusagency.it" },
+    { name: props.badge, url: props.seoCanonical || "https://nexusagency.it" },
+  ];
+
   return (
     <>
-      <SEOHead title={props.seoTitle} description={props.seoDescription} canonical={props.seoCanonical} />
+      <SEOHead
+        title={props.seoTitle}
+        description={props.seoDescription}
+        canonical={props.seoCanonical}
+        breadcrumbs={breadcrumbs}
+        jsonLd={[serviceSchema]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pb-16">

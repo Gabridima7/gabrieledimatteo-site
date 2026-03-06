@@ -41,13 +41,13 @@ const Footer = () => {
 
   const linkCol = [
     { label: t('footer', 'casiStudio'), to: '/casi-studio' },
-    { label: t('footer', 'risorse'), to: '/templates' },
+    { label: 'Blog', to: '/blog' },
     { label: t('footer', 'chiSiamo'), to: '/chi-siamo' },
   ];
 
   const aziendaCol = [
     { label: lang === 'it' ? 'Chi siamo' : 'About', to: '/chi-siamo' },
-    { label: 'Blog', to: '/templates' },
+    { label: 'Blog', to: '/blog' },
     { label: lang === 'it' ? 'Lavora con noi' : 'Careers', action: openApplicationForm },
     { label: t('footer', 'contattaci'), to: '/contatti' },
   ];

@@ -240,8 +240,8 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link to="/templates" className="nav-link px-4 py-2">
-              {t('nav', 'risorse')}
+            <Link to="/blog" className="nav-link px-4 py-2">
+              Blog
             </Link>
           </div>
 
@@ -379,8 +379,8 @@ const Navbar = () => {
                 </Link>
 
                 {/* Risorse */}
-                <Link to="/templates" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
-                  {t('nav', 'risorse')}
+                <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
+                  Blog
                 </Link>
 
                 {/* Lang switch */}

@@ -101,6 +101,37 @@ async function prerender() {
 
   console.log(`\nPre-rendering complete: ${successCount} succeeded, ${failCount} failed`);
 
+  // Generate sitemap.xml
+  const SITE_URL = 'https://nexusagency.it';
+  const today = new Date().toISOString().split('T')[0];
+
+  const priorities = {
+    '/': '1.0',
+    '/servizi': '0.9',
+    '/casi-studio': '0.8',
+    '/chi-siamo': '0.7',
+    '/contatti': '0.7',
+    '/blog': '0.8',
+    '/prodotti-ai': '0.7',
+  };
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes.map(route => {
+    const priority = priorities[route] || (route.startsWith('/servizi/') || route.startsWith('/soluzioni/') ? '0.8' : '0.5');
+    const changefreq = route === '/' ? 'weekly' : route.startsWith('/blog') ? 'weekly' : 'monthly';
+    return `  <url>
+    <loc>${SITE_URL}${route}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+  }).join('\n')}
+</urlset>`;
+
+  fs.writeFileSync(path.resolve(distDir, 'sitemap.xml'), sitemap);
+  console.log(`✓ Generated sitemap.xml with ${routes.length} URLs`);
+
   // Clean up server build
   fs.rmSync(path.resolve(distDir, 'server'), { recursive: true, force: true });
 }

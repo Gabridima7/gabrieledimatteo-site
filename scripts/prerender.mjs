@@ -20,7 +20,7 @@ const routes = [
   '/servizi/website-design',
   '/servizi/mobile-app-design',
   '/servizi/website-redesign',
-  '/servizi/product-ux-ui-audit',
+  '/servizi/product-audit',
   '/servizi/branding-ui-ux',
   '/soluzioni/mvp',
   '/soluzioni/product-redesign',

@@ -78,6 +78,9 @@ export const translations = {
     c3Title: { it: 'Biglia Serramenti', en: 'Biglia Serramenti' },
     c3Desc: { it: 'Sito Web Professionale', en: 'Professional Website' },
     c3Badge: { it: 'Sviluppo Web', en: 'Web Development' },
+    c4Title: { it: '500 Volte Meglio', en: '500 Volte Meglio' },
+    c4Desc: { it: 'Sito Web & Sistema Prenotazioni', en: 'Website & Booking System' },
+    c4Badge: { it: 'Sviluppo Web', en: 'Web Development' },
   },
   // Lead magnet
   lead: {

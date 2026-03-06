@@ -7,6 +7,7 @@ import SectionBackground from '@/components/SectionBackground';
 import coverHomeleven from '@/assets/cover-homeleven.png';
 import coverOneup from '@/assets/cover-oneup.png';
 import coverBiglia from '@/assets/cover-biglia.png';
+import cover500voltemeglio from '@/assets/cover-500voltemeglio.jpg';
 import testimonialMarco from '@/assets/testimonial-marco.png';
 import logoHomeleven from '@/assets/logos/logo-homeleven-white.png';
 import logoOneup from '@/assets/logos/logo-oneup-color.png';

@@ -1,6 +1,10 @@
 import gallery500voltemeglio from '@/assets/gallery-500voltemeglio-hero.png';
 import gallery500voltemeglio2 from '@/assets/gallery-500voltemeglio-2.png';
 import gallery500voltemeglio3 from '@/assets/gallery-500voltemeglio-3.png';
+import galleryHomelevenHero from '@/assets/gallery-homeleven-hero.png';
+import galleryHomelevenServizi from '@/assets/gallery-homeleven-servizi.png';
+import galleryHomelevenProperty from '@/assets/gallery-homeleven-property.png';
+import galleryHomelevenMaison from '@/assets/gallery-homeleven-maison.png';
 
 export interface ProjectImage {
   src: string;
@@ -49,8 +53,8 @@ export const projectsData: Project[] = [
     slug: "homeleven",
     name: "Homeleven",
     tagline: "Software Gestionale *Custom* per il Mercato *Immobiliare*",
-    heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400",
-    coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
+    heroImage: galleryHomelevenHero,
+    coverImage: galleryHomelevenHero,
     client: "Cliente Privato",
     industry: "Gestione Immobiliare",
     services: ["Sviluppo Web App", "UI/UX Design", "Automazione"],
@@ -66,9 +70,9 @@ export const projectsData: Project[] = [
       { number: "4", title: "Sviluppo", items: ["Frontend React", "Backend API", "Automazioni N8N", "Deploy e testing"] },
     ],
     galleryImages: [
-      { src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200", alt: "Dashboard PropManager", caption: "Dashboard principale con overview di tutte le proprietà" },
-      { src: "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1200", alt: "Gestione calendari", caption: "Vista calendario per gestione prenotazioni" },
-      { src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200", alt: "Report finanziari", caption: "Report finanziari automatici mensili" },
+      { src: galleryHomelevenServizi, alt: "Servizi Homeleven", caption: "Panoramica dei servizi offerti dalla piattaforma" },
+      { src: galleryHomelevenProperty, alt: "Villa Mia - Proprietà gestita", caption: "Una delle proprietà gestite tramite la piattaforma" },
+      { src: galleryHomelevenMaison, alt: "Maison Belvedere - Sanremo", caption: "Maison Belvedere, appartamento gestito a Sanremo" },
     ],
     results: [
       { metric: "-80%", label: "Tempo gestione operativa", description: "Da ore a minuti per le operazioni quotidiane di gestione proprietà." },

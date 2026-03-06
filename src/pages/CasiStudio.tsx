@@ -7,6 +7,7 @@ import SectionBackground from '@/components/SectionBackground';
 import coverHomeleven from '@/assets/cover-homeleven.png';
 import coverOneup from '@/assets/cover-oneup.png';
 import coverBiglia from '@/assets/cover-biglia.png';
+import cover500voltemeglio from '@/assets/cover-500voltemeglio.jpg';
 import testimonialMarco from '@/assets/testimonial-marco.png';
 import logoHomeleven from '@/assets/logos/logo-homeleven-white.png';
 import logoOneup from '@/assets/logos/logo-oneup-color.png';
@@ -234,6 +235,14 @@ const CasiStudio = () => {
       tags: [t('works', 'serviceWebDesign'), t('works', 'serviceSviluppoWeb')],
       flag: '🇮🇹',
     },
+    {
+      cover: cover500voltemeglio,
+      title: t('cases', 'c4Title'),
+      desc: t('cases', 'c4Desc'),
+      badge: t('cases', 'c4Badge'),
+      tags: [t('works', 'serviceSviluppoWeb'), 'UI/UX Design', 'Software Gestionale'],
+      flag: '🇮🇹',
+    },
   ];
 
   const nextSlide = useCallback(() => {
@@ -246,9 +255,9 @@ const CasiStudio = () => {
   }, [nextSlide]);
 
   const counters = [
-    { value: "3+", label: t('works', 'counterProjects') },
+    { value: "4+", label: t('works', 'counterProjects') },
     { value: "100%", label: t('works', 'counterClients') },
-    { value: "3", label: t('works', 'counterSectors') },
+    { value: "4", label: t('works', 'counterSectors') },
   ];
 
   const currentSlide = heroSlides[activeSlide];
@@ -449,12 +458,13 @@ const CasiStudio = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
-            className="grid md:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
               { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), cover: coverHomeleven, slug: 'homeleven' },
               { title: t('cases', 'c2Title'), desc: t('cases', 'c2Desc'), badge: t('cases', 'c2Badge'), cover: coverOneup, slug: 'one-up' },
               { title: t('cases', 'c3Title'), desc: t('cases', 'c3Desc'), badge: t('cases', 'c3Badge'), cover: coverBiglia, slug: 'biglia-serramenti' },
+              { title: t('cases', 'c4Title'), desc: t('cases', 'c4Desc'), badge: t('cases', 'c4Badge'), cover: cover500voltemeglio, slug: '500-volte-meglio' },
             ].map((c, i) => (
               <motion.div
                 key={i}

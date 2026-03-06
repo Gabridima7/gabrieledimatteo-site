@@ -1,6 +1,10 @@
 import gallery500voltemeglio from '@/assets/gallery-500voltemeglio-hero.png';
 import gallery500voltemeglio2 from '@/assets/gallery-500voltemeglio-2.png';
 import gallery500voltemeglio3 from '@/assets/gallery-500voltemeglio-3.png';
+import galleryHomelevenHero from '@/assets/gallery-homeleven-hero.png';
+import galleryHomelevenServizi from '@/assets/gallery-homeleven-servizi.png';
+import galleryHomelevenProperty from '@/assets/gallery-homeleven-property.png';
+import galleryHomelevenMaison from '@/assets/gallery-homeleven-maison.png';
 
 export interface ProjectImage {
   src: string;

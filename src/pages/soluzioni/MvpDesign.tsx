@@ -1,5 +1,6 @@
 import { Rocket, Lightbulb, Target, Zap } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
+import heroMvpDesign from '@/assets/hero-mvp-design.png';
 import techReact from '@/assets/tech/icon-react.png';
 import techJs from '@/assets/tech/icon-js.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';

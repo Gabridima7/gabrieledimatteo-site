@@ -1,3 +1,18 @@
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface BlogSection {
+  type: 'paragraph' | 'heading2' | 'heading3' | 'list' | 'quote' | 'callout' | 'image';
+  content?: string;
+  items?: string[];
+  src?: string;
+  alt?: string;
+  caption?: string;
+  variant?: 'info' | 'tip' | 'warning';
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -7,6 +22,12 @@ export interface BlogPost {
   date: string;
   readTime: string;
   featured: boolean;
+  author: string;
+  authorRole?: string;
+  content: BlogSection[];
+  metaDescription: string;
+  relatedSlugs: string[];
+  faq?: FaqItem[];
 }
 
 export const blogCategories = [
@@ -28,6 +49,35 @@ export const blogPosts: BlogPost[] = [
     date: '15 Mar 2026',
     readTime: '6 min',
     featured: true,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Scopri come un software gestionale personalizzato può trasformare la tua PMI: ottimizzazione processi, riduzione costi e aumento produttività.',
+    relatedSlugs: ['web-app-vs-sito-web', 'pmi-italiane-investire-digitale-2026', 'one-up-gestionale-nautico'],
+    content: [
+      { type: 'paragraph', content: 'Nel panorama competitivo attuale, le PMI italiane si trovano di fronte a una sfida cruciale: **ottimizzare i propri processi interni** senza disperdere risorse in soluzioni generiche che non rispondono alle reali esigenze del business.' },
+      { type: 'heading2', content: 'Perché un gestionale generico non basta' },
+      { type: 'paragraph', content: 'I software gestionali "off-the-shelf" offrono funzionalità standardizzate che, nella maggior parte dei casi, coprono solo il 60-70% delle necessità operative di un\'azienda. Il restante 30-40% viene gestito con fogli Excel, email e processi manuali, generando inefficienze e rischi di errore.' },
+      { type: 'callout', content: 'Secondo una ricerca di Osservatori Digital Innovation del Politecnico di Milano, le PMI che adottano soluzioni digitali personalizzate registrano un aumento medio della produttività del 25%.', variant: 'info' },
+      { type: 'heading2', content: 'I vantaggi di un gestionale su misura' },
+      { type: 'list', items: [
+        '**Automazione dei processi ripetitivi** — elimina le attività manuali a basso valore aggiunto',
+        '**Integrazione completa** — connetti CRM, contabilità, magazzino e logistica in un unico sistema',
+        '**Scalabilità** — il software cresce con la tua azienda, adattandosi a nuove esigenze',
+        '**Reportistica avanzata** — dashboard in tempo reale per decisioni data-driven',
+        '**Riduzione degli errori** — meno intervento umano significa meno margine di errore',
+      ]},
+      { type: 'heading2', content: 'Il processo di sviluppo' },
+      { type: 'paragraph', content: 'Lo sviluppo di un gestionale personalizzato segue un percorso strutturato che parte dall\'analisi approfondita dei processi aziendali. In Nexus, utilizziamo un approccio *agile* che prevede rilasci incrementali, consentendo al cliente di testare e validare ogni funzionalità prima di procedere.' },
+      { type: 'quote', content: 'Un buon gestionale non è quello che ha più funzionalità, ma quello che risolve esattamente i problemi della tua azienda.', caption: 'Gabriele Di Matteo, Nexus Agency' },
+      { type: 'heading2', content: 'ROI: quando rientra l\'investimento?' },
+      { type: 'paragraph', content: 'Il ritorno sull\'investimento di un gestionale personalizzato si manifesta tipicamente entro **6-12 mesi** dal lancio. I principali driver sono la riduzione del tempo dedicato ad attività manuali, la diminuzione degli errori operativi e la possibilità di prendere decisioni più rapide grazie a dati centralizzati e aggiornati in tempo reale.' },
+    ],
+    faq: [
+      { question: 'Quanto costa sviluppare un gestionale personalizzato?', answer: 'Il costo varia in base alla complessità e al numero di moduli richiesti. Un progetto base parte da circa 15.000€, mentre soluzioni enterprise più complesse possono superare i 50.000€. Offriamo sempre un preventivo dettagliato dopo l\'analisi iniziale.' },
+      { question: 'Quanto tempo serve per sviluppare un gestionale?', answer: 'I tempi dipendono dalla complessità. Un MVP funzionante può essere pronto in 8-12 settimane, mentre un sistema completo richiede generalmente 4-6 mesi di sviluppo iterativo.' },
+      { question: 'Posso integrare il gestionale con i software che già uso?', answer: 'Assolutamente sì. Uno dei principali vantaggi di un gestionale su misura è proprio la possibilità di integrarlo con qualsiasi sistema esistente tramite API: CRM, software di contabilità, e-commerce, strumenti di comunicazione.' },
+      { question: 'Chi gestisce la manutenzione dopo il lancio?', answer: 'Offriamo piani di manutenzione e supporto post-lancio che includono aggiornamenti, bug fix, assistenza tecnica e sviluppo di nuove funzionalità su richiesta.' },
+    ],
   },
   {
     slug: 'web-app-vs-sito-web',
@@ -38,6 +88,33 @@ export const blogPosts: BlogPost[] = [
     date: '10 Mar 2026',
     readTime: '5 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Web App vs Sito Web: scopri le differenze e quale soluzione è più adatta al tuo business. Guida completa alla scelta.',
+    relatedSlugs: ['react-vs-nextjs-cosa-scegliere', 'gestionale-personalizzato-pmi', 'guida-design-system-prodotti-digitali'],
+    content: [
+      { type: 'paragraph', content: 'Una delle domande più frequenti che riceviamo dai nostri clienti è: *"Mi serve un sito web o una web app?"*. La risposta dipende dagli obiettivi di business e dal tipo di interazione che vuoi offrire ai tuoi utenti.' },
+      { type: 'heading2', content: 'Cos\'è un sito web tradizionale' },
+      { type: 'paragraph', content: 'Un sito web tradizionale è essenzialmente una **vetrina digitale**: presenta informazioni, servizi e contenuti in modo statico o semi-dinamico. È perfetto per aziende che hanno bisogno di una presenza online professionale, un portfolio o un blog.' },
+      { type: 'heading2', content: 'Cos\'è una web app' },
+      { type: 'paragraph', content: 'Una web app è un\'**applicazione software accessibile via browser** che offre funzionalità interattive complesse. Gli utenti possono autenticarsi, gestire dati, effettuare operazioni e interagire con il sistema in modo dinamico. Esempi: dashboard gestionali, piattaforme SaaS, marketplace.' },
+      { type: 'heading2', content: 'Confronto diretto' },
+      { type: 'list', items: [
+        '**Interattività** — Sito web: bassa/media. Web app: alta',
+        '**Complessità** — Sito web: semplice. Web app: medio-alta',
+        '**Autenticazione** — Sito web: raramente necessaria. Web app: quasi sempre presente',
+        '**Costi** — Sito web: inferiori. Web app: superiori ma con ROI maggiore',
+        '**Tempi di sviluppo** — Sito web: 2-6 settimane. Web app: 2-6 mesi',
+      ]},
+      { type: 'callout', content: 'Se i tuoi utenti devono "fare qualcosa" (non solo leggere), probabilmente hai bisogno di una web app.', variant: 'tip' },
+      { type: 'heading2', content: 'Quando scegliere cosa' },
+      { type: 'paragraph', content: 'Scegli un **sito web** se il tuo obiettivo principale è informare, presentare servizi o generare lead. Scegli una **web app** se hai bisogno di funzionalità operative, gestione dati complessa o vuoi offrire un servizio digitale ai tuoi clienti.' },
+    ],
+    faq: [
+      { question: 'Un sito web può diventare una web app?', answer: 'Sì, è possibile evolvere un sito web in una web app, ma spesso conviene ripensare l\'architettura da zero per ottenere risultati ottimali in termini di performance e user experience.' },
+      { question: 'Una web app funziona anche su mobile?', answer: 'Sì, le web app moderne sono responsive e si adattano a qualsiasi dispositivo. È anche possibile creare Progressive Web App (PWA) che offrono un\'esperienza simile alle app native.' },
+      { question: 'Qual è la soluzione più economica?', answer: 'Un sito web tradizionale ha costi iniziali inferiori. Tuttavia, se le tue esigenze richiedono interattività, una web app offre un ritorno sull\'investimento superiore nel lungo periodo.' },
+    ],
   },
   {
     slug: '5-processi-automatizzare-ai',
@@ -48,6 +125,29 @@ export const blogPosts: BlogPost[] = [
     date: '5 Mar 2026',
     readTime: '7 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: '5 processi aziendali da automatizzare con l\'intelligenza artificiale: assistenza clienti, gestione documentale e molto altro.',
+    relatedSlugs: ['chatbot-ai-customer-service-guida', 'gestionale-personalizzato-pmi', 'pmi-italiane-investire-digitale-2026'],
+    content: [
+      { type: 'paragraph', content: 'L\'intelligenza artificiale non è più una tecnologia del futuro: è uno strumento **concreto e accessibile** che le aziende possono implementare oggi per automatizzare processi ripetitivi e liberare risorse preziose.' },
+      { type: 'heading2', content: '1. Assistenza clienti con chatbot AI' },
+      { type: 'paragraph', content: 'I chatbot basati su AI possono gestire fino all\'**80% delle richieste di primo livello** dei clienti, rispondendo istantaneamente 24/7. Le domande più complesse vengono inoltrate automaticamente al team umano con tutto il contesto necessario.' },
+      { type: 'heading2', content: '2. Gestione e classificazione documentale' },
+      { type: 'paragraph', content: 'L\'AI può analizzare, classificare e archiviare automaticamente documenti come fatture, contratti e ordini. Grazie all\'OCR avanzato e al Natural Language Processing, il sistema estrae dati chiave e li inserisce nei tuoi gestionali.' },
+      { type: 'heading2', content: '3. Qualificazione lead e scoring' },
+      { type: 'paragraph', content: 'Gli algoritmi di machine learning analizzano il comportamento dei lead sul tuo sito web e assegnano un punteggio di qualità, permettendo al team commerciale di concentrarsi sui prospect più promettenti.' },
+      { type: 'heading2', content: '4. Reportistica e analisi dati' },
+      { type: 'paragraph', content: 'L\'AI genera report automatici, identifica trend e anomalie nei dati aziendali e fornisce insight predittivi. Non più ore a creare grafici Excel: il sistema ti mostra ciò che conta.' },
+      { type: 'heading2', content: '5. Email e comunicazioni ripetitive' },
+      { type: 'paragraph', content: 'Dalla composizione di email di follow-up alla personalizzazione di comunicazioni marketing, l\'AI può gestire il **70% delle comunicazioni routinarie**, mantenendo un tono coerente con il brand.' },
+      { type: 'callout', content: 'Non serve automatizzare tutto in una volta. Inizia dal processo che ti ruba più tempo e scala gradualmente.', variant: 'tip' },
+    ],
+    faq: [
+      { question: 'Quanto costa implementare l\'AI in azienda?', answer: 'I costi variano in base alla complessità. Un chatbot AI base parte da 3.000-5.000€, mentre soluzioni di automazione più avanzate possono richiedere investimenti di 10.000-30.000€. Il ROI si manifesta generalmente entro 3-6 mesi.' },
+      { question: 'Serve personale tecnico per gestire l\'AI?', answer: 'No, le soluzioni moderne sono progettate per essere gestite da personale non tecnico. Il setup iniziale viene fatto dal team di sviluppo, ma l\'utilizzo quotidiano è intuitivo e user-friendly.' },
+      { question: 'L\'AI sostituirà i miei dipendenti?', answer: 'No. L\'AI automatizza le attività ripetitive e a basso valore, permettendo ai dipendenti di concentrarsi su compiti strategici e creativi. È un potenziamento, non una sostituzione.' },
+    ],
   },
   {
     slug: 'homeleven-digitalizzazione-immobiliare',
@@ -58,6 +158,31 @@ export const blogPosts: BlogPost[] = [
     date: '28 Feb 2026',
     readTime: '8 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Case study Homeleven: come Nexus Agency ha digitalizzato la gestione immobiliare con una piattaforma web su misura.',
+    relatedSlugs: ['one-up-gestionale-nautico', 'gestionale-personalizzato-pmi', 'web-app-vs-sito-web'],
+    content: [
+      { type: 'paragraph', content: 'Homeleven è un\'agenzia immobiliare innovativa che necessitava di una **piattaforma digitale completa** per gestire il proprio portfolio immobili, le visite e le relazioni con i clienti. Ecco come abbiamo affrontato la sfida.' },
+      { type: 'heading2', content: 'La sfida' },
+      { type: 'paragraph', content: 'Homeleven gestiva tutto tramite fogli di calcolo, WhatsApp e telefonate. Le informazioni erano frammentate, le opportunità si perdevano e il team sprecava ore in attività manuali che potevano essere automatizzate.' },
+      { type: 'list', items: [
+        'Nessun sistema centralizzato per la gestione degli immobili',
+        'Comunicazione frammentata con i clienti',
+        'Impossibilità di tracciare lo stato delle trattative',
+        'Zero visibilità sulle performance del team',
+      ]},
+      { type: 'heading2', content: 'La soluzione' },
+      { type: 'paragraph', content: 'Abbiamo progettato e sviluppato una **piattaforma web completa** che integra gestione immobili, CRM clienti, calendario visite e dashboard analytics. Il tutto con un\'interfaccia intuitiva e un design premium.' },
+      { type: 'heading2', content: 'I risultati' },
+      { type: 'callout', content: 'In soli 3 mesi dal lancio, Homeleven ha registrato un aumento del 40% nella velocità di chiusura delle trattative e una riduzione del 60% del tempo dedicato ad attività amministrative.', variant: 'info' },
+      { type: 'quote', content: 'La piattaforma ha cambiato completamente il modo in cui lavoriamo. Oggi gestiamo il triplo degli immobili con lo stesso team.', caption: 'Marco R., Founder di Homeleven' },
+    ],
+    faq: [
+      { question: 'Quanto è durato il progetto Homeleven?', answer: 'Il progetto è durato complessivamente 4 mesi: 1 mese di discovery e design, 2.5 mesi di sviluppo e 2 settimane di testing e ottimizzazione.' },
+      { question: 'Che tecnologie avete utilizzato?', answer: 'La piattaforma è stata sviluppata con React per il frontend, Node.js per il backend e PostgreSQL come database. L\'hosting è su infrastruttura cloud scalabile.' },
+      { question: 'Il sistema è scalabile?', answer: 'Sì, l\'architettura è stata progettata per scalare sia in termini di utenti che di funzionalità. Homeleven può aggiungere nuovi moduli senza dover ripensare il sistema.' },
+    ],
   },
   {
     slug: 'guida-design-system-prodotti-digitali',
@@ -68,6 +193,35 @@ export const blogPosts: BlogPost[] = [
     date: '22 Feb 2026',
     readTime: '10 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Guida completa al design system per prodotti digitali: componenti, design tokens, documentazione e best practice per team di design.',
+    relatedSlugs: ['web-app-vs-sito-web', 'react-vs-nextjs-cosa-scegliere', 'homeleven-digitalizzazione-immobiliare'],
+    content: [
+      { type: 'paragraph', content: 'Un design system è molto più di una libreria di componenti: è il **linguaggio condiviso** tra designer e sviluppatori che garantisce coerenza, velocità e qualità in ogni prodotto digitale.' },
+      { type: 'heading2', content: 'Cos\'è un design system' },
+      { type: 'paragraph', content: 'Un design system è un ecosistema completo di principi, linee guida, componenti riutilizzabili e documentazione che permette a team multidisciplinari di costruire prodotti digitali coerenti e scalabili.' },
+      { type: 'heading2', content: 'I pilastri fondamentali' },
+      { type: 'heading3', content: 'Design Tokens' },
+      { type: 'paragraph', content: 'I design token sono le **unità atomiche** del sistema: colori, tipografia, spaziature, ombre, raggi di bordo. Definiti in modo centralizzato, vengono propagati a tutti i componenti garantendo coerenza visiva.' },
+      { type: 'heading3', content: 'Componenti' },
+      { type: 'paragraph', content: 'I componenti sono i mattoni dell\'interfaccia: bottoni, input, card, modali. Ogni componente ha varianti, stati e documentazione d\'uso chiara.' },
+      { type: 'heading3', content: 'Pattern e template' },
+      { type: 'paragraph', content: 'I pattern combinano più componenti per risolvere problemi ricorrenti: form di registrazione, tabelle dati, navigazione. I template definiscono il layout delle pagine.' },
+      { type: 'heading2', content: 'Best practice' },
+      { type: 'list', items: [
+        '**Inizia piccolo** — Non cercare di documentare tutto subito. Parti dai componenti più utilizzati',
+        '**Mantieni la documentazione viva** — Un design system non documentato è un design system morto',
+        '**Coinvolgi design e sviluppo** — Il sistema deve essere co-creato da entrambi i team',
+        '**Versionamento** — Tratta il design system come un prodotto con versioni e changelog',
+      ]},
+      { type: 'callout', content: 'Un design system maturo può ridurre i tempi di design del 50% e quelli di sviluppo del 30%.', variant: 'info' },
+    ],
+    faq: [
+      { question: 'Quando serve un design system?', answer: 'Un design system diventa essenziale quando il prodotto cresce in complessità, quando più designer e sviluppatori lavorano contemporaneamente o quando si nota inconsistenza visiva tra le varie sezioni.' },
+      { question: 'Quanto tempo serve per crearne uno?', answer: 'Un design system base può essere creato in 2-4 settimane. Un sistema completo e maturo richiede mesi di iterazione continua. La chiave è iniziare con le fondamenta e espandere progressivamente.' },
+      { question: 'Figma o codice?', answer: 'Entrambi. Il design system vive sia in Figma (per i designer) che nel codice (per gli sviluppatori). La sfida è mantenerli sincronizzati. Strumenti come Storybook aiutano a documentare i componenti codificati.' },
+    ],
   },
   {
     slug: 'pmi-italiane-investire-digitale-2026',
@@ -78,6 +232,32 @@ export const blogPosts: BlogPost[] = [
     date: '18 Feb 2026',
     readTime: '5 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Perché le PMI italiane devono investire nella trasformazione digitale nel 2026: dati, trend e strategie per la crescita.',
+    relatedSlugs: ['gestionale-personalizzato-pmi', '5-processi-automatizzare-ai', 'web-app-vs-sito-web'],
+    content: [
+      { type: 'paragraph', content: 'Il **2026 è l\'anno della svolta digitale** per le PMI italiane. I dati dell\'ultimo rapporto ISTAT sulla digitalizzazione delle imprese italiane mostrano un divario crescente tra chi ha investito nel digitale e chi è rimasto indietro.' },
+      { type: 'heading2', content: 'I numeri parlano chiaro' },
+      { type: 'list', items: [
+        'Le PMI digitalizzate crescono **3x più velocemente** rispetto alle concorrenti tradizionali',
+        'Il 72% dei consumatori italiani preferisce interagire con aziende che offrono servizi digitali',
+        'Le aziende con processi automatizzati risparmiano in media **15 ore settimanali** per dipendente',
+        'Il mercato digitale italiano vale oltre 80 miliardi di euro e cresce del 6% annuo',
+      ]},
+      { type: 'heading2', content: 'Gli investimenti prioritari' },
+      { type: 'paragraph', content: 'Non tutti gli investimenti digitali hanno lo stesso impatto. Per le PMI, le priorità dovrebbero essere: **presenza web professionale**, **automazione dei processi** e **gestione dati centralizzata**.' },
+      { type: 'heading2', content: 'Il costo del non fare nulla' },
+      { type: 'paragraph', content: 'Rimandare la trasformazione digitale non è "risparmiare": è accumulare debito tecnologico. Ogni mese di ritardo significa clienti persi, processi inefficienti e un gap competitivo sempre più difficile da colmare.' },
+      { type: 'callout', content: 'Il momento migliore per digitalizzare la tua azienda era 5 anni fa. Il secondo momento migliore è adesso.', variant: 'warning' },
+      { type: 'heading2', content: 'Da dove iniziare' },
+      { type: 'paragraph', content: 'Il primo passo è un\'**analisi dei processi aziendali** per identificare le aree con il maggiore potenziale di ottimizzazione. Da lì, si definisce una roadmap realistica che bilancia impatto e investimento.' },
+    ],
+    faq: [
+      { question: 'Quanto deve investire una PMI nella digitalizzazione?', answer: 'Un investimento iniziale ragionevole per una PMI va dai 10.000 ai 50.000€, a seconda delle dimensioni e delle esigenze. L\'importante è avere una strategia chiara e misurare il ROI di ogni intervento.' },
+      { question: 'Esistono incentivi per la digitalizzazione?', answer: 'Sì, nel 2026 sono attivi diversi incentivi tra cui il Piano Transizione 5.0, crediti d\'imposta per investimenti in beni strumentali 4.0 e voucher regionali per la digitalizzazione.' },
+      { question: 'Da quale area dell\'azienda conviene partire?', answer: 'Consigliamo di partire dall\'area che genera il maggiore spreco di tempo: solitamente è la gestione ordini/clienti o la comunicazione interna. Un audit digitale aiuta a identificare le priorità.' },
+    ],
   },
   {
     slug: 'react-vs-nextjs-cosa-scegliere',
@@ -88,6 +268,33 @@ export const blogPosts: BlogPost[] = [
     date: '12 Feb 2026',
     readTime: '6 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'React vs Next.js: confronto tecnico completo per scegliere il framework giusto. SEO, performance, rendering e casi d\'uso.',
+    relatedSlugs: ['web-app-vs-sito-web', 'guida-design-system-prodotti-digitali', 'gestionale-personalizzato-pmi'],
+    content: [
+      { type: 'paragraph', content: 'React e Next.js sono due delle tecnologie più utilizzate per lo sviluppo frontend moderno. Ma quale scegliere? La risposta, come spesso accade, è: **dipende dal progetto**.' },
+      { type: 'heading2', content: 'React: la libreria flessibile' },
+      { type: 'paragraph', content: 'React è una **libreria JavaScript** per la costruzione di interfacce utente. Offre massima flessibilità nella scelta di routing, state management e architettura. È ideale per Single Page Application (SPA) e web app complesse dove il SEO non è la priorità principale.' },
+      { type: 'heading2', content: 'Next.js: il framework full-stack' },
+      { type: 'paragraph', content: 'Next.js è un **framework React** che aggiunge Server-Side Rendering (SSR), Static Site Generation (SSG), API Routes e molte ottimizzazioni out-of-the-box. È la scelta ideale quando SEO, performance e time-to-market sono prioritari.' },
+      { type: 'heading2', content: 'Confronto tecnico' },
+      { type: 'list', items: [
+        '**SEO** — React (SPA): scarso senza SSR. Next.js: eccellente grazie a SSR/SSG',
+        '**Performance** — React: dipende dalla configurazione. Next.js: ottimizzato di default',
+        '**Routing** — React: librerie esterne (React Router). Next.js: file-system routing integrato',
+        '**Backend** — React: necessita backend separato. Next.js: API Routes integrate',
+        '**Learning curve** — React: più semplice. Next.js: richiede comprensione di SSR/SSG',
+      ]},
+      { type: 'callout', content: 'Se stai costruendo una dashboard o un gestionale, React puro è spesso sufficiente. Se stai costruendo un sito content-driven o un e-commerce, Next.js è quasi sempre la scelta migliore.', variant: 'tip' },
+      { type: 'heading2', content: 'La nostra raccomandazione' },
+      { type: 'paragraph', content: 'In Nexus, scegliamo la tecnologia in base alle esigenze del progetto, non per moda. Valutiamo sempre fattori come SEO requirements, complessità dell\'interfaccia, necessità di backend e budget disponibile per consigliare la soluzione più adatta.' },
+    ],
+    faq: [
+      { question: 'Next.js è più lento di React?', answer: 'No, anzi. Next.js include ottimizzazioni automatiche come code splitting, image optimization e prefetching che rendono le applicazioni generalmente più performanti rispetto a un\'app React configurata manualmente.' },
+      { question: 'Posso migrare da React a Next.js?', answer: 'Sì, la migrazione è possibile e relativamente graduale. I componenti React sono compatibili con Next.js. La principale sfida è adattare il routing e implementare SSR dove necessario.' },
+      { question: 'Quale ha una community più grande?', answer: 'React ha una community più ampia essendo più maturo. Next.js ha una community in rapida crescita e un ecosistema molto attivo, con il supporto diretto di Vercel.' },
+    ],
   },
   {
     slug: 'chatbot-ai-customer-service-guida',
@@ -98,6 +305,37 @@ export const blogPosts: BlogPost[] = [
     date: '5 Feb 2026',
     readTime: '7 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Guida pratica all\'implementazione di chatbot AI per customer service: benefici, tecnologie, costi e best practice.',
+    relatedSlugs: ['5-processi-automatizzare-ai', 'pmi-italiane-investire-digitale-2026', 'gestionale-personalizzato-pmi'],
+    content: [
+      { type: 'paragraph', content: 'I chatbot basati su intelligenza artificiale stanno rivoluzionando il customer service. Non stiamo parlando dei vecchi bot con risposte preimpostate, ma di **assistenti intelligenti** capaci di comprendere il contesto e fornire risposte accurate e personalizzate.' },
+      { type: 'heading2', content: 'Perché un chatbot AI' },
+      { type: 'list', items: [
+        '**Disponibilità 24/7** — I tuoi clienti ricevono assistenza anche fuori orario',
+        '**Tempi di risposta istantanei** — Zero attesa per le domande frequenti',
+        '**Scalabilità** — Gestisci migliaia di conversazioni simultaneamente',
+        '**Riduzione dei costi** — Fino al 60% di risparmio sui costi di assistenza',
+        '**Dati e insight** — Ogni conversazione genera dati utili per migliorare il servizio',
+      ]},
+      { type: 'heading2', content: 'Come funziona' },
+      { type: 'paragraph', content: 'Un chatbot AI moderno utilizza modelli di **Natural Language Processing (NLP)** per comprendere le intenzioni dell\'utente, anche quando la domanda è formulata in modo non standard. Il bot viene addestrato sulla knowledge base aziendale e impara continuamente dalle conversazioni.' },
+      { type: 'heading2', content: 'Implementazione step by step' },
+      { type: 'heading3', content: 'Step 1: Analisi delle conversazioni' },
+      { type: 'paragraph', content: 'Analizza le richieste più frequenti del tuo customer service. Identifica le domande che si ripetono e che possono essere automatizzate senza perdere qualità nel servizio.' },
+      { type: 'heading3', content: 'Step 2: Training del modello' },
+      { type: 'paragraph', content: 'Il chatbot viene addestrato sulla tua documentazione, FAQ, manuali e storico delle conversazioni. Più dati di qualità fornisci, più il bot sarà accurato.' },
+      { type: 'heading3', content: 'Step 3: Deploy e monitoring' },
+      { type: 'paragraph', content: 'Dopo il lancio, monitora le performance del bot: tasso di risoluzione, soddisfazione utente e conversazioni escalnate al team umano. Ottimizza continuamente.' },
+      { type: 'callout', content: 'I migliori chatbot AI non cercano di sostituire il team umano, ma di potenziarlo gestendo le richieste ripetitive e lasciando ai professionisti i casi complessi.', variant: 'info' },
+    ],
+    faq: [
+      { question: 'Quanto tempo serve per implementare un chatbot AI?', answer: 'Un chatbot base può essere operativo in 2-4 settimane. Una soluzione enterprise con integrazioni CRM e training avanzato richiede 2-3 mesi.' },
+      { question: 'Il chatbot può parlare più lingue?', answer: 'Sì, i modelli AI moderni supportano decine di lingue. Il chatbot può essere configurato per rispondere nella lingua dell\'utente automaticamente.' },
+      { question: 'Come gestisce le domande che non sa risolvere?', answer: 'Il chatbot è progettato per riconoscere i propri limiti. Quando non è in grado di rispondere, trasferisce la conversazione a un operatore umano fornendo il contesto completo della chat.' },
+      { question: 'Si integra con il mio CRM?', answer: 'Sì, i chatbot AI si integrano con i principali CRM (Salesforce, HubSpot, ecc.) e con strumenti di ticketing come Zendesk, Freshdesk e altri.' },
+    ],
   },
   {
     slug: 'one-up-gestionale-nautico',
@@ -108,5 +346,33 @@ export const blogPosts: BlogPost[] = [
     date: '30 Gen 2026',
     readTime: '9 min',
     featured: false,
+    author: 'Gabriele Di Matteo',
+    authorRole: 'Founder & CEO',
+    metaDescription: 'Case study ONE UP: come Nexus Agency ha sviluppato il gestionale nautico per la gestione flotte charter e armatori.',
+    relatedSlugs: ['homeleven-digitalizzazione-immobiliare', 'gestionale-personalizzato-pmi', '5-processi-automatizzare-ai'],
+    content: [
+      { type: 'paragraph', content: 'ONE UP è una **piattaforma gestionale nautica** progettata per charter e armatori che necessitavano di uno strumento moderno per gestire flotte, prenotazioni, manutenzione e equipaggio da un unico punto di accesso.' },
+      { type: 'heading2', content: 'Il contesto' },
+      { type: 'paragraph', content: 'Il settore nautico italiano è uno dei più importanti al mondo, ma la digitalizzazione è ancora indietro rispetto ad altri settori. La maggior parte delle aziende gestisce le proprie flotte con strumenti frammentati: fogli Excel per le prenotazioni, WhatsApp per la comunicazione con l\'equipaggio, email per i clienti.' },
+      { type: 'heading2', content: 'La nostra soluzione' },
+      { type: 'paragraph', content: 'Abbiamo sviluppato ONE UP come una **web app completa** che centralizza tutte le operazioni di gestione nautica in un\'interfaccia intuitiva e mobile-friendly.' },
+      { type: 'list', items: [
+        '**Dashboard operativa** — Visione d\'insieme su flotta, prenotazioni e manutenzioni',
+        '**Gestione prenotazioni** — Calendario interattivo con disponibilità in tempo reale',
+        '**Modulo equipaggio** — Assegnazione turni, documenti e certificazioni',
+        '**Manutenzione programmata** — Alert automatici per scadenze e interventi',
+        '**Reportistica** — KPI e analytics per ottimizzare le operazioni',
+      ]},
+      { type: 'heading2', content: 'Risultati ottenuti' },
+      { type: 'callout', content: 'ONE UP ha permesso di ridurre del 50% il tempo di gestione amministrativa e di aumentare del 30% il tasso di occupazione delle imbarcazioni grazie alla visibilità in tempo reale.', variant: 'info' },
+      { type: 'quote', content: 'Finalmente abbiamo uno strumento che parla la nostra lingua. ONE UP ha trasformato il modo in cui gestiamo la nostra flotta.', caption: 'Andrea Z., CEO di ONE UP' },
+      { type: 'heading2', content: 'Tecnologie utilizzate' },
+      { type: 'paragraph', content: 'Il progetto è stato sviluppato con **React** per il frontend, **Node.js** e **PostgreSQL** per il backend, con deploy su infrastruttura cloud scalabile. L\'architettura modulare permette di aggiungere nuove funzionalità senza impattare il sistema esistente.' },
+    ],
+    faq: [
+      { question: 'ONE UP è disponibile per altre aziende nautiche?', answer: 'Attualmente ONE UP è una soluzione custom sviluppata per il cliente. Stiamo valutando la possibilità di trasformarlo in un prodotto SaaS per il settore nautico.' },
+      { question: 'Supporta la gestione multi-sede?', answer: 'Sì, ONE UP è progettato per gestire flotte distribuite su più sedi e porti, con permessi e ruoli differenziati per ogni location.' },
+      { question: 'Come vengono gestiti i pagamenti?', answer: 'ONE UP si integra con i principali gateway di pagamento (Stripe, PayPal) per gestire prenotazioni e depositi cauzionali in modo sicuro e automatizzato.' },
+    ],
   },
 ];

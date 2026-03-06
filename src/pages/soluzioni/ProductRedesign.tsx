@@ -5,9 +5,11 @@ import techJs from '@/assets/tech/icon-js.png';
 import techHtml from '@/assets/tech/icon-html.png';
 import techCss from '@/assets/tech/icon-css.png';
 import techNodejs from '@/assets/tech/icon-nodejs.png';
+import heroProductRedesign from '@/assets/hero-product-redesign.png';
 
 const ProductRedesign = () => (
   <ServicePageTemplate
+    heroImage={heroProductRedesign}
     seoTitle="Product Redesign per PMI e Aziende | NEXUS Agency"
     seoDescription="Ridisegniamo il tuo prodotto digitale. UX migliorata, look fresco, funzionalità potenziate. Risultati misurabili."
     seoCanonical="https://nexusagency.it/soluzioni/product-redesign"

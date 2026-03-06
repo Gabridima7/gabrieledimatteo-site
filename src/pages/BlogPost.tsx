@@ -258,7 +258,7 @@ const BlogPostPage = () => {
   return (
     <>
       <SEOHead
-        title={`${post.title} | Blog - Nexus Agency`}
+        title={`${post.title} | Blog - NEXUS Agency`}
         description={post.metaDescription}
         canonical={`https://nexusagency.it/blog/${post.slug}`}
       />

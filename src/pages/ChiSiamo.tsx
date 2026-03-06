@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import SEOHead from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Zap, Eye, Target, Palette } from 'lucide-react';
@@ -37,6 +38,12 @@ const ChiSiamo = () => {
   const { scrollYProgress } = useScroll({ target: aboutRef, offset: ['start 0.8', 'end 0.4'] });
 
   return (
+    <>
+      <SEOHead
+        title="Chi Siamo — Gabriele Di Matteo | NEXUS Agency"
+        description="NEXUS è guidata da Gabriele Di Matteo, esperto di sviluppo digitale e AI per PMI italiane."
+        canonical="https://nexusagency.it/chi-siamo"
+      />
     <div>
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[85vh] flex items-center pt-[120px]">
@@ -390,8 +397,9 @@ const ChiSiamo = () => {
           </motion.div>
         </div>
       </section>
-    </div>);
-
+    </div>
+    </>
+  );
 };
 
 export default ChiSiamo;

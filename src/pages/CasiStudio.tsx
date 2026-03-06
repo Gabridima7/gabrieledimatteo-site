@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import SEOHead from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Star } from 'lucide-react';
@@ -263,6 +264,12 @@ const CasiStudio = () => {
   const currentSlide = heroSlides[activeSlide];
 
   return (
+    <>
+      <SEOHead
+        title="Casi Studio — Progetti Reali per PMI Italiane | NEXUS"
+        description="Scopri i progetti NEXUS: gestionali, siti web, AI automation per PMI. Risultati concreti e misurabili."
+        canonical="https://nexusagency.it/casi-studio"
+      />
     <div className="min-h-screen">
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[85vh] flex items-center pt-[120px]">
@@ -531,6 +538,7 @@ const CasiStudio = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

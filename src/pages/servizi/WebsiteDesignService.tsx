@@ -10,8 +10,8 @@ import heroWebsiteDesign from '@/assets/hero-website-design.png';
 
 const WebsiteDesignService = () => (
   <ServicePageTemplate
-    seoTitle="Website Design — NEXUS Agency"
-    seoDescription="Siti web custom e landing page dal design moderno e professionale."
+    seoTitle="Realizzazione Siti Web Professionali per PMI | NEXUS Agency"
+    seoDescription="Siti web moderni, veloci e ottimizzati SEO per PMI italiane. Mobile-first, Lighthouse >90. Da €1.500."
     badge="Website Design"
     h1="Siti web dal design moderno e professionale"
     subtitle="Siti web custom che comunicano il valore del tuo brand e convertono i visitatori in clienti."

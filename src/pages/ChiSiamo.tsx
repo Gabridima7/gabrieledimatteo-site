@@ -399,7 +399,7 @@ const ChiSiamo = () => {
       </section>
     </div>
     </>
-
+  );
 };
 
 export default ChiSiamo;

@@ -38,6 +38,7 @@ import MvpDesign from "./pages/soluzioni/MvpDesign";
 import ProductRedesign from "./pages/soluzioni/ProductRedesign";
 import EstensioneTeam from "./pages/soluzioni/EstensioneTeam";
 import ProjectDetail from "./pages/ProjectDetail";
+import PrenotaCall from "./pages/PrenotaCall";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const App = () => (
               <Route path="/contatti" element={<Contatti />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/cookie" element={<Cookie />} />
+              <Route path="/prenota-call" element={<PrenotaCall />} />
               <Route path="/servizi/sviluppo-web" element={<SviluppoWebApp />} />
               <Route path="/servizi/ai-automation" element={<AiAutomation />} />
               <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />

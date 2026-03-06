@@ -9,7 +9,7 @@ import { ApplicationFormProvider } from "./context/ApplicationFormContext";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
-
+import Servizi from "./pages/Servizi";
 import ProdottiAI from "./pages/ProdottiAI";
 import CasiStudio from "./pages/CasiStudio";
 import ChiSiamo from "./pages/ChiSiamo";
@@ -55,7 +55,7 @@ const App = () => (
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />
-              
+              <Route path="/servizi" element={<Servizi />} />
               <Route path="/prodotti-ai" element={<ProdottiAI />} />
               <Route path="/casi-studio" element={<CasiStudio />} />
               <Route path="/chi-siamo" element={<ChiSiamo />} />

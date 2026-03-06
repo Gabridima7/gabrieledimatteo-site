@@ -6,6 +6,7 @@ import iconSviluppoWebAppNew from '@/assets/icons/icon-sviluppo-web-app-new.webp
 import iconAiAutomation from '@/assets/icons/icon-ai-automation.png';
 import iconUiUxDesign from '@/assets/icons/icon-ui-ux-design.png';
 import iconConsulenzaDigitale from '@/assets/icons/icon-consulenza-digitale.webp';
+import iconWebApp from '@/assets/icons/icon-web-app.webp';
 import iconMake from '@/assets/icons/icon-make.png';
 import iconFigma from '@/assets/icons/icon-figma.png';
 import iconFramer from '@/assets/icons/icon-framer.svg';

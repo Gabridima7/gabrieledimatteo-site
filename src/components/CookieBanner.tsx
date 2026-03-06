@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, X, Check } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface CookiePreferences {
   essential: boolean;
@@ -32,7 +33,7 @@ const CookieBanner = () => {
     }
   }, []);
 
-  const savePreferences = (prefs: CookiePreferences) => {
+  const savePreferences = async (prefs: CookiePreferences) => {
     const prefsWithTimestamp = {
       ...prefs,
       timestamp: new Date().toISOString(),
@@ -40,6 +41,24 @@ const CookieBanner = () => {
     localStorage.setItem('cookie_preferences', JSON.stringify(prefsWithTimestamp));
     setIsVisible(false);
     setShowSettings(false);
+
+    // Save to database
+    try {
+      await supabase.functions.invoke('notify-submission', {
+        body: {
+          type: 'cookie_consent',
+          data: {
+            essential: prefs.essential,
+            analytics: prefs.analytics,
+            marketing: prefs.marketing,
+            functional: prefs.functional,
+            user_agent: navigator.userAgent,
+          },
+        },
+      });
+    } catch (err) {
+      console.error('Failed to save cookie consent:', err);
+    }
   };
 
   const handleAcceptAll = () => {

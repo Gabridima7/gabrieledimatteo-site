@@ -1,6 +1,7 @@
 import { Palette, Layout, RefreshCw, Eye } from 'lucide-react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import iconFigma from '@/assets/icons/icon-figma.png';
+import heroBrandingUiUx from '@/assets/hero-branding-ui-ux.png';
 
 const BrandingUiUx = () => (
   <ServicePageTemplate
@@ -10,6 +11,7 @@ const BrandingUiUx = () => (
     h1="Design che comunica e converte"
     subtitle="Creiamo identità visive coerenti e interfacce che trasformano visitatori in clienti."
     heroIcon={Palette}
+    heroImage={heroBrandingUiUx}
     stats={[
       { value: '+120%', label: 'Conversioni medie' },
       { value: '5.0', label: 'Rating clienti' },

@@ -328,48 +328,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ─── SERVICES ─── */}
-      <section className="relative py-24">
-        <SectionBackground variant="blue-left" />
-        <div className="section-container relative z-[2]">
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-14">
-            <motion.span variants={fadeUpVariants} className="badge-pill inline-block mb-4">{t('services', 'badge')}</motion.span>
-            <motion.h2 variants={fadeUpVariants} className="text-section text-white">{t('services', 'title')}</motion.h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {services.map((s, i) =>
-            <motion.div key={i} variants={fadeUpVariants}>
-                <Link to={s.link} className="group block h-full relative rounded-[20px] border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[hsl(228,76%,45%)]/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(28,53,200,0.2)] hover:bg-white/[0.12]">
-                  {/* Top glow effect */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-[hsl(228,76%,45%)] to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-20 bg-[hsl(228,76%,45%)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative p-8 flex flex-col items-center text-center">
-                    {/* Icon in glass sphere */}
-                    <div className="w-20 h-20 rounded-full bg-white/[0.06] border border-white/[0.12] flex items-center justify-center mb-6 group-hover:bg-white/[0.1] group-hover:border-white/[0.2] transition-all duration-300 shadow-[0_0_30px_rgba(28,53,200,0.1)]">
-                      <img src={s.icon} alt={s.title} className="w-10 h-10 object-contain" />
-                    </div>
-                    
-                    <h3 className="text-card-title text-white mb-3">{s.title}</h3>
-                    <p className="text-body text-white/50 mb-6 line-clamp-2">{s.desc}</p>
-                    
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 group-hover:text-white transition-colors">
-                      {t('services', 'scopri')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            )}
-          </motion.div>
-        </div>
-      </section>
 
       {/* ─── STATS — arounda style ─── */}
       <section className="relative py-24">

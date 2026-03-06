@@ -158,9 +158,22 @@ const Contatti = () => {
                 <h1 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4">
                   Contattaci
                 </h1>
-                <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
-                  Se stai pensando di sviluppare un sito web, una web app o un sistema digitale per la tua azienda, il nostro team può aiutarti a trasformare l'idea in un prodotto concreto. Raccontaci il tuo progetto e analizzeremo insieme le migliori soluzioni tecnologiche per svilupparlo.
+                <p className="text-[#6B7280] text-sm leading-relaxed mb-4">
+                  Se vuoi sviluppare un sito web, una web app o un sistema digitale per la tua azienda, il nostro team può aiutarti. Raccontaci il tuo progetto e analizzeremo insieme le migliori soluzioni.
                 </p>
+
+                {/* Quando contattarci */}
+                <div className="mb-6 p-4 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB]">
+                  <p className="text-[13px] font-semibold text-[#374151] mb-2">Quando contattarci:</p>
+                  <ul className="space-y-1.5">
+                    {['Sviluppo sito web professionale', 'Sviluppo web app su misura', 'Automazioni AI per la tua azienda', 'Consulenza digitale e strategia'].map((item, i) => (
+                      <li key={i} className="text-[13px] text-[#6B7280] flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 {submitted ?
                 <div className="flex flex-col items-center justify-center py-16 text-center">

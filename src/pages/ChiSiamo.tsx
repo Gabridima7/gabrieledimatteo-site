@@ -40,8 +40,8 @@ const ChiSiamo = () => {
   return (
     <>
       <SEOHead
-        title="Chi siamo | Nexus Agency – sviluppo web e automazioni AI"
-        description="Scopri il team e la visione di Nexus Agency, un'agenzia specializzata nello sviluppo di prodotti digitali, web app e automazioni AI per aziende."
+        title="Chi siamo | Nexus Agency – sviluppo web e AI per aziende"
+        description="Nexus Agency è una digital agency specializzata nello sviluppo di prodotti digitali e automazioni AI per aziende e PMI. Scopri il team, la missione e l'approccio."
         canonical="https://nexusagency.it/chi-siamo"
         breadcrumbs={[
           { name: "Home", url: "https://nexusagency.it" },
@@ -64,7 +64,7 @@ const ChiSiamo = () => {
                 Chi siamo – <span className="font-serif-accent font-normal text-primary">Nexus Agency</span>
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Da un piccolo team di cinque persone a un team remoto globale di designer e sviluppatori professionisti che si impegnano a creare prodotti digitali di valore per persone in tutto il mondo.
+                Nexus Agency è una digital agency specializzata nello sviluppo di prodotti digitali e automazioni AI per aziende e PMI. Progettiamo e realizziamo soluzioni tecnologiche concrete, orientate ai risultati.
               </p>
               <a href={CAL_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-black text-sm transition-all duration-200 hover:shadow-[0_0_20px_rgba(208,246,1,0.4)] mt-9" style={{ background: '#d0f601' }}>
                 Prenota una call gratuita <ArrowRight size={16} />
@@ -291,12 +291,13 @@ const ChiSiamo = () => {
             className="max-w-4xl mx-auto">
             
             <h2 className="text-3xl font-bold mb-8">Il nostro approccio</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
-                { step: '01', title: 'Analisi del business', desc: 'Studiamo i processi e le esigenze della tua azienda' },
-                { step: '02', title: 'Progettazione del prodotto digitale', desc: 'Definiamo architettura, UX e funzionalità chiave' },
-                { step: '03', title: 'Sviluppo e implementazione', desc: 'Costruiamo il prodotto con tecnologie moderne e scalabili' },
-                { step: '04', title: 'Ottimizzazione e crescita', desc: 'Monitoriamo, ottimizziamo e facciamo evolvere il prodotto' },
+                { step: '01', title: 'Discovery', desc: 'Analizziamo i processi, le esigenze e gli obiettivi del tuo business' },
+                { step: '02', title: 'Strategia', desc: 'Definiamo roadmap, priorità e KPI misurabili per il progetto' },
+                { step: '03', title: 'Design', desc: 'Progettiamo architettura, UX e interfacce utente ad alta fedeltà' },
+                { step: '04', title: 'Sviluppo', desc: 'Costruiamo il prodotto con tecnologie moderne, sicure e scalabili' },
+                { step: '05', title: 'Ottimizzazione', desc: 'Monitoriamo, testiamo e ottimizziamo per massimizzare i risultati' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -328,7 +329,7 @@ const ChiSiamo = () => {
             
             <h2 className="text-3xl font-bold mb-8">Tecnologie e strumenti</h2>
             <div className="flex flex-wrap gap-3">
-              {['WordPress', 'Web app development', 'API integration', 'AI automation', 'Database e backend moderni', 'React', 'Supabase', 'n8n', 'Make', 'Figma'].map((tech, i) =>
+              {['WordPress', 'Web App', 'React', 'API Integration', 'AI Automation', 'Node.js', 'Python', 'Supabase', 'n8n', 'Make', 'Figma'].map((tech, i) =>
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm">
@@ -415,23 +416,24 @@ const ChiSiamo = () => {
             data-cursor="spotlight">
             
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary">
-                G
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-primary/30">
+                <img src={founderGabriele} alt="Gabriele Di Matteo — Founder Nexus Agency" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Gabriele</h3>
-                <p className="text-muted-foreground text-sm">Founder & AI Product Builder</p>
+                <h3 className="text-xl font-semibold">Gabriele Di Matteo</h3>
+                <p className="text-muted-foreground text-sm">Founder & CEO, Nexus Agency</p>
               </div>
             </div>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              Imprenditore digitale e AI product builder con esperienza nella progettazione e realizzazione di prodotti digitali per aziende e PMI. Ho fondato Nexus Agency con la missione di rendere l'innovazione tecnologica accessibile e concreta per il tessuto imprenditoriale italiano.
+            </p>
             <p className="text-muted-foreground leading-relaxed">
-              Costruisco sistemi AI e prodotti digitali che funzionano davvero. 
-              Dopo anni nel mondo delle startup e della consulenza, ho fondato Nexus 
-              per portare l'AI operativa nelle PMI italiane con un approccio concreto e misurabile.
+              La mia visione è portare l'AI operativa e lo sviluppo software di qualità nelle PMI italiane, con un approccio orientato ai risultati, alla trasparenza e alla creazione di valore reale per ogni cliente.
             </p>
             <div className="flex gap-2 mt-4">
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">AI Product</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Systems</span>
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Strategy</span>
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">AI & Automation</span>
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Web Development</span>
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs">Product Strategy</span>
             </div>
           </motion.div>
         </div>

@@ -10,8 +10,8 @@ const ConsulenzaDigitale = () => (
     seoDescription="Audit digitale, roadmap strategica e consulenza per la trasformazione digitale della tua PMI."
     seoCanonical="https://nexusagency.it/servizi/consulenza-digitale"
     badge="Consulenza Digitale"
-    h1="Strategia digitale per la tua crescita"
-    subtitle="Ti guidiamo nella trasformazione digitale con analisi, audit e una roadmap su misura per la tua PMI."
+      h1="Consulenza digitale per PMI"
+      subtitle="Ti guidiamo nella trasformazione digitale con analisi, audit e una roadmap su misura per la tua azienda."
     heroIcon={Lightbulb}
     heroImage={heroConsulenza}
     stats={[

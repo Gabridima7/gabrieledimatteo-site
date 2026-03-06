@@ -1,4 +1,6 @@
 import gallery500voltemeglio from '@/assets/gallery-500voltemeglio-hero.png';
+import gallery500voltemeglio2 from '@/assets/gallery-500voltemeglio-2.png';
+import gallery500voltemeglio3 from '@/assets/gallery-500voltemeglio-3.png';
 
 export interface ProjectImage {
   src: string;
@@ -171,8 +173,8 @@ export const projectsData: Project[] = [
     ],
     galleryImages: [
       { src: gallery500voltemeglio, alt: "Hero 500 Volte Meglio", caption: "Homepage con hero section accogliente" },
-      { src: "https://500voltemeglio.it/wp-content/uploads/2025/10/about.png", alt: "Chi Siamo", caption: "Sezione Chi Siamo del ristorante" },
-      { src: "https://500voltemeglio.it/wp-content/uploads/2025/10/antipasti.png", alt: "Menù antipasti", caption: "Sezione menù con i piatti del ristorante" },
+      { src: gallery500voltemeglio2, alt: "Piatti del ristorante", caption: "Pizza e primi piatti del ristorante" },
+      { src: gallery500voltemeglio3, alt: "Cucina del ristorante", caption: "Il team in cucina al lavoro" },
     ],
     results: [
       { metric: "+200%", label: "Prenotazioni online", description: "Prenotazioni tavoli tramite il sito web, prima inesistenti." },

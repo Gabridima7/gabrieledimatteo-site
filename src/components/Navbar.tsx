@@ -128,6 +128,7 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
+            <Link to="/" className="nav-link px-4 py-2">Home</Link>
             {/* Servizi with mega menu */}
             <div
               data-mega-root
@@ -314,6 +315,11 @@ const Navbar = () => {
               style={{ maxHeight: 'calc(100vh - 72px - 88px)' }}
             >
               <div className="flex-1 overflow-y-auto py-2">
+                {/* Home */}
+                <Link to="/" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
+                  Home
+                </Link>
+
                 {/* Casi Studio */}
                 <Link to="/casi-studio" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-[28px] font-semibold text-[#111827] border-b border-[#F3F4F6] hover:bg-[#F9FAFB] transition-colors">
                   {t('nav', 'casiStudio')}

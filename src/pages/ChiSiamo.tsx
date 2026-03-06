@@ -397,7 +397,8 @@ const ChiSiamo = () => {
           </motion.div>
         </div>
       </section>
-    </div>);
+    </div>
+    </>
 
 };
 

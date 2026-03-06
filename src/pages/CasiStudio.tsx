@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import SEOHead from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, Star } from 'lucide-react';

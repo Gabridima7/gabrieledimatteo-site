@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEOHead from '@/components/SEOHead';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText, Settings, Database, TrendingUp } from 'lucide-react';
 

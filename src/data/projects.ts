@@ -71,8 +71,8 @@ export const projectsData: Project[] = [
     ],
     galleryImages: [
       { src: galleryHomelevenServizi, alt: "Dashboard Staff Interno Homeleven", caption: "Dashboard Staff Interno Homeleven" },
-      { src: galleryHomelevenProperty, alt: "Villa Mia - Proprietà gestita", caption: "Una delle proprietà gestite tramite la piattaforma" },
-      { src: galleryHomelevenMaison, alt: "Maison Belvedere - Sanremo", caption: "Maison Belvedere, appartamento gestito a Sanremo" },
+      { src: galleryHomelevenProperty, alt: "Home page Dashboard Proprietario Homeleven", caption: "Home page Dashboard Proprietario Homeleven" },
+      { src: galleryHomelevenMaison, alt: "Vista Proprietà Dashboard Proprietario Homeleven", caption: "Vista Proprietà Dashboard Proprietario Homeleven" },
     ],
     results: [
       { metric: "-80%", label: "Tempo gestione operativa", description: "Da ore a minuti per le operazioni quotidiane di gestione proprietà." },

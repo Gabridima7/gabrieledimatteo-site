@@ -398,6 +398,7 @@ const BlogPostPage = () => {
               ))}
             </div>
           </div>
+          </div>
         </section>
       )}
 

@@ -51,6 +51,7 @@ const ProjectDetail = () => {
       <SEOHead
         title={`${project.name} — Nexus Agency`}
         description={project.about.replace(/\*/g, '').slice(0, 155)}
+        canonical={`https://nexusagency.it/progetto/${slug}`}
       />
 
       {/* ═══ SECTION 1 — HERO ═══ */}

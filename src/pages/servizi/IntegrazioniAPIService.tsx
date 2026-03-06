@@ -8,8 +8,9 @@ import heroIntegrazioniApi from '@/assets/hero-integrazioni-api.png';
 
 const IntegrazioniAPIService = () => (
   <ServicePageTemplate
-    seoTitle="Integrazioni API — NEXUS Agency"
-    seoDescription="Connetti i tuoi sistemi aziendali con integrazioni API personalizzate."
+    seoTitle="Integrazioni API e Connessione Sistemi Aziendali | NEXUS"
+    seoDescription="Connettiamo i tuoi sistemi aziendali con integrazioni API su misura. CRM, ERP, e-commerce, tool interni."
+    seoCanonical="https://nexusagency.it/servizi/integrazioni-api"
     badge="Integrazioni API"
     h1="Connetti tutti i tuoi sistemi aziendali"
     subtitle="Integrazioni API personalizzate per far comunicare i tuoi software e automatizzare i flussi di dati."

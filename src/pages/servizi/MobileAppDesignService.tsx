@@ -5,8 +5,9 @@ import heroMobileApp from '@/assets/hero-mobile-app-design.png';
 
 const MobileAppDesignService = () => (
   <ServicePageTemplate
-    seoTitle="Mobile App Design — NEXUS Agency"
-    seoDescription="Design di app mobile che gli utenti amano usare, con focus su UX e conversioni."
+    seoTitle="Mobile App Design per iOS e Android | NEXUS Agency"
+    seoDescription="Design di app mobile che gli utenti amano. UI/UX nativa, prototipi interattivi, design system completo."
+    seoCanonical="https://nexusagency.it/servizi/mobile-app-design"
     badge="Mobile App Design"
     h1="App mobile che gli utenti amano"
     subtitle="Design di app mobile native e cross-platform con focus su usabilità, engagement e conversioni."

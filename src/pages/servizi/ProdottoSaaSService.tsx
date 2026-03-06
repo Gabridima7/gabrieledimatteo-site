@@ -8,8 +8,9 @@ import heroProdottoSaas from '@/assets/hero-prodotto-saas.png';
 
 const ProdottoSaaSService = () => (
   <ServicePageTemplate
-    seoTitle="Prodotto SaaS — NEXUS Agency"
-    seoDescription="Sviluppo di prodotti SaaS scalabili dalla MVP al lancio sul mercato."
+    seoTitle="Sviluppo Prodotto SaaS — Da Idea a Prodotto Scalabile | NEXUS"
+    seoDescription="Progettiamo e sviluppiamo prodotti SaaS da zero. Validazione, MVP, scaling. Per startup e imprenditori digitali."
+    seoCanonical="https://nexusagency.it/servizi/prodotto-saas"
     badge="Prodotto SaaS"
     h1="Da idea a prodotto SaaS scalabile"
     subtitle="Sviluppiamo il tuo SaaS dalla MVP al lancio, con architettura pronta a scalare e monetizzare."

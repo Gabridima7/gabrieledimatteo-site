@@ -5,8 +5,9 @@ import heroProductAudit from '@/assets/hero-product-audit.png';
 
 const ProductAuditService = () => (
   <ServicePageTemplate
-    seoTitle="Product UX/UI Audit — NEXUS Agency"
-    seoDescription="Analisi approfondita della UX/UI del tuo prodotto digitale con insights actionable."
+    seoTitle="Product UX/UI Audit — Analisi e Ottimizzazione | NEXUS"
+    seoDescription="Audit UX/UI completo del tuo prodotto digitale. Insights azionabili per migliorare conversioni e user experience."
+    seoCanonical="https://nexusagency.it/servizi/product-ux-ui-audit"
     badge="Product UX/UI Audit"
     h1="Audit UX/UI del tuo prodotto digitale"
     subtitle="Analisi approfondita dell'esperienza utente con insights actionable per migliorare conversioni e usabilità."

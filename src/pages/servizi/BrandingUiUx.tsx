@@ -7,6 +7,7 @@ const BrandingUiUx = () => (
   <ServicePageTemplate
     seoTitle="Branding e UI/UX Design per PMI Italiane | NEXUS Agency"
     seoDescription="Brand identity, logo design, UI/UX per web e app. Design che converte. Da €1.800."
+    seoCanonical="https://nexusagency.it/servizi/branding-ui-ux"
     badge="Branding & UI/UX"
     h1="Design che comunica e converte"
     subtitle="Creiamo identità visive coerenti e interfacce che trasformano visitatori in clienti."

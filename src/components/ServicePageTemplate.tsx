@@ -42,6 +42,7 @@ const stagger = (i: number) => ({ ...fadeUp, transition: { duration: 0.5, ease, 
 export interface ServicePageProps {
   seoTitle: string;
   seoDescription: string;
+  seoCanonical?: string;
   badge: string;
   h1: string;
   subtitle: string;
@@ -125,7 +126,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
 
   return (
     <>
-      <SEOHead title={props.seoTitle} description={props.seoDescription} />
+      <SEOHead title={props.seoTitle} description={props.seoDescription} canonical={props.seoCanonical} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="pb-16">

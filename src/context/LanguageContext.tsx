@@ -13,6 +13,7 @@ const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'it';
     const saved = localStorage.getItem('nexus_lang');
     return (saved === 'en' ? 'en' : 'it') as Language;
   });

@@ -264,6 +264,12 @@ const CasiStudio = () => {
   const currentSlide = heroSlides[activeSlide];
 
   return (
+    <>
+      <SEOHead
+        title="Casi Studio — Progetti Reali per PMI Italiane | NEXUS"
+        description="Scopri i progetti NEXUS: gestionali, siti web, AI automation per PMI. Risultati concreti e misurabili."
+        canonical="https://nexusagency.it/casi-studio"
+      />
     <div className="min-h-screen">
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[85vh] flex items-center pt-[120px]">

@@ -40,8 +40,13 @@ const products = [
 
 const ProdottiAI = () => {
   return (
+    <>
+      <SEOHead
+        title="Prodotti AI per PMI Italiane | NEXUS Agency"
+        description="Agent AI pronti all'uso per PMI: report automatici, operations, analisi dati e lead generation."
+        canonical="https://nexusagency.it/prodotti-ai"
+      />
     <div className="pt-24">
-      {/* Header */}
       <section className="py-16">
         <div className="section-container">
           <motion.div

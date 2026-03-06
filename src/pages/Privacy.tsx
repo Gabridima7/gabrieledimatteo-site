@@ -2,7 +2,12 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 
 const Privacy = () => {
-  return (
+    <>
+      <SEOHead
+        title="Privacy Policy | NEXUS Agency"
+        description="Informativa sulla privacy di NEXUS Agency. Come raccogliamo e trattiamo i tuoi dati personali."
+        canonical="https://nexusagency.it/privacy"
+      />
     <div className="pt-24">
       <section className="py-16">
         <div className="section-container max-w-4xl">

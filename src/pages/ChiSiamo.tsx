@@ -47,7 +47,6 @@ const ChiSiamo = () => {
           { name: "Home", url: "https://nexusagency.it" },
           { name: "Chi Siamo", url: "https://nexusagency.it/chi-siamo" },
         ]}
-        canonical="https://nexusagency.it/chi-siamo"
       />
     <div>
       {/* ═══ HERO ═══ */}

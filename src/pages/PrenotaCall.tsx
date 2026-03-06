@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle, Calendar } from 'lucide-react';
+import SEOHead from '@/components/SEOHead';
 import { Button } from '@/components/ui/button';
 
 const PrenotaCall = () => {
@@ -8,6 +9,12 @@ const PrenotaCall = () => {
   };
 
   return (
+    <>
+      <SEOHead
+        title="Prenota una Call Gratuita — 30 Minuti | NEXUS Agency"
+        description="Call gratuita 30 min con Gabriele Di Matteo. Analizziamo il tuo progetto digitale."
+        canonical="https://nexusagency.it/prenota-call"
+      />
     <div className="pt-24">
       {/* Header */}
       <section className="py-16">

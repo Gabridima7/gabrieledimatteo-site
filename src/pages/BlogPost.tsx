@@ -381,7 +381,8 @@ const BlogPostPage = () => {
       {/* FAQ */}
       {post.faq && post.faq.length > 0 && (
         <section className="relative py-16" style={{ background: '#0A0A0A' }}>
-          <div className="max-w-[800px] mx-auto px-6">
+          <div className="section-container lg:pl-2">
+            <div className="max-w-[800px]">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -95,6 +95,7 @@ const Cookie = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

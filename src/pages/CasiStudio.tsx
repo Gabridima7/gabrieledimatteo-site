@@ -538,6 +538,7 @@ const CasiStudio = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

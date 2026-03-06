@@ -153,6 +153,7 @@ const ProdottiAI = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

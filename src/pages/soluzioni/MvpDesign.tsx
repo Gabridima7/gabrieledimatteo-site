@@ -16,6 +16,7 @@ const MvpDesign = () => (
     h1="Dal concept al *prodotto digitale*"
     subtitle="Progettiamo e sviluppiamo il tuo MVP per validare l'idea, attrarre investitori e conquistare i primi clienti."
     heroIcon={Rocket}
+    heroImage={heroMvpDesign}
     stats={[
       { value: '4-8', label: 'Settimane di sviluppo' },
       { value: '100%', label: 'Codice di tua proprietà' },

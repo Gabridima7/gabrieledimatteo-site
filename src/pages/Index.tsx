@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
@@ -83,9 +84,21 @@ const Index = () => {
   const contractsCount = useCountUp(52850, 1500, statsInView);
   const clientsCount = useCountUp(5, 1500, statsInView);
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
+    
+    try {
+      await supabase.functions.invoke('notify-submission', {
+        body: {
+          type: 'newsletter',
+          data: { email },
+        },
+      });
+    } catch (err) {
+      console.error('Failed to save newsletter subscription:', err);
+    }
+    
     setEmailSubmitted(true);
   };
 

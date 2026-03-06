@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Mail, CheckCircle, Phone, ArrowRight, Paperclip, X } from 'lucide-react';
@@ -33,8 +34,22 @@ const Contatti = () => {
     setFiles(prev => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Save to DB and send email notification
+    try {
+      await supabase.functions.invoke('notify-submission', {
+        body: {
+          type: 'contact',
+          data: { name: form.name, email: form.email, message: form.message },
+        },
+      });
+    } catch (err) {
+      console.error('Failed to save contact submission:', err);
+    }
+
+    // Also open mailto as fallback
     const subject = encodeURIComponent(`${t('contatti', 'emailSubject')} ${form.name}`);
     const body = encodeURIComponent(`${t('contatti', 'labelName').replace('*', '')}: ${form.name}\nEmail: ${form.email}\n\n${t('contatti', 'labelProject').replace('*', '')}:\n${form.message}`);
     window.open(`mailto:info@nexusagency.it?subject=${subject}&body=${body}`, '_self');

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ApplicationFormProvider } from "./context/ApplicationFormContext";
@@ -42,56 +42,63 @@ import PrenotaCall from "./pages/PrenotaCall";
 
 const queryClient = new QueryClient();
 
+export const AppContent = () => (
+  <>
+    <ScrollToTop />
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/servizi" element={<Servizi />} />
+        <Route path="/prodotti-ai" element={<ProdottiAI />} />
+        <Route path="/casi-studio" element={<CasiStudio />} />
+        <Route path="/chi-siamo" element={<ChiSiamo />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contatti" element={<Contatti />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/cookie" element={<Cookie />} />
+        <Route path="/prenota-call" element={<PrenotaCall />} />
+        <Route path="/servizi/sviluppo-web" element={<SviluppoWebApp />} />
+        <Route path="/servizi/ai-automation" element={<AiAutomation />} />
+        <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />
+        <Route path="/servizi/branding-ui-ux" element={<BrandingUiUx />} />
+        <Route path="/servizi/landing-page" element={<LandingPageService />} />
+        <Route path="/servizi/web-app" element={<WebAppService />} />
+        <Route path="/servizi/software-gestionale" element={<SoftwareGestionaleService />} />
+        <Route path="/servizi/prodotto-saas" element={<ProdottoSaaSService />} />
+        <Route path="/servizi/ai-chatbot" element={<AIChatbotService />} />
+        <Route path="/servizi/integrazioni-api" element={<IntegrazioniAPIService />} />
+        <Route path="/servizi/ui-ux-design" element={<UIUXDesignService />} />
+        <Route path="/servizi/website-design" element={<WebsiteDesignService />} />
+        <Route path="/servizi/mobile-app-design" element={<MobileAppDesignService />} />
+        <Route path="/servizi/website-redesign" element={<WebsiteRedesignService />} />
+        <Route path="/servizi/product-audit" element={<ProductAuditService />} />
+        <Route path="/servizi/product-ux-ui-audit" element={<ProductAuditService />} />
+        <Route path="/soluzioni/mvp" element={<MvpDesign />} />
+        <Route path="/soluzioni/product-redesign" element={<ProductRedesign />} />
+        <Route path="/soluzioni/estensione-team" element={<EstensioneTeam />} />
+        <Route path="/progetto/:slug" element={<ProjectDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
+  </>
+);
+
 const App = () => (
   <HelmetProvider>
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <ApplicationFormProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/servizi" element={<Servizi />} />
-              <Route path="/prodotti-ai" element={<ProdottiAI />} />
-              <Route path="/casi-studio" element={<CasiStudio />} />
-              <Route path="/chi-siamo" element={<ChiSiamo />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contatti" element={<Contatti />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/cookie" element={<Cookie />} />
-              <Route path="/prenota-call" element={<PrenotaCall />} />
-              <Route path="/servizi/sviluppo-web" element={<SviluppoWebApp />} />
-              <Route path="/servizi/ai-automation" element={<AiAutomation />} />
-              <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />
-              <Route path="/servizi/branding-ui-ux" element={<BrandingUiUx />} />
-              <Route path="/servizi/landing-page" element={<LandingPageService />} />
-              <Route path="/servizi/web-app" element={<WebAppService />} />
-              <Route path="/servizi/software-gestionale" element={<SoftwareGestionaleService />} />
-              <Route path="/servizi/prodotto-saas" element={<ProdottoSaaSService />} />
-              <Route path="/servizi/ai-chatbot" element={<AIChatbotService />} />
-              <Route path="/servizi/integrazioni-api" element={<IntegrazioniAPIService />} />
-              <Route path="/servizi/ui-ux-design" element={<UIUXDesignService />} />
-              <Route path="/servizi/website-design" element={<WebsiteDesignService />} />
-              <Route path="/servizi/mobile-app-design" element={<MobileAppDesignService />} />
-              <Route path="/servizi/website-redesign" element={<WebsiteRedesignService />} />
-              <Route path="/servizi/product-audit" element={<ProductAuditService />} />
-              <Route path="/soluzioni/mvp" element={<MvpDesign />} />
-              <Route path="/soluzioni/product-redesign" element={<ProductRedesign />} />
-              <Route path="/soluzioni/estensione-team" element={<EstensioneTeam />} />
-              <Route path="/progetto/:slug" element={<ProjectDetail />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </TooltipProvider>
-      </ApplicationFormProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <ApplicationFormProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <AppContent />
+            </BrowserRouter>
+          </TooltipProvider>
+        </ApplicationFormProvider>
+      </LanguageProvider>
+    </QueryClientProvider>
   </HelmetProvider>
 );
 

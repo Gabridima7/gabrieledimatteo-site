@@ -266,8 +266,8 @@ const CasiStudio = () => {
   return (
     <>
       <SEOHead
-        title="Case study e progetti digitali | Nexus Agency"
-        description="Scopri i progetti realizzati da Nexus Agency: siti web, piattaforme digitali e sistemi innovativi sviluppati per aziende e startup."
+        title="Case study sviluppo web e AI | Nexus Agency"
+        description="Scopri i progetti realizzati da Nexus Agency: siti web, web app, automazioni AI e piattaforme digitali sviluppati per aziende e PMI italiane."
         canonical="https://nexusagency.it/casi-studio"
         breadcrumbs={[
           { name: "Home", url: "https://nexusagency.it" },
@@ -337,7 +337,7 @@ const CasiStudio = () => {
                 <em className="font-extrabold text-[#d0f601]" style={{ fontStyle: 'italic' }}>case study</em>
               </h1>
               <p className="text-lg max-w-[520px] mt-5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Nel corso degli anni abbiamo collaborato con aziende e startup per progettare e sviluppare prodotti digitali innovativi. In questa sezione puoi esplorare alcuni dei progetti più significativi realizzati dal nostro team.
+                In questa sezione presentiamo alcuni dei progetti digitali sviluppati per aziende e startup italiane. Ogni progetto nasce da un problema reale e si traduce in una soluzione concreta, misurabile e scalabile.
               </p>
               <a
                 href={CAL_LINK}

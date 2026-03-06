@@ -12,8 +12,8 @@ const WebAppService = () => (
     seoDescription="Applicazioni web personalizzate per PMI italiane. Scalabili, sicure, con UX curata. Da €3.000."
     seoCanonical="https://nexusagency.it/servizi/web-app"
     badge="Web App"
-    h1="Web app interattive e scalabili"
-    subtitle="Applicazioni web progressive su misura che i tuoi utenti ameranno usare ogni giorno."
+      h1="Sviluppo web app personalizzate"
+      subtitle="Applicazioni web progressive su misura, scalabili e sicure che i tuoi utenti ameranno usare ogni giorno."
     heroIcon={Layers}
     heroImage={heroWebApp}
     stats={[

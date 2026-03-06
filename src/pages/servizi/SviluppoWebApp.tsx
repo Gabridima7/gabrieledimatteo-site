@@ -21,8 +21,8 @@ const SviluppoWebApp = () => {
       seoDescription="Sviluppo web professionale front-end e back-end per PMI italiane. React, Node.js, architetture scalabili. Risultati misurabili."
       seoCanonical="https://nexusagency.it/servizi/sviluppo-web"
       badge="Sviluppo Web & App"
-      h1="Sviluppo Web & App su misura per la tua PMI"
-      subtitle="Siti web, applicazioni e piattaforme digitali performanti, scalabili e progettati per convertire."
+      h1="Sviluppo siti web professionali"
+      subtitle="Siti web, applicazioni e piattaforme digitali performanti, scalabili e progettati per convertire visitatori in clienti."
       heroIcon={Code}
       heroImage={heroSviluppoWeb}
       stats={[

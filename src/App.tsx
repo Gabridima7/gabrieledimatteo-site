@@ -13,6 +13,7 @@ import ProdottiAI from "./pages/ProdottiAI";
 import CasiStudio from "./pages/CasiStudio";
 import ChiSiamo from "./pages/ChiSiamo";
 import Blog from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPost";
 import Contatti from "./pages/Contatti";
 import Privacy from "./pages/Privacy";
 import Cookie from "./pages/Cookie";

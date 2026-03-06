@@ -305,15 +305,22 @@ const Index = () => {
               { title: 'Branding e design', desc: 'Creiamo identità visive memorabili e interfacce utente che comunicano i valori del tuo brand e migliorano l\'esperienza dei tuoi clienti.', link: '/servizi/ui-ux-design', icon: iconUiUxDesign },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeUpVariants}>
-                <Link to={item.link} className="group block h-full rounded-2xl border border-white/[0.1] bg-white/[0.04] p-6 hover:bg-white/[0.08] hover:border-white/[0.2] transition-all duration-300">
-                  <div className="w-11 h-11 rounded-[10px] flex items-center justify-center mb-4">
-                    <img src={item.icon} alt={item.title} className="w-7 h-7 object-contain" />
+                <Link to={item.link} className="group block h-full relative rounded-[20px] border border-white/[0.15] bg-white/[0.08] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[hsl(228,76%,45%)]/50 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(28,53,200,0.2)] hover:bg-white/[0.12]">
+                  {/* Top glow effect */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-[hsl(228,76%,45%)] to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-20 bg-[hsl(228,76%,45%)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative p-8 flex flex-col items-center text-center">
+                    {/* Icon in glass sphere */}
+                    <div className="w-20 h-20 rounded-full bg-white/[0.06] border border-white/[0.12] flex items-center justify-center mb-6 group-hover:bg-white/[0.1] group-hover:border-white/[0.2] transition-all duration-300 shadow-[0_0_30px_rgba(28,53,200,0.1)]">
+                      <img src={item.icon} alt={item.title} className="w-10 h-10 object-contain" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#d0f601] transition-colors">{item.title}</h3>
+                    <p className="text-white/55 text-sm leading-relaxed mb-4">{item.desc}</p>
+                    <span className="text-sm font-medium text-white/40 group-hover:text-white/70 inline-flex items-center gap-1 transition-colors">
+                      Scopri di più <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#d0f601] transition-colors">{item.title}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-4">{item.desc}</p>
-                  <span className="text-sm font-medium text-white/40 group-hover:text-white/70 inline-flex items-center gap-1 transition-colors">
-                    Scopri di più <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </span>
                 </Link>
               </motion.div>
             ))}

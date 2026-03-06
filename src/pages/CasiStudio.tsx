@@ -458,7 +458,7 @@ const CasiStudio = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
-            className="grid md:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
               { title: t('cases', 'c1Title'), desc: t('cases', 'c1Desc'), badge: t('cases', 'c1Badge'), cover: coverHomeleven, slug: 'homeleven' },

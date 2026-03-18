@@ -39,6 +39,7 @@ import ProductRedesign from "./pages/soluzioni/ProductRedesign";
 import EstensioneTeam from "./pages/soluzioni/EstensioneTeam";
 import ProjectDetail from "./pages/ProjectDetail";
 import PrenotaCall from "./pages/PrenotaCall";
+import Guida from "./pages/Guida";
 
 const queryClient = new QueryClient();
 

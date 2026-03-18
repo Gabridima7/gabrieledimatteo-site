@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Mail, CheckCircle, Phone, ArrowRight, Paperclip, X } from 'lucide-react';
@@ -13,6 +12,7 @@ import NextStepsSection from '@/components/NextStepsSection';
 import ContactTestimonial from '@/components/ContactTestimonial';
 import ContactCtaSection from '@/components/ContactCtaSection';
 import ContactFaqSection from '@/components/ContactFaqSection';
+import { invokeBackendFunction } from '@/lib/invokeBackendFunction';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -39,11 +39,9 @@ const Contatti = () => {
     
     // Save to DB and send email notification
     try {
-      await supabase.functions.invoke('notify-submission', {
-        body: {
-          type: 'contact',
-          data: { name: form.name, email: form.email, message: form.message },
-        },
+      await invokeBackendFunction('notify-submission', {
+        type: 'contact',
+        data: { name: form.name, email: form.email, message: form.message },
       });
     } catch (err) {
       console.error('Failed to save contact submission:', err);

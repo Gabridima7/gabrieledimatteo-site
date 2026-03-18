@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, FileSearch, PenTool, Code, TestTube, Rocket } from 'lucide-react';
@@ -29,6 +28,7 @@ import coverHomeleven from '@/assets/cover-homeleven.png';
 import coverOneup from '@/assets/cover-oneup.png';
 import coverBiglia from '@/assets/cover-biglia.png';
 import cover500voltemeglio from '@/assets/cover-500voltemeglio.jpg';
+import { invokeBackendFunction } from '@/lib/invokeBackendFunction';
 
 const CAL_LINK = 'https://cal.com/nexus-agency/30min?overlayCalendar=true';
 
@@ -89,11 +89,9 @@ const Index = () => {
     if (!email) return;
     
     try {
-      await supabase.functions.invoke('notify-submission', {
-        body: {
-          type: 'newsletter',
-          data: { email },
-        },
+      await invokeBackendFunction('notify-submission', {
+        type: 'newsletter',
+        data: { email },
       });
     } catch (err) {
       console.error('Failed to save newsletter subscription:', err);

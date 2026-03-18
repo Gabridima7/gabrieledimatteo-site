@@ -59,6 +59,7 @@ export const AppContent = () => (
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/cookie" element={<Cookie />} />
         <Route path="/prenota-call" element={<PrenotaCall />} />
+        <Route path="/guida" element={<Guida />} />
         <Route path="/servizi/sviluppo-web" element={<SviluppoWebApp />} />
         <Route path="/servizi/ai-automation" element={<AiAutomation />} />
         <Route path="/servizi/consulenza-digitale" element={<ConsulenzaDigitale />} />

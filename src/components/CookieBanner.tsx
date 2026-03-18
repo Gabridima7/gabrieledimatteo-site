@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, X, Check } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
-import { supabase } from '@/integrations/supabase/client';
+import { invokeBackendFunction } from '@/lib/invokeBackendFunction';
 
 export interface CookiePreferences {
   essential: boolean;
@@ -44,16 +44,14 @@ const CookieBanner = () => {
 
     // Save to database
     try {
-      await supabase.functions.invoke('notify-submission', {
-        body: {
-          type: 'cookie_consent',
-          data: {
-            essential: prefs.essential,
-            analytics: prefs.analytics,
-            marketing: prefs.marketing,
-            functional: prefs.functional,
-            user_agent: navigator.userAgent,
-          },
+      await invokeBackendFunction('notify-submission', {
+        type: 'cookie_consent',
+        data: {
+          essential: prefs.essential,
+          analytics: prefs.analytics,
+          marketing: prefs.marketing,
+          functional: prefs.functional,
+          user_agent: navigator.userAgent,
         },
       });
     } catch (err) {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { supabase } from '@/integrations/supabase/client';
+import { invokeBackendFunction } from '@/lib/invokeBackendFunction';
 
 const Guida = () => {
   const [email, setEmail] = useState('');
@@ -25,8 +25,8 @@ const Guida = () => {
     setStatus('loading');
 
     try {
-      const { error } = await supabase.functions.invoke('send-guide', {
-        body: { email: email.trim() },
+      const { error } = await invokeBackendFunction('send-guide', {
+        email: email.trim(),
       });
       if (error) throw error;
       setSubmittedEmail(email.trim());

@@ -44,7 +44,7 @@ serve(async (req) => {
       });
     }
 
-    const PDF_URL = 'https://nexusagency.it/files/guida-prospecting.pdf';
+    const PDF_URL = 'https://qiztbdaflhjqnybhflhu.supabase.co/storage/v1/object/public/guides/guida-prospecting.pdf';
 
     const htmlEmail = `
 <!DOCTYPE html>

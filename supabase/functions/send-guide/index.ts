@@ -57,7 +57,7 @@ Grazie per aver scaricato la guida. Qui dentro trovi tutto quello che ti serve p
 
 Scarica la guida PDF: ${PDF_URL}
 
-Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.
 
 A presto,
 Gabriele
@@ -95,7 +95,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
     <a href="${PDF_URL}" target="_blank" style="display:inline-block;background:#6c5ce7;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">Scarica la Guida PDF</a>
   </td></tr></table>
 
-  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.</p>
+  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.</p>
   <p style="margin:0;">A presto,<br><strong>Gabriele</strong><br>Nexus Agency</p>
 </td></tr>
 
@@ -126,7 +126,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
         from: 'Gabriele di Nexus Agency <noreply@nexusagency.it>',
         to: [email],
         subject: 'La tua guida è qui — Come trovare 40.000+ clienti senza sito web',
-        reply_to: 'gabriele@nexusagency.it',
+        reply_to: 'g.dimatteo@nexusagency.it',
         html: htmlEmail,
         text: textEmail,
         headers: {

@@ -56,7 +56,7 @@ Grazie per aver scaricato il file. Ecco cosa troverai al suo interno:
 
 Scarica il file Excel: ${FILE_URL}
 
-Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.
 
 A presto,
 Gabriele
@@ -93,7 +93,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
     <a href="${FILE_URL}" target="_blank" style="display:inline-block;background:#6366f1;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">Scarica il File Excel</a>
   </td></tr></table>
 
-  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.</p>
+  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.</p>
   <p style="margin:0;">A presto,<br><strong>Gabriele</strong><br>Nexus Agency</p>
 </td></tr>
 
@@ -124,7 +124,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
         from: 'Gabriele di Nexus Agency <noreply@nexusagency.it>',
         to: [email],
         subject: 'Ecco il tuo file — 40.000+ aziende italiane senza sito web',
-        reply_to: 'gabriele@nexusagency.it',
+        reply_to: 'g.dimatteo@nexusagency.it',
         html: htmlEmail,
         text: textEmail,
         headers: {

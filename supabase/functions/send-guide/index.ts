@@ -25,7 +25,6 @@ serve(async (req) => {
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // Save lead (upsert to handle duplicates gracefully)
     const { error: dbError } = await supabase.from('leads').upsert(
       { email, source: 'youtube_guida' },
       { onConflict: 'email' }
@@ -35,7 +34,6 @@ serve(async (req) => {
       throw new Error(dbError.message);
     }
 
-    // Send email via Resend
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY not configured');
@@ -45,6 +43,28 @@ serve(async (req) => {
     }
 
     const PDF_URL = 'https://qiztbdaflhjqnybhflhu.supabase.co/storage/v1/object/public/guides/guida-prospecting.pdf';
+    const unsubscribeUrl = `mailto:gabriele@nexusagency.it?subject=Unsubscribe&body=Rimuovimi dalla lista`;
+
+    const textEmail = `Ciao!
+
+Grazie per aver scaricato la guida. Qui dentro trovi tutto quello che ti serve per iniziare:
+
+- Come ottenere la chiave API di Google (gratis)
+- Lo script Python che trova le attività senza sito web
+- Come creare un sito web in 15 minuti con l'AI
+- I messaggi pronti per contattare e vendere
+- Quanto chiedere e come gestire le obiezioni
+
+Scarica la guida PDF: ${PDF_URL}
+
+Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+
+A presto,
+Gabriele
+Nexus Agency
+
+---
+Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
 
     const htmlEmail = `
 <!DOCTYPE html>
@@ -63,19 +83,19 @@ serve(async (req) => {
 
 <!-- Body -->
 <tr><td style="padding:35px 30px;color:#333333;font-size:15px;line-height:1.7;">
-  <p style="margin:0 0 18px 0;">Ciao! 👋</p>
+  <p style="margin:0 0 18px 0;">Ciao!</p>
   <p style="margin:0 0 18px 0;">Grazie per aver scaricato la guida. Qui dentro trovi tutto quello che ti serve per iniziare:</p>
-  <p style="margin:0 0 5px 0;">✅ Come ottenere la chiave API di Google (gratis)</p>
-  <p style="margin:0 0 5px 0;">✅ Lo script Python che trova le attività senza sito web</p>
-  <p style="margin:0 0 5px 0;">✅ Come creare un sito web in 15 minuti con l'AI</p>
-  <p style="margin:0 0 5px 0;">✅ I messaggi pronti per contattare e vendere</p>
-  <p style="margin:0 0 22px 0;">✅ Quanto chiedere e come gestire le obiezioni</p>
+  <p style="margin:0 0 5px 0;">&#10003; Come ottenere la chiave API di Google (gratis)</p>
+  <p style="margin:0 0 5px 0;">&#10003; Lo script Python che trova le attività senza sito web</p>
+  <p style="margin:0 0 5px 0;">&#10003; Come creare un sito web in 15 minuti con l'AI</p>
+  <p style="margin:0 0 5px 0;">&#10003; I messaggi pronti per contattare e vendere</p>
+  <p style="margin:0 0 22px 0;">&#10003; Quanto chiedere e come gestire le obiezioni</p>
 
   <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:10px 0 25px 0;">
-    <a href="${PDF_URL}" target="_blank" style="display:inline-block;background:#6c5ce7;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">📥 SCARICA LA GUIDA PDF</a>
+    <a href="${PDF_URL}" target="_blank" style="display:inline-block;background:#6c5ce7;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">Scarica la Guida PDF</a>
   </td></tr></table>
 
-  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email — leggo tutto.</p>
+  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.</p>
   <p style="margin:0;">A presto,<br><strong>Gabriele</strong><br>Nexus Agency</p>
 </td></tr>
 
@@ -87,7 +107,7 @@ serve(async (req) => {
     <a href="https://instagram.com/nexusagency" style="color:#6c5ce7;text-decoration:none;margin:0 8px;">Instagram</a> ·
     <a href="https://youtube.com/@nexusagency" style="color:#6c5ce7;text-decoration:none;margin:0 8px;">YouTube</a>
   </p>
-  <p style="margin:0;"><a href="mailto:gabriele@nexusagency.it?subject=Unsubscribe" style="color:#bbbbbb;text-decoration:underline;">Non vuoi più ricevere email? Cancellati qui</a></p>
+  <p style="margin:0;"><a href="${unsubscribeUrl}" style="color:#bbbbbb;text-decoration:underline;">Non vuoi più ricevere email? Cancellati qui</a></p>
 </td></tr>
 
 </table>
@@ -105,9 +125,14 @@ serve(async (req) => {
       body: JSON.stringify({
         from: 'Gabriele di Nexus Agency <noreply@nexusagency.it>',
         to: [email],
-        subject: 'La tua guida è qui 📥 Come trovare 40.000+ clienti senza sito web',
+        subject: 'La tua guida è qui — Come trovare 40.000+ clienti senza sito web',
         reply_to: 'gabriele@nexusagency.it',
         html: htmlEmail,
+        text: textEmail,
+        headers: {
+          'List-Unsubscribe': `<${unsubscribeUrl}>`,
+          'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+        },
       }),
     });
 

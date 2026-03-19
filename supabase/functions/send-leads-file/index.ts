@@ -43,7 +43,7 @@ serve(async (req) => {
     }
 
     const FILE_URL = 'https://qiztbdaflhjqnybhflhu.supabase.co/storage/v1/object/public/guides/prospecting_leads_italia_1.xlsx';
-    const unsubscribeUrl = `mailto:gabriele@nexusagency.it?subject=Unsubscribe&body=Rimuovimi dalla lista`;
+    const unsubscribeUrl = `https://nexusagencyitalia.lovable.app/unsubscribe?email=${encodeURIComponent(email)}`;
 
     const textEmail = `Ciao!
 

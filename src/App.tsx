@@ -41,6 +41,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import PrenotaCall from "./pages/PrenotaCall";
 import Guida from "./pages/Guida";
 import Leads from "./pages/Leads";
+import Unsubscribe from "./pages/Unsubscribe";
 
 const queryClient = new QueryClient();
 

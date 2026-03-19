@@ -40,6 +40,7 @@ import EstensioneTeam from "./pages/soluzioni/EstensioneTeam";
 import ProjectDetail from "./pages/ProjectDetail";
 import PrenotaCall from "./pages/PrenotaCall";
 import Guida from "./pages/Guida";
+import Leads from "./pages/Leads";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ export const AppContent = () => (
     <ScrollToTop />
     <Routes>
       <Route path="/guida" element={<Guida />} />
+      <Route path="/leads" element={<Leads />} />
       <Route path="*" element={
         <Layout>
           <Routes>

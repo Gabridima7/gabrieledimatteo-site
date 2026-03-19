@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.send-guide]
 verify_jwt = false
+
+[functions.send-leads-file]
+verify_jwt = false

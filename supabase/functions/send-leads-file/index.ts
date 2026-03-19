@@ -102,8 +102,8 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
   <p style="margin:0 0 6px 0;"><strong>Nexus Agency</strong> — nexusagency.it</p>
   <p style="margin:0 0 10px 0;">Hai ricevuto questa email perché hai scaricato il nostro file gratuito.</p>
   <p style="margin:0 0 10px 0;">
-    <a href="https://instagram.com/nexusagency" style="color:#6366f1;text-decoration:none;margin:0 8px;">Instagram</a> ·
-    <a href="https://youtube.com/@nexusagency" style="color:#6366f1;text-decoration:none;margin:0 8px;">YouTube</a>
+    <a href="https://www.instagram.com/itsgabridima/" style="color:#6366f1;text-decoration:none;margin:0 8px;">Instagram</a> ·
+    <a href="https://www.youtube.com/@gabridimatteo" style="color:#6366f1;text-decoration:none;margin:0 8px;">YouTube</a>
   </p>
   <p style="margin:0;"><a href="${unsubscribeUrl}" style="color:#bbbbbb;text-decoration:underline;">Non vuoi più ricevere email? Cancellati qui</a></p>
 </td></tr>

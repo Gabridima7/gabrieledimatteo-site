@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { invokeBackendFunction } from "@/lib/invokeBackendFunction";
 
 const Unsubscribe = () => {
   const [searchParams] = useSearchParams();
@@ -14,9 +14,7 @@ const Unsubscribe = () => {
 
     setStatus("loading");
     try {
-      const { data, error } = await supabase.functions.invoke("unsubscribe", {
-        body: { email },
-      });
+      const { data, error } = await invokeBackendFunction("unsubscribe", { email });
 
       if (error) throw error;
       if (data?.success) {

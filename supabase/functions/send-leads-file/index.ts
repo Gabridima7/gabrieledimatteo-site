@@ -76,8 +76,8 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
 
 <!-- Header -->
 <tr><td style="background:linear-gradient(135deg,#0a0a0f 0%,#1a1040 50%,#6366f1 100%);padding:50px 30px;text-align:center;">
-  <h1 style="color:#ffffff;font-size:24px;font-weight:700;margin:0 0 8px 0;font-family:'Inter',Arial,sans-serif;">NEXUS AGENCY</h1>
-  <p style="color:#818cf8;font-size:16px;margin:0;font-family:'Inter',Arial,sans-serif;">Il tuo file è pronto</p>
+  <h1 style="color:#ffffff !important;font-size:24px;font-weight:700;margin:0 0 8px 0;font-family:'Inter',Arial,sans-serif;"><span style="color:#ffffff !important;">NEXUS AGENCY</span></h1>
+  <p style="color:#818cf8 !important;font-size:16px;margin:0;font-family:'Inter',Arial,sans-serif;"><span style="color:#818cf8 !important;">Il tuo file è pronto</span></p>
 </td></tr>
 
 <!-- Body -->

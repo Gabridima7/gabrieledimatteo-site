@@ -43,6 +43,27 @@ serve(async (req) => {
     }
 
     const FILE_URL = 'https://qiztbdaflhjqnybhflhu.supabase.co/storage/v1/object/public/guides/prospecting_leads_italia_1.xlsx';
+    const unsubscribeUrl = `mailto:gabriele@nexusagency.it?subject=Unsubscribe&body=Rimuovimi dalla lista`;
+
+    const textEmail = `Ciao!
+
+Grazie per aver scaricato il file. Ecco cosa troverai al suo interno:
+
+- Oltre 40.000 aziende italiane senza sito web
+- Nome dell'attività, settore e città
+- Dati pronti per il prospecting
+- File Excel organizzato e filtrabile
+
+Scarica il file Excel: ${FILE_URL}
+
+Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+
+A presto,
+Gabriele
+Nexus Agency
+
+---
+Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
 
     const htmlEmail = `
 <!DOCTYPE html>
@@ -61,18 +82,18 @@ serve(async (req) => {
 
 <!-- Body -->
 <tr><td style="padding:35px 30px;color:#333333;font-size:15px;line-height:1.7;">
-  <p style="margin:0 0 18px 0;">Ciao! 👋</p>
+  <p style="margin:0 0 18px 0;">Ciao!</p>
   <p style="margin:0 0 18px 0;">Grazie per aver scaricato il file. Ecco cosa troverai al suo interno:</p>
-  <p style="margin:0 0 5px 0;">✅ Oltre 40.000 aziende italiane senza sito web</p>
-  <p style="margin:0 0 5px 0;">✅ Nome dell'attività, settore e città</p>
-  <p style="margin:0 0 5px 0;">✅ Dati pronti per il prospecting</p>
-  <p style="margin:0 0 22px 0;">✅ File Excel organizzato e filtrabile</p>
+  <p style="margin:0 0 5px 0;">&#10003; Oltre 40.000 aziende italiane senza sito web</p>
+  <p style="margin:0 0 5px 0;">&#10003; Nome dell'attività, settore e città</p>
+  <p style="margin:0 0 5px 0;">&#10003; Dati pronti per il prospecting</p>
+  <p style="margin:0 0 22px 0;">&#10003; File Excel organizzato e filtrabile</p>
 
   <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:10px 0 25px 0;">
-    <a href="${FILE_URL}" target="_blank" style="display:inline-block;background:#6366f1;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">📥 SCARICA IL FILE EXCEL</a>
+    <a href="${FILE_URL}" target="_blank" style="display:inline-block;background:#6366f1;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">Scarica il File Excel</a>
   </td></tr></table>
 
-  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email — leggo tutto.</p>
+  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.</p>
   <p style="margin:0;">A presto,<br><strong>Gabriele</strong><br>Nexus Agency</p>
 </td></tr>
 
@@ -84,7 +105,7 @@ serve(async (req) => {
     <a href="https://instagram.com/nexusagency" style="color:#6366f1;text-decoration:none;margin:0 8px;">Instagram</a> ·
     <a href="https://youtube.com/@nexusagency" style="color:#6366f1;text-decoration:none;margin:0 8px;">YouTube</a>
   </p>
-  <p style="margin:0;"><a href="mailto:gabriele@nexusagency.it?subject=Unsubscribe" style="color:#bbbbbb;text-decoration:underline;">Non vuoi più ricevere email? Cancellati qui</a></p>
+  <p style="margin:0;"><a href="${unsubscribeUrl}" style="color:#bbbbbb;text-decoration:underline;">Non vuoi più ricevere email? Cancellati qui</a></p>
 </td></tr>
 
 </table>
@@ -102,9 +123,14 @@ serve(async (req) => {
       body: JSON.stringify({
         from: 'Gabriele di Nexus Agency <noreply@nexusagency.it>',
         to: [email],
-        subject: 'Ecco il tuo file 📥 40.000+ aziende italiane senza sito web',
+        subject: 'Ecco il tuo file — 40.000+ aziende italiane senza sito web',
         reply_to: 'gabriele@nexusagency.it',
         html: htmlEmail,
+        text: textEmail,
+        headers: {
+          'List-Unsubscribe': `<${unsubscribeUrl}>`,
+          'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+        },
       }),
     });
 

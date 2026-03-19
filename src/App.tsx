@@ -49,6 +49,7 @@ export const AppContent = () => (
     <ScrollToTop />
     <Routes>
       <Route path="/guida" element={<Guida />} />
+      <Route path="/leads" element={<Leads />} />
       <Route path="*" element={
         <Layout>
           <Routes>

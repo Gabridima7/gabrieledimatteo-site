@@ -126,7 +126,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
         from: 'Gabriele di Nexus Agency <noreply@nexusagency.it>',
         to: [email],
         subject: 'La tua guida è qui — Come trovare 40.000+ clienti senza sito web',
-        reply_to: 'gabriele@nexusagency.it',
+        reply_to: 'g.dimatteo@nexusagency.it',
         html: htmlEmail,
         text: textEmail,
         headers: {

@@ -50,6 +50,7 @@ export const AppContent = () => (
     <Routes>
       <Route path="/guida" element={<Guida />} />
       <Route path="/leads" element={<Leads />} />
+      <Route path="/unsubscribe" element={<Unsubscribe />} />
       <Route path="*" element={
         <Layout>
           <Routes>

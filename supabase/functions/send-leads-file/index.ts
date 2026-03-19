@@ -93,7 +93,7 @@ Non vuoi più ricevere email? Rispondi con oggetto "Unsubscribe".`;
     <a href="${FILE_URL}" target="_blank" style="display:inline-block;background:#6366f1;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;font-family:'Inter',Arial,sans-serif;">Scarica il File Excel</a>
   </td></tr></table>
 
-  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.</p>
+  <p style="margin:0 0 18px 0;">Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.</p>
   <p style="margin:0;">A presto,<br><strong>Gabriele</strong><br>Nexus Agency</p>
 </td></tr>
 

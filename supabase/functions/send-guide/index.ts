@@ -57,7 +57,7 @@ Grazie per aver scaricato la guida. Qui dentro trovi tutto quello che ti serve p
 
 Scarica la guida PDF: ${PDF_URL}
 
-Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.
 
 A presto,
 Gabriele

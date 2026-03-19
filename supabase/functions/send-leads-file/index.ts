@@ -56,7 +56,7 @@ Grazie per aver scaricato il file. Ecco cosa troverai al suo interno:
 
 Scarica il file Excel: ${FILE_URL}
 
-Se hai domande o vuoi approfondire qualcosa, rispondi direttamente a questa email.
+Se hai domande o vuoi approfondire, scrivi a g.dimatteo@nexusagency.it — rispondo personalmente.
 
 A presto,
 Gabriele

@@ -228,8 +228,8 @@ const ProjectDetail = () => {
               {project.galleryImages[0].caption && (
                 <p className="text-sm text-[#666] mb-3 text-center">{project.galleryImages[0].caption}</p>
               )}
-              <div className="overflow-hidden rounded-2xl aspect-[16/9]">
-                <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
+              <div className="overflow-hidden rounded-2xl">
+                <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-auto transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
               </div>
             </motion.div>
           )}
@@ -248,8 +248,8 @@ const ProjectDetail = () => {
                   {img.caption && (
                     <p className="text-sm text-[#666] mb-3 text-center">{img.caption}</p>
                   )}
-                  <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-                    <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
+                  <div className="overflow-hidden rounded-2xl">
+                    <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
                   </div>
                 </motion.div>
               ))}

@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowRight, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 import SEOHead from '@/components/SEOHead';
 

@@ -348,15 +348,17 @@ const CasiStudio = () => {
               >
                 {t('works', 'heroCta')} <ArrowRight size={16} />
               </a>
-              <div className="flex flex-wrap gap-10 mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="flex items-center justify-between max-w-2xl w-full mt-12 pt-12" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 {counters.map((s, i) => (
-                  <div key={i} className="flex items-start gap-10">
-                    {i > 0 && <div className="hidden sm:block w-px h-12 -ml-10 flex-shrink-0" style={{ background: 'rgba(255,255,255,0.1)' }} />}
+                  <React.Fragment key={i}>
                     <div>
                       <p className="font-bold text-white" style={{ fontSize: 'clamp(28px,3vw,40px)' }}>{s.value}</p>
                       <p className="text-[13px] mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</p>
                     </div>
-                  </div>
+                    {i < counters.length - 1 && (
+                      <div className="hidden sm:block w-px h-12 bg-[rgba(255,255,255,0.1)]" />
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
             </motion.div>

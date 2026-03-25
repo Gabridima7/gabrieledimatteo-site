@@ -144,9 +144,7 @@ export const projectsData: Project[] = [
       { number: "3", title: "Sviluppo & Launch", items: ["Sviluppo responsive", "Ottimizzazione SEO", "Integrazione form", "Go-live e monitoraggio"] },
     ],
     galleryImages: [
-      { src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200", alt: "Homepage Infissi Rossi", caption: "Homepage con hero section e catalogo in evidenza" },
-      { src: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1200", alt: "Pagina prodotti", caption: "Catalogo prodotti con filtri per tipologia e materiale" },
-      { src: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200", alt: "Form preventivi", caption: "Form preventivi ottimizzato per la conversione" },
+      { src: "/assets/projects/biglia-serramenti-hero.png", alt: "Biglia Serramenti — Homepage", caption: "Homepage con hero section e navigazione principale" },
     ],
     results: [
       { metric: "+120%", label: "Visite organiche", description: "Crescita del traffico organico nei primi 3 mesi grazie all'ottimizzazione SEO locale." },

@@ -246,7 +246,7 @@ const ProjectDetail = () => {
               {project.galleryImages[0].caption && (
                 <p className="text-sm text-[#666] mb-3 text-center">{project.galleryImages[0].caption}</p>
               )}
-              <div className="overflow-hidden rounded-2xl">
+              <div className="overflow-hidden rounded-2xl cursor-pointer" onClick={() => setLightboxIndex(0)}>
                 <img src={project.galleryImages[0].src} alt={project.galleryImages[0].alt} loading="lazy" className="w-full h-auto transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
               </div>
             </motion.div>
@@ -266,7 +266,7 @@ const ProjectDetail = () => {
                   {img.caption && (
                     <p className="text-sm text-[#666] mb-3 text-center">{img.caption}</p>
                   )}
-                  <div className="overflow-hidden rounded-2xl">
+                  <div className="overflow-hidden rounded-2xl cursor-pointer" onClick={() => setLightboxIndex(i + 1)}>
                     <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" />
                   </div>
                 </motion.div>
@@ -275,6 +275,69 @@ const ProjectDetail = () => {
           )}
         </div>
       </section>
+
+      {/* ═══ LIGHTBOX MODAL ═══ */}
+      {lightboxIndex !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm"
+          onClick={() => setLightboxIndex(null)}
+        >
+          {/* Close */}
+          <button
+            onClick={() => setLightboxIndex(null)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+          >
+            <X size={28} />
+          </button>
+
+          {/* Counter */}
+          <p className="absolute top-6 left-6 text-white/50 text-sm font-medium z-10">
+            {lightboxIndex + 1} / {project.galleryImages.length}
+          </p>
+
+          {/* Caption */}
+          {project.galleryImages[lightboxIndex].caption && (
+            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm text-center max-w-lg z-10">
+              {project.galleryImages[lightboxIndex].caption}
+            </p>
+          )}
+
+          {/* Prev */}
+          {project.galleryImages.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + project.galleryImages.length) % project.galleryImages.length); }}
+              className="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors z-10"
+            >
+              <ChevronLeft size={36} />
+            </button>
+          )}
+
+          {/* Next */}
+          {project.galleryImages.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % project.galleryImages.length); }}
+              className="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors z-10"
+            >
+              <ChevronRight size={36} />
+            </button>
+          )}
+
+          {/* Image */}
+          <motion.img
+            key={lightboxIndex}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            src={project.galleryImages[lightboxIndex].src}
+            alt={project.galleryImages[lightboxIndex].alt}
+            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </motion.div>
+      )}
 
       {/* ═══ SECTION 7 — RISULTATI ═══ */}
       <section className="py-24 bg-[#f5f5f5]">

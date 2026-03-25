@@ -21,7 +21,7 @@ const ConsulenzaDigitale = () => (
     ]}
     heroQuote={{ text: "La consulenza di NEXUS ci ha dato una visione chiara su dove investire nel digitale. Ogni euro speso ha avuto un ritorno.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'Revelli Group', category: 'Consulenza', description: 'Audit digitale completo e roadmap di trasformazione per gruppo industriale.', metrics: ['+35% efficienza', 'ROI in 6 mesi'], slug: 'revelli' },
+      { name: 'ONE UP', category: 'Consulenza', description: 'Audit digitale e roadmap strategica per ottimizzare processi e presenza online.', metrics: ['+35% efficienza', 'ROI in 6 mesi'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a definire la tua strategia digitale?"
     benefits={[

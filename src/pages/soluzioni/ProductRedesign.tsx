@@ -24,7 +24,7 @@ const ProductRedesign = () => (
     ]}
     heroQuote={{ text: "Il redesign di NEXUS ha dato nuova vita al nostro prodotto. Gli utenti adorano la nuova interfaccia.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'Web App', description: 'Redesign completo del gestionale flotta barche.', metrics: ['+60% engagement', 'UX rinnovata'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'Web App', description: 'Redesign completo del gestionale flotta barche.', metrics: ['+60% engagement', 'UX rinnovata'], slug: 'one-up' },
     ]}
     ctaBannerText="Il tuo prodotto ha bisogno di un refresh?"
     ctaBannerDescription="Analizziamo insieme il tuo prodotto e ti proponiamo un piano di redesign."

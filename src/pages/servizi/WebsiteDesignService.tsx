@@ -25,8 +25,8 @@ const WebsiteDesignService = () => (
     ]}
     heroQuote={{ text: "Il sito rifatto da NEXUS ha portato un aumento immediato delle richieste di preventivo.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
     caseStudies={[
-      { name: 'Biglia Serramenti', category: 'Website Design', description: 'Sito web istituzionale con design premium e ottimizzazione SEO.', metrics: ['+65% lead', 'PageSpeed 98'], slug: 'biglia' },
-      { name: 'ONE UP', category: 'Sito Web', description: 'Sito corporate con animazioni e storytelling del brand.', metrics: ['+80% traffico', 'Bounce -35%'], slug: 'oneup' },
+      { name: 'Biglia Serramenti', category: 'Website Design', description: 'Sito web istituzionale con design premium e ottimizzazione SEO.', metrics: ['+65% lead', 'PageSpeed 98'], slug: 'biglia-serramenti' },
+      { name: 'ONE UP', category: 'Sito Web', description: 'Sito corporate con animazioni e storytelling del brand.', metrics: ['+80% traffico', 'Bounce -35%'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a rinnovare il tuo sito web?"
     benefits={[

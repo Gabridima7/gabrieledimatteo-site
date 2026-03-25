@@ -24,7 +24,7 @@ const WebsiteRedesignService = () => (
     ]}
     heroQuote={{ text: "Il redesign del sito ha cambiato completamente la percezione del nostro brand online.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
     caseStudies={[
-      { name: 'Biglia Serramenti', category: 'Redesign', description: 'Redesign completo del sito aziendale con nuova brand identity e SEO.', metrics: ['+80% lead', 'PageSpeed 98'], slug: 'biglia' },
+      { name: 'Biglia Serramenti', category: 'Redesign', description: 'Redesign completo del sito aziendale con nuova brand identity e SEO.', metrics: ['+80% lead', 'PageSpeed 98'], slug: 'biglia-serramenti' },
     ]}
     ctaBannerText="Pronto a dare nuova vita al tuo sito?"
     benefits={[

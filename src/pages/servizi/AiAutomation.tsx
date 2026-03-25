@@ -24,7 +24,7 @@ const AiAutomation = () => (
     ]}
     heroQuote={{ text: "Grazie a NEXUS abbiamo automatizzato il 70% dei processi ripetitivi. Il team ora si concentra su attività ad alto valore.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'AI Automation', description: 'Automazione dei flussi operativi con Make e AI per ridurre i tempi di gestione.', metrics: ['-70% lavoro manuale', 'ROI in 30 giorni'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'AI Automation', description: 'Automazione dei flussi operativi con Make e AI per ridurre i tempi di gestione.', metrics: ['-70% lavoro manuale', 'ROI in 30 giorni'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto ad automatizzare la tua azienda?"
     benefits={[

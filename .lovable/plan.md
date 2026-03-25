@@ -1,21 +1,32 @@
 
 
-## Problema
+## Audit Results: Broken Links
 
-Nella pagina `/casi-studio` ci sono **due blocchi KPI identici**. La sezione KPI nell'hero (sotto il pulsante CTA verde) non è stata modificata e i 3 elementi sono ancora troppo vicini tra loro con le linee separatrici schiacciate.
+### Found 1 broken link
 
-## Piano
+**File:** `src/pages/servizi/ConsulenzaDigitale.tsx` (line 24)
+- Slug `revelli` does not match any project in `projects.ts`
+- Clicking "Vedi caso studio" for "Revelli Group" leads to `/progetto/revelli` which shows the 404 page
 
-### Modificare i KPI nell'hero (righe 351-361 di `src/pages/CasiStudio.tsx`)
+### All other links are correct
+- Homepage case studies: 4/4 valid
+- Casi Studio page: 4/4 valid
+- All 15 service pages: slugs verified (after previous fixes)
+- All 3 solution pages: slugs verified
+- Footer: all routes valid
+- Navbar: all routes valid
 
-Sostituire il layout attuale (`flex flex-wrap gap-10` con margini negativi per i separatori) con lo stesso pattern `justify-between` già applicato alla sezione sottostante:
+### Proposed Fix
 
-- Usare `flex items-center justify-between max-w-2xl w-full` per distribuire i 3 KPI uniformemente
-- Usare `React.Fragment` per inserire i separatori `w-px h-12` tra gli elementi
-- Rimuovere i `gap-10` e `-ml-10` che causano la compressione
+Since "Revelli Group" is not a real project in the database, there are two options:
 
-Risultato: spaziatura identica a quella della sezione "Prodotti che Generano Risultati".
+1. **Remove the case study reference** from `ConsulenzaDigitale.tsx` and replace it with an existing project (e.g., `one-up` or `homeleven`)
+2. **Create a full Revelli Group project** in `projects.ts`
 
-### File coinvolto
-- `src/pages/CasiStudio.tsx` — righe 351-361
+**Recommended:** Option 1 -- replace with an existing project like ONE UP (already referenced as client quote on that same page). Change slug from `revelli` to `one-up` and update name/description accordingly.
+
+### Changes
+
+**`src/pages/servizi/ConsulenzaDigitale.tsx`** (line 24):
+- Replace `{ name: 'Revelli Group', category: 'Consulenza', ... slug: 'revelli' }` with a valid case study using slug `one-up` or `homeleven`
 

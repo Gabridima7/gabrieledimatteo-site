@@ -70,7 +70,7 @@ export const translations = {
     viewAll: { it: 'Vedi tutti', en: 'View all' },
     viewCase: { it: 'Vedi caso studio', en: 'View case study' },
     c1Title: { it: 'Homeleven', en: 'Homeleven' },
-    c1Desc: { it: 'Gestionale Property Manager con AI', en: 'AI-powered Property Manager Platform' },
+    c1Desc: { it: 'Gestionale Property Manager', en: 'Property Manager Platform' },
     c1Badge: { it: 'Web App + AI', en: 'Web App + AI' },
     c2Title: { it: 'ONE UP', en: 'ONE UP' },
     c2Desc: { it: 'Gestionale Flotta Barche', en: 'Boat Fleet Management' },

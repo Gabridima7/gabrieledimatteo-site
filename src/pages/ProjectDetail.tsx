@@ -27,9 +27,27 @@ const ProjectDetail = () => {
   const projectIndex = projectsData.findIndex(p => p.slug === slug);
   const project = projectIndex !== -1 ? projectsData[projectIndex] : null;
 
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (lightboxIndex === null || !project) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight') setLightboxIndex(prev => prev !== null ? (prev + 1) % project.galleryImages.length : null);
+      if (e.key === 'ArrowLeft') setLightboxIndex(prev => prev !== null ? (prev - 1 + project.galleryImages.length) % project.galleryImages.length : null);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, [lightboxIndex, project]);
 
   if (!project) {
     return (

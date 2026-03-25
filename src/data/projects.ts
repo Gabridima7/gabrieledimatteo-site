@@ -55,7 +55,7 @@ export const projectsData: Project[] = [
     tagline: "Software Gestionale *Custom* per il Mercato *Immobiliare*",
     heroImage: galleryHomelevenHero,
     coverImage: galleryHomelevenHero,
-    client: "Cliente Privato",
+    client: "Homeleven",
     industry: "Gestione Immobiliare",
     services: ["Sviluppo Web App", "UI/UX Design", "Automazione"],
     country: "🇮🇹 Italia",

@@ -256,7 +256,7 @@ const CasiStudio = () => {
   }, [nextSlide]);
 
   const counters = [
-    { value: "4+", label: t('works', 'counterProjects') },
+    { value: "30+", label: t('works', 'counterProjects') },
     { value: "100%", label: t('works', 'counterClients') },
     { value: "4", label: t('works', 'counterSectors') },
   ];

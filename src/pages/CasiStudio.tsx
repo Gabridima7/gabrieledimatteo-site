@@ -441,18 +441,18 @@ const CasiStudio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="flex flex-wrap gap-12 md:gap-16 lg:gap-20 mt-10"
+            className="flex items-center mt-10"
           >
             {counters.map((c, i) => (
-              <div key={i} className="flex items-center gap-12 md:gap-16 lg:gap-20">
+              <React.Fragment key={i}>
                 <div>
                   <p className="text-3xl font-bold text-[#d0f601]">{c.value}</p>
                   <p className="text-sm text-[#888]">{c.label}</p>
                 </div>
                 {i < counters.length - 1 && (
-                  <div className="hidden sm:block w-px h-12 bg-[rgba(255,255,255,0.1)]" />
+                  <div className="hidden sm:block w-px h-12 bg-[rgba(255,255,255,0.1)] mx-auto" />
                 )}
-              </div>
+              </React.Fragment>
             ))}
           </motion.div>
         </div>

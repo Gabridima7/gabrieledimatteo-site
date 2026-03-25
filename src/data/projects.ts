@@ -107,9 +107,14 @@ export const projectsData: Project[] = [
       { number: "4", title: "Testing & Go Live", items: ["Testing multi-ruolo per verificare la corretta segregazione degli accessi", "Onboarding del team ONE UP con formazione all'uso della piattaforma", "Deploy su dominio dedicato teamoneup.com", "Documentazione utente completa per ogni ruolo"] },
     ],
     galleryImages: [
-      { src: "/assets/cover-oneup-0CbpMj0p.png", alt: "ONE UP — Dashboard gestionale flotta", caption: "Dashboard con riepilogo flotta, ticket aperti e accesso rapido" },
-      { src: "/assets/cover-oneup-0CbpMj0p.png", alt: "ONE UP — Sistema Ticket", caption: "Sistema ticket con livelli di urgenza e ciclo di vita tracciato" },
-      { src: "/assets/cover-oneup-0CbpMj0p.png", alt: "ONE UP — Dettaglio Barca", caption: "Pagina barca con schede Overview, Ticket, Diario, Vele e Posizione" },
+      { src: "/assets/projects/oneup-dashboard.png", alt: "ONE UP — Dashboard gestionale flotta", caption: "Dashboard con riepilogo flotta, ticket aperti e accesso rapido" },
+      { src: "/assets/projects/oneup-barche.png", alt: "ONE UP — Lista Barche", caption: "Gestione flotta con card per ogni imbarcazione della Classe Smeralda 888" },
+      { src: "/assets/projects/oneup-ticket.png", alt: "ONE UP — Sistema Ticket", caption: "Sistema ticket con livelli di urgenza, stato e ciclo di vita tracciato" },
+      { src: "/assets/projects/oneup-messaggi.png", alt: "ONE UP — Messaggistica", caption: "Chat interna real-time con supporto audio, immagini e GIF" },
+      { src: "/assets/projects/oneup-notifiche.png", alt: "ONE UP — Preferenze Notifiche", caption: "Impostazioni notifiche personalizzabili per ogni evento" },
+      { src: "/assets/projects/oneup-lingua.png", alt: "ONE UP — Aspetto & Lingua", caption: "Supporto multilingua Italiano/English" },
+      { src: "/assets/projects/oneup-gestione-barche.png", alt: "ONE UP — Gestione Barche", caption: "Pannello admin per gestione barche, armatori e team manager" },
+      { src: "/assets/projects/oneup-sistema.png", alt: "ONE UP — Sistema & Dati", caption: "Statistiche database, esportazione dati e impostazioni di sistema" },
     ],
     results: [
       { metric: "5", label: "Ruoli distinti", description: "Super Admin, Admin, Team Manager, Comandante e Armatore — ognuno con accesso calibrato alle proprie funzioni operative." },

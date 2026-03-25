@@ -90,7 +90,7 @@ export const projectsData: Project[] = [
     slug: "one-up",
     name: "ONE UP",
     tagline: "Gestionale Web *Custom* per la Flotta *Smeralda 888*",
-    heroImage: "/assets/cover-oneup-0CbpMj0p.png",
+    heroImage: "/assets/projects/one-up-hero.png",
     coverImage: "/assets/cover-oneup-0CbpMj0p.png",
     client: "ONE UP S.S.D. S.R.L.",
     industry: "Nautica & Sports Management",

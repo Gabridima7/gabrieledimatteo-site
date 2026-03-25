@@ -24,7 +24,7 @@ const LandingPageService = () => (
     ]}
     heroQuote={{ text: "La landing page di NEXUS ha triplicato le conversioni della nostra campagna Google Ads.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
     caseStudies={[
-      { name: 'Biglia Serramenti', category: 'Landing Page', description: 'Landing page per campagna lead generation con form ottimizzato.', metrics: ['+180% conversioni', 'CPA -40%'], slug: 'biglia' },
+      { name: 'Biglia Serramenti', category: 'Landing Page', description: 'Landing page per campagna lead generation con form ottimizzato.', metrics: ['+180% conversioni', 'CPA -40%'], slug: 'biglia-serramenti' },
     ]}
     ctaBannerText="Pronto a lanciare una landing page che converte?"
     benefits={[

@@ -20,7 +20,7 @@ const ProductAuditService = () => (
     ]}
     heroQuote={{ text: "L'audit di NEXUS ha rivelato problemi che non avevamo notato. Le correzioni hanno portato +40% di conversioni.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'UX Audit', description: 'Audit completo della piattaforma con roadmap di miglioramenti prioritizzati.', metrics: ['+40% conversioni', '50+ insights'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'UX Audit', description: 'Audit completo della piattaforma con roadmap di miglioramenti prioritizzati.', metrics: ['+40% conversioni', '50+ insights'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a scoprire come migliorare il tuo prodotto?"
     benefits={[

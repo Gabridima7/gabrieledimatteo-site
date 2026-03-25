@@ -20,7 +20,7 @@ const BrandingUiUx = () => (
     ]}
     heroQuote={{ text: "Il redesign del nostro brand ha completamente trasformato la percezione del mercato nei nostri confronti.", name: "Gianni B.", role: "Titolare, Biglia Serramenti" }}
     caseStudies={[
-      { name: 'Biglia Serramenti', category: 'Branding & Web', description: 'Rebranding completo con nuovo sito web e identità visiva coordinata.', metrics: ['+85% richieste', 'Brand coerente'], slug: 'biglia' },
+      { name: 'Biglia Serramenti', category: 'Branding & Web', description: 'Rebranding completo con nuovo sito web e identità visiva coordinata.', metrics: ['+85% richieste', 'Brand coerente'], slug: 'biglia-serramenti' },
       { name: 'Homeleven', category: 'UI/UX Design', description: 'Design dell\'interfaccia utente per piattaforma gestionale immobiliare.', metrics: ['UX intuitiva', '+50% retention'], slug: 'homeleven' },
     ]}
     ctaBannerText="Pronto a rinnovare il tuo brand?"

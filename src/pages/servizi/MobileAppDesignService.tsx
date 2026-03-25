@@ -20,7 +20,7 @@ const MobileAppDesignService = () => (
     ]}
     heroQuote={{ text: "Il design dell'app è stato fondamentale per il successo. Gli utenti adorano l'esperienza fluida.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'Mobile Design', description: 'Design di app mobile per piattaforma fitness con gamification integrata.', metrics: ['+85% retention', '4.8★ rating'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'Mobile Design', description: 'Design di app mobile per piattaforma fitness con gamification integrata.', metrics: ['+85% retention', '4.8★ rating'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a progettare la tua app mobile?"
     benefits={[

@@ -23,7 +23,7 @@ const ProdottoSaaSService = () => (
     ]}
     heroQuote={{ text: "NEXUS ci ha aiutato a passare dall'idea alla MVP in 6 settimane. Ora abbiamo i primi clienti paganti.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'SaaS', description: 'Piattaforma SaaS B2B con subscription management e onboarding automatizzato.', metrics: ['MVP in 6 settimane', '50+ utenti beta'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'SaaS', description: 'Piattaforma SaaS B2B con subscription management e onboarding automatizzato.', metrics: ['MVP in 6 settimane', '50+ utenti beta'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a lanciare il tuo SaaS?"
     benefits={[

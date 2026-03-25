@@ -151,6 +151,7 @@ export const projectsData: Project[] = [
       { src: "/assets/projects/biglia-serramenti-progetti-page.png", alt: "Biglia Serramenti — Pagina Progetti", caption: "Pagina Progetti con filtri e griglia realizzazioni" },
       { src: "/assets/projects/biglia-serramenti-villa.png", alt: "Biglia Serramenti — Villa Privata Champorcher", caption: "Dettaglio progetto: Villa Privata Champorcher" },
       { src: "/assets/projects/biglia-serramenti-installazione.png", alt: "Biglia Serramenti — Installazione", caption: "Sezione Installazione con carousel fasi operative" },
+      { src: "/assets/projects/biglia-serramenti-contatti.png", alt: "Biglia Serramenti — Form Contatti", caption: "Form di contatto con sfondo dinamico" },
     ],
     results: [
       { metric: "+120%", label: "Visite organiche", description: "Crescita del traffico organico nei primi 3 mesi grazie all'ottimizzazione SEO locale." },

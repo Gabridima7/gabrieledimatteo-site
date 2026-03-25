@@ -119,7 +119,7 @@ export const projectsData: Project[] = [
     results: [
       { metric: "5", label: "Ruoli distinti", description: "Super Admin, Admin, Team Manager, Comandante e Armatore — ognuno con accesso calibrato alle proprie funzioni operative." },
       { metric: "20+", label: "Sezioni gestite", description: "Dashboard, barche, ticket, diario, inventario vele, posizione, fatture, conteggi, messaggistica e notifiche in un'unica piattaforma." },
-      { metric: "0", label: "Excel sostituiti", description: "Nessun foglio di calcolo, nessun WhatsApp operativo: tutto il flusso manutentivo e documentale è ora centralizzato e tracciato." },
+      { metric: "0", label: "Excel", description: "Nessun foglio di calcolo, nessun WhatsApp operativo: tutto il flusso manutentivo e documentale è ora centralizzato e tracciato." },
       { metric: "100%", label: "Accessibile da browser", description: "Piattaforma web responsiva accessibile da qualsiasi dispositivo — in banchina, in cantiere o in ufficio — senza installazioni." },
     ],
     testimonial: undefined,

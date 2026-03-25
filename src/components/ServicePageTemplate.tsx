@@ -271,7 +271,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                     {!cover && <div className="h-48 flex items-center justify-center"><span className="text-white/50 text-xl font-bold">{name}</span></div>}
                   </div>
                   <div className="md:hidden px-6 py-5">
-                    <Link to="/casi-studio" className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-7 py-3" style={{ background: '#d0f601', color: '#06080F' }}>
+                    <Link to={`/progetto/${cs.slug}`} className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-7 py-3" style={{ background: '#d0f601', color: '#06080F' }}>
                       Vedi caso studio <ArrowRight size={14} />
                     </Link>
                   </div>
@@ -289,7 +289,7 @@ const ServicePageTemplate = (props: ServicePageProps) => {
                     <div className="p-10 flex flex-col justify-end">
                       <p className="text-white/80 text-lg leading-relaxed mb-8">{description}</p>
                       <div>
-                        <Link to="/casi-studio" className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-8 py-3.5" style={{ background: '#d0f601', color: '#06080F' }}>
+                        <Link to={`/progetto/${cs.slug}`} className="inline-flex items-center justify-center gap-2 font-semibold text-sm rounded-full px-8 py-3.5" style={{ background: '#d0f601', color: '#06080F' }}>
                           Vedi caso studio <ArrowRight size={14} />
                         </Link>
                       </div>

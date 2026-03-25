@@ -127,7 +127,7 @@ export const projectsData: Project[] = [
   {
     slug: "biglia-serramenti",
     name: "Biglia Serramenti",
-    tagline: "Sito Web Aziendale e *Catalogo Digitale* per un'Azienda di *Infissi*",
+    tagline: "Sito Web Aziendale e *Catalogo Digitale* per un'Azienda di *Serramenti e Facciate*",
     heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400",
     coverImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
     client: "Infissi Rossi",

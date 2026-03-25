@@ -441,7 +441,7 @@ const CasiStudio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="flex items-center mt-10"
+            className="flex items-center justify-between mt-10 max-w-2xl"
           >
             {counters.map((c, i) => (
               <React.Fragment key={i}>

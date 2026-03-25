@@ -1,29 +1,21 @@
 
 
-## Traduzione pagina /contatti in inglese
+## Problema
 
-Aggiungere il supporto bilingue (IT/EN) alla pagina `/contatti`, seguendo il pattern gia utilizzato nel resto del sito con `LanguageContext` e `translations.ts`.
+Nella pagina `/casi-studio` ci sono **due blocchi KPI identici**. La sezione KPI nell'hero (sotto il pulsante CTA verde) non è stata modificata e i 3 elementi sono ancora troppo vicini tra loro con le linee separatrici schiacciate.
 
-### Cosa cambia
+## Piano
 
-**1. Aggiunta traduzioni in `src/i18n/translations.ts`**
+### Modificare i KPI nell'hero (righe 351-361 di `src/pages/CasiStudio.tsx`)
 
-Nuova sezione `contatti` con tutte le stringhe della pagina:
-- Breadcrumb ("Home", "Contatti")
-- Nome e ruolo del founder
-- I 3 punti beneficio (rispondiamo entro 12 ore, NDA, specialisti)
-- Label "Contattaci" e "Prenota una call"
-- Titolo form "Parlaci del tuo progetto"
-- Label campi (Nome completo, Email aziendale, Il tuo progetto)
-- Placeholder dei campi
-- Testo bottone file upload
-- Disclaimer privacy/cookie
-- Bottone "Invia"
-- Messaggio di successo ("Grazie!", "Ti risponderemo...")
+Sostituire il layout attuale (`flex flex-wrap gap-10` con margini negativi per i separatori) con lo stesso pattern `justify-between` già applicato alla sezione sottostante:
 
-**2. Modifica `src/pages/Contatti.tsx`**
+- Usare `flex items-center justify-between max-w-2xl w-full` per distribuire i 3 KPI uniformemente
+- Usare `React.Fragment` per inserire i separatori `w-px h-12` tra gli elementi
+- Rimuovere i `gap-10` e `-ml-10` che causano la compressione
 
-- Importare `useLanguage` dal context
-- Sostituire tutte le stringhe hardcoded con chiamate `t('contatti', 'chiave')`
-- La struttura e lo stile della pagina restano invariati
+Risultato: spaziatura identica a quella della sezione "Prodotti che Generano Risultati".
+
+### File coinvolto
+- `src/pages/CasiStudio.tsx` — righe 351-361
 

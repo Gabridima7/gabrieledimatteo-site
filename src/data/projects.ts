@@ -146,6 +146,7 @@ export const projectsData: Project[] = [
     galleryImages: [
       { src: "/assets/projects/biglia-serramenti-hero.png", alt: "Biglia Serramenti — Homepage", caption: "Homepage con hero section e navigazione principale" },
       { src: "/assets/projects/biglia-serramenti-progetti.png", alt: "Biglia Serramenti — Progetti", caption: "Sezione Progetti con galleria realizzazioni" },
+      { src: "/assets/projects/biglia-serramenti-processo.png", alt: "Biglia Serramenti — Processo", caption: "Processo produttivo: Progettazione, Produzione, Installazione, Assistenza" },
     ],
     results: [
       { metric: "+120%", label: "Visite organiche", description: "Crescita del traffico organico nei primi 3 mesi grazie all'ottimizzazione SEO locale." },

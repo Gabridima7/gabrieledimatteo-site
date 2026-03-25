@@ -130,7 +130,7 @@ export const projectsData: Project[] = [
     tagline: "Sito Web Aziendale e *Catalogo Digitale* per un'Azienda di *Serramenti e Facciate*",
     heroImage: "/assets/projects/biglia-serramenti-hero-new.png",
     coverImage: "/assets/projects/biglia-serramenti-hero-new.png",
-    client: "Infissi Rossi",
+    client: "Biglia Serramenti",
     industry: "Artigianato & Edilizia",
     services: ["Web Design", "Sviluppo Web"],
     country: "🇮🇹 Italia",

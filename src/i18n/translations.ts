@@ -257,7 +257,7 @@ export const translations = {
     counterProjects: { it: 'Progetti Completati', en: 'Projects Completed' },
     counterClients: { it: 'Clienti Soddisfatti', en: 'Satisfied Clients' },
     counterSectors: { it: 'Settori Serviti', en: 'Sectors Served' },
-    project3Name: { it: 'Infissi Rossi', en: 'Infissi Rossi' },
+    project3Name: { it: 'Biglia Serramenti', en: 'Biglia Serramenti' },
     project3Desc: {
       it: 'Sito web aziendale con catalogo prodotti e richiesta preventivi per azienda di infissi.',
       en: 'Business website with product catalog and quote requests for a window company.',

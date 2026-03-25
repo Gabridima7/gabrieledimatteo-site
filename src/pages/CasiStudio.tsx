@@ -258,7 +258,7 @@ const CasiStudio = () => {
   const counters = [
     { value: "30+", label: t('works', 'counterProjects') },
     { value: "100%", label: t('works', 'counterClients') },
-    { value: "4", label: t('works', 'counterSectors') },
+    { value: "9", label: t('works', 'counterSectors') },
   ];
 
   const currentSlide = heroSlides[activeSlide];

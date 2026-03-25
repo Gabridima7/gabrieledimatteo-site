@@ -24,7 +24,7 @@ const MvpDesign = () => (
     ]}
     heroQuote={{ text: "NEXUS ha trasformato la nostra idea in un prodotto funzionante in sole 6 settimane. Ora abbiamo i primi clienti paganti.", name: "Mattia T.", role: "Founder, Homeleven" }}
     caseStudies={[
-      { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager con AI integrata.', metrics: ['+200% efficienza', 'MVP in 6 settimane'], slug: 'homeleven' },
+      { name: 'Homeleven', category: 'Web App + AI', description: 'Gestionale Property Manager.', metrics: ['+200% efficienza', 'MVP in 6 settimane'], slug: 'homeleven' },
     ]}
     ctaBannerText="Hai un'idea? Trasformala in realtà."
     ctaBannerDescription="Prenota una call gratuita per discutere il tuo progetto MVP."

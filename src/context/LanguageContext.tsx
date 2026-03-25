@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import type { Language } from '@/i18n/translations';
 import { t as translate } from '@/i18n/translations';
 
@@ -36,8 +36,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+const fallback: LanguageContextType = {
+  lang: 'it',
+  setLang: () => {},
+  toggleLanguage: () => {},
+  t: (section: string, key: string) => translate(section, key, 'it'),
+};
+
 export const useLanguage = () => {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider');
-  return ctx;
+  return ctx ?? fallback;
 };

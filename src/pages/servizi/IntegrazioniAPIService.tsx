@@ -23,7 +23,7 @@ const IntegrazioniAPIService = () => (
     ]}
     heroQuote={{ text: "NEXUS ha collegato tutti i nostri strumenti in un ecosistema unico. Ora i dati fluiscono automaticamente.", name: "Andrea Z.", role: "CEO, ONE UP" }}
     caseStudies={[
-      { name: 'ONE UP', category: 'Integrazione API', description: 'Integrazione tra CRM, gestionale e piattaforma e-commerce con sync real-time.', metrics: ['5 sistemi connessi', '-90% data entry'], slug: 'oneup' },
+      { name: 'ONE UP', category: 'Integrazione API', description: 'Integrazione tra CRM, gestionale e piattaforma e-commerce con sync real-time.', metrics: ['5 sistemi connessi', '-90% data entry'], slug: 'one-up' },
     ]}
     ctaBannerText="Pronto a connettere i tuoi sistemi?"
     benefits={[

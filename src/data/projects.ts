@@ -92,7 +92,7 @@ export const projectsData: Project[] = [
     tagline: "Gestionale Web *Custom* per la Flotta *Smeralda 888*",
     heroImage: "/assets/projects/one-up-hero.png",
     coverImage: "/assets/cover-oneup-0CbpMj0p.png",
-    client: "ONE UP S.S.D. S.R.L.",
+    client: "ONE UP",
     industry: "Nautica & Sports Management",
     services: ["Sviluppo Web App", "UI/UX Design", "Software Gestionale"],
     country: "🇮🇹 Italia",

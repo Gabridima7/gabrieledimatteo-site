@@ -92,21 +92,30 @@ export async function qualifyBatch(leads: Partial<Lead>[]): Promise<Qualificatio
 function buildLeadContext(lead: Partial<Lead>): string {
   const parts: string[] = []
 
-  if (lead.name) parts.push(`Nome: ${lead.name}`)
-  if (lead.company) parts.push(`Azienda: ${lead.company}`)
+  if (lead.name) parts.push(`Nome attività: ${lead.name}`)
   if (lead.role) parts.push(`Ruolo: ${lead.role}`)
-  if (lead.city || lead.region) parts.push(`Posizione: ${[lead.city, lead.region].filter(Boolean).join(', ')}`)
-  if (lead.website) parts.push(`Sito web: ${lead.website}`)
-  if (lead.source) parts.push(`Fonte: ${lead.source}`)
+  if (lead.city || lead.region) parts.push(`Città: ${[lead.city, lead.region].filter(Boolean).join(', ')}`)
+  if (lead.phone) parts.push(`Telefono: disponibile`)
 
   if (lead.raw_data) {
     const raw = lead.raw_data
-    if (raw.rating) parts.push(`Rating Google: ${raw.rating}/5 (${raw.review_count ?? '?'} recensioni)`)
-    if (raw.types) parts.push(`Categoria: ${(raw.types as string[]).join(', ')}`)
+
+    if (raw.sector) parts.push(`Settore: ${raw.sector}`)
+    if (raw.address) parts.push(`Indirizzo: ${raw.address}`)
+
+    // Segnali forti per la qualificazione
+    parts.push(`Sito web: ASSENTE (confermato dalla lista)`)
+    if (raw.rating != null) {
+      const stars = raw.rating as number
+      const count = raw.review_count as number ?? 0
+      parts.push(`Rating Google Maps: ${stars}/5 con ${count} recensioni`)
+      // Attività con molte recensioni = buon volume di clienti = ROI alto per un sito
+      if (count > 100) parts.push(`Nota: alta reputazione online (${count} rec.) — ottimo candidato per sito con prenotazioni/menu`)
+      if (stars >= 4.5) parts.push(`Nota: rating eccellente — può capitalizzare la reputazione con presenza web`)
+    }
+
     if (raw.headline) parts.push(`Headline LinkedIn: ${raw.headline}`)
-    if (raw.website_tech) parts.push(`Tecnologia sito: ${raw.website_tech}`)
-    if (raw.has_website === false) parts.push(`Sito web: assente`)
-    if (raw.website_year) parts.push(`Anno sito: ${raw.website_year}`)
+    if (raw.website_tech) parts.push(`Tecnologia sito attuale: ${raw.website_tech}`)
   }
 
   return parts.join('\n')

@@ -2,37 +2,49 @@ import { readFileSync } from 'fs'
 import { extname } from 'path'
 import { parse } from 'csv-parse/sync'
 import * as XLSX from 'xlsx'
-import { Lead, CampaignInput } from '../../types'
+import { Lead } from '../../types'
 
-// Mappatura flessibile dei nomi colonna — gestisce varianti italiane/inglesi
+// Mappatura colonne — supporta il formato del file prospecting_leads_italia
+// e varianti generiche italiane/inglesi
 const COLUMN_ALIASES: Record<keyof CSVRow, string[]> = {
-  name:    ['nome', 'ragione_sociale', 'ragione sociale', 'azienda', 'company', 'name', 'denominazione'],
-  sector:  ['settore', 'categoria', 'attività', 'attivita', 'tipo', 'sector', 'category', 'tipo_attività'],
-  city:    ['città', 'citta', 'comune', 'city', 'localita', 'località'],
-  region:  ['regione', 'provincia', 'region', 'prov'],
-  phone:   ['telefono', 'tel', 'phone', 'cellulare', 'mobile'],
-  email:   ['email', 'e-mail', 'mail', 'posta'],
-  vat:     ['partita_iva', 'p.iva', 'piva', 'vat', 'cf_piva', 'codice_fiscale'],
+  name:       ['nome attività', 'nome_attività', 'nome attivita', 'nome', 'ragione sociale', 'ragione_sociale', 'azienda', 'company', 'denominazione'],
+  sector:     ['categoria', 'settore', 'attività', 'attivita', 'tipo', 'sector', 'category'],
+  city:       ['città', 'citta', 'comune', 'city', 'localita', 'località'],
+  address:    ['indirizzo', 'address', 'via', 'sede'],
+  phone:      ['telefono', 'tel', 'phone', 'cellulare', 'mobile'],
+  email:      ['email', 'e-mail', 'mail', 'posta'],
+  rating:     ['rating', 'voto', 'stelle'],
+  reviews:    ['n° recensioni', 'n. recensioni', 'recensioni', 'reviews', 'num recensioni'],
+  maps_url:   ['google maps', 'maps', 'link maps', 'google_maps'],
+  contacted:  ['contattato?', 'contattato', 'contacted', 'già contattato'],
+  status:     ['stato', 'status'],
+  vat:        ['partita_iva', 'p.iva', 'piva', 'vat', 'codice_fiscale'],
 }
 
 interface CSVRow {
   name: string
   sector?: string
   city?: string
-  region?: string
+  address?: string
   phone?: string
   email?: string
+  rating?: string
+  reviews?: string
+  maps_url?: string
+  contacted?: string
+  status?: string
   vat?: string
 }
 
 export interface CSVImportOptions {
   campaignId: string
   filter: {
-    geo?: string           // es. "Milano", "Lombardia", "Sicilia"
-    sectors?: string[]     // es. ["ristorante", "bar", "pizzeria"]
+    geo?: string        // es. "Torino", "Sicilia" — matcha su città estratta
+    sectors?: string[]  // es. ["ristorante", "bar caffetteria"]
   }
   maxLeads?: number
-  offset?: number          // per paginare su file grande (es. riprendi dal lead 500)
+  offset?: number       // paginazione: salta le prime N righe già processate
+  skipContacted?: boolean  // salta le righe con "Contattato?" = sì (default: true)
 }
 
 export async function importFromFile(
@@ -47,19 +59,22 @@ export async function importFromFile(
   } else if (ext === '.xlsx' || ext === '.xls') {
     rows = parseExcel(filePath)
   } else {
-    throw new Error(`Formato file non supportato: ${ext}. Usa .csv, .xlsx o .xls`)
+    throw new Error(`Formato non supportato: ${ext}. Usa .csv, .xlsx o .xls`)
   }
 
-  console.log(`   📂 File caricato: ${rows.length.toLocaleString('it')} righe totali`)
+  console.log(`   File caricato: ${rows.length.toLocaleString('it')} righe totali`)
 
   const normalized = rows.map(normalizeRow)
-  const filtered = applyFilters(normalized, options.filter)
-  console.log(`   🔍 Dopo filtri (${options.filter.geo ?? 'tutto'} / ${options.filter.sectors?.join(',') ?? 'tutti i settori'}): ${filtered.length.toLocaleString('it')} aziende`)
+  const filtered = applyFilters(normalized, options)
+
+  const geoLabel = options.filter.geo ?? 'tutta Italia'
+  const sectorLabel = options.filter.sectors?.join(', ') ?? 'tutti i settori'
+  console.log(`   Filtro: ${geoLabel} / ${sectorLabel} → ${filtered.length.toLocaleString('it')} aziende`)
 
   const offset = options.offset ?? 0
   const maxLeads = options.maxLeads ?? 50
   const slice = filtered.slice(offset, offset + maxLeads)
-  console.log(`   ✂️  Slice selezionata: ${slice.length} lead (da riga ${offset} a ${offset + slice.length})`)
+  console.log(`   Slice: ${slice.length} lead (righe ${offset}–${offset + slice.length})`)
 
   return slice.map(row => csvRowToLead(row, options.campaignId))
 }
@@ -76,15 +91,19 @@ function parseCSV(filePath: string): Record<string, string>[] {
 
 function parseExcel(filePath: string): Record<string, string>[] {
   const workbook = XLSX.readFile(filePath)
-  const sheet = workbook.Sheets[workbook.SheetNames[0]]
+  // Usa il foglio "Lead Prospecting" se esiste, altrimenti il primo
+  const sheetName = workbook.SheetNames.find(n =>
+    n.toLowerCase().includes('lead') || n.toLowerCase().includes('prospecting')
+  ) ?? workbook.SheetNames[0]
+  const sheet = workbook.Sheets[sheetName]
   return XLSX.utils.sheet_to_json(sheet, { defval: '' }) as Record<string, string>[]
 }
 
 function normalizeRow(row: Record<string, string>): CSVRow {
   const result: Partial<CSVRow> = {}
-  const lowerRow: Record<string, string> = {}
 
-  // Normalizza i nomi delle chiavi
+  // Normalizza chiavi: lowercase + rimuovi spazi extra
+  const lowerRow: Record<string, string> = {}
   for (const [k, v] of Object.entries(row)) {
     lowerRow[k.toLowerCase().trim()] = String(v ?? '').trim()
   }
@@ -98,72 +117,121 @@ function normalizeRow(row: Record<string, string>): CSVRow {
     }
   }
 
+  // --- Pulizia post-mappatura ---
+
+  // Città: "10124 Torino TO" → "Torino"
+  if (result.city) {
+    result.city = extractCityName(result.city)
+  }
+
+  // Settore: "ristorante - Torino" → "ristorante"
+  // (il file ha categoria nel formato "tipo - Città")
+  if (result.sector) {
+    result.sector = result.sector.split(' - ')[0].trim()
+  }
+
   return {
-    name: result.name ?? 'N/D',
-    sector: result.sector,
-    city: result.city,
-    region: result.region,
-    phone: result.phone,
-    email: result.email,
-    vat: result.vat,
+    name:      result.name ?? 'N/D',
+    sector:    result.sector,
+    city:      result.city,
+    address:   result.address,
+    phone:     result.phone,
+    email:     result.email,
+    rating:    result.rating,
+    reviews:   result.reviews,
+    maps_url:  result.maps_url,
+    contacted: result.contacted,
+    status:    result.status,
+    vat:       result.vat,
   }
 }
 
-function applyFilters(rows: CSVRow[], filter: CSVImportOptions['filter']): CSVRow[] {
+// "10124 Torino TO" → "Torino"
+// "10124 To TO"     → "To" (fallback)
+function extractCityName(raw: string): string {
+  // Pattern: codice postale (5 cifre) + spazio + nome città + spazio + sigla provincia (2 lettere maiuscole)
+  const match = raw.match(/^\d{5}\s+(.+?)\s+[A-Z]{2}$/)
+  if (match) return match[1].trim()
+  // Fallback: prendi tutto dopo eventuale codice postale
+  const fallback = raw.replace(/^\d{5}\s+/, '').trim()
+  return fallback || raw
+}
+
+function applyFilters(rows: CSVRow[], options: CSVImportOptions): CSVRow[] {
+  const skipContacted = options.skipContacted ?? true
+
   return rows.filter(row => {
-    // Filtro geografico
-    if (filter.geo) {
-      const geo = filter.geo.toLowerCase()
+    // Scarta righe senza nome
+    if (!row.name || row.name === 'N/D') return false
+
+    // Scarta già contattati
+    if (skipContacted && row.contacted) {
+      const v = row.contacted.toLowerCase()
+      if (v === 'sì' || v === 'si' || v === 'yes' || v === '1' || v === 'true') return false
+    }
+
+    // Filtro geografico — matcha su città estratta
+    if (options.filter.geo) {
+      const geo = options.filter.geo.toLowerCase()
       const matchCity = row.city?.toLowerCase().includes(geo)
-      const matchRegion = row.region?.toLowerCase().includes(geo)
-      if (!matchCity && !matchRegion) return false
+      const matchAddress = row.address?.toLowerCase().includes(geo)
+      if (!matchCity && !matchAddress) return false
     }
 
     // Filtro settore
-    if (filter.sectors && filter.sectors.length > 0) {
+    if (options.filter.sectors && options.filter.sectors.length > 0) {
       const sector = (row.sector ?? '').toLowerCase()
-      const match = filter.sectors.some(s => sector.includes(s.toLowerCase()))
+      const match = options.filter.sectors.some(s => sector.includes(s.toLowerCase()))
       if (!match) return false
     }
-
-    // Scarta righe senza nome
-    if (!row.name || row.name === 'N/D') return false
 
     return true
   })
 }
 
 function csvRowToLead(row: CSVRow, campaignId: string): Omit<Lead, 'id' | 'created_at' | 'updated_at'> {
+  const rating = row.rating ? parseFloat(row.rating.replace(',', '.')) : undefined
+  const reviewCount = row.reviews ? parseInt(row.reviews.replace(/\D/g, '')) : undefined
+
   return {
     campaign_id: campaignId,
-    source: 'google_maps',    // manteniamo 'google_maps' per compatibilità DB, o aggiungiamo 'csv'
+    source: 'csv',
     name: row.name,
     company: row.name,
     city: row.city,
-    region: row.region,
-    phone: row.phone,
-    email: row.email,
+    phone: row.phone || undefined,
+    email: row.email || undefined,
     status: 'discovered',
     raw_data: {
       sector: row.sector,
+      address: row.address,
+      rating,
+      review_count: reviewCount,
+      maps_url: row.maps_url,
+      has_website: false,
       vat: row.vat,
-      has_website: false,     // per definizione: la lista è di aziende senza sito
     },
   }
 }
 
-// Utility: anteprima colonne del file (utile per capire la mappatura)
-export function previewFile(filePath: string, numRows = 3): void {
+// Utility: mostra anteprima colonne — utile prima di lanciare una campagna
+export function previewFile(filePath: string, numRows = 5): void {
   const ext = extname(filePath).toLowerCase()
   let rows: Record<string, string>[]
 
-  if (ext === '.csv') {
-    rows = parseCSV(filePath)
-  } else {
-    rows = parseExcel(filePath)
-  }
+  if (ext === '.csv') rows = parseCSV(filePath)
+  else rows = parseExcel(filePath)
 
-  console.log('\n📋 Colonne rilevate:', Object.keys(rows[0] ?? {}).join(', '))
-  console.log(`\n👀 Prime ${numRows} righe:`)
-  rows.slice(0, numRows).forEach((r, i) => console.log(`   [${i + 1}]`, r))
+  console.log('\nColonne rilevate nel file:')
+  console.log(' ', Object.keys(rows[0] ?? {}).join('\n  '))
+
+  console.log(`\nPrime ${numRows} righe normalizzate:`)
+  rows.slice(0, numRows).map(normalizeRow).forEach((r, i) => {
+    console.log(`\n[${i + 1}] ${r.name}`)
+    console.log(`    Settore: ${r.sector ?? '-'}`)
+    console.log(`    Città:   ${r.city ?? '-'}`)
+    console.log(`    Tel:     ${r.phone ?? '-'}`)
+    console.log(`    Email:   ${r.email ?? '-'}`)
+    console.log(`    Rating:  ${r.rating ?? '-'} (${r.reviews ?? '0'} rec.)`)
+  })
 }

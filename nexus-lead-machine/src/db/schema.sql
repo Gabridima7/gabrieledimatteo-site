@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS campaigns (
 CREATE TABLE IF NOT EXISTS leads (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   campaign_id UUID REFERENCES campaigns(id) ON DELETE CASCADE,
-  source TEXT NOT NULL CHECK (source IN ('linkedin', 'google_maps', 'pagineggialle', 'manual')),
+  source TEXT NOT NULL CHECK (source IN ('linkedin', 'google_maps', 'csv', 'pagineggialle', 'manual')),
   -- Identità
   name TEXT NOT NULL,
   company TEXT,

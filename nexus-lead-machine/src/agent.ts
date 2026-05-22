@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import { CampaignInput, Lead } from './types'
-import { discoverGoogleMapsLeads } from './modules/discovery/googlemaps'
+import { importFromFile } from './modules/discovery/csv-import'
 import { discoverLinkedInLeads } from './modules/discovery/linkedin'
 import { qualifyBatch } from './modules/qualification/claude'
 import { findEmail, extractDomain } from './modules/enrichment/hunter'
@@ -15,8 +15,11 @@ import {
 } from './db/client'
 
 export async function runCampaign(input: CampaignInput): Promise<void> {
-  console.log(`\n🚀 Avvio campagna: ${input.name}`)
-  console.log(`   Target: ${input.target_type} | Servizio: ${input.service_focus} | Geo: ${input.geo}\n`)
+  console.log(`\n--- NEXUS LEAD MACHINE ---`)
+  console.log(`Campagna: ${input.name}`)
+  console.log(`Target: ${input.target_type} | Servizio: ${input.service_focus} | Geo: ${input.geo}`)
+  if (input.csv_file) console.log(`File: ${input.csv_file}`)
+  console.log('')
 
   // 1. Crea la campagna nel DB
   const campaign = await createCampaign({
@@ -27,45 +30,35 @@ export async function runCampaign(input: CampaignInput): Promise<void> {
     keywords: input.keywords,
     status: 'active',
   })
-  console.log(`✅ Campagna creata: ${campaign.id}`)
+  console.log(`Campagna creata: ${campaign.id}`)
 
-  // 2. DISCOVERY — trova lead da più fonti in parallelo
-  console.log('\n📡 Discovery in corso...')
+  // 2. DISCOVERY
+  console.log('\n[1/5] Discovery...')
   const maxLeads = input.max_leads ?? 50
-  const [gmapLeads, linkedinLeads] = await Promise.allSettled([
-    discoverGoogleMapsLeads(input, Math.floor(maxLeads * 0.7)),
-    discoverLinkedInLeads(input, Math.floor(maxLeads * 0.3)),
-  ])
-
   const rawLeads: Omit<Lead, 'id' | 'created_at' | 'updated_at'>[] = []
 
-  if (gmapLeads.status === 'fulfilled') {
-    console.log(`   Google Maps: ${gmapLeads.value.length} lead trovati`)
-    for (const place of gmapLeads.value) {
-      rawLeads.push({
-        campaign_id: campaign.id,
-        source: 'google_maps',
-        name: place.name,
-        city: place.city,
-        website: place.website,
-        phone: place.phone,
-        status: 'discovered',
-        raw_data: {
-          rating: place.rating,
-          review_count: place.review_count,
-          types: place.types,
-          place_id: place.place_id,
-          has_website: !!place.website,
-        },
-      })
-    }
-  } else {
-    console.warn('   Google Maps: errore —', gmapLeads.reason)
+  // Fonte primaria: CSV (gratis, 43k aziende)
+  if (input.csv_file) {
+    const csvLeads = await importFromFile(input.csv_file, {
+      campaignId: campaign.id,
+      filter: {
+        geo: input.geo,
+        sectors: input.sectors ?? input.keywords,
+      },
+      maxLeads: input.use_linkedin ? Math.floor(maxLeads * 0.7) : maxLeads,
+      offset: input.csv_offset ?? 0,
+    })
+    rawLeads.push(...csvLeads)
+    console.log(`   CSV: ${csvLeads.length} lead importati`)
   }
 
-  if (linkedinLeads.status === 'fulfilled') {
-    console.log(`   LinkedIn: ${linkedinLeads.value.length} lead trovati`)
-    for (const profile of linkedinLeads.value) {
+  // Fonte opzionale: LinkedIn (solo se esplicitamente abilitato)
+  if (input.use_linkedin) {
+    console.log('   LinkedIn: ricerca in corso (Apify)...')
+    const linkedinLeads = await discoverLinkedInLeads(input, Math.floor(maxLeads * 0.3))
+      .catch(err => { console.warn(`   LinkedIn: errore — ${err.message}`); return [] })
+
+    for (const profile of linkedinLeads) {
       rawLeads.push({
         campaign_id: campaign.id,
         source: 'linkedin',
@@ -78,21 +71,26 @@ export async function runCampaign(input: CampaignInput): Promise<void> {
         raw_data: { headline: profile.headline },
       })
     }
-  } else {
-    console.warn('   LinkedIn: errore —', linkedinLeads.reason)
+    console.log(`   LinkedIn: ${linkedinLeads.length} lead trovati`)
+  }
+
+  // Google Maps: disabilitato di default (costo elevato)
+  if (input.use_google_maps) {
+    console.warn('   ATTENZIONE: Google Maps abilitato — può generare costi elevati!')
+    // Se serve, importare e usare discoverGoogleMapsLeads qui
   }
 
   if (rawLeads.length === 0) {
-    console.error('❌ Nessun lead trovato. Verifica le API key e i parametri.')
+    console.error('\nNessun lead trovato. Verifica il percorso del file CSV o i filtri.')
     return
   }
 
   // 3. Salva i lead grezzi
   const savedLeads = await insertLeads(rawLeads)
-  console.log(`\n💾 ${savedLeads.length} lead salvati nel DB`)
+  console.log(`\n[2/5] ${savedLeads.length} lead salvati nel DB`)
 
-  // 4. QUALIFICATION — Claude analizza ogni lead
-  console.log('\n🧠 Qualificazione con Claude in corso...')
+  // 4. QUALIFICATION con Claude
+  console.log('\n[3/5] Qualificazione con Claude...')
   const qualifications = await qualifyBatch(savedLeads)
 
   let qualified = 0
@@ -107,47 +105,51 @@ export async function runCampaign(input: CampaignInput): Promise<void> {
     })
     if (q.worthy) qualified++
   }
-  console.log(`   ✅ ${qualified} lead qualificati (score ≥ 6)`)
-  console.log(`   ❌ ${savedLeads.length - qualified} lead scartati`)
+  console.log(`   Qualificati: ${qualified}/${savedLeads.length} (score >= 6)`)
+  console.log(`   Scartati: ${savedLeads.length - qualified}`)
 
-  // 5. ENRICHMENT — trova email per i lead qualificati
-  console.log('\n🔍 Enrichment email in corso...')
+  // 5. ENRICHMENT — solo se non abbiamo già email dal CSV
+  console.log('\n[4/5] Enrichment email...')
   const topLeads = await getTopLeads(campaign.id)
 
+  let alreadyHaveEmail = 0
   let enriched = 0
+
   for (const lead of topLeads) {
-    if (lead.website) {
+    if (lead.email) {
+      // Email già presente nel CSV — nessuna chiamata API
+      alreadyHaveEmail++
+      await updateLead(lead.id, { status: 'enriched' })
+    } else if (lead.website) {
+      // Prova Hunter.io solo se non abbiamo email e abbiamo il sito
       const domain = extractDomain(lead.website)
       const result = await findEmail(domain, lead.name)
       if (result.email) {
-        await updateLead(lead.id, {
-          email: result.email,
-          status: 'enriched',
-        })
+        await updateLead(lead.id, { email: result.email, status: 'enriched' })
         enriched++
       } else {
         await updateLead(lead.id, { status: 'outreach_ready' })
       }
+      await new Promise(r => setTimeout(r, 200))
     } else {
       await updateLead(lead.id, { status: 'outreach_ready' })
     }
-    await new Promise(r => setTimeout(r, 200))
   }
-  console.log(`   📧 ${enriched}/${topLeads.length} email trovate`)
+  console.log(`   Email dal CSV: ${alreadyHaveEmail}`)
+  console.log(`   Email trovate via Hunter: ${enriched}`)
 
-  // 6. OUTREACH GENERATION — Claude genera i messaggi
-  console.log('\n✍️  Generazione messaggi outreach...')
+  // 6. GENERAZIONE OUTREACH con Claude
+  console.log('\n[5/5] Generazione messaggi outreach...')
   const outreachLeads = await getTopLeads(campaign.id)
   const outreachResults = await generateOutreachBatch(outreachLeads)
 
+  let messagesCreated = 0
   for (let i = 0; i < outreachLeads.length; i++) {
     const lead = outreachLeads[i]
     const { linkedin_dm, email, follow_up } = outreachResults[i]
 
-    const messages = [linkedin_dm, email]
     if (lead.email) {
-      const inserted = await insertOutreach(messages)
-      // Crea il follow-up collegato all'email
+      const inserted = await insertOutreach([linkedin_dm, email])
       const emailMsg = inserted.find(m => m.channel === 'email')
       if (emailMsg) {
         await insertFollowUp({
@@ -158,25 +160,27 @@ export async function runCampaign(input: CampaignInput): Promise<void> {
           status: 'pending_review',
         })
       }
+      messagesCreated += 2
     } else {
       // Solo LinkedIn DM se non abbiamo email
       await insertOutreach([linkedin_dm])
+      messagesCreated += 1
     }
 
     await updateLead(lead.id, { status: 'outreach_ready' })
   }
 
-  // 7. RIEPILOGO FINALE
+  // RIEPILOGO
   console.log('\n' + '='.repeat(50))
-  console.log('📊 RIEPILOGO CAMPAGNA')
+  console.log('RIEPILOGO CAMPAGNA')
   console.log('='.repeat(50))
-  console.log(`Campagna:          ${campaign.name}`)
-  console.log(`Lead trovati:      ${savedLeads.length}`)
+  console.log(`Nome:              ${campaign.name}`)
+  console.log(`Lead importati:    ${savedLeads.length}`)
   console.log(`Lead qualificati:  ${qualified}`)
-  console.log(`Email trovate:     ${enriched}`)
-  console.log(`Messaggi pronti:   ${outreachLeads.length * 2}`)
+  console.log(`Con email:         ${alreadyHaveEmail + enriched}`)
+  console.log(`Messaggi pronti:   ${messagesCreated}`)
   console.log('')
-  console.log('👀 Vai su Supabase o nel gestionale Nexus per')
-  console.log('   revisionare e approvare i messaggi.')
+  console.log('Vai su Supabase o nel gestionale Nexus per')
+  console.log('revisionare e approvare i messaggi prima di inviare.')
   console.log('='.repeat(50) + '\n')
 }

@@ -1,5 +1,5 @@
 export type ServiceType = 'sito_web' | 'gestionale' | 'automazione' | 'app' | 'sistema_agentico'
-export type LeadSource = 'linkedin' | 'google_maps' | 'pagineggialle' | 'manual'
+export type LeadSource = 'linkedin' | 'google_maps' | 'csv' | 'pagineggialle' | 'manual'
 export type LeadStatus = 'discovered' | 'qualified' | 'enriched' | 'outreach_ready' | 'contacted' | 'replied' | 'converted' | 'rejected'
 export type OutreachChannel = 'linkedin_dm' | 'email'
 export type OutreachStatus = 'pending_review' | 'approved' | 'sent' | 'bounced'
@@ -71,6 +71,12 @@ export interface CampaignInput {
   geo: string                   // es. "Milano", "Lombardia", "Italia"
   keywords?: string[]           // keyword aggiuntive per la ricerca
   max_leads?: number
+  // Fonte dati primaria
+  csv_file?: string             // percorso al file .csv/.xlsx con le 43k aziende
+  csv_offset?: number           // per riprendere da dove si era (paginazione)
+  sectors?: string[]            // filtro settori sul CSV
+  use_linkedin?: boolean        // abilita LinkedIn discovery (default: false)
+  use_google_maps?: boolean     // abilita Google Maps (default: false — costa caro!)
 }
 
 // Output del modulo di qualificazione Claude
